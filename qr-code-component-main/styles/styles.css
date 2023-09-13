@@ -10,3 +10,19 @@
   .attribution a {
     color: hsl(228, 45%, 44%);
   }
+
+  #personal-image, #mobile-image {
+    display: none;
+  }
+
+  @media (min-width: 375px) {
+    #mobile-image {
+        display: block;
+    }
+  }
+
+  @media (min-width : 1440px) {
+    #personal-image {
+        display: block;
+    }
+  }
