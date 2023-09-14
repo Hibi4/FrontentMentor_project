@@ -3,13 +3,18 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style> */
 
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 500;
+}
+
 .attribution { 
     font-size: 11px; text-align: center; 
     position: fixed;
     bottom: 0;
 }
 
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { color: hsl(228, 45%, 44%); font-size: 16px;}
 
 main {
     width: 30%;
