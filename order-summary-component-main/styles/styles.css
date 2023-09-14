@@ -1,0 +1,21 @@
+/* <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> */
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+    position: fixed;
+    bottom: 0;
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
+
+main {
+    width: 30%;
+    height: auto;
+}
+
+main .main-section {
+    grid-template-rows: auto auto;
+}
