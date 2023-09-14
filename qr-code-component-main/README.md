@@ -19,7 +19,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/Hibi4/FrontentMentor_project.git)
-
+-  https://qr-code-component-olive-two.vercel.app/
 ### Built with
 
 - Semantic HTML5 markup
