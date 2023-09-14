@@ -1,11 +1,7 @@
-/* <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style> */
-
-body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 500;
+.body {
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 500; */
+    background-color: hsl(225, 100%, 94%);
 }
 
 .attribution { 
@@ -18,7 +14,8 @@ body {
 
 main {
     width: 30%;
-    height: auto;
+    margin: 0 auto;
+    margin-top: 7%;
 }
 
 main .main-section {
