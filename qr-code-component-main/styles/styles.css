@@ -1,28 +1,27 @@
-/* <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>*/ 
-  .attribution {
+.attribution {
     font-size: 11px;
     text-align: center;
-  }
+}
 
-  .attribution a {
+.attribution a {
     color: hsl(228, 45%, 44%);
-  }
+}
 
-  #personal-image, #mobile-image {
+#desktop-image,
+#mobile-image {
     display: none;
-  }
+}
 
-  @media (min-width: 375px) {
+@media (min-width: 1440px) {
+    #desktop-image {
+        display: block;
+
+    }
+}
+
+@media (max-width: 775px) {
     #mobile-image {
         display: block;
-    }
-  }
 
-  @media (min-width : 1440px) {
-    #personal-image {
-        display: block;
     }
-  }
+}
