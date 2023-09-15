@@ -25,9 +25,12 @@ main .main-section {
 }
 
 .main-infos h2 {
-    /* <h2 style="text-align: center; margin-top: 5%;">Order Summary</h2> */
     text-align: center;
     margin-top: 5%;
+}
+
+.main-img img {
+    width: 100%;
 }
 
 .main-infos p {
@@ -56,10 +59,41 @@ main .main-section {
 .main-infos-data a {
     margin-left: 150px;
 }
-/*        
-         
-          <div style="display: block; margin-left: 10px;">
-            <p style="line-height: 2px; font-weight: 500;">Annual Plan</p> $59.99/year
-          </div>
-          <a href="" style="margin-left: 150px;">Change</a>
-        </div>*/
+
+.main-infos .main-infos-btns {
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.main-infos .main-infos-btns button {
+    width: 85%;
+    margin-left: 8%;
+}
+
+
+.main-infos .main-infos-btns #payment_btn {
+    border-radius: 10px;
+    color: white;
+}
+
+.main-infos .main-infos-btns #payment_btn:hover {
+    background-color: hsl(228, 65%, 48%);
+}
+
+.main-infos .main-infos-btns #order_btn {
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+@media (max-width: 775px) {
+    main {
+        width: 90%;
+        margin-top: 20%;
+        border-radius: 20px;
+    }
+
+    .main-img img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+}

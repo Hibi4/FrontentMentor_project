@@ -23,14 +23,12 @@
   <main class="main">
     <div class="main-section">
       <div class="main-img">
-        <img src="/images/illustration-hero.svg" alt="">
+        <img id="desktop-img" src="/images/illustration-hero.svg" alt="">
       </div>
       <div class="main-infos">
-        <!-- <h2 style="text-align: center; margin-top: 5%;">Order Summary</h2> -->
-        <h2 >Order Summary</h2>
+        <h2>Order Summary</h2>
         <p>You can now listen to millions of songs, <br> audiobooks, and podcasts on
-          any
-          device <br> anywhere you like!</p>
+          any device <br> anywhere you like!</p>
           <div class="main-infos-data">
             <img src="images/icon-music.svg" alt="">
             <div class="main-infos-plan">
@@ -38,17 +36,11 @@
             </div>
             <a href="">Change</a>
           </div>
-        <!-- <div class="main-infos-data" style="display: inline-flex; margin-top: 15px; margin-left: 30px;">
-          <img src="images/icon-music.svg" alt="" style="margin-left: 5px;">
-          <div style="display: block; margin-left: 10px;">
-            <p style="line-height: 2px; font-weight: 500;">Annual Plan</p> $59.99/year
-          </div>
-          <a href="" style="margin-left: 150px;">Change</a>
-        </div> -->
-        <div class="main-infos-btns" style="margin: 0 auto; margin-top: 25px;">
-          <button style="width: 85%; margin-left: 8%; border-radius: 10px;" type="button"
-            class="btn btn-primary">Proceed to Payment</button> <br>
-          <button style="width: 85%; margin-left: 8%; margin-top: 15px;" type="button" class="btn btn-light">Cancel
+        
+        <div class="main-infos-btns">
+          <button type="button"
+            class="btn btn-primary" id="payment_btn" >Proceed to Payment</button> <br>
+          <button type="button" class="btn btn-light" id="order_btn" >Cancel
             Order</button>
         </div>
 
@@ -56,13 +48,6 @@
 
     </div>
   </main>
-
-  <!-- 
-
-  
-
-  
-   -->
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
