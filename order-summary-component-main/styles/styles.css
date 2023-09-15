@@ -15,9 +15,51 @@
 main {
     width: 30%;
     margin: 0 auto;
-    margin-top: 7%;
+    margin-top: 5%;
+    background-color: white;
 }
+
 
 main .main-section {
     grid-template-rows: auto auto;
 }
+
+.main-infos h2 {
+    /* <h2 style="text-align: center; margin-top: 5%;">Order Summary</h2> */
+    text-align: center;
+    margin-top: 5%;
+}
+
+.main-infos p {
+    text-align: center;
+    padding: 5%;
+}
+
+.main-infos img {
+    margin-left: 5px;
+}
+
+.main-infos .main-infos-data {
+    display: inline-flex;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+.main-infos-data .main-infos-plan {
+    display: block;
+    margin-left: 10px;
+}
+
+.main-infos-data .main-infos-plan p {
+    line-height: 2px;
+}
+
+.main-infos-data a {
+    margin-left: 150px;
+}
+/*        
+         
+          <div style="display: block; margin-left: 10px;">
+            <p style="line-height: 2px; font-weight: 500;">Annual Plan</p> $59.99/year
+          </div>
+          <a href="" style="margin-left: 150px;">Change</a>
+        </div>*/
