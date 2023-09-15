@@ -33,12 +33,16 @@ main .main-section {
     width: 100%;
 }
 
-.main-infos p {
+.main-infos #main-text {
     text-align: center;
     padding-right: 15%;
     padding-left: 15%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    /* padding-right: 15%;
+    padding-left: 15%; */
+    /* padding-right: 15%;
+    padding-left: 15%; */
+    /* padding-top: 5%;
+    padding-bottom: 5%; */
 }
 
 .main-infos img {
@@ -47,7 +51,8 @@ main .main-section {
 
 .main-infos .main-infos-data {
     display: inline-flex;
-    margin-top: 15px;
+    /* margin-top : 15px */ 
+    margin-top: 35px;
     margin-left: 30px;
 }
 .main-infos-data .main-infos-plan {
@@ -91,7 +96,7 @@ main .main-section {
 @media (max-width: 775px) {
     main {
         width: 90%;
-        margin-top: 20%;
+        margin-top: 15%;
         border-radius: 20px;
     }
 
@@ -117,7 +122,7 @@ main .main-section {
 
     .main-infos-data a {
         margin-left: 30px;
-        color: hsl(228, 45%, 44%);
+        color: hsl(245, 75%, 52%);
     }
 
     .main-infos-data .main-infos-plan p {
