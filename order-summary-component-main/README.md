@@ -14,7 +14,7 @@ This is a solution to the [Order summary card challenge on Frontend Mentor](http
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://frontent-mentor-projects.vercel.app/)
 
 ## My process
 
@@ -48,5 +48,5 @@ For future projects, I would like to use some Front-end frameworks (react, angul
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+- Website - [Add your name here](https://frontent-mentor-projects.vercel.app/)
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Hibi4)
