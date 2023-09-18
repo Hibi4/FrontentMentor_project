@@ -1,6 +1,4 @@
 .body {
-    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 500; */
     background-color: hsl(225, 100%, 94%);
 }
 
@@ -37,12 +35,7 @@ main .main-section {
     text-align: center;
     padding-right: 15%;
     padding-left: 15%;
-    /* padding-right: 15%;
-    padding-left: 15%; */
-    /* padding-right: 15%;
-    padding-left: 15%; */
-    /* padding-top: 5%;
-    padding-bottom: 5%; */
+    
 }
 
 .main-infos img {
@@ -51,7 +44,6 @@ main .main-section {
 
 .main-infos .main-infos-data {
     display: inline-flex;
-    /* margin-top : 15px */ 
     margin-top: 35px;
     margin-left: 30px;
 }
