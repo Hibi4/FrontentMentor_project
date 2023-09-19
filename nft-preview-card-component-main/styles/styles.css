@@ -1,0 +1,55 @@
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: white;
+}
+
+.attribution a {
+    /* color: hsl(228, 45%, 44%); */
+    color: white;
+}
+
+body {
+    background-color:hsl(217, 54%, 11%);
+}
+
+.main {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    /* background-color: red; */
+    width: 80%;
+}
+
+.main .main-img img {
+    width: 35%;
+}
+
+.main .main-data p {
+    color: hsl(0, 0%, 100%);
+}
+
+.main_data_infos {
+    display: inline-flex;
+}
+
+.main_data_infos .icon_ethereum_img {
+    height: 40px;
+}
+
+#ethereum_text {
+    margin-left: 10px;
+    color: hsl(178, 100%, 50%);
+}
+
+.main_data_infos .icon_clock_img {
+    margin-left: 205px;
+}
+
+
+/* <div class="main_data_infos" style="display: inline-flex;">
+          <img src="/images/icon-ethereum.svg" class="icon_ethereum_img" alt="">
+          <p style="margin-left: 10px;">0.041 ETH</p>
+        
+          <img src="/images/icon-clock.svg" class="icon_clock_img" alt="" style="margin-left: 205px;">
+          <p>3 days left</p> */ 
