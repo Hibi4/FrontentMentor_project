@@ -16,16 +16,23 @@ body {
 
 .main {
     display: grid;
-    grid-template-rows: auto auto;
-    /* background-color: red; */
-    width: 80%;
+    background-color: hsl(215, 69%, 16%);
+    width: 30%;
     justify-content: center;
-
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 60px;
 }
 
 .main .main-img img {
-    width: 70%;
+    margin-left: 35px;
+    width: 80%;
+    margin-top: 20px;
 } 
+
+.main .main-data {
+    margin-left: 35px;
+}
 
 .main .main-data p {
     color: hsl(0, 0%, 100%);
@@ -45,7 +52,7 @@ body {
 }
 
 .main_data_infos .icon_clock_img {
-    margin-left: 200px;
+    margin-left: 150px;
     height: 30px;
     margin-top: 10px;
 }
@@ -57,10 +64,3 @@ body {
 .main-data .avatar_logo {
     height: 45px;
 }
-
-/* <div class="main_data_infos" style="display: inline-flex;">
-          <img src="/images/icon-ethereum.svg" class="icon_ethereum_img" alt="">
-          <p style="margin-left: 10px;">0.041 ETH</p>
-        
-          <img src="/images/icon-clock.svg" class="icon_clock_img" alt="" style="margin-left: 205px;">
-          <p>3 days left</p> */ 
