@@ -64,3 +64,45 @@ body {
 .main-data .avatar_logo {
     height: 45px;
 }
+
+@media (max-width: 767px) {
+    .main {
+        width: 90%;
+        margin-top: 30px;
+    }
+
+    .main .main-img img {
+        margin-left: 25px;
+        margin-top: 20px;
+    }
+
+    .main .main-data {
+        margin-left: 25px;
+    }
+
+    .main_data_infos .icon_ethereum_img {
+        height: 20px;
+        margin-top: 15px;
+    }
+
+    .main_data_infos .icon_clock_img {
+        margin-left: 100px;
+        height: 30px;
+        margin-top: 10px;
+    }
+    /* 
+    .main_data_infos .icon_ethereum_img {
+        height: 40px;
+    }
+
+    #ethereum_text {
+        margin-left: 10px;
+        color: hsl(178, 100%, 50%);
+    }
+
+    .main_data_infos .icon_clock_img {
+        margin-left: 150px;
+        height: 30px;
+        margin-top: 10px;
+    }*/ 
+}
