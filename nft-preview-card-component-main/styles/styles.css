@@ -1,14 +1,5 @@
 
-.attribution {
-    font-size: 11px;
-    text-align: center;
-    color: white;
-}
 
-.attribution a {
-    /* color: hsl(228, 45%, 44%); */
-    color: white;
-}
 
 body {
     background-color:hsl(217, 54%, 11%);
@@ -66,6 +57,9 @@ body {
 }
 
 @media (max-width: 767px) {
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
     .main {
         width: 90%;
         margin-top: 30px;
@@ -86,23 +80,7 @@ body {
     }
 
     .main_data_infos .icon_clock_img {
-        margin-left: 100px;
-        height: 30px;
-        margin-top: 10px;
+        margin-left: 70px;
     }
-    /* 
-    .main_data_infos .icon_ethereum_img {
-        height: 40px;
-    }
-
-    #ethereum_text {
-        margin-left: 10px;
-        color: hsl(178, 100%, 50%);
-    }
-
-    .main_data_infos .icon_clock_img {
-        margin-left: 150px;
-        height: 30px;
-        margin-top: 10px;
-    }*/ 
+    
 }
