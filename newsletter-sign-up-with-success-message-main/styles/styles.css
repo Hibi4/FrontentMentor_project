@@ -7,16 +7,11 @@
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+    
 }
 
 .body {
-    background-color: hsl(228, 45%, 44%);
-}
-
-.main {
-    /* border-radius, width,   */
-    /*width: 30%;*/
-    
+    background-color: hsl(234, 29%, 20%);
 }
 
 .main-content {
@@ -31,10 +26,6 @@
     padding-top: 50px;
     height: 550px;
 }
-
-/* .main-content .data-content {
-    
-} */
 
 .main .main-content .logo-content img {
     height: 80%;
@@ -58,3 +49,23 @@
     margin-top: 15px;
     font-weight: 400;
 }
+
+/* CSS for success.html */
+.main-success {
+    margin: 0 auto;
+    width: 30%;
+    padding: 25px;
+    margin-top: 95px;
+    background-color: white;
+    border-radius: 20px;
+    
+}
+
+#subscribe_id:hover {
+    background-color: rgb(233, 98, 138);
+}
+
+#dissmis-btn:hover {
+    background-color: rgb(233, 98, 138);
+}
+
