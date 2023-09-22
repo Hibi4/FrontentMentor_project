@@ -9,21 +9,37 @@
     color: hsl(228, 45%, 44%);
 }
 
+.body {
+    background-color: hsl(228, 45%, 44%);
+}
+
 .main {
     /* border-radius, width,   */
-    /* width: 30%; */
+    /*width: 30%;*/
+    
 }
 
 .main-content {
     display: grid;
     grid-template-columns: 2fr auto;
-    /*background-color: red; */
     width: 50%;
+    justify-content: center;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 40px;
+    padding-top: 50px;
+    height: 550px;
 }
 
+/* .main-content .data-content {
+    
+} */
+
 .main .main-content .logo-content img {
-    height: 90%;
+    height: 80%;
     float: right;
+    padding: 15px;
 }
 
 #text-title {
@@ -33,9 +49,9 @@
 }
 
 #text-content {
-    text-align: center;
+    padding-left: 20px;
     font-size: 16px;
-    padding-right: 15px;
+    padding-right: 35px;
 }
 
 #email-text {
