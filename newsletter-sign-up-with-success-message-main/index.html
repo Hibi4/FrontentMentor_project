@@ -21,21 +21,25 @@
         <p id="text-content">Join 60,000+ product managers receiving monthly updates on:</p>
         <span style="display: inline-flex; padding-left: 15px;">
           <img src="/assets/images/icon-success.svg" alt="" style="width: 20px; margin-right: 10px;">
-          <p>Product discovery and building what matters</p>
+          <p style="margin-top: 15px;">Product discovery and building what matters</p>
         </span>
         <span style="display: inline-flex; padding-left: 15px;">
           <img src="/assets/images/icon-success.svg" alt="" style="width: 20px; margin-right: 10px;">
-          <p>Measuring to ensure updates are a success</p>
+          <p style="margin-top: 15px;">Measuring to ensure updates are a success</p>
         </span>
         <span style="display: inline-flex; padding-left: 15px;">
           <img src="/assets/images/icon-success.svg" alt="" style="width: 20px; margin-right: 10px;">
-          <p>Product discovery and building what matters</p>
+          <p style="margin-top: 15px;">And much more!</p>
         </span>
         <!-- <p id="email-text">Email address</p>  -->
         <div class="form-group" style="padding-left: 15px;">
-          <label for="exampleInputEmail1" id="email-text">Email address</label>
+          <span style="display: inline-flex;">
+            <label for="exampleInputEmail1" id="email-text">Email address</label>
+            <label for="" id="error_email_text" style="margin-left: 100px; margin-top: 15px; color: red;"></label>
+          </span>
+          
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="email@company.com" aria-describedby="emailHelp" style="width: 80%;">
-          <button type="submit" class="btn btn-dark" id="subscribe_id" style="width: 80%; margin-top: 20px;">Subscribe to monthly newsletter</button>
+          <button type="submit" class="btn btn-dark" id="subscribe_id" onclick="isMail()" style="width: 80%; margin-top: 20px;">Subscribe to monthly newsletter</button>
         </div>
       
       </div>
@@ -44,6 +48,8 @@
       </div>
     </div>
   </main>
+
+  <script src="/main/main.js"></script>
 
   <!-- Sign-up form start -->
 
