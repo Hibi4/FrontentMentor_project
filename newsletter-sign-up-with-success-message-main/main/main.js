@@ -10,8 +10,8 @@ function isMail() {
         console.log(isEmail());
         window.location.href = "success.html";
     } else {
-        console.log("Not a mail");
-        document.getElementById("error_email_text").innerHTML = "valid email required"; 
+        document.getElementById("error_email_text").style.color = "red";
+        document.getElementById("error_email_text").innerHTML = "valid email required";
     }
             
 }

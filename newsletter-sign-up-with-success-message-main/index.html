@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
   <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
-  integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 </head>
+
 <body class="body">
 
   <main class="main">
@@ -19,29 +22,29 @@
       <div class="data-content">
         <h1 id="text-title">Stay updated!</h1>
         <p id="text-content">Join 60,000+ product managers receiving monthly updates on:</p>
-        <span style="display: inline-flex; padding-left: 15px;">
-          <img src="/assets/images/icon-success.svg" alt="" style="width: 20px; margin-right: 10px;">
-          <p style="margin-top: 15px;">Product discovery and building what matters</p>
+        <span class="data-content-span">
+          <img src="/assets/images/icon-success.svg" alt="">
+          <p>Product discovery and building what matters</p>
         </span>
-        <span style="display: inline-flex; padding-left: 15px;">
-          <img src="/assets/images/icon-success.svg" alt="" style="width: 20px; margin-right: 10px;">
-          <p style="margin-top: 15px;">Measuring to ensure updates are a success</p>
+        <span class="data-content-span">
+          <img src="/assets/images/icon-success.svg" alt="">
+          <p>Measuring to ensure updates are a success</p>
         </span>
-        <span style="display: inline-flex; padding-left: 15px;">
-          <img src="/assets/images/icon-success.svg" alt="" style="width: 20px; margin-right: 10px;">
-          <p style="margin-top: 15px;">And much more!</p>
+        <span class="data-content-span">
+          <img src="/assets/images/icon-success.svg" alt="">
+          <p>And much more!</p>
         </span>
-        <!-- <p id="email-text">Email address</p>  -->
-        <div class="form-group" style="padding-left: 15px;">
-          <span style="display: inline-flex;">
+        <div class="form-group">
+          <span id="form_label_span">
             <label for="exampleInputEmail1" id="email-text">Email address</label>
-            <label for="" id="error_email_text" style="margin-left: 100px; margin-top: 15px; color: red;"></label>
+            <label for="" id="error_email_text"></label>
           </span>
-          
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="email@company.com" aria-describedby="emailHelp" style="width: 80%;">
-          <button type="submit" class="btn btn-dark" id="subscribe_id" onclick="isMail()" style="width: 80%; margin-top: 20px;">Subscribe to monthly newsletter</button>
+
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="email@company.com"
+            aria-describedby="emailHelp" style="width: 80%;">
+          <button type="submit" class="btn btn-dark" id="subscribe_id" onclick="isMail()">Subscribe to monthly newsletter</button>
         </div>
-      
+
       </div>
       <div class="logo-content">
         <img src="/assets/images/illustration-sign-up-desktop.svg" alt="" srcset="">
@@ -51,39 +54,10 @@
 
   <script src="/main/main.js"></script>
 
-  <!-- Sign-up form start -->
-
-  <!-- Stay updated!
-
-  Join 60,000+ product managers receiving monthly updates on:
-
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
-
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter -->
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  <!-- Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message -->
-
-  <!-- Success message end -->
-
-  <!-- valid email required : show text: if the given email is not valid -->
-  
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Harun</a>.
   </div>
 </body>
+
 </html>
