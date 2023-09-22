@@ -5,7 +5,7 @@ function isEmail() {
     return regex.test(valeur);
 }
 
-function isMail() {
+function checkIsEmailValid() {
     if(isEmail()) {
         console.log(isEmail());
         window.location.href = "success.html";

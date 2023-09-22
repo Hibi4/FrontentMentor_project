@@ -119,3 +119,37 @@
     background-color: hsl(0, 94%, 66%);
 }
 
+@media (max-width: 768px) {
+    .main-content {
+        width: 90%;
+        grid-template-columns: none;
+    }
+    .main .main-content .logo-content img {
+        height: 90%;
+        float: none;
+        
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    #text-content {
+        padding-left: 40px;   
+        padding-right: 35px;
+    }
+
+    .data-content-span {
+        display: inline-flex;
+        margin-left: 25px;
+        margin-right: 15px;
+    }
+
+    .form-group {
+        margin-left: 27px;
+    }
+
+    .body {
+        background-color: white
+    }
+
+}
+
