@@ -1,15 +1,44 @@
-/* <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style> */
-
-  .attribution {
-    font-size: 11px; text-align: center;
+.attribution {
+    font-size: 11px;
+    text-align: center;
     position: fixed;
     bottom: 0;
-  }
+}
 
-  .attribution a {
+.attribution a {
     color: hsl(228, 45%, 44%);
-  }
+}
+
+.main {
+    /* border-radius, width,   */
+    /* width: 30%; */
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    /*background-color: red; */
+    width: 50%;
+}
+
+.main .main-content .logo-content img {
+    height: 90%;
+    float: right;
+}
+
+#text-title {
+    size: 16px;
+    color: hsl(234, 29%, 20%);
+    text-align: center;
+}
+
+#text-content {
+    text-align: center;
+    font-size: 16px;
+    padding-right: 15px;
+}
+
+#email-text {
+    margin-top: 15px;
+    font-weight: 400;
+}
