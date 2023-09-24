@@ -135,6 +135,9 @@
     .main-content {
         width: 90%;
         grid-template-columns: none;
+        
+        margin-top: 0px;
+        padding-top: 0px;
     }
     .main .main-content .logo-content img {
         height: 90%;
@@ -176,6 +179,14 @@
 
     #exampleInputEmail1 {
         width: 100%;
+    }
+
+    .order_1 {
+        order: 1;
+    }
+      
+    .order_2 {
+        order: 2;
     }
 
 }
