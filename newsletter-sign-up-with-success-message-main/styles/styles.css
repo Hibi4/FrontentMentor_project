@@ -127,8 +127,6 @@
     display: none; 
 }
 
-/* <input type="email" class="form-control" id="exampleInputEmail1" placeholder="email@company.com"
-            aria-describedby="emailHelp" style="width: 80%;"> */
 #exampleInputEmail1 {
     width: 80%;
 }
