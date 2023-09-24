@@ -1,7 +1,7 @@
 function isEmail() {
     const valeur = document.getElementById("exampleInputEmail1").value;
     console.log("Passed elements is: " + valeur);
-    var regex = /\S+@\S+\.\S+/;
+    const regex = /\S+@\S+\.\S+/;
     return regex.test(valeur);
 }
 

@@ -19,7 +19,7 @@
 
   <main class="main">
     <div class="main-content">
-      <div class="data-content">
+      <div class="data-content ">
         <h1 id="text-title">Stay updated!</h1>
         <p id="text-content">Join 60,000+ product managers receiving monthly updates on:</p>
         <span class="data-content-span">
@@ -41,13 +41,21 @@
           </span>
 
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="email@company.com"
-            aria-describedby="emailHelp" style="width: 80%;">
+            aria-describedby="emailHelp" >
           <button type="submit" class="btn btn-dark" id="subscribe_id" onclick="checkIsEmailValid()">Subscribe to monthly newsletter</button>
         </div>
 
       </div>
-      <div class="logo-content">
-        <img src="/assets/images/illustration-sign-up-desktop.svg" alt="" srcset="">
+      <div class="logo-content ">
+        <!-- <button class="col-sm-2 col-md-2 d-none d-sm-inline btn rounded-0" id="btn_all_shop_details" type="button">ALL
+                    SHOP</button>
+                  <div class="col-sm-10 col-md-10 d-none d-sm-inline pr-12 text-white" id="shop_banner_details">
+                    <img src="" id="logo_shop_details_image" alt=""> 
+                  <i class="fa fa-shopping-cart col-sm-2 col-md-2 d-sm-none" id="btn_shop_icon" @click="add_to_basket_icon_shop">
+                    <span class="circle"></span>
+                  </i> -->
+        <img src="/assets/images/illustration-sign-up-desktop.svg" alt="" srcset="" class="desktop-image">
+        <img src="/assets/images/illustration-sign-up-mobile.svg" alt="" srcset="" class="mobile-image">
       </div>
     </div>
   </main>
