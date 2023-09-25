@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/Hibi4/FrontentMentor_project.git](https://github.com/Hibi4/FrontentMentor_project.git)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/Hibi4/FrontentMentor_project.git]
+- Live Site URL: [https://newsletter-sign-up-black.vercel.app/]
 
 ## My process
 
@@ -60,5 +60,5 @@ For future projects, I would like to use some Front-end frameworks (react, angul
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+- Website - [https://newsletter-sign-up-black.vercel.app/]
 - Frontend Mentor - [@hibi](https://www.frontendmentor.io/profile/Hibi4)
