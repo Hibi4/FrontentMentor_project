@@ -7,7 +7,7 @@
 
 .attribution a {
     color: hsl(228, 45%, 44%);
-    
+
 }
 
 .body {
@@ -101,7 +101,7 @@
     cursor: pointer;
 }
 
-/* CSS for success.html */
+/* start CSS for success.html */
 .main-success {
     margin: 0 auto;
     width: 30%;
@@ -119,12 +119,14 @@
     background-color: hsl(0, 94%, 66%);
 }
 
+/* end CSS for success.html */
+
 .desktop-image {
     display: block;
 }
-   
+
 .mobile-image {
-    display: none; 
+    display: none;
 }
 
 #exampleInputEmail1 {
@@ -135,10 +137,11 @@
     .main-content {
         width: 90%;
         grid-template-columns: none;
-        
+
         margin-top: 0px;
         padding-top: 0px;
     }
+
     .main .main-content .logo-content img {
         height: 90%;
         float: none;
@@ -147,7 +150,7 @@
     }
 
     #text-content {
-        padding-left: 40px;   
+        padding-left: 40px;
         padding-right: 35px;
     }
 
@@ -168,9 +171,9 @@
     .desktop-image {
         display: none;
     }
-       
+
     .mobile-image {
-        display: block; 
+        display: block;
     }
 
     #subscribe_id {
@@ -184,10 +187,9 @@
     .order_1 {
         order: 1;
     }
-      
+
     .order_2 {
         order: 2;
     }
 
 }
-
