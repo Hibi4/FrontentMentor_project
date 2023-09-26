@@ -49,6 +49,35 @@
     margin-top: 10px;
   }
 
+  .description_img_left div h3 {
+    font-weight: bold;
+    font-size: 60px;
+  }
+
+  .description_img_left p {
+    margin-right: 20%;
+    color: hsl(32, 7%, 57%);
+  }
+
+  .description_img_left .btn {
+    background-color: hsl(5, 85%, 63%);
+    color: white;
+  }
+
+  .main__section_right .hr_tag {
+    background-color: white;
+  }
+
+  .main__section_right h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .main__section_right p {
+    font-size: small;
+    color: hsl(33, 12%, 81%);
+  }
+
   .products {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -76,32 +105,3 @@
     .products .products_global_div div p:nth-child(2) {
         line-height: 2px;
     }
-
-
-
-  /* <div class="products">
-      <div style="display: inline-flex;">
-        <img src="/assets/images/image-retro-pcs.jpg" style="width: 85px; height: 100px;" alt="">
-        <div style="margin-left: 20px;">
-          <p style="font-size: 20px; color: hsl(32, 12%, 81%);">01</p>
-          <p style="line-height: 2px;">Reviving Retro PCs</p>
-          <p>What happens when old PCs are given modern upgrades?</p>
-        </div>
-      </div>
-      <div style="display: inline-flex;">
-        <img src="/assets/images/image-top-laptops.jpg" style="width: 85px; height: 100px;" alt="">
-        <div style="margin-left: 20px;">
-          <p style="font-size: 20px; color: hsl(32, 12%, 81%);">02</p>
-          <p style="line-height: 2px;">Top 10 Laptops of 2022</p>
-          <p>Our best picks for various needs and budgets.</p>
-        </div>
-      </div>
-      <div style="display: inline-flex;">
-        <img src="/assets/images/image-gaming-growth.jpg" style="width: 85px; height: 100px;" alt="">
-        <div style="margin-left: 20px;">
-          <p style="font-size: 20px; color: hsl(32, 9%, 63%);">03</p>
-          <p style="line-height: 2px;">The Growth of Gaming</p>
-          <p>How the pandemic has sparked fresh opportunities.</p>
-        </div>
-      </div>
-    </div> */
