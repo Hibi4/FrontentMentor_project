@@ -37,3 +37,9 @@
   #main__section_right_title {
     color: hsl(35, 77%, 62%);
   }
+
+  .description_img_left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+  } 
