@@ -105,3 +105,37 @@
     .products .products_global_div div p:nth-child(2) {
         line-height: 2px;
     }
+
+    @media (max-width: 767px) {
+
+        .header .header__logo {
+            margin-left: 0px;
+        }
+
+        .main__section {
+            grid-template-columns: none;
+            margin-left: 0px;
+        }
+
+        .main__section_left img {
+            width: 100%;
+        }
+
+        .description_img_left { 
+            grid-template-columns: none;
+        }
+
+        .products {
+            grid-template-columns: none;
+        }
+
+        .products .products_global_div div {
+            margin-left: 10px;
+        }
+
+        .description_img_left .btn {
+            margin-bottom: 20px;
+        }
+
+        
+    }
