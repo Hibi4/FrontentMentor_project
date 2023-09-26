@@ -55,3 +55,53 @@
     margin-top: 30px;
     margin-left: 30px;
   }
+
+  .products .products_global_div img {
+    width: 85px;
+    height: 100px;
+  }
+
+  .products .products_global_div {
+    display: inline-flex;
+  }
+  .products .products_global_div div {
+    margin-left: 20px;
+  }
+
+    .products .products_global_div div p:nth-child(1) {
+        font-size: 20px;
+        color: hsl(32, 12%, 81%);
+    }
+
+    .products .products_global_div div p:nth-child(2) {
+        line-height: 2px;
+    }
+
+
+
+  /* <div class="products">
+      <div style="display: inline-flex;">
+        <img src="/assets/images/image-retro-pcs.jpg" style="width: 85px; height: 100px;" alt="">
+        <div style="margin-left: 20px;">
+          <p style="font-size: 20px; color: hsl(32, 12%, 81%);">01</p>
+          <p style="line-height: 2px;">Reviving Retro PCs</p>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </div>
+      </div>
+      <div style="display: inline-flex;">
+        <img src="/assets/images/image-top-laptops.jpg" style="width: 85px; height: 100px;" alt="">
+        <div style="margin-left: 20px;">
+          <p style="font-size: 20px; color: hsl(32, 12%, 81%);">02</p>
+          <p style="line-height: 2px;">Top 10 Laptops of 2022</p>
+          <p>Our best picks for various needs and budgets.</p>
+        </div>
+      </div>
+      <div style="display: inline-flex;">
+        <img src="/assets/images/image-gaming-growth.jpg" style="width: 85px; height: 100px;" alt="">
+        <div style="margin-left: 20px;">
+          <p style="font-size: 20px; color: hsl(32, 9%, 63%);">03</p>
+          <p style="line-height: 2px;">The Growth of Gaming</p>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </div>
+    </div> */
