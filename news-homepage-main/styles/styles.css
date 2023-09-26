@@ -1,0 +1,42 @@
+/*   <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>*/ 
+
+  .attribution {
+    font-size: 11px; 
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 20px;
+  }
+
+  /*.header .header__logo {
+    margin-top: 20px;
+  }*/
+
+  /* .header .header__nav ul {
+    list-style-type: none;
+    overflow: hidden;
+  }
+
+    .header .header__nav li {
+        float: right; 
+    }
+
+    .header .header__nav .header__nav-list li a {
+        margin-left: 80px;
+        display: block;
+        text-decoration: none;
+    } */
+
+    
