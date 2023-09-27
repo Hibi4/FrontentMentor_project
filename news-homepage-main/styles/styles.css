@@ -97,69 +97,76 @@
     margin-left: 20px;
   }
 
-    .products .products_global_div div p:nth-child(1) {
-        font-size: 20px;
-        color: hsl(32, 12%, 81%);
+  .products .products_global_div div p:nth-child(1) {
+    font-size: 20px;
+    color: hsl(32, 12%, 81%);
+  }
+
+  .products .products_global_div div p:nth-child(2) {
+    line-height: 2px;
+  }
+
+  .header__menu-toggle {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    /* start sandwich menu */
+    .header__nav {
+      display: none; /* Initially hide the navigation for mobile */
     }
 
-    .products .products_global_div div p:nth-child(2) {
-        line-height: 2px;
+    /* Add a CSS class to style the navigation when it's displayed */
+    .header__nav--visible {
+      display: block;
+    }
+      
+    /* Style for the menu icon (you may adjust this as needed) */
+    #menu-icon {
+      cursor: pointer;
     }
 
     .header__menu-toggle {
-      display: none;
+      display: block; /* Display the menu toggle icon */
     }
 
-    @media (max-width: 767px) {
-      /* start sandwich menu */
-      .header__nav {
-        display: none; /* Initially hide the navigation for mobile */
-      }
+    #exit-menu-icon {
+      display: none; /* Hide the exit icon initially */
+    }
 
-      /* Add a CSS class to style the navigation when it's displayed */
-      .header__nav--visible {
-        display: block;
-      }
-      
-      /* Style for the menu icon (you may adjust this as needed) */
-      #menu-icon {
-        cursor: pointer;
-      }
-
-      .header__menu-toggle {
-        display: block; /* Display the menu toggle icon */
-      }
+    /* .nav.flex-column {
+      flex-direction: column;
+    } */
     
-      /* end sandwich menu */
+    /* end sandwich menu */
 
-        .header .header__logo {
-            margin-left: 0px;
-        }
+      .header .header__logo {
+        margin-left: 0px;
+      }
 
-        .main__section {
-            grid-template-columns: none;
-            margin-left: 0px;
-        }
+      .main__section {
+        grid-template-columns: none;
+        margin-left: 0px;
+      }
 
-        .main__section_left img {
-            width: 100%;
-        }
+      .main__section_left img {
+        width: 100%;
+      }
 
-        .description_img_left { 
-            grid-template-columns: none;
-        }
+      .description_img_left { 
+        grid-template-columns: none;
+      }
 
-        .products {
-            grid-template-columns: none;
-        }
+      .products {
+        grid-template-columns: none;
+      }
 
-        .products .products_global_div div {
-            margin-left: 10px;
-        }
+      .products .products_global_div div {
+        margin-left: 10px;
+      }
 
-        .description_img_left .btn {
-            margin-bottom: 20px;
-        }
-
+      .description_img_left .btn {
+        margin-bottom: 20px;
+      }
         
     }
