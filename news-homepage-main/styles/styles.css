@@ -106,7 +106,31 @@
         line-height: 2px;
     }
 
+    .header__menu-toggle {
+      display: none;
+    }
+
     @media (max-width: 767px) {
+      /* start sandwich menu */
+      .header__nav {
+        display: none; /* Initially hide the navigation for mobile */
+      }
+
+      /* Add a CSS class to style the navigation when it's displayed */
+      .header__nav--visible {
+        display: block;
+      }
+      
+      /* Style for the menu icon (you may adjust this as needed) */
+      #menu-icon {
+        cursor: pointer;
+      }
+
+      .header__menu-toggle {
+        display: block; /* Display the menu toggle icon */
+      }
+    
+      /* end sandwich menu */
 
         .header .header__logo {
             margin-left: 0px;
