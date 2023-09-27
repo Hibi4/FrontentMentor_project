@@ -138,6 +138,43 @@
       flex-direction: column;
     } */
     
+    
+    /* .side-panel {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 260px;
+      height: 100%; 
+      position: fixed;
+      top: 5;
+      float: right;
+      height: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      overflow-y: auto;
+      transition: left 0.3s ease-in-out;
+      background-color: #fff;
+      color: white;
+    }
+
+    /* Styles to slide in the side panel when visible */
+    /* .header__nav--visible + #sidePanel {
+      left: 0;
+    } */
+
+    .side-panel {
+      /* Existing styles for the side panel */
+    
+      /* Initially off-screen */
+      height: 100%;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Styles to slide in the side panel when visible */
+    .side-panel--visible {
+      transform: translateX(0);
+    }
+
     /* end sandwich menu */
 
       .header .header__logo {
