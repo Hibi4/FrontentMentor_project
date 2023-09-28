@@ -18,7 +18,7 @@
     <div class="main-section">
       <div class="day-input">
         <h3>Day</h3>
-        <input type="text" name="" id="day-data" placeholder="DD" required size="2" maxlength="2">
+        <input type="text" name="day-data" id="day-data" placeholder="DD" required size="2" maxlength="2">
         <p>Enter valide day</p>
       </div>
       <div class="months-input">
@@ -32,19 +32,21 @@
         <p></p>
       </div>
     </div>
-    
+    <div>
+      <button class="btn btn-primary" id="btn" onclick="isGivenDatavalid()">Calculate</button>
+    </div>
     <span>
       <hr class="hr_tag">
     </span>
     <div class="age-result">
       <div class="year_result">
-        <h3> <span id="years" style="color: blue;">33</span> years</h3>
+        <h3> <span id="years-result" style="color: blue;">33</span> years</h3>
       </div>
       <div class="months_result">
-        <h3> <span id="years" style="color: blue;">33</span> years</h3>
+        <h3> <span id="months-result" style="color: blue;">33</span> years</h3>
       </div>
       <div class="day_result">
-        <h3> <span id="years" style="color: blue;">33</span> years</h3>
+        <h3> <span id="day-result" style="color: blue;">33</span> years</h3>
       </div>
     
     </div>

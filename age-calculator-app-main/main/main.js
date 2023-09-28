@@ -9,19 +9,28 @@
 // log the result to the console
 
 var currentDate = new Date();
-const d = document.getElementById("day-data").value;
-const m = document.getElementById("months-data").value;
-const y = document.getElementById("year-data").value;
+// const _d = document.querySelector("#day-data").value;
 
-console.log('days: ' + d);
-console.log('days: ' + m);
-console.log('days: ' + y);
 
-function isGivenDatavalid(days, months, years) {
-    
-    
-    if ((days < 0 || days > 31) && d != "") {
+
+/* console.log('days: ' + _d);
+console.log('days: ' + _m);
+console.log('days: ' + _y);*/
+
+function isGivenDatavalid() {
+    var _d = document.getElementById("day-data").value;
+    const _m = document.getElementById("months-data").value;
+    const _y = document.getElementById("year-data").value;
+
+    console.log("isGivenDatavalid");
+    var days = parseInt(_d);
+    var months = parseInt(_m);
+    var years = parseInt(_y);
+    console.log("days: " + days);
+
+    if ((days < 0 || days > 31) && _d != "") {
         console.log("Invalid day");
+        document.getElementById("day-data").style.outline = "2px solid red";
         return false;
     }
 
@@ -36,6 +45,28 @@ function isGivenDatavalid(days, months, years) {
     }
 
     return "";
+}
+
+function calculateAges() {
+    var days = parseInt(_d);
+    var months = parseInt(_m);
+    var years = parseInt(_y);
+
+    if(!isGivenDatavalid(days, months, years)) {
+        // call calculatesCurrentAge function
+        var currentYear = currentDate.getFullYear();
+        var currentMonth = currentDate.getMonth() + 1;
+        var currentDay = currentDate.getDate();
+
+        var ageInYears = currentYear - years;
+        var ageInMonths = currentMonth - months;
+        var ageInDays = currentDay - days;
+        
+        document.getElementById("years-result").innerHTML = ageInYears;
+        document.getElementById("months-result").innerHTML = ageInMonths;
+        document.getElementById("days-result").innerHTML = ageInDays;
+
+    } 
 }
 
 function calculatesCurrentAge(days, months, years) {
