@@ -142,28 +142,36 @@
       display: none; /* Hide the exit icon initially */
       margin-right: 5px;
     }
-
-    /* .nav.flex-column {
-      flex-direction: column;
-    } */
     
-    
+    /* open side panel */
     /* .side-panel {
       position: fixed;
       top: 0;
       left: -260px;
-      width: 260px;
+      width: 160px;
       height: 100%; 
-      position: fixed;
-      top: 5;
-      float: right;
-      height: 100%;
+      z-index: 1;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       overflow-y: auto;
       transition: left 0.3s ease-in-out;
       background-color: #fff;
       color: white;
-    }
+    } */
+
+    /* .side-panel {
+      position: fixed;
+      top: 0;
+      left: -260px; 
+      width: 160px;
+      height: 100%; 
+      z-index: 1;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      overflow-y: auto;
+      transition: left 0.3s ease-in-out;
+      background-color: #fff;
+      color: white;
+      
+    } */
 
     /* Styles to slide in the side panel when visible */
     /* .header__nav--visible + #sidePanel {

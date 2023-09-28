@@ -7,13 +7,14 @@ function toggleMenu() {
 
 
     if (nav.classList.contains('header__nav--visible')) {
-        /* sidePanel.style.display = 'none'; */ // Hide the side panel
+        /*sidePanel.style.display = 'none'; */ // Hide the side panel
+        
         nav.classList.remove('header__nav--visible');
         menuIcon.style.display = 'block';
         exitMenuIcon.style.display = 'none';
         navList.classList.remove('flex-column');
 
-        sidePanel.classList.remove('side-panel--visible'); // Hide the side panel
+        /* sidePanel.classList.remove('side-panel--visible');*/ // Hide the side panel
         
     } else {
         /* sidePanel.style.display = 'block'; */ // display the side panel
@@ -22,6 +23,6 @@ function toggleMenu() {
         exitMenuIcon.style.display = 'block';
         navList.classList.add('flex-column');
 
-        sidePanel.classList.add('side-panel--visible'); // Show the side panel
+        /*sidePanel.classList.add('side-panel--visible');*/ // Show the side panel
     }
 }
