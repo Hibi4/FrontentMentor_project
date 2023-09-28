@@ -16,6 +16,10 @@
     margin-top: 20px;
   }
 
+  .header__nav {
+    margin-right: 45px;
+  }
+
   .header .header__logo {
     margin-left: 30px;
   }
@@ -28,12 +32,12 @@
   }
 
   .main__section_left img {
-    width: 90%;
+    width: 95%;
   }
 
   .main__section_right {
     background-color: black;
-    margin-right: 15px;
+    margin-right: 55px;
     color: white;
     padding: 14px 18px;
     text-align: left;
@@ -116,6 +120,9 @@
       display: none; /* Initially hide the navigation for mobile */
     }
 
+    .main__section_right {
+      width: 100%;
+    }
     /* Add a CSS class to style the navigation when it's displayed */
     .header__nav--visible {
       display: block;
@@ -124,6 +131,7 @@
     /* Style for the menu icon (you may adjust this as needed) */
     #menu-icon {
       cursor: pointer;
+      margin-right: 5px;
     }
 
     .header__menu-toggle {
@@ -132,6 +140,7 @@
 
     #exit-menu-icon {
       display: none; /* Hide the exit icon initially */
+      margin-right: 5px;
     }
 
     /* .nav.flex-column {
@@ -161,19 +170,16 @@
       left: 0;
     } */
 
-    .side-panel {
-      /* Existing styles for the side panel */
-    
-      /* Initially off-screen */
+    /*.side-panel {
       height: 100%;
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
-    }
+    } */
     
     /* Styles to slide in the side panel when visible */
-    .side-panel--visible {
+    /*.side-panel--visible {
       transform: translateX(0);
-    }
+    } */
 
     /* end sandwich menu */
 
