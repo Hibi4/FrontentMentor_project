@@ -57,7 +57,7 @@
   font-size: small;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -75,10 +75,31 @@ input[type="text"], input[type="email"], input[type="password"] {
   color: white;
   background-color: #900;
   border-radius: 0 0 5px 5px;
-
   box-sizing: border-box;
 }
 
 .error.active {
   padding: 0.3em;
+}
+
+@media (max-width: 767px) {
+  .main {
+    width: 90%;
+  }
+
+  .hr_tag {
+    background-color: rgb(156, 164, 171);
+    width: 40%;
+  }
+
+  #icon-arrow {
+    background-color: hsl(259, 100%, 65%);
+    float: none;
+    padding: 5px;
+    border-radius: 50px;
+  }
+
+  input[type="text"] {
+    width: auto;
+  }
 }
