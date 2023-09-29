@@ -28,20 +28,26 @@ function isGivenDatavalid() {
     var years = parseInt(_y);
     console.log("days: " + days);
 
-    if ((days < 0 || days > 31) && _d != "") {
+
+    if ((days < 0 || days > 31) || _d === "") {
         console.log("Invalid day");
         document.getElementById("day-data").style.outline = "2px solid red";
-        return false;
+        document.querySelector(".main-section #day-title").style.color = "red";
+        // return false;
     }
 
-    if ((months < 0 || months > 12) && m != "") {
+    if ((months < 0 || months > 12) || _m === "") {
         console.log("Invalid month");
-        return false;
+        document.getElementById("months-data").style.outline = "2px solid red";
+        document.querySelector(".main-section #month-title").style.color = "red";
+        // return false;
     }
 
-    if ((years > currentDate.getFullYear) && y != "") {
+    if ((years > currentDate.getFullYear) || _y === "") {
         console.log("Invalid year");
-        return false;
+        document.getElementById("year-data").style.outline = "2px solid red";
+        document.querySelector(".main-section #year-title").style.color = "red";
+        // return false;
     }
 
     return "";

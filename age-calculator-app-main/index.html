@@ -17,22 +17,23 @@
   <main class="main">
     <div class="main-section">
       <div class="day-input">
-        <h3>Day</h3>
+        <h3 id="day-title">Day</h3>
         <input type="text" name="day-data" id="day-data" placeholder="DD" required size="2" maxlength="2">
-        <p>Enter valide day</p>
+        <!-- <p>Enter valide day</p> -->
+        <span class="error" id="day_error_message"></span>
       </div>
       <div class="months-input">
-        <h3>Month</h3>
+        <h3 id="month-title">Month</h3>
         <input type="text" name="" id="months-data" placeholder="MM" required size="2" maxlength="2">
-        <p></p>
+        <span id="month_error_message"></span>
       </div>
       <div class="year-input">
-        <h3>Year</h3>
+        <h3 id="year-title">Year</h3>
         <input type="text" name="" id="year-data" placeholder="YYYY" required size="2" maxlength="4">
-        <p></p>
+        <span id="year_error_message"></span>
       </div>
-    </div>
-    <div>
+    </div> <br>
+    <div style="margin-top: 30px;">
       <button class="btn btn-primary" id="btn" onclick="isGivenDatavalid()">Calculate</button>
     </div>
     <span>
