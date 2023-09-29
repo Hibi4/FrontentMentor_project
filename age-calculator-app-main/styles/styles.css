@@ -38,6 +38,13 @@
   background-color: rgb(156, 164, 171);
 }
 
+#icon-arrow {
+  background-color: hsl(259, 100%, 65%);
+  float: right;
+  padding: 5px;
+  border-radius: 50px;
+}
+
 #day_error_message, #month_error_message, #year_error_message {
   color: red;
   font-size: small;

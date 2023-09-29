@@ -33,7 +33,45 @@ function isGivenDatavalid() {
         console.log("Invalid day");
         document.getElementById("day-data").style.outline = "2px solid red";
         document.querySelector(".main-section #day-title").style.color = "red";
+
+    }
+
+    if ((months < 0 || months > 12) || _m === "") {
+        console.log("Invalid month");
+        document.getElementById("months-data").style.outline = "2px solid red";
+        document.querySelector(".main-section #month-title").style.color = "red";
+    }
+
+    if ((years > currentDate.getFullYear) || _y === "") {
+        console.log("Invalid year");
+        document.getElementById("year-data").style.outline = "2px solid red";
+        document.querySelector(".main-section #year-title").style.color = "red";
+    }
+
+    return "";
+}
+
+function calculateAges() {
+
+    var _d = document.getElementById("day-data").value;
+    const _m = document.getElementById("months-data").value;
+    const _y = document.getElementById("year-data").value;
+
+    var days = parseInt(_d);
+    var months = parseInt(_m);
+    var years = parseInt(_y);
+    let isDayValid = true;
+    let isMonthValid = true;
+    let isYearValid = true;
+
+
+    if ((days < 0 || days > 31) || _d === "") {
+        console.log("Invalid day");
+        document.getElementById("day-data").style.outline = "2px solid red";
+        document.querySelector(".main-section #day-title").style.color = "red";
         // return false;
+        isDayValid = false;
+
     }
 
     if ((months < 0 || months > 12) || _m === "") {
@@ -41,6 +79,7 @@ function isGivenDatavalid() {
         document.getElementById("months-data").style.outline = "2px solid red";
         document.querySelector(".main-section #month-title").style.color = "red";
         // return false;
+        isMonthValid = false;
     }
 
     if ((years > currentDate.getFullYear) || _y === "") {
@@ -48,17 +87,13 @@ function isGivenDatavalid() {
         document.getElementById("year-data").style.outline = "2px solid red";
         document.querySelector(".main-section #year-title").style.color = "red";
         // return false;
+        isYearValid = false;
     }
 
-    return "";
-}
-
-function calculateAges() {
-    var days = parseInt(_d);
-    var months = parseInt(_m);
-    var years = parseInt(_y);
-
-    if(!isGivenDatavalid(days, months, years)) {
+    console.log("isDayValid: " + isDayValid);
+    console.log("isMonthValid: " + isMonthValid);
+    console.log("isYearValid: " + isYearValid);
+    if(isDayValid && isMonthValid && isYearValid) {
         // call calculatesCurrentAge function
         var currentYear = currentDate.getFullYear();
         var currentMonth = currentDate.getMonth() + 1;
@@ -70,9 +105,9 @@ function calculateAges() {
         
         document.getElementById("years-result").innerHTML = ageInYears;
         document.getElementById("months-result").innerHTML = ageInMonths;
-        document.getElementById("days-result").innerHTML = ageInDays;
+        document.getElementById("day-result").innerHTML = ageInDays;
 
-    } 
+    }
 }
 
 function calculatesCurrentAge(days, months, years) {
