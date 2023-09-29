@@ -45,6 +45,10 @@
   float: left;
 }
 
+.hr2_tag {
+  display: none;
+}
+
 #icon-arrow {
   background-color: hsl(259, 100%, 65%);
   float: right;
@@ -92,6 +96,13 @@ input[type="text"] {
     width: 40%;
   }
 
+  .hr2_tag {
+    display: block;
+    background-color: rgb(156, 164, 171);
+    float: right;
+    width: 40%;
+  }
+
   #icon-arrow {
     background-color: hsl(259, 100%, 65%);
     float: none;
@@ -102,4 +113,5 @@ input[type="text"] {
   input[type="text"] {
     width: auto;
   }
+  
 }

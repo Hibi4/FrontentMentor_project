@@ -106,7 +106,7 @@ function calculateAges() {
     }
 }
 
-function calculatesCurrentAge(days, months, years) {
+function calculatesCurrentAges(days, months, years) {
     
     var currentYear = currentDate.getFullYear();
     var currentMonth = currentDate.getMonth() + 1;
