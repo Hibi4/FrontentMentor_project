@@ -34,8 +34,10 @@
   color: rgb(156, 164, 171);
 }
 
-.main-section .hr_tag {
+.hr_tag {
   background-color: rgb(156, 164, 171);
+  width: 87%;
+  float: left;
 }
 
 #icon-arrow {
