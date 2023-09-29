@@ -9,9 +9,6 @@
 // log the result to the console
 
 var currentDate = new Date();
-// const _d = document.querySelector("#day-data").value;
-
-
 
 /* console.log('days: ' + _d);
 console.log('days: ' + _m);
@@ -27,7 +24,6 @@ function isGivenDatavalid() {
     var months = parseInt(_m);
     var years = parseInt(_y);
     console.log("days: " + days);
-
 
     if ((days < 0 || days > 31) || _d === "") {
         console.log("Invalid day");

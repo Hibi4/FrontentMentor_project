@@ -10,18 +10,23 @@
   color: hsl(228, 45%, 44%);
 }
 
+.body {
+  background-color: hsl(0, 0%, 94%);
+  
+}
+
 .main {
   width: 30%;
   margin: 0 auto;
   margin-top: 100px;
+  padding: 30px;
+  border-radius: 30px;
+  border-bottom-right-radius: 100px;
+  background-color: hsl(0, 0%, 100%);
 }
 
 .main-section {
   display: inline-flex;
-  /* flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; */
 }
 
 .main-section div {
@@ -36,7 +41,7 @@
 
 .hr_tag {
   background-color: rgb(156, 164, 171);
-  width: 87%;
+  width: 84%;
   float: left;
 }
 
