@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <title>Frontend Mentor | Age calculator app</title>
+
+</head>
+
+<body class="body">
+
+  <main class="main">
+    <div class="main-section">
+      <div class="day-input">
+        <h3 id="day-title">Day</h3>
+        <input type="text" name="day-data" id="day-data" placeholder="DD" required size="2" maxlength="2">
+        <span id="day_error_message"></span>
+      </div>
+      <div class="months-input">
+        <h3 id="month-title">Month</h3>
+        <input type="text" name="" id="months-data" placeholder="MM" required size="2" maxlength="2">
+        <span id="month_error_message"></span>
+      </div>
+      <div class="year-input">
+        <h3 id="year-title">Year</h3>
+        <input type="text" name="" id="year-data" placeholder="YYYY" required size="2" maxlength="4">
+        <span id="year_error_message"></span>
+      </div>
+    </div> <br>
+    <div style="margin-top: 30px;">
+      <hr class="hr_tag">
+      <img src="/assets/images/icon-arrow.svg" alt="" id="icon-arrow" onclick="calculateAges()">
+      <hr class="hr2_tag">
+    </div> <br>
+    <div class="age-result">
+      <div class="year_result">
+        <h3 style="font-weight: 700; font-size: 50px;"> <span id="years-result" style="color: hsl(259, 100%, 65%)">- -
+          </span> <span>
+            years</span></h3>
+      </div>
+      <div class="months_result">
+        <h3 style="font-weight: 700; font-size: 50px;"> <span id="months-result" style="color: hsl(259, 100%, 65%)">-
+            -</span> <span>
+            months</span></h3>
+      </div>
+      <div class="day_result">
+        <h1 style="font-weight: 700; font-size: 50px;"> <span id="day-result" style="color: hsl(259, 100%, 65%)">-
+            -</span> <span>
+            days</span></h1>
+      </div>
+      
+    </div>
+  </main>
+  <script src="/main/main.js"></script>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Harun</a>.
+  </div>
+</body>
+
+</html>

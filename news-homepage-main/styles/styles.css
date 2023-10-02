@@ -16,6 +16,10 @@
     margin-top: 20px;
   }
 
+  .header__nav {
+    margin-right: 45px;
+  }
+
   .header .header__logo {
     margin-left: 30px;
   }
@@ -28,12 +32,12 @@
   }
 
   .main__section_left img {
-    width: 98%;
+    width: 95%;
   }
 
   .main__section_right {
     background-color: black;
-    margin-right: 15px;
+    margin-right: 55px;
     color: white;
     padding: 14px 18px;
     text-align: left;
@@ -115,6 +119,9 @@
       display: none;
     }
 
+    .main__section_right {
+      width: 100%;
+    }
     
     .header__nav--visible {
       display: block;
@@ -123,6 +130,7 @@
     
     #menu-icon {
       cursor: pointer;
+      margin-right: 5px;
     }
 
     .header__menu-toggle {
@@ -131,46 +139,54 @@
 
     #exit-menu-icon {
       display: none; 
+      margin-right: 5px;
     }
-
-    /* .nav.flex-column {
-      flex-direction: column;
-    } */
     
-    
+    /* open side panel */
     /* .side-panel {
       position: fixed;
       top: 0;
       left: -260px;
-      width: 260px;
+      width: 160px;
       height: 100%; 
-      position: fixed;
-      top: 5;
-      float: right;
-      height: 100%;
+      z-index: 1;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       overflow-y: auto;
       transition: left 0.3s ease-in-out;
       background-color: #fff;
       color: white;
-    }
+    } */
+
+    /* .side-panel {
+      position: fixed;
+      top: 0;
+      left: -260px; 
+      width: 160px;
+      height: 100%; 
+      z-index: 1;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      overflow-y: auto;
+      transition: left 0.3s ease-in-out;
+      background-color: #fff;
+      color: white;
+      
+    } */
 
     /* Styles to slide in the side panel when visible */
     /* .header__nav--visible + #sidePanel {
       left: 0;
     } */
 
-    /* .side-panel {
-      
+    /*.side-panel {
       height: 100%;
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
     } */
     
     /* Styles to slide in the side panel when visible */
-    /* .side-panel--visible {
+    /*.side-panel--visible {
       transform: translateX(0);
-    }*/
+    } */
 
     /* end sandwich menu */
 
