@@ -28,7 +28,7 @@
   }
 
   .main__section_left img {
-    width: 90%;
+    width: 98%;
   }
 
   .main__section_right {
@@ -111,27 +111,26 @@
   }
 
   @media (max-width: 767px) {
-    /* start sandwich menu */
     .header__nav {
-      display: none; /* Initially hide the navigation for mobile */
+      display: none;
     }
 
-    /* Add a CSS class to style the navigation when it's displayed */
+    
     .header__nav--visible {
       display: block;
     }
       
-    /* Style for the menu icon (you may adjust this as needed) */
+    
     #menu-icon {
       cursor: pointer;
     }
 
     .header__menu-toggle {
-      display: block; /* Display the menu toggle icon */
+      display: block; 
     }
 
     #exit-menu-icon {
-      display: none; /* Hide the exit icon initially */
+      display: none; 
     }
 
     /* .nav.flex-column {
@@ -161,19 +160,17 @@
       left: 0;
     } */
 
-    .side-panel {
-      /* Existing styles for the side panel */
-    
-      /* Initially off-screen */
+    /* .side-panel {
+      
       height: 100%;
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
-    }
+    } */
     
     /* Styles to slide in the side panel when visible */
-    .side-panel--visible {
+    /* .side-panel--visible {
       transform: translateX(0);
-    }
+    }*/
 
     /* end sandwich menu */
 
