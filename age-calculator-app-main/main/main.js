@@ -92,33 +92,23 @@ function calculateAges() {
     }
 
     if (months < 0 || months > 12) {
-        console.log("Invalid month");
+        if(months === 2 && days > 29) {
+            console.log("february has only 29 days or 28 days in a leap year");
+        } else {
+            console.log("Invalid month");
+        }
+        
         document.getElementById("months-data").style.outline = "2px solid red";
         document.querySelector(".main-section #month-title").style.color = "red";
         isMonthValid = false;
     }
 
-    // why this is not working
-    // si l'année en cours est inférieur à l'année saisie
     if (years > currentDate.getFullYear() || years <= 0) {
         console.log("Invalid year not possible to be born in the future");
+        document.getElementById("year-data").style.outline = "2px solid red";
+        document.querySelector(".main-section #year-title").style.color = "red";
         isYearValid = false;
     }
-
-    /* if (years > currentDate.getFullYear) {
-        console.log("Invalid year");
-        document.getElementById("year-data").style.outline = "2px solid red";
-        // document.querySelector(".main-section #year-title").style.color = "red";
-        // return false;
-        isYearValid = false;
-        
-    } */ 
-
-    console.log("isDayValid: " + isDayValid);
-    console.log("isMonthValid: " + isMonthValid);
-    console.log("isYearValid: " + isYearValid);
-    console.log("given year " + years);
-    console.log("current year " + currentDate.getFullYear());
    
     if(isDayValid && isMonthValid && isYearValid) {
 
@@ -129,6 +119,14 @@ function calculateAges() {
         var ageInYears = currentYear - years;
         var ageInMonths = currentMonth - months;
         var ageInDays = currentDay - days;
+
+        if(ageInDays < 0) {
+            ageInDays = 30 + ageInDays;
+        }
+
+        if(ageInMonths < 0) {
+            ageInMonths = 12 + ageInMonths;
+        }
         
         document.getElementById("years-result").innerHTML = ageInYears;
         document.getElementById("months-result").innerHTML = ageInMonths;
