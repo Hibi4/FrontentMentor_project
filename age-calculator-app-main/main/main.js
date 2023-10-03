@@ -14,7 +14,7 @@ var currentDate = new Date();
 console.log('days: ' + _m);
 console.log('days: ' + _y);*/
 
-function isGivenDatavalid() {
+/* function isGivenDatavalid() {
     var _d = document.getElementById("day-data").value;
     const _m = document.getElementById("months-data").value;
     const _y = document.getElementById("year-data").value;
@@ -45,7 +45,7 @@ function isGivenDatavalid() {
     }
 
     return "";
-}
+} */
 
 function calculateAges() {
 
@@ -86,7 +86,6 @@ function calculateAges() {
         console.log("Invalid day");
         document.getElementById("day-data").style.outline = "2px solid red";
         document.querySelector(".main-section #day-title").style.color = "red";
-        // return false;
         // document.getElementById("day_error_message").innerHTML = "Invalid day";
         isDayValid = false;
 
@@ -96,23 +95,33 @@ function calculateAges() {
         console.log("Invalid month");
         document.getElementById("months-data").style.outline = "2px solid red";
         document.querySelector(".main-section #month-title").style.color = "red";
-        // return false;
         isMonthValid = false;
     }
 
-    if (years > currentDate.getFullYear) {
+    // why this is not working
+    // si l'année en cours est inférieur à l'année saisie
+    if (years > currentDate.getFullYear() || years <= 0) {
+        console.log("Invalid year not possible to be born in the future");
+        isYearValid = false;
+    }
+
+    /* if (years > currentDate.getFullYear) {
         console.log("Invalid year");
         document.getElementById("year-data").style.outline = "2px solid red";
         // document.querySelector(".main-section #year-title").style.color = "red";
         // return false;
         isYearValid = false;
-    }
+        
+    } */ 
 
     console.log("isDayValid: " + isDayValid);
     console.log("isMonthValid: " + isMonthValid);
     console.log("isYearValid: " + isYearValid);
+    console.log("given year " + years);
+    console.log("current year " + currentDate.getFullYear());
+   
     if(isDayValid && isMonthValid && isYearValid) {
-        // call calculatesCurrentAge function
+
         var currentYear = currentDate.getFullYear();
         var currentMonth = currentDate.getMonth() + 1;
         var currentDay = currentDate.getDate();
@@ -124,11 +133,11 @@ function calculateAges() {
         document.getElementById("years-result").innerHTML = ageInYears;
         document.getElementById("months-result").innerHTML = ageInMonths;
         document.getElementById("day-result").innerHTML = ageInDays;
-
+        
     }
 }
 
-function calculatesCurrentAges(days, months, years) {
+/* function calculatesCurrentAges(days, months, years) {
     
     var currentYear = currentDate.getFullYear();
     var currentMonth = currentDate.getMonth() + 1;
@@ -141,5 +150,5 @@ function calculatesCurrentAges(days, months, years) {
     return "You are " + ageInYears + " years, " + ageInMonths + " months and " + ageInDays + " days old";
 }
 
-console.log("Calculate current age");
+console.log("Calculate current age"); */ 
 // console.log(calculatesCurrentAge(24, 9, 1984));
