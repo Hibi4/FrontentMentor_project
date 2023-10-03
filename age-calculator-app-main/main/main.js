@@ -47,6 +47,13 @@ console.log('days: ' + _y);*/
     return "";
 } */
 
+function checkKindMonth(month) {
+    if(month === 4 || month === 6 || month === 9 || month === 11) {
+        return true;
+    }
+    return false;
+}
+
 function calculateAges() {
 
     var _d = document.getElementById("day-data").value;
@@ -81,23 +88,17 @@ function calculateAges() {
         isYearValid = false;
     }
 
-
-    if (days < 0 || days > 31) {
+    if ((days < 0 || days > 31) || (months === 2 && days > 29) || (checkKindMonth(months) && days >= 30)) {
         console.log("Invalid day");
         document.getElementById("day-data").style.outline = "2px solid red";
         document.querySelector(".main-section #day-title").style.color = "red";
         // document.getElementById("day_error_message").innerHTML = "Invalid day";
         isDayValid = false;
-
     }
 
     if (months < 0 || months > 12) {
-        if(months === 2 && days > 29) {
-            console.log("february has only 29 days or 28 days in a leap year");
-        } else {
-            console.log("Invalid month");
-        }
         
+        console.log("Invalid month");
         document.getElementById("months-data").style.outline = "2px solid red";
         document.querySelector(".main-section #month-title").style.color = "red";
         isMonthValid = false;
