@@ -35,7 +35,8 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
 
 ### What I learned
 
-For this project, I used Bootstrap, Flexbox, CSS Grid and Javascript. It's not new for me but I practice my knowledge during this project. I learn the CSS properties order to allow me to choose new things.
+For this project, I used Bootstrap, Flexbox, CSS Grid and Javascript. It's not new for me but I practiced my knowledge during this project. I learn the CSS properties order to allow me to choose new things. 
+I had some difficulty solving the challenge with the menu for mobile design. I couldn't exactly reproduce the design of the challenge.
 
 ### Continued development
 
@@ -43,8 +44,8 @@ For future projects, I would like to use some Front-end frameworks (react, angul
 
 ### Useful resources
 
-- Example resource 1 -  www.w3schools.com - This site helped me to search some CSS information.
-- Example resource 2 - https://getbootstrap.com/docs/4.6/getting-started/introduction/ - This site helped me    to use some bootstrap components.
+- Example resource 1 -  ```www.w3schools.com``` - This site helped me to search some CSS information.
+- Example resource 2 - ```https://getbootstrap.com/docs/4.6/getting-started/introduction/``` - This site helped me    to use some bootstrap components.
 
 ## Author
 

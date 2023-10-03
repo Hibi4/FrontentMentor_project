@@ -11,7 +11,7 @@ function toggleMenu() {
         menuIcon.style.display = 'block';
         exitMenuIcon.style.display = 'none';
         navList.classList.remove('flex-column');
-
+        
         
         
     } else {
