@@ -60,17 +60,39 @@ function calculateAges() {
     let isMonthValid = true;
     let isYearValid = true;
 
+    if(_d === "") {
+        console.log("This field is required ");
+        document.getElementById("day-data").style.outline = "2px solid red";
+        document.querySelector(".main-section #day-title").style.color = "red";
+        isDayValid = false;
+    }
 
-    if ((days < 0 || days > 31) || _d === "") {
+    if(_m === "") {
+        console.log("This field is required ");
+        document.getElementById("months-data").style.outline = "2px solid red";
+        document.querySelector(".main-section #month-title").style.color = "red";
+        isMonthValid = false;
+    }
+
+    if(_y === "") {
+        console.log("This field is required ");
+        document.getElementById("year-data").style.outline = "2px solid red";
+        document.querySelector(".main-section #year-title").style.color = "red";
+        isYearValid = false;
+    }
+
+
+    if (days < 0 || days > 31) {
         console.log("Invalid day");
         document.getElementById("day-data").style.outline = "2px solid red";
         document.querySelector(".main-section #day-title").style.color = "red";
         // return false;
+        // document.getElementById("day_error_message").innerHTML = "Invalid day";
         isDayValid = false;
 
     }
 
-    if ((months < 0 || months > 12) || _m === "") {
+    if (months < 0 || months > 12) {
         console.log("Invalid month");
         document.getElementById("months-data").style.outline = "2px solid red";
         document.querySelector(".main-section #month-title").style.color = "red";
@@ -78,10 +100,10 @@ function calculateAges() {
         isMonthValid = false;
     }
 
-    if ((years > currentDate.getFullYear) || _y === "") {
+    if (years > currentDate.getFullYear) {
         console.log("Invalid year");
         document.getElementById("year-data").style.outline = "2px solid red";
-        document.querySelector(".main-section #year-title").style.color = "red";
+        // document.querySelector(".main-section #year-title").style.color = "red";
         // return false;
         isYearValid = false;
     }
@@ -120,4 +142,4 @@ function calculatesCurrentAges(days, months, years) {
 }
 
 console.log("Calculate current age");
-console.log(calculatesCurrentAge(24, 9, 1984));
+// console.log(calculatesCurrentAge(24, 9, 1984));
