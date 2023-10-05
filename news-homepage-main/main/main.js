@@ -12,6 +12,8 @@ function toggleMenu() {
         exitMenuIcon.style.display = 'none';
         navList.classList.remove('flex-column');
         
+        
+        
     } else {
         nav.classList.add('header__nav--visible');
         menuIcon.style.display = 'none';
