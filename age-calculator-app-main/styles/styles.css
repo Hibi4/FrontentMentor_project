@@ -89,6 +89,7 @@ input[type="text"] {
 @media (max-width: 767px) {
   .main {
     width: 90%;
+    padding-left: 20px;
   }
 
   .hr_tag {

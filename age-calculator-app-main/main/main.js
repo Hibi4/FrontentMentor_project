@@ -1,22 +1,18 @@
-
-var currentDate = new Date();
+const currentDate = new Date();
 
 function checkKindMonth(month) {
-    if(month === 4 || month === 6 || month === 9 || month === 11) {
-        return true;
-    }
-    return false;
+    return month === 4 || month === 6 || month === 9 || month === 11;
 }
 
 function calculateAges() {
 
-    var _d = document.getElementById("day-data").value;
+    const _d = document.getElementById("day-data").value;
     const _m = document.getElementById("months-data").value;
     const _y = document.getElementById("year-data").value;
 
-    var days = parseInt(_d);
-    var months = parseInt(_m);
-    var years = parseInt(_y);
+    let days = parseInt(_d);
+    let months = parseInt(_m);
+    let years = parseInt(_y);
     let isDayValid = true;
     let isMonthValid = true;
     let isYearValid = true;
@@ -42,11 +38,10 @@ function calculateAges() {
         isYearValid = false;
     }
 
-    if ((days < 0 || days > 31) || (months === 2 && days > 29) || (checkKindMonth(months) && days >= 30)) {
+    if ((days < 0 || days > 31) || (months === 2 && days > 29) || (checkKindMonth(months) && days > 30)) {
         console.log("Invalid day");
         document.getElementById("day-data").style.outline = "2px solid red";
         document.querySelector(".main-section #day-title").style.color = "red";
-        // document.getElementById("day_error_message").innerHTML = "Invalid day";
         isDayValid = false;
     }
 
@@ -67,13 +62,13 @@ function calculateAges() {
    
     if(isDayValid && isMonthValid && isYearValid) {
 
-        var currentYear = currentDate.getFullYear();
-        var currentMonth = currentDate.getMonth() + 1;
-        var currentDay = currentDate.getDate();
+        let currentYear = currentDate.getFullYear();
+        let currentMonth = currentDate.getMonth() + 1;
+        let currentDay = currentDate.getDate();
 
-        var ageInYears = currentYear - years;
-        var ageInMonths = currentMonth - months;
-        var ageInDays = currentDay - days;
+        let ageInYears = currentYear - years;
+        let ageInMonths = currentMonth - months;
+        let ageInDays = currentDay - days;
 
         if(ageInDays < 0) {
             ageInDays = 30 + ageInDays;
