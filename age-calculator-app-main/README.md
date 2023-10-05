@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/Hibi4/FrontentMentor_project.git)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://age-calculator-project.vercel.app/)
 
 ## My process
 
@@ -64,6 +64,6 @@ For future projects, I would like to use some Front-end frameworks (react, angul
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+- Website - [Add your name here](https://age-calculator-project.vercel.app/)
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Hibi4)
 
