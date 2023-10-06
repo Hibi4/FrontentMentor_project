@@ -14,22 +14,22 @@
 .main {
     width: 30%;
     margin: 0 auto;
-    background-color: yellow;
-    padding: 14px 18px;
     text-align: center;
     margin-top: 15%;
     background-color: hsl(217, 19%, 38%);
     border-radius: 10px;
+    height: 210px;
 }
 
 #advice_number_text {
     color: hsl(150, 100%, 66%);
+    padding-top: 20px;
 }
 
 .dice_icon_logo {
     padding: 14px 18px;
     border-radius: 50px;
-    background-color: rgb(38, 198, 198);
+    background-color: rgb(58, 211, 211);
 }
 
 .hr_tag {
@@ -44,4 +44,4 @@
     float: right;
 }
 
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { color: white }
