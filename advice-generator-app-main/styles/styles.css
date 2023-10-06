@@ -18,7 +18,8 @@
     margin-top: 15%;
     background-color: hsl(217, 19%, 38%);
     border-radius: 10px;
-    height: 210px;
+    /* height: 210px; */
+    height: 40%;
 }
 
 #advice_number_text {
