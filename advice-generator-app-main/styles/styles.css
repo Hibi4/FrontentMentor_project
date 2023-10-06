@@ -1,0 +1,28 @@
+/* <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>*/ 
+
+.attribution { 
+    
+    position: absolute;
+    font-size: 11px;
+    text-align: center;
+    bottom: 0; 
+}
+
+.main {
+    width: 30%;
+    margin: 0 auto;
+    background-color: yellow;
+    padding: 14px 18px;
+    text-align: center;
+}
+
+.dice_icon_logo {
+    padding: 14px 18px;
+    border-radius: 50px;
+    background-color: blue;
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
