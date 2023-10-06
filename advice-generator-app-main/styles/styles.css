@@ -1,8 +1,3 @@
-/* <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>*/ 
-
 .attribution { 
     
     position: absolute;
@@ -11,18 +6,42 @@
     bottom: 0; 
 }
 
+.body {
+    background-color: hsl(217, 19%, 24%);
+    color: white;
+}
+
 .main {
     width: 30%;
     margin: 0 auto;
     background-color: yellow;
     padding: 14px 18px;
     text-align: center;
+    margin-top: 15%;
+    background-color: hsl(217, 19%, 38%);
+    border-radius: 10px;
+}
+
+#advice_number_text {
+    color: hsl(150, 100%, 66%);
 }
 
 .dice_icon_logo {
     padding: 14px 18px;
     border-radius: 50px;
-    background-color: blue;
+    background-color: rgb(38, 198, 198);
+}
+
+.hr_tag {
+    background-color: white;
+    width: 47%;
+    float: left;
+}
+
+.hr2_tag {
+    background-color: white;
+    width: 45%;
+    float: right;
 }
 
 .attribution a { color: hsl(228, 45%, 44%); }
