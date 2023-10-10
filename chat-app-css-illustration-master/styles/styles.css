@@ -21,7 +21,7 @@
 .main-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 90%;
+    height: calc(80vh - 10px);
     padding: 20px;
 }
 
@@ -30,6 +30,7 @@
     border: solid 10px white;
     border-radius: 20px;
     padding: 1px;
+    height: 100%;
 }
 
 /* .chat-content {
@@ -41,7 +42,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* background: linear-gradient(hsl(270, 7%, 64%),hsl(276, 100%, 81%)); */
     background: linear-gradient(90deg, hsl(276, 77%, 50%),hsl(327, 72%, 57%));
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
