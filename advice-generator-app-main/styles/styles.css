@@ -34,7 +34,7 @@
 .dice_icon_logo {
     padding: 14px 18px;
     border-radius: 50px;
-    background-color: rgb(58, 211, 211);
+    background-color: hsl(150, 100%, 66%) /* rgb(58, 211, 211)*/ ;
 }
 
 .hr_tag {
