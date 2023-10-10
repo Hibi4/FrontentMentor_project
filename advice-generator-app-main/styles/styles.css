@@ -1,5 +1,4 @@
-.attribution { 
-    
+.attribution {    
     position: absolute;
     font-size: 11px;
     text-align: center;
@@ -22,32 +21,14 @@
     /* max-height: 40%;*/ 
 } 
 
-/* .main {
-    width: 30%;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 15%;
-    background-color: hsl(217, 19%, 38%);
-    border-radius: 10px;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .div_advice {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn {
-    align-self: center;
-  } */
-
 #advice_number_text {
     color: hsl(150, 100%, 66%);
     padding-top: 20px;
+}
+
+#advice_text {
+    color: white;
+    padding-bottom: 15px;
 }
 
 .dice_icon_logo {
