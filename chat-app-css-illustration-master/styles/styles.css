@@ -11,29 +11,40 @@
 
 .attribution a:hover {
     color: hsl(228, 45%, 44%);
+    
 }
 
-/* .body {
-    background-color: hsl(276, 73%, 65%);
-} */
+.body {
+    background-color: whitesmoke;
+}
 
 .main-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 90%;
+    padding: 20px;
 }
 
-.chat-content {
-    height: auto;
-    width: 50%;
-    /* background-color: yellow; */
+.chat {
+    width: 40%;
+    border: solid 10px white;
+    border-radius: 20px;
+    padding: 1px;
 }
+
+/* .chat-content {
+    padding: 10px;
+} */
 
 .chat-content-header {
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-
+    width: 100%;
+    /* background: linear-gradient(hsl(270, 7%, 64%),hsl(276, 100%, 81%)); */
+    background: linear-gradient(90deg, hsl(276, 77%, 50%),hsl(327, 72%, 57%));
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .chat-content-header img {
@@ -50,8 +61,7 @@
     background-color: hsl(266, 29%, 89%);
     padding: 14px 18px;
     border-radius: 20px;
-}
-*/
+} */
 .dogs-picture {
     height: 60px;
 }
