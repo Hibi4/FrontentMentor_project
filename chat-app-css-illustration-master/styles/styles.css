@@ -1,6 +1,18 @@
 /* <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); } */ 
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    
+    padding: 3px;
+    margin-left: 7px;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
 
 .attribution {
     position: fixed;
@@ -38,8 +50,7 @@
 } */
 
 .chat-content-header {
-    display: flex;
-    justify-content: space-between;
+    display: inline-flex;
     align-items: center;
     width: 100%;
     background: linear-gradient(90deg, hsl(276, 77%, 50%),hsl(327, 72%, 57%));
