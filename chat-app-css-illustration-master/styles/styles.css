@@ -40,12 +40,22 @@
 .chat {
     background: linear-gradient(
     to right,
-    red 50%,
+    hsl(276, 55%, 52%) 50%,
     whitesmoke 20% 40%,
     whitesmoke 40% 60%,
     whitesmoke 60% 80%,
     whitesmoke 80%
   );
+    border-end-end-radius: 50px;
+    border-end-start-radius: 50px;
+}
+
+.chat-content-body div p.chat_text {
+    padding-left: 5px;
+    border-radius: 10px;
+    color: hsl(293, 100%, 63%);
+    background-color: rgb(224, 214, 214);
+
 }
 
 .chat-content {
@@ -54,6 +64,7 @@
     border-radius: 20px;
     padding: 1px;
     /* height: 100%; */
+    margin-top: 20px;
     margin-left: 250px;
     background-color: whitesmoke;
 }
