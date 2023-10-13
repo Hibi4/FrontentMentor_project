@@ -11,6 +11,7 @@
 }
 
 .main {
+    position: relative;
     width: 30%;
     margin: 0 auto;
     text-align: center;
@@ -20,6 +21,13 @@
     /* height: 210px; */
     /* max-height: 40%;*/ 
 } 
+
+.btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+ }
 
 #advice_number_text {
     color: hsl(150, 100%, 66%);
@@ -35,6 +43,11 @@
     padding: 14px 18px;
     border-radius: 50px;
     background-color: hsl(150, 100%, 66%) /* rgb(58, 211, 211)*/ ;
+    
+}
+
+.dice_icon_logo:hover {
+    box-shadow: 0px 0px 30px -3px #52FFA8;
 }
 
 .hr_tag {
@@ -42,6 +55,12 @@
     width: 47%;
     float: left;
 }
+
+.div_advice {
+    padding: 0 10px;
+}
+
+
 
 .hr2_tag {
     background-color: white;
