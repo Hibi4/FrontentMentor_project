@@ -69,7 +69,7 @@
     border-radius: 20px;
     padding: 1px;
     /* height: 100%; */
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 250px;
     background-color: whitesmoke;
 }
@@ -164,4 +164,16 @@
 
 .chat-content-body div.div_text_left {
     width: 60%;
+}
+
+.chat_header_text p {
+    color: white;
+}
+
+.chat_header_text p:nth-last-child(1) {
+    line-height: 1px;
+}
+
+.chat-content-body div:nth-child(2) p.chat_text {
+    margin-top: -5px;
 }
