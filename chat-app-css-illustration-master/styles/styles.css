@@ -12,7 +12,7 @@
 }
 
 .attribution {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     font-size: 11px;
     text-align: center;
@@ -31,7 +31,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: calc(90vh - 10px);
-    padding: 20px;
+    padding: 10px;
 }
 
 .chat {
@@ -73,10 +73,6 @@
     margin-left: 250px;
     background-color: whitesmoke;
 }
-
-/* .chat-content {
-    padding: 10px;
-} */
 
 .chat-content-header {
     display: inline-flex;
@@ -121,7 +117,6 @@
 }
 
 .wrapper input {
-    /* background: rgba(255, 255, 255, 0.3); */
     background-color: #fff;
     border: 2px solid white;
     border-radius: 50px;
@@ -130,7 +125,7 @@
 }
 
 .wrapper button {
-    background: white; 
+    background: white;
     border-radius: 50px;
     aspect-ratio: 1;
     height: 100%;
@@ -147,3 +142,26 @@
     top: 10%;
     right: 5px;
 } 
+
+.main-content-right {
+    padding: 50px;
+    margin-top: 30%;
+}
+
+.main-content-right h1 {
+    font-size: 40px;
+}
+
+.main-content p.text_content {
+    color: grey;
+    font-size: 25px;
+}
+
+.chat-content-body {
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.chat-content-body div.div_text_left {
+    width: 60%;
+}

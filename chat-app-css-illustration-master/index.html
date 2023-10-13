@@ -10,6 +10,8 @@
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
   <title>Frontend Mentor | Chat-app-CSS-Illustration-master </title>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="styles/styles.css">
 
 </head>
@@ -26,11 +28,11 @@
             <p style="line-height: 1px; color: white;">Available to Walk</p>
           </div>
         </div>
-        <div class="chat-content-body" style="display: grid; grid-template-rows: auto;">
-          <div style="width: 60%;">
+        <div class="chat-content-body">
+          <div class="div_text_left">
             <p class="chat_text">That sounds great. I'd be happy with that.</p>
           </div>
-          <div style="width: 60%;">
+          <div class="div_text_left">
             <p class="chat_text" style="margin-top: -5px;">Could you send over some pictures of your dog, please?</p>
           </div>
 
@@ -46,20 +48,20 @@
           <div>
             <p class="chat_text_right" style="float: right; margin-top: -2px; ">Can you make it?</p>
           </div>
-          <div>
-            <p class="chat_text" style="float: left; width: 60%; margin-top: -2px; ">She looks so happy! The time we discussed
+          <div class="div_text_left">
+            <p class="chat_text" style="float: left; margin-top: -5px; ">She looks so happy! The time we discussed
               works. How
               long shall I take her
               out for?</p>
           </div>
 
           <div
-            style=" display: inline-flex; margin-top: 5px; height: 40px; background: linear-gradient(90deg, hsl(327, 72%, 57%), hsl(276, 77%, 50%)); width: 70%;">
+            style=" display: inline-flex; margin-top: -5px; height: 40px; background: linear-gradient(90deg, hsl(327, 72%, 57%), hsl(276, 77%, 50%)); width: 70%;">
             <input type="radio" style="margin-top: 5px;">
             <p>30 minute walk $29</p>
           </div>
           <div
-            style="display: inline-flex; margin-top: 15px; height: 40px; width: 70%;background: linear-gradient(90deg, hsl(327, 72%, 57%), hsl(276, 77%, 50%));">
+            style="display: inline-flex; margin-top: 10px; height: 40px; width: 70%;background: linear-gradient(90deg, hsl(327, 72%, 57%), hsl(276, 77%, 50%));">
             <input type="radio">
             <p> 1 hour walk $49</p>
           </div>
@@ -67,7 +69,7 @@
         <div class="wrapper">
           <input type="text" placeholder="Type a message…" />
           <button>
-              <!-- Icon or SVG -->
+
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                       viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                       stroke-linejoin="round">
@@ -82,10 +84,10 @@
 
     </div>
 
-    <div class="main-content-right" style="padding: 50px; margin-top: 30%;">
+    <div class="main-content-right" >
 
       <h1>Simple booking</h1>
-      <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to
+      <p class="text_content">Stay in touch with our dog walkers through the chat interface. This makes it easy to
         discuss arrangements and make bookings. Once the walk has been completed you can rate
         your walker and book again all through the chat.</p>
     </div>
