@@ -33,14 +33,12 @@
 }
 
 .chat {
-    background: linear-gradient(
-    to right,
-    hsl(276, 55%, 52%) 50%,
-    whitesmoke 20% 40%,
-    whitesmoke 40% 60%,
-    whitesmoke 60% 80%,
-    whitesmoke 80%
-  );
+    background: linear-gradient(to right,
+            hsl(276, 55%, 52%) 50%,
+            whitesmoke 20% 40%,
+            whitesmoke 40% 60%,
+            whitesmoke 60% 80%,
+            whitesmoke 80%);
     border-end-end-radius: 50px;
     border-end-start-radius: 50px;
 }
@@ -75,9 +73,14 @@
     display: inline-flex;
     align-items: center;
     width: 100%;
-    background: linear-gradient(90deg, hsl(276, 77%, 50%),hsl(327, 72%, 57%));
+    background: linear-gradient(90deg, hsl(276, 77%, 50%), hsl(327, 72%, 57%));
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+
+.chat-content-header .ellipsis_icon {
+    margin-left: 90px;
+    color: white;
 }
 
 .chat-content-header img {
@@ -130,7 +133,7 @@
     height: 80%;
     top: 10%;
     right: 5px;
-} 
+}
 
 .main-content-right {
     padding: 50px;
