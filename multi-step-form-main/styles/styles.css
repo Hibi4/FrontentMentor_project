@@ -20,3 +20,16 @@
     color: hsl(228, 45%, 44%);
 }
 
+.main {
+    display: grid;
+    grid-template-columns: 300px auto;
+    height: calc(75vh - 10px);
+    width: 70%;
+}
+
+.infos_text {
+    padding-left: 35px;
+    display: grid;
+    grid-template-rows: 100px 80px 80px 80px;
+    background-image: url("/assets/images/bg-sidebar-desktop.svg");
+}
