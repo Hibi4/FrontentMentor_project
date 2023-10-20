@@ -10,11 +10,17 @@
     color: hsl(228, 45%, 44%);
 }
 
+.body {
+  background-color: hsl(206, 94%, 87%);
+}
+
 .main {
     display: grid;
-    grid-template-columns: 300px auto;
+    grid-template-columns: 270px auto;
     height: calc(75vh - 10px);
     width: 70%;
+    margin: 0 auto;
+    margin-top: 65px;
 }
 
 .infos_text {
@@ -25,9 +31,34 @@
     background-repeat: no-repeat;
 }
 
-.next_btn {
-    margin-left: 55%;
+.enter_infos_text_div {
+    
+    padding: 55px;
+    height: 100%;
+    background-color: white;
 }
+
+.info {
+  margin-top: 35px;
+}
+
+.info input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.next_btn {
+    margin-left: 65%;
+}
+
+/* .next_btn button {
+  background-color: hsl(228, 100%, 84%);
+  color: white;
+}
+
+.next_btn button:hover {
+  color: white;
+} */ 
 
 .plan .monthly-billing {
     display: grid;
@@ -44,7 +75,7 @@
 
 .move_btns {
   display: inline-flex;
-  margin-top: 25px;
+  margin-top: 32px; 
   width: 100%;
 }
 
@@ -165,15 +196,6 @@
   padding-top: 20px;
   padding-left: 10px;
   padding-bottom: 10px;
-}
-
-.next_btn button {
-  background-color: hsl(228, 100%, 84%);
-  color: white;
-}
-
-.next_btn button:hover {
-  color: white;
 }
 
 .thanks_design {
