@@ -173,6 +173,34 @@
   padding: 20px;
 }
 
+.online_package {
+  display: grid;
+  grid-template-columns: 20px auto auto;
+  background-color: rgb(246, 237, 237);
+  padding-top: 5px;
+  padding-left: 15px;
+  border-radius: 5px;
+}
+
+.storage_package {
+  display: grid;
+  grid-template-columns: 20px auto auto;
+  margin-top: 10px;
+  background-color: rgb(246, 237, 237);
+  padding-left: 15px;
+  padding-top: 5px;
+  border-radius: 5px;
+}
+
+.profile_package {
+  display: grid;
+  grid-template-columns: 20px auto auto;
+  margin-top: 10px;
+  background-color: rgb(246, 237, 237);
+  padding-left: 15px;
+  padding-top: 5px;
+  border-radius: 5px;
+} 
 
 .arcade_div {
   background-color: whitesmoke;
