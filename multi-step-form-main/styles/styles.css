@@ -175,3 +175,13 @@
 .next_btn button:hover {
   color: white;
 }
+
+.thanks_design {
+  margin: 0 auto;
+  margin-top: 20%;
+  width: 60%;
+}
+
+.thanks_design p {
+  color: grey;
+}
