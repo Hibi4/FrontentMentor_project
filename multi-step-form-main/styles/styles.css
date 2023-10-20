@@ -134,3 +134,44 @@
   background-color: whitesmoke;
   padding: 20px;
 }
+
+
+.arcade_div {
+  background-color: whitesmoke;
+  width: 80%;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.online_div {
+  background-color: whitesmoke;
+  width: 80%;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+}
+
+.arcade_div_hr {
+  width: 100%;
+  float: left;
+}
+
+.total_div {
+  width: 80%;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.next_btn button {
+  background-color: hsl(228, 100%, 84%);
+  color: white;
+}
+
+.next_btn button:hover {
+  color: white;
+}
