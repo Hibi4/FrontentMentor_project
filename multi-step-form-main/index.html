@@ -16,38 +16,38 @@
 <body class="body">
   <main class="main">
     <div class="infos_text">
-      <div class="infos_text_info" style="display: flex; margin-top: 30px;">
-        <div style="height: 40px; width: 40px; background-color: yellow; border-radius: 100%; text-align: center;"><span>1</span></div>
-        <div style="margin-left: 15px; color: white;">
+      <div class="infos_text_div" style="margin-top: 30px;">
+        <div class="step_div"><p>1</p></div>
+        <div class="step_div_text">
           <p>STEP1</p>
-          <h6 style="line-height: 1px;">YOUR INFO</h6>
+          <h6>YOUR INFO</h6>
         </div>
       </div>
-      <div class="infos_text_plan" style="display: flex;">
-        <div style="height: 40px; width: 40px; background-color: yellow; border-radius: 100%; text-align: center;"><span>2</span> </div>
-        <div style="margin-left: 15px; color: white;">
+      <div class="infos_text_div" >
+        <div class="step_div"><p>2</p> </div>
+        <div class="step_div_text" >
           <p>STEP2</p>
-          <h6 style="line-height: 1px;">SELECT PLAN</h6>
+          <h6>SELECT PLAN</h6>
         </div>
       </div>
-      <div class="infos_text_add" style="display: flex;">
-        <div style="height: 40px; width: 40px; background-color: yellow; border-radius: 100%; text-align: center;"><span>3</span></div>
-        <div style="margin-left: 15px; color: white;">
+      <div class="infos_text_div" >
+        <div class="step_div"><p>3</p></div>
+        <div class="step_div_text">
           <p>STEP3</p>
-          <h6 style="line-height: 1px;">SELECT PLAN</h6>
+          <h6>SELECT PLAN</h6>
         </div>
       </div>
-      <div class="infos_text_summarry" style="display: flex;">
-        <div style="height: 40px; width: 40px; background-color: yellow; border-radius: 100%; text-align: center;"><span>4</span></div>
-        <div style="margin-left: 15px; color: white;">
+      <div class="infos_text_div">
+        <div class="step_div"><p>4</p></div>
+        <div class="step_div_text">
           <p>STEP4</p>
-          <h6 style="line-height: 1px;">SELECT PLAN</h6>
+          <h6>SELECT PLAN</h6>
         </div>
       </div>
     </div>
     <div class="enter_infos_text">
       <div class="enter_infos_text_div">
-        <!-- <div>
+        <!-- <div class="personal">
           <h4>Personal info</h4>
           <p>Please provide your name, email, address, and phone number</p>
         </div> -->
@@ -58,7 +58,7 @@
           <label>Phone Number</label>
           <input type="tel" class="form-control" required placeholder="e.g +1234567890">
           <div class="move_btns">
-            <div class="previous_btn" id="previous_btn">
+            <div class="previous_btn">
               <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
             </div>
             <div class="next_btn">
@@ -104,7 +104,7 @@
             </div>
             </div>
           </div>
-          <!-- <div class="add">
+          <!-- <div class="tab add">
             <h3> Pick add-ons </h3>
             <p>Add-ons help enhance your gaming experience</p>
             <div class="add_package">

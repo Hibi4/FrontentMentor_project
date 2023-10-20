@@ -31,8 +31,33 @@
     background-repeat: no-repeat;
 }
 
+.step_div {
+  height: 40px;
+  width: 40px;
+  background-color: yellow;
+  border-radius: 100%;
+  text-align: center;
+}
+
+.step_div p {
+  margin-top: 8px;
+}
+
+.step_div_text {
+  margin-left: 15px;
+  color: white;
+}
+
+.step_div_text h6 {
+  line-height: 1px;
+}
+
+.infos_text_div {
+  display: flex;
+}
+
 .enter_infos_text_div {
-    
+
     padding: 55px;
     height: 100%;
     background-color: white;
@@ -82,11 +107,11 @@
 
 .move_btns {
   display: inline-flex;
-  margin-top: 32px; 
+  margin-top: 32px;
   width: 100%;
 }
 
-.switch {
+  .switch {
     position: relative;
     display: inline-block;
     width: 60px;
