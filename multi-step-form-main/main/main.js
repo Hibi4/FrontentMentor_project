@@ -46,3 +46,11 @@ function nextPrev(n) {
     currentTab = currentTab + n;
     showTab(currentTab);
 }
+
+document.querySelector(".previous_btn").addEventListener("click", function() {
+    nextPrev(-1);
+});
+
+document.querySelector(".next_btn").addEventListener("click", function() {
+    nextPrev(1);
+});

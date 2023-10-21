@@ -59,10 +59,10 @@
           <input type="tel" class="form-control" required placeholder="e.g +1234567890">
           <div class="move_btns">
             <div class="previous_btn">
-              <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
+              <button type="submit" class="btn btn-light">Go back</button>
             </div>
             <div class="next_btn">
-              <button type="submit" class="btn btn-primary" onclick="nextPrev(1)">Next Stop</button>
+              <button type="submit" class="btn btn-primary">Next Stop</button>
             </div>
           </div>
         </div> 
@@ -97,14 +97,14 @@
             
           <div class="move_btns">
             <div class="previous_btn">
-              <button type="submit" class="btn btn-light">Go back</button>
+              <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
             </div>
             <div class="next_btn">
-              <button type="submit" class="btn btn-primary">Next Stop</button>
+              <button type="submit" class="btn btn-primary" onclick="nextPrev(1)">Next Stop</button>
             </div>
             </div>
           </div>
-          <!-- <div class="tab add">
+          <div class="tab add">
             <h3> Pick add-ons </h3>
             <p>Add-ons help enhance your gaming experience</p>
             <div class="add_package">
@@ -148,15 +148,15 @@
               </div>
               <div class="move_btns">
                 <div class="previous_btn">
-                  <button type="submit" class="btn btn-light">Go back</button>
+                  <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
                 </div>
                 <div class="next_btn">
-                  <button type="submit" class="btn btn-primary">Next Stop</button>
+                  <button type="submit" class="btn btn-primary" onclick="nextPrev(1)">Next Stop</button>
                 </div>
               </div>
             </div>
-          </div> -->
-          <!-- <div class="Summary">
+          </div>
+          <div class="tab Summary">
             <h3> Finishing up </h3>
             <p style="color: grey;">Double-check everything looks OK before confirming</p>
             <div class="articles_summary">
@@ -191,14 +191,14 @@
             </div>
             <div class="move_btns">
               <div class="previous_btn">
-                <button type="submit" class="btn btn-light">Go back</button>
+                <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
               </div>
               <div class="next_btn">
-                <button type="submit" class="btn">Confirm</button>
+                <button type="submit" class="btn" onclick="nextPrev(1)">Confirm</button>
               </div>
             </div>
-          </div> -->
-          <!-- <div class="thanks_design">
+          </div>
+          <div class="tab thanks_design">
             <div>
               <img src="/assets/images/icon-thank-you.svg" alt="" srcset="">
               <h3>Thank you!</h3>
@@ -206,7 +206,7 @@
                 using our platform. If you ever need support, please feel free 
                 to email us at support@loremgaming.com.</p>
             </div>
-          </div> -->
+          </div>
       </div>
     </div>
   </main>
