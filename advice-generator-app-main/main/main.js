@@ -18,3 +18,7 @@ function generateAdvice() {
 
     })
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  generateAdvice();
+});

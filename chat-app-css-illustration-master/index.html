@@ -1,104 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <title>Frontend Mentor | Chat-app-CSS-Illustration-master </title>
   <link rel="stylesheet" href="styles/styles.css">
 
 </head>
+
 <body class="body">
   <div class="main-content">
-      <div class="chat">
-        <div class="chat-content">
-          <div class="chat-content-header">
-            <i class="arrow left"></i>
-            <img src="/images/avatar.jpg" alt="">
-            <div>
-              <p style="color: white;">Samuel Green</p>
-              <p style="line-height: 1px; color: white;">Available to Walk</p>
-            </div>
+    <div class="chat">
+      <div class="chat-content">
+        <div class="chat-content-header">
+          <i class="arrow left"></i>
+          <img src="/images/avatar.jpg" alt="">
+          <div class="chat_header_text">
+            <p>Samuel Green</p>
+            <p>Available to Walk</p>
           </div>
-          <div class="chat-content-body" style="display: grid; grid-template-rows: auto;">
-            <div style="width: 60%;">
-              <p class="chat_text">That sounds great. I'd be happy with that.</p>
-            </div>
-            <div style="width: 60%;">
-              <p class="chat_text">Could you send over some pictures of your dog, please?</p>
-            </div>
-    
-            <div class="dogs-picture">
-              <img src="/images/dog-image-1.jpg" alt="">
-              <img src="/images/dog-image-2.jpg" alt="">
-              <img src="/images/dog-image-3.jpg" alt="">
-            </div>
-            <div>
-              <p class="chat_text" style="float: right; width: 60%;">Here are a few pictures. She's a happy girl!</p>
-            </div>
-            <div>
-              <p class="chat_text" style="float: right;">Can you make it?</p>
-            </div>
-            <div>
-              <p class="chat_text" style="float: left; width: 60%;">She looks so happy! The time we discussed works. How long shall I take her
-                out for?</p>
-            </div>
-    
-            <div
-              style=" display: inline-flex; margin-top: 5px; height: 40px; background: linear-gradient(90deg, hsl(327, 72%, 57%), hsl(276, 77%, 50%)); width: 70%;">
-              <input type="radio" style="margin-top: 5px;">
-              <p>30 minute walk $29</p>
-            </div>
-            <div
-              style="display: inline-flex; margin-top: 15px; height: 40px; width: 70%;background: linear-gradient(90deg, hsl(327, 72%, 57%), hsl(276, 77%, 50%));">
-              <input type="radio">
-              <p> 1 hour walk $49</p>
-            </div>
+          <div class="ellipsis_icon">
+            <i class="fa fa-ellipsis-v"></i>
           </div>
         </div>
+        <div class="chat-content-body">
+          <div class="div_text_left">
+            <p class="chat_text">That sounds great. I'd be happy with that.</p>
+          </div>
+          <div class="div_text_left">
+            <p class="chat_text">Could you send over some pictures of your dog, please?</p>
+          </div>
+  
+          <div class="dogs-picture">
+            <img src="/images/dog-image-1.jpg" alt="">
+            <img src="/images/dog-image-2.jpg" alt="">
+            <img src="/images/dog-image-3.jpg" alt="">
+          </div>
+          <div>
+            <p class="chat_text_right">Here are a few
+              pictures. She's a happy girl!</p>
+          </div>
+          <div>
+            <p class="chat_text_right">Can you make it?</p>
+          </div>
+          <div class="div_text_left">
+            <p class="chat_text">She looks so happy! The time we discussed
+              works. How
+              long shall I take her
+              out for?</p>
+          </div>
+  
+          <div>
+            <input type="radio">
+            <p>30 minute walk $29</p>
+          </div>
+          <div>
+            <input type="radio">
+            <p> 1 hour walk $49</p>
+          </div>
+        </div>
+        <div class="wrapper">
+          <input type="text" placeholder="Type a message…" />
+          <button>
+  
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M5 12l14 0"></path>
+              <path d="M13 18l6 -6"></path>
+              <path d="M13 6l6 6"></path>
+            </svg>
+          </button>
+        </div>
       </div>
-    
-    <div class="main-content-right" style="padding: 50px; margin-top: 30%;">  
-      
+    </div>
+
+    <div class="main-content-right" >
+
       <h1>Simple booking</h1>
-      <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to 
-        discuss arrangements and make bookings. Once the walk has been completed you can rate 
+      <p class="text_content">Stay in touch with our dog walkers through the chat interface. This makes it easy to
+        discuss arrangements and make bookings. Once the walk has been completed you can rate
         your walker and book again all through the chat.</p>
     </div>
   </div>
-  <!-- Samuel Green
-  Available to Walk
 
-  That sounds great. I’d be happy with that.
-
-  Could you send over some pictures of your dog, please?
-
-  Here are a few pictures. She’s a happy girl!
-
-  Can you make it?
-
-  She looks so happy! The time we discussed works. How long shall I take her out for?
-
-  30 minute walk
-  $29
-
-  1 hour walk
-  $49
-
-  Type a message…
-
-  Simple booking
-
-  Stay in touch with our dog walkers through the chat interface. This makes it easy to 
-  discuss arrangements and make bookings. Once the walk has been completed you can rate 
-  your walker and book again all through the chat.  -->
-  
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Harun</a>.
   </div>
 </body>
+
 </html>

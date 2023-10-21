@@ -1,10 +1,6 @@
-/* <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); } */ 
 .arrow {
     border: solid white;
     border-width: 0 3px 3px 0;
-    
     padding: 3px;
     margin-left: 7px;
 }
@@ -15,7 +11,7 @@
 }
 
 .attribution {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     font-size: 11px;
     text-align: center;
@@ -23,7 +19,6 @@
 
 .attribution a:hover {
     color: hsl(228, 45%, 44%);
-    
 }
 
 .body {
@@ -34,28 +29,34 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: calc(90vh - 10px);
-    padding: 20px;
+    padding: 10px;
 }
 
 .chat {
-    background: linear-gradient(
-    to right,
-    hsl(276, 55%, 52%) 50%,
-    whitesmoke 20% 40%,
-    whitesmoke 40% 60%,
-    whitesmoke 60% 80%,
-    whitesmoke 80%
-  );
+    background: linear-gradient(to right,
+            hsl(276, 55%, 52%) 50%,
+            whitesmoke 20% 40%,
+            whitesmoke 40% 60%,
+            whitesmoke 60% 80%,
+            whitesmoke 80%);
     border-end-end-radius: 50px;
     border-end-start-radius: 50px;
 }
 
 .chat-content-body div p.chat_text {
+    padding: 7px;
     padding-left: 5px;
     border-radius: 10px;
     color: hsl(293, 100%, 63%);
-    background-color: rgb(224, 214, 214);
+    background-color: rgb(225, 217, 217);
+}
 
+.chat-content-body div p.chat_text_right {
+    background-color: white;
+    text-align: right;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 7px 10px;
 }
 
 .chat-content {
@@ -63,23 +64,23 @@
     border: solid 10px white;
     border-radius: 20px;
     padding: 1px;
-    /* height: 100%; */
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 250px;
     background-color: whitesmoke;
 }
-
-/* .chat-content {
-    padding: 10px;
-} */
 
 .chat-content-header {
     display: inline-flex;
     align-items: center;
     width: 100%;
-    background: linear-gradient(90deg, hsl(276, 77%, 50%),hsl(327, 72%, 57%));
+    background: linear-gradient(90deg, hsl(276, 77%, 50%), hsl(327, 72%, 57%));
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+
+.chat-content-header .ellipsis_icon {
+    margin-left: 90px;
+    color: white;
 }
 
 .chat-content-header img {
@@ -89,14 +90,6 @@
     margin-right: 10px;
 }
 
-/*.chat-content-body p {
-    width: 50%;
-    padding-left: 10px;
-    color: violet;
-    background-color: hsl(266, 29%, 89%);
-    padding: 14px 18px;
-    border-radius: 20px;
-} */
 .dogs-picture {
     height: 60px;
 }
@@ -105,4 +98,110 @@
     width: 50px;
     float: right;
     padding-right: 15px;
+}
+
+.wrapper {
+    width: 400px;
+    max-width: 100%;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.wrapper input {
+    background-color: #fff;
+    border: 2px solid white;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    width: 78%;
+}
+
+.wrapper button {
+    background: white;
+    border-radius: 50px;
+    aspect-ratio: 1;
+    height: 100%;
+    background-color: black;
+    color: white;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.wrapper button {
+    height: 80%;
+    top: 10%;
+    right: 5px;
+}
+
+.main-content-right {
+    padding: 50px;
+    margin-top: 30%;
+}
+
+.main-content-right h1 {
+    font-size: 40px;
+}
+
+.main-content p.text_content {
+    color: grey;
+    font-size: 25px;
+}
+
+.chat-content-body {
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.chat-content-body div.div_text_left {
+    width: 60%;
+}
+
+.chat_header_text p {
+    color: white;
+}
+
+.chat_header_text p:nth-last-child(1) {
+    line-height: 1px;
+}
+
+.chat-content-body div:nth-child(2) p.chat_text {
+    margin-top: -5px;
+}
+
+.chat-content-body div:nth-child(4) p.chat_text_right {
+    width: 60%;
+    float: right;
+    margin-top: 3px;
+}
+
+.chat-content-body div:nth-child(5) p.chat_text_right {
+    margin-top: -5px;
+    float: right;
+}
+
+.chat-content-body div:nth-child(6) p.chat_text {
+    float: left;
+    margin-top: -5px;
+}
+
+.chat-content-body div:nth-child(7) {
+    display: inline-flex;
+    margin-top: -5px;
+    height: 40px;
+    background: linear-gradient(90deg, hsl(327, 72%, 57%), hsl(276, 77%, 50%));
+    width: 70%;
+}
+
+.chat-content-body div:nth-child(7) input {
+    margin-top: 5px;
+}
+
+.chat-content-body div:nth-child(8) {
+    display: inline-flex;
+    margin-top: 10px;
+    height: 40px;
+    background: linear-gradient(90deg, hsl(327, 72%, 57%), hsl(276, 77%, 50%));
+    width: 70%;
 }
