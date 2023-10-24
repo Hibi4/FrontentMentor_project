@@ -38,24 +38,32 @@ function validateForm() {
     // x = document.getElementsByClassName("tab");
     y = x[currentTab].getElementsByTagName("input");
     // A loop that checks every input field in the current tab:
-    for (i = 0; i < y.length; i++) {
+    /* for (i = 0; i < y.length; i++) {
       // If a field is empty... isNaN(y[i].value
-      if(y[i].value == "") {
+      if(y[i].value == "" ) {
         valid = false;
         y[i].style.backgroundColor = "red";
       }
-      /* if (y[i].value == "") {
-        // add an "invalid" class to the field:
-        // y[i].className += " invalid";
-        // and set the current valid status to false
-        valid = false;
-      } */ 
-    }
+    } */ 
     
     // If the valid status is true, mark the step as finished and valid:
     /* if (valid) {
       document.getElementsByClassName("step")[currentTab].className += " finish";
+      y[i].style.backgroundColor = "white";
     } */
-    console.log("Valeur de valid: "+valid);
-    return valid; // return the valid status
+    
+    return valid;
   }
+
+document.querySelector(".arcade_billing").addEventListener("click", function() {
+    document.querySelector(".arcade_billing").style.backgroundColor = "rgb(228, 217, 217)";
+});
+
+document.querySelector(".advanced_billing").addEventListener("click", function() {    
+    document.querySelector(".advanced_billing").style.backgroundColor = "rgb(228, 217, 217)";
+});
+
+document.querySelector(".pro_billing").addEventListener("click", function() {
+    document.querySelector(".pro_billing").style.backgroundColor = "rgb(228, 217, 217)";
+});
+

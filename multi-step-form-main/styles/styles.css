@@ -176,8 +176,13 @@
   border: grey solid 1px;
   border-radius: 5px;
   width: 65%;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */ 
+  background-color: white;
   padding: 20px;
+}
+
+.arcade_billing:hover {
+  background-color: rgb(228, 217, 217);
 }
 
 .advanced_billing {
@@ -185,8 +190,13 @@
   border: grey solid 1px;
   border-radius: 5px;
   width: 65%;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
+  background-color: white;
   padding: 20px;
+}
+
+.advanced_billing:hover {
+  background-color: rgb(228, 217, 217);
 }
 
 .pro_billing {
@@ -194,8 +204,13 @@
   border: grey solid 1px;
   border-radius: 5px;
   width: 65%;
-  background-color: whitesmoke;
+  /*background-color: whitesmoke; */ 
+  background-color: white;
   padding: 20px;
+}
+
+.pro_billing:hover {
+  background-color: rgb(228, 217, 217);
 }
 
 .online_package {
