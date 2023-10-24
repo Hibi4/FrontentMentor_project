@@ -59,7 +59,7 @@ document.querySelector(".arcade_billing").addEventListener("click", function() {
     document.querySelector(".arcade_billing").style.backgroundColor = "rgb(228, 217, 217)";
 });
 
-document.querySelector(".advanced_billing").addEventListener("click", function() {    
+document.querySelector(".advanced_billing").addEventListener("click", function() {
     document.querySelector(".advanced_billing").style.backgroundColor = "rgb(228, 217, 217)";
 });
 
@@ -67,3 +67,20 @@ document.querySelector(".pro_billing").addEventListener("click", function() {
     document.querySelector(".pro_billing").style.backgroundColor = "rgb(228, 217, 217)";
 });
 
+/* document.querySelector(".checkbox_online").addEventListener("click", function() {
+    // document.querySelector(".checkbox_storage").style.backgroundColor = "rgb(228, 217, 217)";
+    // console.log("you click on the checkbox online");
+    if(document.querySelector(".checkbox_online").value == true) {
+       console.log("chekcbox online checked");
+    } else {
+        console.log("chekcbox online not checked");
+    }
+}); */
+
+
+if(document.querySelector(".checkbox_online").value == true){
+    // document.querySelector(".storage_chekcbox").style.backgroundColor = "rgb(228, 217, 217)";
+    console.log("chekcbox storage checked");
+} else {
+    console.log("chekcbox storage not checked");
+}

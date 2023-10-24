@@ -63,8 +63,12 @@
   background-color: white;
 }
 
-.info {
-  margin-top: 35px;
+/* .info {
+  margin-top: 15px;
+}*/ 
+
+.info label {
+  color: hsl(213, 96%, 18%);
 }
 
 .info input {
@@ -74,6 +78,23 @@
 
 .next_btn {
     margin-left: 65%;
+    color: hsl(213, 96%, 18%);
+}
+
+.next_btn button {
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+  font-weight: 700;
+}
+
+.next_btn button:hover {
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+}
+
+.previous_btn button {
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
 }
 
 /* .next_btn button {
@@ -91,13 +112,13 @@
 }
 
 .billing_choice {
-    display: flex;
-    margin-top: 30px;
-    padding-left: 35%;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    background-color: whitesmoke;
+  display: flex;
+  margin-top: 30px;
+  padding-left: 35%;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: whitesmoke;
 }
 
 .billing_choice label {
@@ -131,7 +152,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: hsl(213, 96%, 18%);
+    /* background-color: #ccc; */
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -149,7 +171,8 @@
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    /* background-color: #2196F3; */
+    background-color: hsl(213, 96%, 18%);
   }
   
   input:focus + .slider {
@@ -163,13 +186,13 @@
   }
   
   /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
+.slider.round {
+  border-radius: 34px;
+}
   
-  .slider.round:before {
-    border-radius: 50%;
-  }
+.slider.round:before {
+  border-radius: 50%;
+}
 
 .arcade_billing {
   margin-top: 5px;
@@ -280,5 +303,5 @@
 }
 
 .thanks_design p {
-  color: grey;
+  color: hsl(231, 11%, 63%); 
 }

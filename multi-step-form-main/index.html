@@ -47,11 +47,12 @@
     </div>
     <div class="enter_infos_text">
       <div class="enter_infos_text_div">
-        <!-- <div class="personal">
-          <h4>Personal info</h4>
-          <p>Please provide your name, email, address, and phone number</p>
-        </div> -->
-          <div class="tab info">
+        <div class="tab">
+          <div class="personal">
+            <h4 style="color: hsl(213, 96%, 18%);">Personal info</h4>
+            <p style="color: hsl(213, 96%, 18%);">Please provide your name, email, address, and phone number</p>
+          </div>
+          <div class="info">
             <label>Name</label>
             <input type="text" class="form-control" placeholder="e.g Stephen King" required>
             <label>Email Address</label>
@@ -63,10 +64,11 @@
                 <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
               </div>
               <div class="next_btn">
-                <button type="submit" class="btn btn-primary" onclick="nextPrev(1)">Next step</button>
+                <button type="submit" class="btn" onclick="nextPrev(1)">Next step</button>
                 <!--  <input type="submit" class="btn btn-primary" value="Next step"> -->
               </div>
             </div>
+          </div>
         </div>
         <div class="tab plan">
           <h3> Select your plan </h3>
@@ -112,7 +114,7 @@
             <div class="add_package">
               <div class="online_package">
                 <div>
-                  <input type="checkbox" name="" id="">
+                  <input type="checkbox" class="checkbox_online" name="" id="">
                 </div>
                 <div>
                   <p>Online service</p>
@@ -123,9 +125,8 @@
                 </div>
               </div>
               <div class="storage_package">
-              
                 <div>
-                  <input type="checkbox" name="" id="">
+                  <input class="storage_checkbox" type="checkbox" name="storage_checkbox" id="">
                 </div>
                 <div>
                   <p>Larger storage</p>
@@ -137,7 +138,7 @@
               </div>
               <div class="profile_package">
                 <div>
-                  <input type="checkbox" name="" id="">
+                  <input type="checkbox" class="profile_checkbox" name="" id="">
                 </div>
                 <div>
                   <p>Customizable Profile</p>
@@ -153,7 +154,7 @@
                   <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
                 </div>
                 <div class="next_btn">
-                  <button type="submit" class="btn btn-primary" onclick="nextPrev(1)">Next Stop</button>
+                  <button type="submit" class="btn" onclick="nextPrev(1)">Next Stop</button>
                 </div>
               </div>
             </div>
