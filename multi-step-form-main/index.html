@@ -30,7 +30,7 @@
           <h6>SELECT PLAN</h6>
         </div>
       </div>
-      <div class="infos_text_div" >
+      <div class="infos_text_div">
         <div class="step_div"><p>3</p></div>
         <div class="step_div_text">
           <p>STEP3</p>
@@ -51,21 +51,23 @@
           <h4>Personal info</h4>
           <p>Please provide your name, email, address, and phone number</p>
         </div> -->
-        <div class="tab info">Name
-          <input type="text" class="form-control" required placeholder="e.g Stephen King ">
-          <label>Email Address</label>
-          <input type="email" class="form-control" required placeholder="e.g stephenking@lorem.com">
-          <label>Phone Number</label>
-          <input type="tel" class="form-control" required placeholder="e.g +1234567890">
-          <div class="move_btns">
-            <div class="previous_btn">
-              <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
+          <div class="tab info">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="e.g Stephen King" required>
+            <label>Email Address</label>
+            <input type="email" class="form-control" placeholder="e.g stephenking@lorem.com" required>
+            <label>Phone Number</label>
+            <input type="tel" class="form-control" placeholder="e.g +1234567890" required>
+            <div class="move_btns">
+              <div class="previous_btn">
+                <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
+              </div>
+              <div class="next_btn">
+                <button type="submit" class="btn btn-primary" onclick="nextPrev(1)">Next step</button>
+                <!--  <input type="submit" class="btn btn-primary" value="Next step"> -->
+              </div>
             </div>
-            <div class="next_btn">
-              <button type="submit" class="btn btn-primary" onclick="nextPrev(1)">Next Stop</button>
-            </div>
-          </div>
-        </div> 
+        </div>
         <div class="tab plan">
           <h3> Select your plan </h3>
           <p>You have the option of monthly or yearly billing</p>
