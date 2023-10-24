@@ -78,9 +78,9 @@ document.querySelector(".pro_billing").addEventListener("click", function() {
 }); */
 
 
-if(document.querySelector(".checkbox_online").value == true){
+/* if(document.querySelector(".checkbox_online").value == true){
     // document.querySelector(".storage_chekcbox").style.backgroundColor = "rgb(228, 217, 217)";
     console.log("chekcbox storage checked");
 } else {
     console.log("chekcbox storage not checked");
-}
+}*/ 

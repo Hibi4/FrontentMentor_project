@@ -81,7 +81,7 @@
     color: hsl(213, 96%, 18%);
 }
 
-.next_btn button {
+/* .next_btn button {
   background-color: hsl(213, 96%, 18%);
   color: white;
   font-weight: 700;
@@ -90,7 +90,7 @@
 .next_btn button:hover {
   background-color: hsl(213, 96%, 18%);
   color: white;
-}
+} */ 
 
 .previous_btn button {
   color: hsl(213, 96%, 18%);
