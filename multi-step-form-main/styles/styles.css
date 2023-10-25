@@ -106,6 +106,22 @@
   color: white;
 } */ 
 
+/* .step.active {
+  opacity: 1;
+}
+
+.step.finish {
+  background-color: yellow;
+} */ 
+
+/* .infos_text_div.active {
+  background-color: red
+} */
+
+.step_div.finish {
+  background-color: red;
+}
+
 .plan .monthly-billing {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

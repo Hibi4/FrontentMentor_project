@@ -21,6 +21,8 @@ function showTab(n) {
     } else {
         document.querySelector(".next_btn").style.display = "inline";
     }
+
+    fixStepIndicator(n);
 }
 
 function nextPrev(n) {
@@ -38,25 +40,25 @@ function validateForm() {
     // x = document.getElementsByClassName("tab");
     y = x[currentTab].getElementsByTagName("input");
     // A loop that checks every input field in the current tab:
-    /* for (i = 0; i < y.length; i++) {
+    for (i = 0; i < y.length; i++) {
       // If a field is empty... isNaN(y[i].value
       if(y[i].value == "" ) {
         valid = false;
         y[i].style.backgroundColor = "red";
       }
-    }*/
+    }
     
     // If the valid status is true, mark the step as finished and valid:
-    /* if (valid) {
-      document.getElementsByClassName("step")[currentTab].className += " finish";
-      y[i].style.backgroundColor = "white";
-    } */
+    if (valid) {
+      document.getElementsByClassName("step_div")[currentTab].className += " finish";
+      // y[i].style.backgroundColor = "red";
+    }
     
     return valid;
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    
+
     function handleCheckboxChange(checkbox, packageDiv) {
         checkbox.addEventListener("change", function () {
             if (checkbox.checked) {
@@ -81,5 +83,15 @@ function validateForm() {
     const profilePackageDiv = document.querySelector(".profile_package");
     handleCheckboxChange(checkboxProfile, profilePackageDiv);
 });
+
+function fixStepIndicator(n) {
+    // This function removes the "active" class of all steps...
+    var i, x = document.getElementsByClassName("step_div");
+    for (i = 0; i < x.length; i++) {
+      x[i].className = x[i].className.replace(" active", "");
+    }
+    //... and adds the "active" class on the current step:
+    x[n].className += " active";
+  }
 
   
