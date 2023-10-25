@@ -55,6 +55,49 @@ function validateForm() {
     return valid;
   }
 
+  // Add this code to your JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    // Find the checkbox and the online_package div
+    const checkboxOnline = document.querySelector(".checkbox_online");
+    const onlinePackageDiv = document.querySelector(".online_package");
+    const checkboxStorage = document.querySelector(".storage_checkbox"); // checkbox
+    const storagePackageDiv = document.querySelector(".storage_package"); // div storage
+    const profileCheckboxDiv = document.querySelector(".profile_package");
+    const checkboxProfile = document.querySelector(".profile_checkbox");
+
+    checkboxProfile.addEventListener("change", function () {
+        if (checkboxProfile.checked) {
+            // profileCheckboxDiv.style.backgroundColor = "your-desired-color"; // Change to your desired color
+            console.log("chekcbox profile checked");
+        } else {
+            // profileCheckboxDiv.style.backgroundColor = "initial"; // Change to the initial background color
+            console.log("chekcbox profile not checked");
+        }
+    });
+
+    checkboxStorage.addEventListener("change", function () {
+        if (checkboxStorage.checked) {
+            // storagePackageDiv.style.backgroundColor = "your-desired-color"; // Change to your desired color
+            console.log("chekcbox storage checked");
+        } else {
+            // storagePackageDiv.style.backgroundColor = "initial"; // Change to the initial background color
+            console.log("chekcbox storage not checked");
+        }
+    });
+
+    // Add an event listener to the checkbox
+    checkboxOnline.addEventListener("change", function () {
+        if (checkboxOnline.checked) {
+            // onlinePackageDiv.style.backgroundColor = "your-desired-color"; // Change to your desired color
+            console.log("chekcbox online checked");
+        } else {
+            // onlinePackageDiv.style.backgroundColor = "initial"; // Change to the initial background color
+            console.log("chekcbox online not checked");
+        }
+    });
+});
+
+/* 
 document.querySelector(".arcade_billing").addEventListener("click", function() {
     document.querySelector(".arcade_billing").style.backgroundColor = "rgb(228, 217, 217)";
 });
@@ -65,7 +108,7 @@ document.querySelector(".advanced_billing").addEventListener("click", function()
 
 document.querySelector(".pro_billing").addEventListener("click", function() {
     document.querySelector(".pro_billing").style.backgroundColor = "rgb(228, 217, 217)";
-});
+}); */
 
 /* document.querySelector(".checkbox_online").addEventListener("click", function() {
     // document.querySelector(".checkbox_storage").style.backgroundColor = "rgb(228, 217, 217)";
