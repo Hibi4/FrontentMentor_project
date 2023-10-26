@@ -1,4 +1,6 @@
 let currentTab = 0;
+let array_articles = [];
+let array_addons = [];
 showTab(currentTab);
 
 function showTab(n) {
@@ -30,6 +32,7 @@ function nextPrev(n) {
     if (n == 1 && !validateForm()) return false;
     tabs[currentTab].style.display = "none";
     currentTab = currentTab + n;
+    console.log("enter in the button directions");
     showTab(currentTab);
 }
 
@@ -47,14 +50,29 @@ function validateForm() {
         y[i].style.backgroundColor = "red";
       }
     }
-    
+
     // If the valid status is true, mark the step as finished and valid:
     if (valid) {
-      document.getElementsByClassName("step_div")[currentTab].className += " finish";
-      // y[i].style.backgroundColor = "red";
+        let i, x = document.getElementsByClassName("step_div");
+    
+        for (const elt of x) {
+            elt.className = elt.className.replace(" finish", "");
+        }
+        x[currentTab].className += " finish";
     }
     
     return valid;
+  }
+
+  function fixStepIndicator(n) {
+    // This function removes the "active" class of all steps...
+    let x = document.getElementsByClassName("step_div");
+    
+    for (const elt of x) {
+        elt.className = elt.className.replace(" active", "");
+    }
+    //... and adds the "active" class on the current step:
+    x[n].className += " active";
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -65,7 +83,7 @@ function validateForm() {
                 packageDiv.style.backgroundColor = "hsl(229, 24%, 87%)"; 
                 packageDiv.style.border = "solid 1px hsl(228, 45%, 44%)";
             } else {
-                packageDiv.style.backgroundColor = "white";
+                packageDiv.style.backgroundColor = "rgb(246, 237, 237)";
                 packageDiv.style.border = "none";
             }
         });
@@ -84,14 +102,25 @@ function validateForm() {
     handleCheckboxChange(checkboxProfile, profilePackageDiv);
 });
 
-function fixStepIndicator(n) {
-    // This function removes the "active" class of all steps...
-    var i, x = document.getElementsByClassName("step_div");
-    for (i = 0; i < x.length; i++) {
-      x[i].className = x[i].className.replace(" active", "");
-    }
-    //... and adds the "active" class on the current step:
-    x[n].className += " active";
-  }
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".arcade_billing").addEventListener("click", function () {
+        // console.log("enter in the arcade billing");
+        let n = document.getElementById("arcade_article_name").innerHTML;
+        let p = document.getElementById("arcade_article_price").innerHTML;
+        array_articles.push(n);
+        array_articles.push(p);
+        console.log(array_articles);
+    });
 
+    document.querySelector(".advanced_billing").addEventListener("click", function () {
+        let n = document.getElementById("advanced_article_name").innerHTML;
+        let p = document.getElementById("advanced_article_price").innerHTML;   
+        
+    });
+
+    document.querySelector(".pro_billing").addEventListener("click", function () {
+        let n = document.getElementById("pro_article_name").innerHTML;
+        let p = document.getElementById("pro_article_price").innerHTML;
+    });
+});
   
