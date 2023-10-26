@@ -77,34 +77,43 @@ function validateForm() {
 
   document.addEventListener("DOMContentLoaded", function () {
 
-    function handleCheckboxChange(checkbox, packageDiv) {
+    function handleCheckboxChange(checkbox, packageDiv , name, price) {
         checkbox.addEventListener("change", function () {
             if (checkbox.checked) {
                 packageDiv.style.backgroundColor = "hsl(229, 24%, 87%)"; 
                 packageDiv.style.border = "solid 1px hsl(228, 45%, 44%)";
+                array_addons.push(name);
+                array_addons.push(price);
             } else {
                 packageDiv.style.backgroundColor = "rgb(246, 237, 237)";
                 packageDiv.style.border = "none";
+                array_addons.pop(name);
+                array_addons.pop(price);
             }
         });
     }
 
     const checkboxOnline = document.querySelector(".checkbox_online");
     const onlinePackageDiv = document.querySelector(".online_package");
-    handleCheckboxChange(checkboxOnline, onlinePackageDiv);
+    const onlineArticleName = document.getElementById("description_online_name").innerHTML;
+    const onlineArticlePrice = document.getElementById("description_online_price").innerHTML;
+    handleCheckboxChange(checkboxOnline, onlinePackageDiv, onlineArticleName, onlineArticlePrice);
 
     const checkboxStorage = document.querySelector(".storage_checkbox");
     const storagePackageDiv = document.querySelector(".storage_package");
-    handleCheckboxChange(checkboxStorage, storagePackageDiv);
+    const storageArticleName = document.getElementById("description_storage_name").innerHTML;
+    const storageArticlePrice = document.getElementById("description_storage_price").innerHTML;
+    handleCheckboxChange(checkboxStorage, storagePackageDiv, storageArticleName, storageArticlePrice);
 
     const checkboxProfile = document.querySelector(".profile_checkbox");
     const profilePackageDiv = document.querySelector(".profile_package");
-    handleCheckboxChange(checkboxProfile, profilePackageDiv);
+    const profileArticleName = document.getElementById("description_profile_name").innerHTML;
+    const profileArticlePrice = document.getElementById("description_profile_price").innerHTML;
+    handleCheckboxChange(checkboxProfile, profilePackageDiv, profileArticleName, profileArticlePrice);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".arcade_billing").addEventListener("click", function () {
-        // console.log("enter in the arcade billing");
         let n = document.getElementById("arcade_article_name").innerHTML;
         let p = document.getElementById("arcade_article_price").innerHTML;
         array_articles.push(n);
@@ -115,12 +124,18 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".advanced_billing").addEventListener("click", function () {
         let n = document.getElementById("advanced_article_name").innerHTML;
         let p = document.getElementById("advanced_article_price").innerHTML;   
-        
+        array_articles.push(n);
+        array_articles.push(p);
+        console.log(array_articles);
     });
 
     document.querySelector(".pro_billing").addEventListener("click", function () {
         let n = document.getElementById("pro_article_name").innerHTML;
         let p = document.getElementById("pro_article_price").innerHTML;
+        array_articles.push(n);
+        array_articles.push(p);
+        console.log(array_articles);
     });
+    
 });
   
