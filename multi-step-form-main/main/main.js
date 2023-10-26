@@ -84,11 +84,13 @@ function validateForm() {
                 packageDiv.style.border = "solid 1px hsl(228, 45%, 44%)";
                 array_addons.push(name);
                 array_addons.push(price);
+                console.log(array_addons);
             } else {
                 packageDiv.style.backgroundColor = "rgb(246, 237, 237)";
                 packageDiv.style.border = "none";
                 array_addons.pop(name);
                 array_addons.pop(price);
+                console.log(array_addons);
             }
         });
     }
