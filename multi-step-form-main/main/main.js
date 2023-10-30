@@ -77,31 +77,29 @@ function validateForm() {
 
   document.addEventListener("DOMContentLoaded", function () {
 
-    function handleCheckboxChange(checkbox, packageDiv , name, price) {
+    function handleCheckboxChange(checkbox, packageDiv, name, price) {
         checkbox.addEventListener("change", function () {
             if (checkbox.checked) {
                 packageDiv.style.backgroundColor = "hsl(229, 24%, 87%)"; 
                 packageDiv.style.border = "solid 1px hsl(228, 45%, 44%)";
-                /* <div>
-                  <p id="">Online service</p>
-                  <p id="">Larger storage</p>
-                </div> */
+                
                 array_addons.push(name);
                 array_addons.push(price);
                 console.log(array_addons);
                 for (const element of array_addons) {
-                    const divElt = document.createElement("div");
-                    const pElt = document.createElement("p");
-                    pElt.innerHTML = element
-                    divElt.appendChild(pElt);
-                    document.querySelector(".online_div").appendChild(divElt);
-                    // document.createElement("p").innerHTML = array_addons[index];
+                    const divName = document.createElement("div");
+                    const pName = document.createElement("p");
+                    pName.innerHTML = element;
+                    divName.appendChild(pName);
+                    document.querySelector(".online_div").appendChild(divName);
                 }
             } else {
                 packageDiv.style.backgroundColor = "rgb(246, 237, 237)";
                 packageDiv.style.border = "none";
+                
                 array_addons.pop(name);
                 array_addons.pop(price);
+
                 console.log(array_addons);
             }
         });
