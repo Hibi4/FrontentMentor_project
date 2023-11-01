@@ -81,15 +81,17 @@ function validateForm() {
     let total_price = 0;
     function handleCheckboxChange(checkbox, packageDiv, name, price) {
         checkbox.addEventListener("change", function () {
-            if (checkbox.checked) {
+
+            if (checkbox.checked) { 
+                
                 packageDiv.style.backgroundColor = "hsl(229, 24%, 87%)";
                 packageDiv.style.border = "solid 1px hsl(228, 45%, 44%)";
                 let number = 0;
                 const article = {name: name, price: price};
-                if(!array_addons.includes(article)) {
-                    array_addons.push(article);
-                }
+                array_addons.push(article);
                 console.log(array_addons);
+                document.querySelector(".online_div").innerHTML = "";
+                console.log("Array_addons length: "+array_addons.length);
                 for (const element of array_addons) {
                     const divName = document.createElement("div");
                     const pName = document.createElement("p");
@@ -110,6 +112,7 @@ function validateForm() {
                 document.getElementById("total_price").innerHTML = total_price;
                 
             } else {
+                console.log(checkbox.id + " unchecked");
                 packageDiv.style.backgroundColor = "rgb(246, 237, 237)";
                 packageDiv.style.border = "none";
                 const article = {name: name, price: price};
@@ -194,8 +197,3 @@ function displayArticles(list_article_) {
     }
 }
 
-function displayAddons(list_addons_, name, price) {
-    for (const elt of list_addons_) {
-        
-    }
-}
