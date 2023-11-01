@@ -1,6 +1,7 @@
 let currentTab = 0;
 let array_articles = [];
 let array_addons = [];
+let array_total = [];
 showTab(currentTab);
 
 function showTab(n) {
@@ -77,30 +78,47 @@ function validateForm() {
 
   document.addEventListener("DOMContentLoaded", function () {
 
+    let total_price = 0;
     function handleCheckboxChange(checkbox, packageDiv, name, price) {
         checkbox.addEventListener("change", function () {
             if (checkbox.checked) {
-                packageDiv.style.backgroundColor = "hsl(229, 24%, 87%)"; 
+                packageDiv.style.backgroundColor = "hsl(229, 24%, 87%)";
                 packageDiv.style.border = "solid 1px hsl(228, 45%, 44%)";
-                
-                array_addons.push(name);
-                array_addons.push(price);
+                let number = 0;
+                const article = {name: name, price: price};
+                if(!array_addons.includes(article)) {
+                    array_addons.push(article);
+                }
                 console.log(array_addons);
                 for (const element of array_addons) {
                     const divName = document.createElement("div");
                     const pName = document.createElement("p");
-                    pName.innerHTML = element;
+                    const divPrice = document.createElement("div");
+                    const pPrice = document.createElement("p");
+                    pName.innerHTML = element.name;
+                    pPrice.innerHTML = element.price;
                     divName.appendChild(pName);
+                    divPrice.appendChild(pPrice);
+                    number = parseInt(element.price.match(/\d+/)[0]);
+                    array_total.push(number);
                     document.querySelector(".online_div").appendChild(divName);
+                    document.querySelector(".online_div").appendChild(divPrice);
                 }
+                array_total.forEach(element => {
+                    total_price += element;
+                });
+                document.getElementById("total_price").innerHTML = total_price;
+                
             } else {
                 packageDiv.style.backgroundColor = "rgb(246, 237, 237)";
                 packageDiv.style.border = "none";
-                
-                array_addons.pop(name);
-                array_addons.pop(price);
-
+                const article = {name: name, price: price};
+                array_addons = array_addons.filter( (arrayItem) => {
+                    return (arrayItem.name !== article.name ||
+                    arrayItem.price !== article.price);
+                });
                 console.log(array_addons);
+                
             }
         });
     }
@@ -125,17 +143,12 @@ function validateForm() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    /* $(".monthly-billing").on("click", "button",function () {
-        let n = $("#arcade_article_name").text();
-        let p = $("#arcade_article_price").text();
-        let va = $(".article_name").text();
-        console.log("valeur de n: "+va);
-    }); */ 
     document.querySelector(".arcade_billing").addEventListener("click", function () {
         let n = document.getElementById("arcade_article_name").innerHTML;
         let p = document.getElementById("arcade_article_price").innerHTML;
         array_articles.push(n);
         array_articles.push(p);
+        array_total.push(parseInt(p.match(/\d+/)[0]));
         document.querySelector(".arcade_billing").style.backgroundColor = "hsl(229, 24%, 87%)";
         document.querySelector(".advanced_billing").style.backgroundColor = "white";
         document.querySelector(".advanced_billing").style.backgroundColor = "white";
@@ -152,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".arcade_billing").style.backgroundColor = "white";
         array_articles.push(n);
         array_articles.push(p);
+        array_total.push(parseInt(p.match(/\d+/)[0]));
         document.getElementById("selected_articles_names").innerHTML = n + " (Monthly)";
         document.getElementById("selected_articles_prices").innerHTML = p;
         console.log(array_articles);
@@ -165,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".advanced_billing").style.backgroundColor = "white";
         array_articles.push(n);
         array_articles.push(p);
+        array_total.push(parseInt(p.match(/\d+/)[0]));
         document.getElementById("selected_articles_names").innerHTML = n + " (Monthly)";
         document.getElementById("selected_articles_prices").innerHTML = p;
         console.log(array_articles);
