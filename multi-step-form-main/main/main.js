@@ -82,8 +82,7 @@ function validateForm() {
     function handleCheckboxChange(checkbox, packageDiv, name, price) {
         checkbox.addEventListener("change", function () {
 
-            if (checkbox.checked) { 
-                
+            if (checkbox.checked) {  
                 packageDiv.style.backgroundColor = "hsl(229, 24%, 87%)";
                 packageDiv.style.border = "solid 1px hsl(228, 45%, 44%)";
                 let number = 0;

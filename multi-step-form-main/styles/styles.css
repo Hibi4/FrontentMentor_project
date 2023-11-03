@@ -308,6 +308,10 @@
   float: left;
 }
 
+#infos_text_div {
+  margin-top: 30px;
+}
+
 .total_div {
   width: 80%;
   padding-top: 20px;
@@ -323,4 +327,42 @@
 
 .thanks_design p {
   color: hsl(231, 11%, 63%); 
+}
+
+@media (max-width: 600px) {
+  /* .main {
+    display: block;
+    width: 90%;
+  } 
+
+  .infos_text {
+    display: none;
+  } 
+  .infos_text {
+    padding-left: 35px;
+    display: grid;
+    grid-template-rows: 100px 80px 80px 80px;
+    background-image: url("/assets/images/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+  } */
+  .main {
+    display: block;
+    width: 100%;
+  }
+
+  .infos_text {
+    display: grid;
+    grid-template-columns: 100px 80px 80px 80px;
+    background-image: url("/assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+  }
+
+  .step_div_text {
+    display: none;
+  }
+
+  #infos_text_div {
+    margin-top: 0px;
+  }
+  
 }
