@@ -329,6 +329,18 @@
   color: hsl(231, 11%, 63%); 
 }
 
+.description_online_price {
+  margin-left: 65%;
+}
+
+.description_storage_price {
+  margin-left: 65%;
+}
+
+.description_profile_price {
+  margin-left: 65%;
+}
+
 @media (max-width: 600px) {
   /* .main {
     display: block;
@@ -390,6 +402,7 @@
     grid-template-columns: 60px 100px;
     padding-top: 10px;
     padding-left: 15px;
+    padding-bottom: 0px;
     width: 90%;
   }
 
@@ -398,36 +411,59 @@
   }
 
   .advanced_billing {
-    padding: 0px;
+    display: grid;
+    grid-template-columns: 60px 100px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-bottom: 0px;
     width: 90%;
+  }
+
+  .advanced_billing p:nth-last-child(1) {
+    line-height: 1px;
   }
 
   .pro_billing {
-    padding: 0px;
+    display: grid;
+    grid-template-columns: 60px 100px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-bottom: 0px;
     width: 90%;
   }
 
-  /* .arcade_billing {
-  margin-top: 5px;
-  border: grey solid 1px;
-  border-radius: 5px;
-  width: 65%;
-  background-color: white;
-  padding: 20px;
-}
+  .pro_billing p:nth-last-child(1) {
+    line-height: 1px;
+  }
 
-.arcade_billing:hover {
-  background-color: rgb(228, 217, 217);
-}
+  .billing_choice {
+    padding-left: 25%;
+  }
 
-.advanced_billing {
-  margin-top: 5px;
-  border: grey solid 1px;
-  border-radius: 5px;
-  width: 65%;
-  background-color: white;
-  padding: 20px;
-}
- */
+  .previous_btn {
+    padding: 5px;
+    width: 210px;
+  }
+
+  #next_btn {
+    margin-left: 65%;
+  }
+
+  .next_btn  {
+    width: 90%;
+    margin-left: 115px;
+  }
+
+  .description_online_price {
+    margin-left: 20%;
+  }
+  
+  .description_storage_price {
+    margin-left: 30%;
+  }
+  
+  .description_profile_price {
+    margin-left: 5%;
+  }
   
 }

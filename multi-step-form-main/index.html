@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,34 +12,43 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <title>Frontend Mentor | Multi-step form</title>
   <link rel="stylesheet" href="styles/styles.css">
-  
+
 </head>
+
 <body class="body">
   <main class="main">
     <div class="infos_text">
       <div class="infos_text_div" id="infos_text_div">
-        <div class="step_div"><p>1</p></div>
+        <div class="step_div">
+          <p>1</p>
+        </div>
         <div class="step_div_text">
           <p>STEP1</p>
           <h6>YOUR INFO</h6>
         </div>
       </div>
       <div class="infos_text_div">
-        <div class="step_div"><p>2</p> </div>
-        <div class="step_div_text" >
+        <div class="step_div">
+          <p>2</p>
+        </div>
+        <div class="step_div_text">
           <p>STEP2</p>
           <h6>SELECT PLAN</h6>
         </div>
       </div>
       <div class="infos_text_div">
-        <div class="step_div"><p>3</p></div>
+        <div class="step_div">
+          <p>3</p>
+        </div>
         <div class="step_div_text">
           <p>STEP3</p>
           <h6>SELECT PLAN</h6>
         </div>
       </div>
       <div class="infos_text_div">
-        <div class="step_div"><p>4</p></div>
+        <div class="step_div">
+          <p>4</p>
+        </div>
         <div class="step_div_text">
           <p>STEP4</p>
           <h6>SELECT PLAN</h6>
@@ -63,8 +73,9 @@
               <div class="previous_btn">
                 <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
               </div>
-              <div class="next_btn">
-                <button type="submit" class="btn" style="background-color: hsl(213, 96%, 18%); color: white;" onclick="nextPrev(1)">Next step</button>
+              <div class="next_btn" id="next_btn">
+                <button type="submit" class="btn" style="background-color: hsl(213, 96%, 18%); color: white;"
+                  onclick="nextPrev(1)">Next step</button>
               </div>
             </div>
           </div>
@@ -79,18 +90,24 @@
               </div>
               <div class="">
                 <p id="arcade_article_name">Arcade</p>
-              <p id="arcade_article_price">$9/mo</p>
+                <p id="arcade_article_price">$9/mo</p>
               </div>
             </button>
             <button class="advanced_billing">
-              <img src="/assets/images/icon-advanced.svg" alt="" srcset="">
-              <p id="advanced_article_name">Advanced</p>
-              <p id="advanced_article_price">$9/mo</p>
+              <div>
+                <img src="/assets/images/icon-advanced.svg" alt="" srcset="">
+              </div>
+              <div>
+                <p id="advanced_article_name">Advanced</p>
+                <p id="advanced_article_price">$9/mo</p>
+              </div>
             </button>
             <button class="pro_billing">
-              <img src="/assets/images/icon-pro.svg" alt="" srcset="">
-              <p id="pro_article_name">Pro</p>
-              <p id="pro_article_price">$9/mo</p>
+              <div><img src="/assets/images/icon-pro.svg" alt="" srcset=""></div>
+              <div>
+                <p id="pro_article_name">Pro</p>
+                <p id="pro_article_price">$9/mo</p>
+              </div>
             </button>
           </div>
           <div class="billing_choice">
@@ -101,83 +118,85 @@
             </label>
             <p>Yearly</p>
           </div>
-            
+
           <div class="move_btns">
             <div class="previous_btn">
               <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
             </div>
             <div class="next_btn">
-              <button type="submit" class="btn btn-primary" style="background-color: hsl(213, 96%, 18%); color: white;" onclick="nextPrev(1)">Next Step</button>
-            </div>
-            </div>
-          </div>
-          <!-- slide 3 -->
-          <div class="tab add">
-            <h3> Pick add-ons </h3>
-            <p>Add-ons help enhance your gaming experience</p>
-            <div class="add_package">
-              <div class="online_package">
-                <div>
-                  <input type="checkbox" class="checkbox_online" name="" id="checkbox1">
-                </div>
-                <div>
-                  <p id="description_online_name">Online service</p>
-                  <p class="package_description">Access to multipler games</p>
-                </div>
-                <div style="margin-left: 65%;">
-                  <p id="description_online_price">+$1/mo</p>
-                </div>
-              </div>
-              <div class="storage_package">
-                <div>
-                  <input class="storage_checkbox" type="checkbox" name="storage_checkbox" id="checkbox2">
-                </div>
-                <div>
-                  <p id="description_storage_name">Larger storage</p>
-                  <p class="package_description">Extra 1TB of cloud save</p>
-                </div>
-                <div style="margin-left: 65%;">
-                  <p id="description_storage_price">+$2/mo</p>
-                </div>
-              </div>
-              <div class="profile_package">
-                <div>
-                  <input type="checkbox" class="profile_checkbox" name="" id="checkbox3">
-                </div>
-                <div>
-                  <p id="description_profile_name">Customizable Profile</p>
-                  <p class="package_description">Custom theme on your profile</p>
-                </div>
-                <div style="margin-left: 65%;">
-                  <p id="description_profile_price">+$2/mo</p>
-                </div>
-              </div>
-              <div class="move_btns">
-                <div class="previous_btn">
-                  <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
-                </div>
-                <div class="next_btn">
-                  <button type="submit" class="btn" style="background-color: hsl(213, 96%, 18%); color: white;" onclick="nextPrev(1)">Next Step</button>
-                </div>
-              </div>
+              <button type="submit" class="btn btn-primary" style="background-color: hsl(213, 96%, 18%); color: white;"
+                onclick="nextPrev(1)">Next Step</button>
             </div>
           </div>
-          <div class="tab Summary">
-            <h3> Finishing up </h3>
-            <p style="color: grey;">Double-check everything looks OK before confirming</p>
-            <div class="articles_summary">
-              <div class="arcade_div" style="display: grid; grid-template-columns: auto 80px;">
-                <div>
-                  <p style="color: hsl(213, 96%, 18%);" id="selected_articles_names"></p>
-                  <a href="" class="change_articles">Change</a>
-                </div>
-                <div>
-                  <p style="color: hsl(213, 96%, 18%);" id="selected_articles_prices"></p>
-                </div>
-                <hr class="arcade_div_hr">
+        </div>
+        <!-- slide 3 -->
+        <div class="tab add">
+          <h3> Pick add-ons </h3>
+          <p>Add-ons help enhance your gaming experience</p>
+          <div class="add_package">
+            <div class="online_package">
+              <div>
+                <input type="checkbox" class="checkbox_online" name="" id="checkbox1">
               </div>
-              <div class="online_div" style="display: grid; grid-template-columns: auto 80px;">
-                <!-- <div>
+              <div>
+                <p id="description_online_name">Online service</p>
+                <p class="package_description">Access to multipler games</p>
+              </div>
+              <div class="description_online_price">
+                <p id="description_online_price">+$1/mo</p>
+              </div>
+            </div>
+            <div class="storage_package">
+              <div>
+                <input class="storage_checkbox" type="checkbox" name="storage_checkbox" id="checkbox2">
+              </div>
+              <div>
+                <p id="description_storage_name">Larger storage</p>
+                <p class="package_description">Extra 1TB of cloud save</p>
+              </div>
+              <div class="description_storage_price">
+                <p id="description_storage_price">+$2/mo</p>
+              </div>
+            </div>
+            <div class="profile_package">
+              <div>
+                <input type="checkbox" class="profile_checkbox" name="" id="checkbox3">
+              </div>
+              <div>
+                <p id="description_profile_name">Customizable Profile</p>
+                <p class="package_description">Custom theme on your profile</p>
+              </div>
+              <div class="description_profile_price">
+                <p id="description_profile_price">+$2/mo</p>
+              </div>
+            </div>
+            <div class="move_btns">
+              <div class="previous_btn">
+                <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
+              </div>
+              <div class="next_btn">
+                <button type="submit" class="btn" style="background-color: hsl(213, 96%, 18%); color: white;"
+                  onclick="nextPrev(1)">Next Step</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab Summary">
+          <h3> Finishing up </h3>
+          <p style="color: grey;">Double-check everything looks OK before confirming</p>
+          <div class="articles_summary">
+            <div class="arcade_div" style="display: grid; grid-template-columns: auto 80px;">
+              <div>
+                <p style="color: hsl(213, 96%, 18%);" id="selected_articles_names"></p>
+                <a href="" class="change_articles">Change</a>
+              </div>
+              <div>
+                <p style="color: hsl(213, 96%, 18%);" id="selected_articles_prices"></p>
+              </div>
+              <hr class="arcade_div_hr">
+            </div>
+            <div class="online_div" style="display: grid; grid-template-columns: auto 80px;">
+              <!-- <div>
                   <p id="">Online service</p>
                   <p id="">Larger storage</p>
                 </div>
@@ -185,41 +204,43 @@
                   <p id=""> +$1/mo </p>
                   <p id=""> +$2/mo </p>
                 </div> -->
-              </div>
-              <div class="total_div" style="display: grid; grid-template-columns: auto 80px;">
-                <div>
-                  <p>Total (per month)</p>
-                </div>
-                <div>
-                  <p style="color: hsl(243, 100%, 62%); font-size: 14px; font-weight: 700;"> +$ <span id="total_price"></span>/mo </p>
-                </div>
-              </div>
             </div>
-            <div class="move_btns">
-              <div class="previous_btn">
-                <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
+            <div class="total_div" style="display: grid; grid-template-columns: auto 80px;">
+              <div>
+                <p>Total (per month)</p>
               </div>
-              <div class="next_btn" id="next_btn_id">
-                <button type="submit" class="btn btn-primary" onclick="nextPrev(1)">Confirm</button>
+              <div>
+                <p style="color: hsl(243, 100%, 62%); font-size: 14px; font-weight: 700;"> +$ <span
+                    id="total_price"></span>/mo </p>
               </div>
             </div>
           </div>
-          <div class="tab thanks_design">
-            <div>
-              <img src="/assets/images/icon-thank-you.svg" alt="" srcset="">
-              <h3>Thank you!</h3>
-              <p>Thanks for confirming your subscription! We hope you have fun 
-                using our platform. If you ever need support, please feel free 
-                to email us at support@loremgaming.com.</p>
+          <div class="move_btns">
+            <div class="previous_btn">
+              <button type="submit" class="btn btn-light" onclick="nextPrev(-1)">Go back</button>
+            </div>
+            <div class="next_btn" id="next_btn_id">
+              <button type="submit" class="btn btn-primary" onclick="nextPrev(1)">Confirm</button>
             </div>
           </div>
+        </div>
+        <div class="tab thanks_design">
+          <div>
+            <img src="/assets/images/icon-thank-you.svg" alt="" srcset="">
+            <h3>Thank you!</h3>
+            <p>Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free
+              to email us at support@loremgaming.com.</p>
+          </div>
+        </div>
       </div>
     </div>
   </main>
   <script src="main/main.js"></script>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
+
 </html>
