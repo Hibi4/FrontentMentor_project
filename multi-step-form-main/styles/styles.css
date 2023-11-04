@@ -348,6 +348,7 @@
   .main {
     display: block;
     width: 100%;
+    margin-top: 0px;
   }
 
   .infos_text {
@@ -355,6 +356,7 @@
     grid-template-columns: 100px 80px 80px 80px;
     background-image: url("/assets/images/bg-sidebar-mobile.svg");
     background-repeat: no-repeat;
+    height: 150px;
   }
 
   .step_div_text {
@@ -363,6 +365,69 @@
 
   #infos_text_div {
     margin-top: 0px;
+    margin-left: 20px;
   }
+
+  .infos_text_div {
+    padding-top: 30px;
+  }
+
+  .step_div p {
+    color: white;
+    font-weight: 700;
+  }
+
+  .enter_infos_text_div {
+    padding: 20px;
+  }
+
+  .plan .monthly-billing {
+    display: block;
+  }
+
+  .arcade_billing {
+    display: grid;
+    grid-template-columns: 60px 100px;
+    padding-top: 10px;
+    padding-left: 15px;
+    width: 90%;
+  }
+
+  .arcade_billing p:nth-last-child(1) {
+    line-height: 1px;
+  }
+
+  .advanced_billing {
+    padding: 0px;
+    width: 90%;
+  }
+
+  .pro_billing {
+    padding: 0px;
+    width: 90%;
+  }
+
+  /* .arcade_billing {
+  margin-top: 5px;
+  border: grey solid 1px;
+  border-radius: 5px;
+  width: 65%;
+  background-color: white;
+  padding: 20px;
+}
+
+.arcade_billing:hover {
+  background-color: rgb(228, 217, 217);
+}
+
+.advanced_billing {
+  margin-top: 5px;
+  border: grey solid 1px;
+  border-radius: 5px;
+  width: 65%;
+  background-color: white;
+  padding: 20px;
+}
+ */
   
 }
