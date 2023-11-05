@@ -108,10 +108,9 @@ function validateForm() {
                 array_total.forEach(element => {
                     total_price += element;
                 });
-                document.getElementById("total_price").innerHTML = total_price;
+                document.getElementById("total_price").innerHTML = `+$${total_price}/mo`;
                 
             } else {
-                console.log(checkbox.id + " unchecked");
                 packageDiv.style.backgroundColor = "rgb(246, 237, 237)";
                 packageDiv.style.border = "none";
                 const article = {name: name, price: price};
