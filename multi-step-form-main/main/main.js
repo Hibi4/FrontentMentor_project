@@ -105,7 +105,10 @@ function validateForm() {
                     document.querySelector(".online_div").appendChild(divName);
                     document.querySelector(".online_div").appendChild(divPrice);
                 }
+                
+                total_price = 0;
                 array_total.forEach(element => {
+                    console.log("Total_price: "+array_total);
                     total_price += element;
                 });
                 document.getElementById("total_price").innerHTML = `+$${total_price}/mo`;
@@ -149,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let p = document.getElementById("arcade_article_price").innerHTML;
         array_articles.push(n);
         array_articles.push(p);
+        array_total = [];
         array_total.push(parseInt(p.match(/\d+/)[0]));
         document.querySelector(".arcade_billing").style.backgroundColor = "hsl(229, 24%, 87%)";
         document.querySelector(".advanced_billing").style.backgroundColor = "white";
@@ -166,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".arcade_billing").style.backgroundColor = "white";
         array_articles.push(n);
         array_articles.push(p);
+        array_total = [];
         array_total.push(parseInt(p.match(/\d+/)[0]));
         document.getElementById("selected_articles_names").innerHTML = n + " (Monthly)";
         document.getElementById("selected_articles_prices").innerHTML = p;
@@ -180,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".advanced_billing").style.backgroundColor = "white";
         array_articles.push(n);
         array_articles.push(p);
+        array_total = [];
         array_total.push(parseInt(p.match(/\d+/)[0]));
         document.getElementById("selected_articles_names").innerHTML = n + " (Monthly)";
         document.getElementById("selected_articles_prices").innerHTML = p;
