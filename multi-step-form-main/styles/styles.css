@@ -2,7 +2,7 @@
 .attribution {
     font-size: 11px;
     text-align: center;
-    position: fixed;
+    position: absolute;
     bottom: 0px;
 }
 
@@ -470,6 +470,10 @@
   .thanks_design h3 {
     margin-top: 15px;
     color: hsl(213, 96%, 18%);
+  }
+
+  .attribution {
+    margin-left: 20px;
   }
   
 }

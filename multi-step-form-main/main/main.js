@@ -3,6 +3,7 @@ let array_articles = [];
 let array_addons = [];
 let array_total = [];
 showTab(currentTab);
+let plan_step_valid = false;
 
 function showTab(n) {
     let tabs = document.querySelectorAll(".tab");
@@ -30,7 +31,15 @@ function showTab(n) {
 
 function nextPrev(n) {
     let tabs = document.getElementsByClassName("tab");
-    if (n == 1 && !validateForm()) return false;
+    // console.log("plan_step_validate: "+plan_step_valid);
+    if ((n == 1 && !validateForm())) {
+        return false;
+    }
+    console.log("valeur de n: "+currentTab); 
+    if((currentTab === 1 && plan_step_valid === false)) {
+        return false;
+    }
+    
     tabs[currentTab].style.display = "none";
     currentTab = currentTab + n;
     console.log("enter in the button directions");
@@ -43,14 +52,16 @@ function validateForm() {
     x = document.querySelectorAll(".tab");
     // x = document.getElementsByClassName("tab");
     y = x[currentTab].getElementsByTagName("input");
+    let t = document.getElementsByTagName("monthly-billing button");
+    console.log("valeur de t: "+t);
     // A loop that checks every input field in the current tab:
-    /*for (i = 0; i < y.length; i++) {
+    /* for (i = 0; i < y.length; i++) {
       // If a field is empty... isNaN(y[i].value
       if(y[i].value == "" ) {
         valid = false;
         y[i].style.backgroundColor = "red";
       }
-    } */ 
+    } */
 
     // If the valid status is true, mark the step as finished and valid:
     if (valid) {
@@ -150,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".arcade_billing").addEventListener("click", function () {
         let n = document.getElementById("arcade_article_name").innerHTML;
         let p = document.getElementById("arcade_article_price").innerHTML;
+        plan_step_valid = true;
         array_articles.push(n);
         array_articles.push(p);
         array_total = [];
@@ -168,6 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".advanced_billing").style.backgroundColor = "hsl(229, 24%, 87%)";
         document.querySelector(".pro_billing").style.backgroundColor = "white";
         document.querySelector(".arcade_billing").style.backgroundColor = "white";
+        plan_step_valid = true;
         array_articles.push(n);
         array_articles.push(p);
         array_total = [];
@@ -183,6 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".pro_billing").style.backgroundColor = "hsl(229, 24%, 87%)";
         document.querySelector(".arcade_billing").style.backgroundColor = "white";
         document.querySelector(".advanced_billing").style.backgroundColor = "white";
+        plan_step_valid = true;
         array_articles.push(n);
         array_articles.push(p);
         array_total = [];
