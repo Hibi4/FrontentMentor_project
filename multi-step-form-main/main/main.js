@@ -33,7 +33,6 @@ function nextPrev(n) {
     if ((n == 1 && !validateForm())) return false;
     tabs[currentTab].style.display = "none";
     currentTab = currentTab + n;
-    console.log("enter in the button directions");
     showTab(currentTab);
 }
 
@@ -81,9 +80,7 @@ function validateForm() {
                 let number = 0;
                 const article = {name: name, price: price};
                 array_addons.push(article);
-                console.log(array_addons);
                 document.querySelector(".online_div").innerHTML = "";
-                console.log("Array_addons length: "+array_addons.length);
                 for (const element of array_addons) {
                     const divName = document.createElement("div");
                     const pName = document.createElement("p");
@@ -101,7 +98,6 @@ function validateForm() {
                 
                 total_price = 0;
                 array_total.forEach(element => {
-                    console.log("Total_price: "+array_total);
                     total_price += element;
                 });
                 document.getElementById("total_price").innerHTML = `+$${total_price}/mo`;
@@ -114,7 +110,6 @@ function validateForm() {
                     return (arrayItem.name !== article.name ||
                     arrayItem.price !== article.price);
                 });
-                console.log(array_addons);
                 
             }
         });
@@ -152,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".advanced_billing").style.backgroundColor = "white";
         document.getElementById("selected_articles_names").innerHTML = n + " (Monthly)";
         document.getElementById("selected_articles_prices").innerHTML = p;
-        console.log(array_articles);
     });
 
     document.querySelector(".advanced_billing").addEventListener("click", function () {
@@ -167,7 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
         array_total.push(parseInt(p.match(/\d+/)[0]));
         document.getElementById("selected_articles_names").innerHTML = n + " (Monthly)";
         document.getElementById("selected_articles_prices").innerHTML = p;
-        console.log(array_articles);
     });
 
     document.querySelector(".pro_billing").addEventListener("click", function () {
@@ -182,7 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
         array_total.push(parseInt(p.match(/\d+/)[0]));
         document.getElementById("selected_articles_names").innerHTML = n + " (Monthly)";
         document.getElementById("selected_articles_prices").innerHTML = p;
-        console.log(array_articles);
     });
     
 });
