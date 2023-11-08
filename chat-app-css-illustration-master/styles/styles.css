@@ -120,16 +120,9 @@
     background: white;
     border-radius: 50px;
     aspect-ratio: 1;
-    height: 100%;
     background-color: black;
     color: white;
-    height: 40px;
     position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.wrapper button {
     height: 80%;
     top: 10%;
     right: 5px;
@@ -235,4 +228,29 @@
         width: 80%;
         margin-left: 60px;
     }  
+
+    .chat-content-body .options { 
+        color: white;
+    }
+
+    .options .price:first-child { 
+        margin-left: 40px;
+    }
+
+    .options .price:last-child { 
+        margin-left: 60px;
+    }
+
+    .chat-content-body .options span {
+        font-weight: 700;
+        font-size: 18px;
+    }
+    /* <div>
+            <input type="radio">
+            <p class="options">30 minute walk <span style="margin-left:40px;">$29</span></p>
+          </div>
+          <div>
+            <input type="radio">
+            <p class="options" style="padding-bottom: 15px;"> 1 hour walk <span style="margin-left:65px;">$49</span></p>
+          </div> */
 }
