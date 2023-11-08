@@ -30,9 +30,7 @@ function showTab(n) {
 
 function nextPrev(n) {
     let tabs = document.getElementsByClassName("tab");
-    // console.log("plan_step_validate: "+plan_step_valid);
     if ((n == 1 && !validateForm())) return false;
-
     tabs[currentTab].style.display = "none";
     currentTab = currentTab + n;
     console.log("enter in the button directions");
@@ -40,21 +38,16 @@ function nextPrev(n) {
 }
 
 function validateForm() {
-    // This function deals with validation of the form fields
     let x, y, i, valid = true;
     x = document.querySelectorAll(".tab");
-    // x = document.getElementsByClassName("tab");
     y = x[currentTab].getElementsByTagName("input");
-    // A loop that checks every input field in the current tab:
-    /* for (i = 0; i < y.length; i++) {
-      // If a field is empty... isNaN(y[i].value
+    for (i = 0; i < y.length; i++) {
       if(y[i].value == "" ) {
         valid = false;
         y[i].style.backgroundColor = "red";
       }
-    } */
+    }
 
-    // If the valid status is true, mark the step as finished and valid:
     if (valid) {
         let x = document.getElementsByClassName("step_div");
     
@@ -68,13 +61,11 @@ function validateForm() {
   }
 
   function fixStepIndicator(n) {
-    // This function removes the "active" class of all steps...
     let x = document.getElementsByClassName("step_div");
     
     for (const elt of x) {
         elt.className = elt.className.replace(" active", "");
     }
-    //... and adds the "active" class on the current step:
     x[n].className += " active";
   }
 
@@ -196,10 +187,4 @@ document.addEventListener("DOMContentLoaded", function () {
     
 });
 
-function displayArticles(list_article_) {
-    for (const elt of list_article_) {
-        document.getElementById("selected_articles_names").innerHTML = elt + "Monthly";
-        document.getElementById("selected_articles_prices").innerHTML = elt;
-    }
-}
 
