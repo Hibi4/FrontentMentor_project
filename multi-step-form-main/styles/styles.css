@@ -84,7 +84,11 @@
   font-weight: 700;
 }
 
-.step_div.finish {
+/* .step_div.finish {
+  background-color: hsl(113, 68%, 82%);
+}*/
+
+.step_div.active {
   background-color: hsl(113, 68%, 82%);
 }
 
