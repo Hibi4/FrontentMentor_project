@@ -47,14 +47,14 @@ function validateForm() {
       }
     }
 
-    if (valid) {
+    /* if (valid) {
         let x = document.getElementsByClassName("step_div");
     
         for (const elt of x) {
             elt.className = elt.className.replace(" finish", "");
         }
-        x[currentTab].className += " finish";
-    }
+        // x[currentTab].className += " finish";
+    }*/ 
     
     return valid;
   }
