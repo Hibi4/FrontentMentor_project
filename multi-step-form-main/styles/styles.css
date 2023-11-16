@@ -28,6 +28,7 @@
     display: grid;
     grid-template-rows: 100px 80px 80px 80px;
     background-image: url("/assets/images/bg-sidebar-desktop.svg");
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
