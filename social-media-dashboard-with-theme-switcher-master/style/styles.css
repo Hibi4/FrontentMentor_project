@@ -94,6 +94,12 @@
     background-color: hsl(227, 47%, 96%);
 }
 
+.dashboard__1__overview {
+    width: 70%;
+    height: auto;
+    background-color: hsl(227, 47%, 96%);
+}
+
 .dashboard__content {
     padding: 25px;
 }
@@ -115,6 +121,8 @@
     float: left;
     margin-right: 5px;
 }
+
+
 
 
 
