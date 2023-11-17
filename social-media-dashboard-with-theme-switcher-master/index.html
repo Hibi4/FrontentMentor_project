@@ -10,15 +10,15 @@
   <link rel="stylesheet" href="style/styles.css">
  
 </head>
-<body style="margin-left: 7em; width: 80%;">
-  <div class="header" style="display: flex;">
+<body class="body" >
+  <div class="header" >
     <div class="header__title">
       <h1>Social Media Dashboard</h1>
       <p>Total Followers: 23,004</p>
     </div>
     <div class="header__toggle">
       <p>Dark Mode</p>
-      <label class="switch"> 
+      <label class="switch">
         <input type="checkbox" checked id="input-switch">
         <span class="slider round"></span>
       </label>
@@ -28,7 +28,7 @@
   <div class="dashboard">
     
     <div class="dashboard__1">
-      <div style="background-color: aqua; width: 100%; height: 3px;"></div>
+      <div id="mini-color-fb"></div>
       <div class="dashboard__content">
         <div class="social_media">
           <img src="/images/icon-facebook.svg" alt="" >
@@ -41,7 +41,7 @@
     </div>
 
     <div class="dashboard__1">
-      <div style="background-color: aqua; width: 100%; height: 3px;"></div>
+      <div id="mini-color-tw"></div>
       <div class="dashboard__content">
         <div class="social_media">
           <img src="/images/icon-facebook.svg" alt="" >
@@ -54,7 +54,7 @@
     </div>
 
     <div class="dashboard__1">
-      <div style="background-color: aqua; width: 100%; height: 3px;"></div>
+      <div id="mini-color-insta"></div>
       <div class="dashboard__content">
         <div class="social_media">
           <img src="/images/icon-facebook.svg" alt="" >
@@ -67,7 +67,7 @@
     </div>
 
     <div class="dashboard__1">
-      <div style="background-color: aqua; width: 100%; height: 3px;"></div>
+      <div id="mini-color-yt"></div>
       <div class="dashboard__content">
         <div class="social_media">
           <img src="/images/icon-facebook.svg" alt="" >
@@ -80,9 +80,9 @@
     </div>
   </div>
 
-  <h1>Overview - Today</h1>
+  <h1 id="overview__title">Overview - Today</h1>
 
-  <div class="dashboard__overview" style="display: grid; grid-template-columns: auto auto auto auto;">
+  <div class="dashboard__overview" >
     <!-- div 1 -->
     <div class="dashboard__1__overview">
       <div class="dashboard__1__overview__content">
@@ -138,11 +138,11 @@
     </div>
 
     <!-- div 5 -->
-    <div class="dashboard__1__overview" style="margin-top: 25px;">
+    <div class="dashboard__1__overview" >
       <div class="dashboard__1__overview__content">
         <div> 
           <p class="overview__text">Retweets</p>
-          <img src="/images/icon-twitter.svg" alt="" id="icon_social_media__5" >
+          <img src="/images/icon-twitter.svg" alt="" id="icon_social_media__5">
         </div>
         <div>
           <p class="nb__likes">117</p>
@@ -170,7 +170,7 @@
       <div class="dashboard__1__overview__content">
         <div>
           <p class="overview__text">Likes</p>
-          <img src="/images/icon-youtube.svg" alt="" id="icon_social_media__7" >
+          <img src="/images/icon-youtube.svg" alt="" id="icon_social_media__7">
         </div>
         <div>
           <p class="nb__likes" >107</p>
