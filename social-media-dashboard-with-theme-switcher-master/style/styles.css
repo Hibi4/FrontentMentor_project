@@ -11,9 +11,14 @@
 
   .header__toggle {
     display: flex;
-    margin-left: 65%;
+    margin-left: 55%;
     margin-top: 15px;
-    width: 10%;
+    width: 15%;
+  }
+
+  .dark-mode {
+    background-color: black;
+   /*  color: white; */
   }
 
   .header__title p {
@@ -24,7 +29,7 @@
     position: relative;
     display: inline-block;
     /* width: 80px; */
-    width: 60px;
+    width: 65px;
     height: 34px;
     margin-top: 15px;
     margin-left: 5px;
