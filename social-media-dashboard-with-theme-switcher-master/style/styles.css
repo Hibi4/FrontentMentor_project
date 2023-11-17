@@ -88,15 +88,16 @@
 }
 
 .dashboard__1 {
-    width: 70%;
+    width: 90%;
     height: auto;
     /* padding: 25px; */
     background-color: hsl(227, 47%, 96%);
 }
 
 .dashboard__1__overview {
-    width: 70%;
+    width: 88%;
     height: auto;
+    /* height: 60% */
     background-color: hsl(227, 47%, 96%);
 }
 
