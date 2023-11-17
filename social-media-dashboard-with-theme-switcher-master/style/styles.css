@@ -115,6 +115,11 @@
     font-size: 27px;
 }
 
+.nb__likes {
+    font-weight: 700;
+    font-size: 27px;
+}
+
 /* .dashboard__1 p {
     text-align: center;
 } */ 
@@ -128,6 +133,53 @@
     margin-right: 5px;
 }
 
+
+#logo__icon__overview__1 img  {
+  /* style="margin-top: 25px; margin-left: 175px;" */
+  margin-top: 45px;
+  margin-left: 160px;
+  
+}
+
+#logo__icon__overview__2 img  {
+  /* style="margin-top: 25px; margin-left: 175px;" */ 
+  margin-top: 45px;
+  margin-left: 160px;
+}
+
+#logo__icon__overview__3 img  {
+/*  style="margin-top: 25px; margin-left: 135px;" */
+  margin-top: 45px;
+  margin-left: 120px;
+}
+
+#logo__icon__overview__4 img  {
+ /* style="margin-top: 25px; margin-left: 160px;" */
+ margin-top: 45px;
+  margin-left: 145px;
+}
+
+#logo__icon__overview__5 img  {
+  margin-top:  45px;
+  margin-left: 130px;
+}
+
+#logo__icon__overview__6 img  {
+  /* style="margin-top: 25px; margin-left: 150px;" */ 
+  margin-top:  45px;
+  margin-left: 135px;
+}
+
+#logo__icon__overview__7 img  {
+  /* style="margin-top: 25px; margin-left: 165px;" */
+  margin-top:  45px;
+  margin-left: 150px;
+}
+
+#logo__icon__overview__8 img  {
+  margin-top: 45px;
+  margin-left: 150px;
+}
 
 
 
