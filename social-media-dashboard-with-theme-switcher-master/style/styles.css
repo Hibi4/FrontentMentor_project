@@ -17,7 +17,8 @@
   }
 
   .dark-mode {
-    background-color: black;
+    background-color: hsl(230, 17%, 14%);
+    /* background-color: black; */ 
    /*  color: white; */
   }
 
@@ -135,26 +136,22 @@
 
 
 #logo__icon__overview__1 img  {
-  /* style="margin-top: 25px; margin-left: 175px;" */
   margin-top: 45px;
   margin-left: 160px;
   
 }
 
 #logo__icon__overview__2 img  {
-  /* style="margin-top: 25px; margin-left: 175px;" */ 
   margin-top: 45px;
   margin-left: 160px;
 }
 
 #logo__icon__overview__3 img  {
-/*  style="margin-top: 25px; margin-left: 135px;" */
   margin-top: 45px;
   margin-left: 120px;
 }
 
 #logo__icon__overview__4 img  {
- /* style="margin-top: 25px; margin-left: 160px;" */
  margin-top: 45px;
   margin-left: 145px;
 }
@@ -165,13 +162,11 @@
 }
 
 #logo__icon__overview__6 img  {
-  /* style="margin-top: 25px; margin-left: 150px;" */ 
   margin-top:  45px;
   margin-left: 135px;
 }
 
 #logo__icon__overview__7 img  {
-  /* style="margin-top: 25px; margin-left: 165px;" */
   margin-top:  45px;
   margin-left: 150px;
 }
@@ -179,8 +174,63 @@
 #logo__icon__overview__8 img  {
   margin-top: 45px;
   margin-left: 150px;
+} 
+
+.nb__likes {
+  float: left;
+  padding-left: 15px;
 }
 
+.overview__text { 
+  float: left;
+  padding-left: 15px;
+}
 
+#icon_social_media__1 {
+  margin-top: 15px;
+  margin-left: 120px;
+}
+
+#icon_social_media__2 {
+  margin-top: 15px;
+  margin-left: 160px;
+}
+
+#icon_social_media__3 {
+  /* style="margin-top: 15px; margin-left: 155px;" */ 
+  margin-top: 15px;
+  margin-left: 155px;
+}
+
+#icon_social_media__4 {
+  /* style="margin-top: 15px; margin-left: 110px;" */
+  margin-top: 15px;
+  margin-left: 110px;
+}
+
+#icon_social_media__5 {
+  margin-top: 15px;
+  margin-left: 130px;
+}
+
+/* #icon_social_media__6 #icon_social_media__7 {
+  margin-top: 15px;
+  margin-left: 160px;
+}*/ 
+
+#icon_social_media__6 {
+  margin-top: 15px;
+  margin-left: 160px
+}
+
+#icon_social_media__7 {
+  margin-top: 15px;
+  margin-left: 160px;
+} 
+
+#icon_social_media__8 {
+  margin-top: 15px;
+  margin-left: 130px;
+}
 
 
