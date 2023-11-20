@@ -113,12 +113,14 @@
 
 .dashboard__content p.nb_followers {
     font-weight: 700;
-    font-size: 27px;
+    font-size: 37px;
+    text-align: center;
+    line-height: 1px;
 }
 
 .nb__likes {
     font-weight: 700;
-    font-size: 27px;
+    font-size: 33px;
 }
 
 /* .dashboard__1 p {
@@ -129,11 +131,43 @@
     text-align: 0px;
 } */
 
+.social_media {
+  margin-left: 65px;
+}
+
 .social_media img {
     float: left;
     margin-right: 5px;
 }
 
+.logo__icon__overview {
+  text-align: center;
+}
+
+#logo__icon__overview__1 {
+  color: green;
+}
+
+
+#icon__overview_1 {
+  color: rgb(43, 231, 43);
+  font-weight: 700;
+}
+
+#icon__overview_2 {
+  color: rgb(43, 231, 43);
+  font-weight: 700;
+}
+
+#icon__overview_3 {
+  color: rgb(43, 231, 43);
+  font-weight: 700;
+}
+
+#icon__overview_4 {
+  color: red;
+  font-weight: 700;
+}
 
 #logo__icon__overview__1 img  {
   margin-top: 45px;
@@ -187,6 +221,7 @@
 }
 
 #icon_social_media__1 {
+  
   margin-top: 15px;
   margin-left: 120px;
 }
@@ -245,25 +280,25 @@
 
 .dashboard__1 #mini-color-fb {
   /* background-color: aqua; width: 100%; height: 3px; */ 
-  background-color: aqua;
+  background-color: hsl(208, 92%, 53%);
   width: 100%;
   height: 3px;
 }
 
 .dashboard__1 #mini-color-tw { 
-  background-color: aqua;
+  background-color: hsl(203, 89%, 53%);
   width: 100%;
   height: 3px;
 } 
 
 .dashboard__1 #mini-color-insta {
-  background-color: aqua;
+  background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
   width: 100%;
   height: 3px;
 }
 
 .dashboard__1 #mini-color-yt {
-  background-color: aqua;
+  background-color: hsl(348, 97%, 39%);
   width: 100%;
   height: 3px;
 }
@@ -293,4 +328,7 @@
 .nb_followers_text {
   color: grey;
   font-size: 18px;
+  text-align: center;
+  line-height: 1px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

@@ -6,6 +6,7 @@ const dashbord = document.querySelectorAll(".dashboard__1");
 const dashboard__1__overview = document.querySelectorAll(".dashboard__1__overview");
 const overviewText = document.querySelectorAll(".overview__text");
 const nbFollowers = document.querySelectorAll(".nb_followers");
+const g = document.querySelectorAll(".social_media p");
 
 // Get the position of the click relative to the center of the slider
     /* var sliderWidth = event.currentTarget.offsetWidth;
@@ -26,12 +27,23 @@ document.getElementById('input-switch').addEventListener('click', function(event
     var clickX = event.clientX - this.getBoundingClientRect().left;
     var clickRelativeToCenter = clickX - sliderWidth / 2;
 
+    /* let elt = document.body;
+    elt.classList.toggle("dark-mode"); */
+    document.querySelector(".body").style.backgroundColor = "hsl(232, 19%, 15%)";
     // Determine if the click is on the left or right side of the slider
     if (clickRelativeToCenter < 0) {
-      console.log('Clicked on the left side of the switch');
-      overviewSection();
+        console.log('Clicked on the left side of the switch');
+        header__title.style.color = "white";
+        document.querySelector(".header__toggle p").style.color = "white ";
+        
+        overviewSection();
     } else {
-      console.log('Clicked on the right side of the switch');
+        console.log('Clicked on the right side of the switch');
+        document.querySelector(".body").style.backgroundColor = "white";
+        header__title.style.color = "black";
+        document.querySelector(".header__toggle p").style.color = "black";
+
+        
     }
 });
 
@@ -46,6 +58,7 @@ document.getElementById('input-switch').addEventListener('click', function(event
 
 
 function overviewSection() {
+    
     for(const elt of dashboard__1__overview) {
         elt.style.backgroundColor = "hsl(230, 17%, 14%)";
     }
@@ -65,5 +78,8 @@ function overviewSection() {
         elt.style.color = "white";
     }
 
-    
+    for (const elt of g) {
+        elt.style.color = "white";
+    }
+
 }
