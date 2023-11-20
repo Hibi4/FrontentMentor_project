@@ -289,3 +289,8 @@
 .dashboard__overview div:nth-child(8) {
   margin-top: 25px;
 }
+
+.nb_followers_text {
+  color: grey;
+  font-size: 18px;
+}
