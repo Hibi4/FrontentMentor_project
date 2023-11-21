@@ -61,7 +61,8 @@ document.getElementById('input-switch').addEventListener('click', function(event
 function overviewSection() {
     
     for(const elt of dashboard__1__overview) {
-        elt.style.backgroundColor = "hsl(230, 17%, 14%)";
+       //  elt.style.backgroundColor = "hsl(230, 17%, 14%)";
+       elt.style.backgroundColor = "hsl(228, 28%, 20%)";
     }
     // nb__likes.style.color = "white";
     for (const elt of nb__likes) {
@@ -72,7 +73,7 @@ function overviewSection() {
     }
 
     for (const elt of dashbord) {
-        elt.style.backgroundColor = "hsl(230, 17%, 14%)";
+        elt.style.backgroundColor = "hsl(228, 28%, 20%)";
     }
 
     for (const elt of nbFollowers) {
