@@ -27,24 +27,24 @@ document.getElementById('input-switch').addEventListener('click', function(event
     var clickX = event.clientX - this.getBoundingClientRect().left;
     var clickRelativeToCenter = clickX - sliderWidth / 2;
 
-    /* let elt = document.body;
-    elt.classList.toggle("dark-mode"); */
     document.querySelector(".body").style.backgroundColor = "hsl(232, 19%, 15%)";
     // Determine if the click is on the left or right side of the slider
     if (clickRelativeToCenter < 0) {
-        console.log('Clicked on the left side of the switch');
         header__title.style.color = "white";
         document.querySelector(".header__toggle p").style.color = "white ";
         document.getElementById("overview__title").style.color = "white";
+        document.querySelector(".header__body").style.backgroundColor = "hsl(232, 19%, 15%)";
+
         overviewSection();
     } else {
-        console.log('Clicked on the right side of the switch');
         document.querySelector(".body").style.backgroundColor = "white";
         header__title.style.color = "black";
         document.getElementById("overview__title").style.color = "black";
         document.querySelector(".header__toggle p").style.color = "black";
-
-        
+        document.querySelector(".header__body").style.backgroundColor = "hsl(230, 22%, 74%)";
+        for(const elt of dashboard__1__overview) {
+            elt.style.backgroundColor = "hsl(227, 47%, 96%)";
+        }
     }
 });
 
