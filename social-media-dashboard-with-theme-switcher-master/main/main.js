@@ -7,6 +7,8 @@ const dashboard__1__overview = document.querySelectorAll(".dashboard__1__overvie
 const overviewText = document.querySelectorAll(".overview__text");
 const nbFollowers = document.querySelectorAll(".nb_followers");
 const g = document.querySelectorAll(".social_media p");
+const dashboard__1 = document.querySelectorAll(".dashboard__1");
+
 
 // Get the position of the click relative to the center of the slider
     /* var sliderWidth = event.currentTarget.offsetWidth;
@@ -34,40 +36,51 @@ document.getElementById('input-switch').addEventListener('click', function(event
         document.querySelector(".header__toggle p").style.color = "white ";
         document.getElementById("overview__title").style.color = "white";
         document.querySelector(".header__body").style.backgroundColor = "hsl(232, 19%, 15%)";
-
         overviewSection();
     } else {
         document.querySelector(".body").style.backgroundColor = "white";
         header__title.style.color = "black";
         document.getElementById("overview__title").style.color = "black";
-        document.querySelector(".header__toggle p").style.color = "black";
-        document.querySelector(".header__body").style.backgroundColor = "hsl(230, 22%, 74%)";
+        document.querySelector(".header__toggle p").style.color = "gray";
+        document.querySelector(".header__body").style.backgroundColor = "hsl(227, 47%, 96%)";
         for(const elt of dashboard__1__overview) {
             elt.style.backgroundColor = "hsl(227, 47%, 96%)";
         }
+
+        for (const elt of nb__likes) {
+            elt.style.color = "black";
+        }
+        
+        for (const elt of overviewText) {
+            elt.style.color = "black";
+        }
+
+        for(const elt of dashboard__1) {
+            elt.style.backgroundColor = "hsl(227, 47%, 96%)";
+        }
+
+        for (const elt of nbFollowers) {
+            elt.style.color = "black";
+        }
+
+        for (const elt of g) {
+            elt.style.color = "black";
+        }
+    
     }
 });
-
-/* switchInput.addEventListener("click", (e) => {
-    console.log("click on the switch input");
-    let elt = document.body;
-    elt.classList.toggle("dark-mode");
-    // header__title.classList.toggle(".header__title__dark");
-    header__title.style.color = "white";
-    overviewSection();
-}); */
 
 
 function overviewSection() {
     
     for(const elt of dashboard__1__overview) {
-       //  elt.style.backgroundColor = "hsl(230, 17%, 14%)";
        elt.style.backgroundColor = "hsl(228, 28%, 20%)";
     }
-    // nb__likes.style.color = "white";
+    
     for (const elt of nb__likes) {
         elt.style.color = "white";
     }
+
     for (const elt of overviewText) {
         elt.style.color = "white";
     }
