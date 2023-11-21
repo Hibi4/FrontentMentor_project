@@ -35,12 +35,13 @@ document.getElementById('input-switch').addEventListener('click', function(event
         console.log('Clicked on the left side of the switch');
         header__title.style.color = "white";
         document.querySelector(".header__toggle p").style.color = "white ";
-        
+        document.getElementById("overview__title").style.color = "white";
         overviewSection();
     } else {
         console.log('Clicked on the right side of the switch');
         document.querySelector(".body").style.backgroundColor = "white";
         header__title.style.color = "black";
+        document.getElementById("overview__title").style.color = "black";
         document.querySelector(".header__toggle p").style.color = "black";
 
         
