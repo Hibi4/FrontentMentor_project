@@ -420,3 +420,43 @@
   line-height: 1px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+@media(max-width: 600px) {
+
+  .header {
+    display: block;
+  }
+
+  /* .header__toggle {
+    display: flex;
+    margin-left: 52%;
+    margin-top: 15px;
+    width: 15%;
+  } */
+
+  .header__toggle {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .dashboard {
+    display: block;
+  }
+
+  .dashboard__overview {
+    display: block;
+  }
+
+  .dashboard__1 {
+    margin-top: 20px;
+  }
+  
+  .dashboard__1__overview {
+    margin-top: 18px;
+  }
+
+  /* .dashboard__overview div:nth-child(5) {
+  margin-top: 25px;
+} */
+
+}
