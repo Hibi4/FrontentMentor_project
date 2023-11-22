@@ -101,6 +101,12 @@ function applyLightMode() {
     document.querySelector(".header__toggle p").style.color = "gray";
     document.querySelector(".header__body").style.backgroundColor = "hsl(227, 47%, 96%)";
     
+    // document.getElementsByTagName("input:checked + .slider:before").style.backgroundColor = "black";
+    /*   input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  } */
     /* for(const elt of dashboard__1__overview) {
         elt.style.backgroundColor = "hsl(227, 47%, 96%)";
     }
