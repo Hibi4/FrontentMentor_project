@@ -48,6 +48,10 @@
     width: 15%;
   }
 
+  .line__header {
+    display: none;
+  }
+
   .header__toggle p {
     color: gray;
   }
@@ -394,7 +398,6 @@
 }
 
 .dashboard__overview {
-  /* style="display: grid; grid-template-columns: auto auto auto auto;"  */
   display: grid;
   grid-template-columns: auto auto auto auto;
   margin-left: 7em;
@@ -432,32 +435,26 @@
 
   .header {
     display: block;
-    margin-left: 10px;
+    margin-left: 25px;
   }
 
-  /* 
-    .nb__likes {
-    font-weight: 700;
-    font-size: 33px;
-    float: left;
-    padding-left: 15px;
-} */
-
-  /* .header__toggle {
-    display: flex;
-    margin-left: 52%;
-    margin-top: 15px;
-    width: 15%;
-  } 
-  .header {
-    display: flex;
-    margin-left: 7em;
+  .header__title {
+    font-size: 10px;
+    margin-top: -15px;
   }
-  */
 
   .header__toggle {
     margin-left: 0px;
     width: 100%;
+  }
+
+   .line__header {
+    display: block;
+    background-color: gray;
+  }
+
+  .switch {
+    margin-left: 45%;
   }
 
   .dashboard {
