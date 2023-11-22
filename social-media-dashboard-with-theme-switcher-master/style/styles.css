@@ -467,7 +467,6 @@
 
   .dashboard__overview {
     display: block;
-   /*  margin-left: 20px; */
   }
 
   .dashboard__1 {
@@ -499,12 +498,48 @@
     margin-left: 18px;
   }
 
-  /* .overview__text {
-    padding-left: 2px;
-  } */
-
   .nb__likes {
     margin-top: -2px;
+  }
+
+  .logo__icon__overview {
+    padding-bottom: 10px;
+  }
+
+  #icon_social_media__1 {
+    margin-left: 130px;
+  }
+
+  #icon_social_media__2 {
+    margin-left: 170px;
+  }
+
+  #icon_social_media__3 {
+    margin-left: 170px;
+  }
+
+  #icon_social_media__4 {
+    margin-left: 120px;
+  }
+
+  #icon_social_media__4 {
+    margin-left: 120px;
+  }
+
+  #icon_social_media__5 {
+    margin-left: 150px;
+  }
+
+  #icon_social_media__6 {
+    margin-left: 170px;
+  }
+
+  #icon_social_media__7 {
+    margin-left: 170px;
+  }
+
+  #logo__icon__overview__8 {
+    padding-right: 8px;
   }
 
 }
