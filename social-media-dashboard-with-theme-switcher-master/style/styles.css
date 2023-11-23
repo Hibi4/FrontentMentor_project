@@ -168,19 +168,6 @@
     padding-left: 15px;
 }
 
-/* .nb__likes {
-  float: left;
-  padding-left: 15px;
-} */ 
-
-/* .dashboard__1 p {
-    text-align: center;
-} */ 
-
-/* .social_media p {
-    text-align: 0px;
-} */
-
 .social_media {
   margin-left: 65px;
 }
@@ -219,10 +206,10 @@
   font-weight: 700;
 }
 
-#logo__icon__overview__1 {
+/* #logo__icon__overview__1 {
   color: rgb(92, 182, 92);
   font-weight: 700;
-}
+} */
 
 #logo__icon__overview__2 {
   color: rgb(177, 51, 51);
@@ -259,16 +246,6 @@
   font-weight: 700;
 }
 
-/* #logo__icon__overview__1 {
-  color: rgb(43, 231, 43);
-  font-weight: 700;
-}
-
-#logo__icon__overview__1 {
-  color: rgb(43, 231, 43);
-  font-weight: 700;
-}*/
-
 
 #logo__icon__overview__1 img  {
   margin-top: 45px;
@@ -282,12 +259,12 @@
 
 #logo__icon__overview__3 img  {
   margin-top: 45px;
-  margin-left: 105px;
+  margin-left: 95px;
 }
 
 #logo__icon__overview__4 img  {
  margin-top: 45px;
-  margin-left: 145px;
+  margin-left: 135px;
 }
 
 #logo__icon__overview__5 img  {
@@ -302,12 +279,12 @@
 
 #logo__icon__overview__7 img  {
   margin-top:  45px;
-  margin-left: 130px;
+  margin-left: 120px;
 }
 
 #logo__icon__overview__8 img  {
   margin-top: 45px;
-  margin-left: 130px;
+  margin-left: 120px;
 } 
 
 
@@ -513,10 +490,6 @@
 
   #icon_social_media__3 {
     margin-left: 170px;
-  }
-
-  #icon_social_media__4 {
-    margin-left: 120px;
   }
 
   #icon_social_media__4 {
