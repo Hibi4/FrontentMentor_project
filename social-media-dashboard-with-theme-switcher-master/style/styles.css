@@ -1,8 +1,10 @@
   .attribution {
     font-size: 11px;
     text-align: center;
-    position: fixed;
+    position: relative;
     bottom: 0;
+    margin-top: 50px;
+    font-size: 27px;
   }
 
   .attribution a {
@@ -108,7 +110,6 @@
   }
   
   input:checked + .slider {
-    /* background-color: hsl(213, 96%, 18%); */
     background-color: rgb(211, 200, 200);
   }
   

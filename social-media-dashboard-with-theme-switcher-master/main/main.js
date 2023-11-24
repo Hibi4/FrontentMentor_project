@@ -91,7 +91,7 @@ function applyDarkMode() {
     document.getElementById("overview__title").style.color = "white";
     document.querySelector(".header__toggle p").style.color = "white ";
     document.querySelector(".header__body").style.backgroundColor = "hsl(232, 19%, 15%)";
-    overviewSection(true);
+    applychanges(true);
 }
 
 function applyLightMode() {
@@ -131,7 +131,7 @@ function applyLightMode() {
         elt.style.color = "black";
     } */
 
-    overviewSection(false);
+    applychanges(false);
 
     /* function applyLightMode() {
         document.querySelector(".body").style.backgroundColor = "white";
@@ -161,7 +161,7 @@ function applyCommonStylesToDashboardElements(elements, backgroundColor, textCol
     // Add other common styles for dashboard elements
 } */ 
 
-function overviewSection(isDarkMode) {
+function applychanges(isDarkMode) {
     const backgroundColor = isDarkMode ? "hsl(228, 28%, 20%)" : "hsl(227, 47%, 96%)";
     const textColor = isDarkMode ? "white" : "black";
 
