@@ -1,0 +1,40 @@
+/* .body {
+    padding-left: 20px;
+} */
+
+.header {
+    background-color: #f1f1f1;
+    display: flex;
+}
+
+.header .header__logo {
+    width: 60%;
+    padding-left: 40px;
+}
+
+.header .header__dark-mode {
+    margin-left: 60%;
+    width: 30%;
+}
+
+.nav {
+    display: flex;
+    margin-top: 50px;
+    padding-left: 40px;
+}
+
+#search_country {
+    width: 290px;
+    padding: 10px;
+}
+
+.regions {
+    margin-left: 60%;
+    width: auto;
+}
+
+.regions select {
+    padding: 10px;
+    width: 200px;
+}
+

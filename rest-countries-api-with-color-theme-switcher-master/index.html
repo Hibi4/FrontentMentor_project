@@ -4,8 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rest-countries-api-with-color-theme-switfher</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
-    <h1>Rest countries api color</h1>
+<body class="body">
+    <!-- <h1>Rest countries api color</h1> -->
+    <header class="header">
+        <!-- <div></div>
+        <div></div> -->
+        <div class="header__logo">
+            <p>Where in the world?</p>
+        </div>
+        <div class="header__dark-mode">
+            <p>Dark Mode</p>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="search_bar" style="display: flex;">
+            <!-- <div>
+                <span class="input-group-text" id="addon-wrapping">@</span> 
+            </div> -->
+            <span style="padding: 10px; background-color: grey;">@</span>
+            <input type="text" id="search_country" placeholder="Search for a country...">
+        </div>
+        <div class="regions">
+            <select name="region" id="region">
+                <option value="Filter by Region">Filter by Region</option>
+                <option value="Africa">Africa</option>
+                <option value="America">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+    </nav>
+    <main>
+
+    </main>
 </body>
 </html>
