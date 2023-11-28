@@ -38,3 +38,23 @@
     width: 200px;
 }
 
+
+
+.countries {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: 250px 250px 250px 250px;
+    margin-top: 60px;
+    gap: 60px;
+}
+
+.countries .country__div {
+    
+}
+
+.countries .country__div__img {
+    width: 250px;
+    height: 250px;
+
+}
+
