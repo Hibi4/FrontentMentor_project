@@ -1,6 +1,6 @@
 /* .body {
-    padding-left: 20px;
-} */
+    width: 90%;
+}*/ 
 
 .header {
     background-color: #f1f1f1;
@@ -38,7 +38,9 @@
     width: 200px;
 }
 
-
+/* .countries__div {
+    padding-left: 40px;
+} */
 
 .countries {
     display: grid;
@@ -48,13 +50,13 @@
     gap: 60px;
 }
 
-.countries .country__div {
-    
-}
-
 .countries .country__div__img {
     width: 250px;
     height: 250px;
+    background-size: cover;
+}
 
+.main {
+    margin-left: 100px;
 }
 

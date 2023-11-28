@@ -3,7 +3,7 @@ const countries = document.querySelector('.countries');
 fetch('data.json')
    .then(response => response.json())
    .then(data => {
-        console.log(data);
+        // console.log(data);
 
         for(const country of data) {
             const div_country = document.createElement('div');
@@ -16,8 +16,8 @@ fetch('data.json')
             divImg.appendChild(img);
             div_country.appendChild(divImg);
 
-            const h4 = document.createElement('h4'); 
-            h4.textContent = country.name; 
+            const h4 = document.createElement('h4');
+            h4.textContent = country.name;
             const population = document.createElement('p');
             const region = document.createElement('p');
             const capital = document.createElement('p');
@@ -34,5 +34,6 @@ fetch('data.json')
         }
 });
 
- /* div_country.appendChild(divImg); 
-        div_country.appendChild(divText); */ 
+/* document.getElementById('search_country').addEventListener('click', function(e) {
+    console.log('search_country');
+}); */
