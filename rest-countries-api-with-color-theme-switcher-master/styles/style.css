@@ -52,6 +52,7 @@
 
 .countries .country__div__img {
     width: 250px;
+    /* height: 250px; */
     height: 250px;
     background-size: cover;
 }

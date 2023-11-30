@@ -1,9 +1,9 @@
 const countries = document.querySelector('.countries');
+const options = document.querySelectorAll('options');
 
 fetch('data.json')
    .then(response => response.json())
    .then(data => {
-        // console.log(data);
 
         for(const country of data) {
             const div_country = document.createElement('div');
@@ -11,6 +11,7 @@ fetch('data.json')
             const divImg = document.createElement('div');
             const divText = document.createElement('div');
             img.src = country.flag;
+            /* console.log("flag: "+country.flag); */
             img.alt = country.name;
             img.className = 'country__div__img';
             divImg.appendChild(img);
@@ -21,6 +22,7 @@ fetch('data.json')
             const population = document.createElement('p');
             const region = document.createElement('p');
             const capital = document.createElement('p');
+
             population.textContent = 'Population: ' + country.population;
             region.textContent = 'Region: ' + country.region;
             capital.textContent = 'Capital: ' + country.capital;
@@ -34,6 +36,20 @@ fetch('data.json')
         }
 });
 
-/* document.getElementById('search_country').addEventListener('click', function(e) {
+/* document.getElementById('region').addEventListener('click', function(e) {
     console.log('search_country');
 }); */
+
+/* for (const elt of options) {
+    elt.addEventListener('click', function(e) {
+        console.log('search_country');
+    });
+} */ 
+
+/* document.querySelector('option').addEventListener('click', function(e) {
+    console.log('search_country');
+}); */
+
+document.getElementById('region').addEventListener('change', function(e) {
+    console.log('selected option change');
+});
