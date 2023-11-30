@@ -2,10 +2,10 @@ const countries = document.querySelector('.countries');
 const options = document.querySelectorAll('options');
 
 fetch('data.json')
-   .then(response => response.json())
-   .then(data => {
+    .then(response => response.json())
+    .then(data => {
 
-        for(const country of data) {
+        for (const country of data) {
             const div_country = document.createElement('div');
             const img = document.createElement('img');
             const divImg = document.createElement('div');
@@ -34,22 +34,23 @@ fetch('data.json')
             countries.appendChild(div_country);
 
         }
-});
 
-/* document.getElementById('region').addEventListener('click', function(e) {
-    console.log('search_country');
-}); */
+        document.getElementById('region').addEventListener('change', function (e) {
 
-/* for (const elt of options) {
-    elt.addEventListener('click', function(e) {
-        console.log('search_country');
+            console.log(updateCountriesByRegion(data, e.target.value));
+
+        });
+
     });
-} */ 
 
-/* document.querySelector('option').addEventListener('click', function(e) {
-    console.log('search_country');
-}); */
+function updateCountriesByRegion(data, selectedRegion) {
 
-document.getElementById('region').addEventListener('change', function(e) {
-    console.log('selected option change');
-});
+    console.log("selected region: " + selectedRegion);
+
+    // const results = data.filter(country => country.region === selectedRegion || selectedRegion === 'Filter by Region');
+    const results = data.filter(country =>
+        country.region.trim().toLowerCase() === selectedRegion.trim().toLowerCase()
+    );
+    return results;
+}
+
