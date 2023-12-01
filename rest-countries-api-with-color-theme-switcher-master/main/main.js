@@ -72,8 +72,9 @@ function displayElements(data) {
 
 }
 
+let isDark = true;
 document.querySelector('.moon_icon').addEventListener('click', function () {
-    let isDark = true;
+    // isDark = !isDark;
     if(isDark) {
         applyDarkMode();
         isDark = false;
@@ -85,10 +86,13 @@ document.querySelector('.moon_icon').addEventListener('click', function () {
 });
 
 function applyDarkMode() {
-    document.body.style.backgroundColor = 'black';
-    applyCommonStylesElements(document.querySelectorAll('.country__div'), 'black', 'white');
+    document.body.style.backgroundColor = 'hsl(207, 26%, 17%)';
+    applyCommonStylesElements(document.querySelectorAll('.country__div'), 'hsl(207, 26%, 17%)', 'white');
     applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(207, 26%, 17%)', '');
-    
+    document.getElementById('region').style.backgroundColor = 'hsl(209, 23%, 22%)';
+    document.getElementById('region').style.color = 'white';
+    document.querySelector('.search_bar').style.backgroundColor = 'hsl(209, 23%, 22%)';
+    document.getElementById('search_country').style.backgroundColor = 'hsl(209, 23%, 22%)';
     /* document.querySelector('.country__div__text').style.color = 'white';
     document.querySelector('.country__region').style.color = 'white';
     document.querySelector('.country__population').style.color = 'white';
@@ -110,10 +114,13 @@ function applyCommonStylesElements(elements, backgroundColor, textColor) {
 }
 
 function applyLightMode() {
-    document.body.style.backgroundColor = 'white';
-}
 
-/* function changeBackgroundColor() {
-    document.body.style.backgroundColor = 'black';
-} */
+    document.querySelector('.body').style.backgroundColor = 'white';
+    applyCommonStylesElements(document.querySelectorAll('.country__div'), 'white', 'black');
+    applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(0, 0%, 98%)', '');
+    document.getElementById('region').style.backgroundColor = 'white';
+    document.getElementById('region').style.color = 'black';
+    document.querySelector('.search_bar').style.backgroundColor = 'white';
+    document.getElementById('search_country').style.backgroundColor = 'white';
+}
 
