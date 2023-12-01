@@ -49,6 +49,19 @@ function displayElements(data) {
         const population = document.createElement('p');
         const region = document.createElement('p');
         const capital = document.createElement('p');
+        /* const region = document.createElement('p');
+
+        // Create a span element for the word 'Region'
+        const regionLabel = document.createElement('span');
+        regionLabel.textContent = 'Region: ';
+        regionLabel.style.fontWeight = 'bold';
+
+        // Append the span element and the text content
+        region.appendChild(regionLabel);
+        region.appendChild(document.createTextNode(country.region));
+
+        // Append the 'region' element to its parent container
+        divText.appendChild(region); */
 
         population.textContent = 'Population: ' + country.population;
         region.textContent = 'Region: ' + country.region;
@@ -74,7 +87,8 @@ function displayElements(data) {
 
 let isDark = true;
 document.querySelector('.moon_icon').addEventListener('click', function () {
-    // isDark = !isDark;
+    // const backgroundColor = isDarkMode ? "hsl(228, 28%, 20%)" : "hsl(227, 47%, 96%)";
+    
     if(isDark) {
         applyDarkMode();
         isDark = false;
@@ -86,7 +100,7 @@ document.querySelector('.moon_icon').addEventListener('click', function () {
 });
 
 function applyDarkMode() {
-    document.body.style.backgroundColor = 'hsl(207, 26%, 17%)';
+    document.body.style.backgroundColor = 'black';
     applyCommonStylesElements(document.querySelectorAll('.country__div'), 'hsl(207, 26%, 17%)', 'white');
     applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(207, 26%, 17%)', '');
     document.getElementById('region').style.backgroundColor = 'hsl(209, 23%, 22%)';
@@ -97,7 +111,7 @@ function applyDarkMode() {
     document.querySelector('.country__region').style.color = 'white';
     document.querySelector('.country__population').style.color = 'white';
     document.querySelector('.country__capital').style.color = 'white'; */
-    /* div_country.className = 'country__div';
+    /* div_country.className = 'country__div'; 
         divText.className = 'country__div__text';
         h4.className = 'country__name__text';
         population.className = 'country__population';
