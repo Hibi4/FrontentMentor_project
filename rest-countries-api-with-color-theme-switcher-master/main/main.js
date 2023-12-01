@@ -15,7 +15,7 @@ fetch('data.json')
 
             displayElements(filterResults);
             
-        }); 
+        });
 
     });
 
@@ -53,6 +53,14 @@ function displayElements(data) {
         population.textContent = 'Population: ' + country.population;
         region.textContent = 'Region: ' + country.region;
         capital.textContent = 'Capital: ' + country.capital;
+        // add style to the div
+        div_country.className = 'country__div';
+        divText.className = 'country__div__text';
+        h4.className = 'country__name__text';
+        population.className = 'country__population';
+        region.className = 'country__region';
+        capital.className = 'country__capital';
+
         divText.appendChild(h4);
         divText.appendChild(population);
         divText.appendChild(region);
@@ -63,4 +71,49 @@ function displayElements(data) {
     }
 
 }
+
+document.querySelector('.moon_icon').addEventListener('click', function () {
+    let isDark = true;
+    if(isDark) {
+        applyDarkMode();
+        isDark = false;
+    } else {
+        applyLightMode();
+        isDark = true;
+    }
+    
+});
+
+function applyDarkMode() {
+    document.body.style.backgroundColor = 'black';
+    applyCommonStylesElements(document.querySelectorAll('.country__div'), 'black', 'white');
+    applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(207, 26%, 17%)', '');
+    
+    /* document.querySelector('.country__div__text').style.color = 'white';
+    document.querySelector('.country__region').style.color = 'white';
+    document.querySelector('.country__population').style.color = 'white';
+    document.querySelector('.country__capital').style.color = 'white'; */
+    /* div_country.className = 'country__div';
+        divText.className = 'country__div__text';
+        h4.className = 'country__name__text';
+        population.className = 'country__population';
+        region.className = 'country__region';
+        capital.className = 'country__capital'; */
+}
+
+function applyCommonStylesElements(elements, backgroundColor, textColor) {
+    for (const elt of elements) {
+        elt.style.backgroundColor = backgroundColor;
+        elt.style.color = textColor;
+    }
+    
+}
+
+function applyLightMode() {
+    document.body.style.backgroundColor = 'white';
+}
+
+/* function changeBackgroundColor() {
+    document.body.style.backgroundColor = 'black';
+} */
 
