@@ -1,5 +1,5 @@
 const countries = document.querySelector('.countries');
-const options = document.querySelectorAll('options');
+let isDark = true;
 
 fetch('data.json')
     .then(response => response.json())
@@ -24,7 +24,7 @@ function updateCountriesByRegion(data, selectedRegion) {
     console.log("selected region: " + selectedRegion);
 
     const results = data.filter(country =>
-        country.region.trim().toLowerCase() === selectedRegion.trim().toLowerCase()
+        country.region.trim().toLowerCase() === selectedRegion.trim().toLowerCase() || selectedRegion === 'Filter by Region'
     );
     return results;
 }
@@ -62,11 +62,15 @@ function displayElements(data) {
 
         // Append the 'region' element to its parent container
         divText.appendChild(region); */
-
+        // console.log(CountriesData(region, f, country.region));
+        const populationLabel = document.createElement('span');
+        populationLabel.textContent = 'Population: ';
+        
         population.textContent = 'Population: ' + country.population;
         region.textContent = 'Region: ' + country.region;
         capital.textContent = 'Capital: ' + country.capital;
-        // add style to the div
+        
+        
         div_country.className = 'country__div';
         divText.className = 'country__div__text';
         h4.className = 'country__name__text';
@@ -85,7 +89,7 @@ function displayElements(data) {
 
 }
 
-let isDark = true;
+
 document.querySelector('.moon_icon').addEventListener('click', function () {
     // const backgroundColor = isDarkMode ? "hsl(228, 28%, 20%)" : "hsl(227, 47%, 96%)";
     
@@ -137,4 +141,18 @@ function applyLightMode() {
     document.querySelector('.search_bar').style.backgroundColor = 'white';
     document.getElementById('search_country').style.backgroundColor = 'white';
 }
+
+/* const region = document.createElement('p');
+        // Create a span element for the word 'Region'
+        const regionLabel = document.createElement('span');
+        regionLabel.textContent = 'Region: ';
+        regionLabel.style.fontWeight = 'bold';
+
+        // Append the span element and the text content
+        region.appendChild(regionLabel);
+        region.appendChild(document.createTextNode(country.region));
+
+        // Append the 'region' element to its parent container
+        divText.appendChild(region); */
+
 
