@@ -155,7 +155,7 @@ function applyLightMode() {
         // Append the 'region' element to its parent container
         divText.appendChild(region); */
 
-        export default {
+     /* export default {
             data() {
                 return {
                     data: null,
@@ -172,6 +172,8 @@ function applyLightMode() {
                     console.error(err);
                 });
             },
-        };
+        }; */ 
+
+
 
 
