@@ -90,7 +90,7 @@ function displayElements(data) {
 }
 
 
-document.querySelector('.moon_icon').addEventListener('click', function () {
+document.querySelector('.header__dark-mode i').addEventListener('click', function () {
     // const backgroundColor = isDarkMode ? "hsl(228, 28%, 20%)" : "hsl(227, 47%, 96%)";
     
     if(isDark) {
@@ -154,5 +154,24 @@ function applyLightMode() {
 
         // Append the 'region' element to its parent container
         divText.appendChild(region); */
+
+        export default {
+            data() {
+                return {
+                    data: null,
+                };
+            },
+            mounted() {
+                fetch('data.json')
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log("data from json");
+                    // this.data = data;
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+            },
+        };
 
 
