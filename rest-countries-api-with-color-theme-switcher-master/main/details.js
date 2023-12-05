@@ -1,8 +1,67 @@
-console.log("From details.js")
-
 document.querySelector('.back__button').addEventListener('click', function () {
     console.log("From back button");
+    window.location.href = "index.html";
 });
+
+// add data to the details page according to the country name given in the url
+const queryString = window.location.href;
+/* const urlParams = new URLSearchParams(queryString);
+const countryName = urlParams.get('name'); */
+// console.log( "country__name: "+ window.location.href.split('?')[1].split('=')[1]);
+let numcode = window.location.href.split('?')[1].split('=')[1];
+console.log( "NumCode: "+numcode);
+
+
+// console.log(countryName);
+// Explain why I have used to fetch by numcode instead of name
+
+function displayCountryElement() {
+    
+}
+
+// fetch data from the api
+/*  fetch('https://restcountries.eu/rest/v2/name/' + countryName)
+    .then((res) => res.json())
+    .then((data) => {
+        console.log("display data from specific country");
+        console.log(data); */
+        // const countries = document.querySelector('.countries');
+        /* const div_country = document.createElement('div');
+        const img = document.createElement('img');
+        const divImg = document.createElement('div');
+        const divText = document.createElement('div');
+        img.src = data[0].flag;
+
+        img.alt = data[0].name;
+        img.className = 'country__div__img';
+        img.href = 'details.html';
+
+        divImg.appendChild(img);
+        div_country.appendChild(divImg);
+
+        const h4 = document.createElement('h4');
+        h4.textContent = data[0].name;
+        const population = document.createElement('p');
+        const region = document.createElement('p');
+        const capital = document.createElement('p');
+        const nativeName = document.createElement('p');
+        const subRegion = document.createElement('p');
+        const topLevelDomain = document.createElement('p');
+        const currencies = document.createElement('p');
+        const languages = document.createElement('p');
+        const borderCountries = document.createElement('p');
+        
+        const populationLabel = document.createElement('span');
+        populationLabel.textContent = 'Population: ';
+
+        population.textContent = 'Population: ' + data[0].population;
+        region.textContent = 'Region: ' + data[0].region;
+        capital.textContent = 'Capital: ' + data[0].capital;
+        nativeName.textContent = 'Native Name: ' + data[0].nativeName;
+        subRegion.textContent = 'Sub Region: ' + data[0].subregion;
+        topLevelDomain.textContent = 'Top Level Domain: ' + data[0].topLevelDomain;
+        currencies.textContent = 'Currencies: ' + data[0].currencies[0].name; 
+     });*/
 
 // Import Vue from the Vue.js library (make sure to include Vue in your project)
 /*     import Vue from 'vue';

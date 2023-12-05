@@ -41,7 +41,7 @@ function displayElements(data) {
 
         img.alt = country.name;
         img.className = 'country__div__img';
-        img.href = 'details.html';
+        // img.href = 'details.html';
         
         divImg.appendChild(img);
         div_country.appendChild(divImg);
@@ -87,6 +87,10 @@ function displayElements(data) {
         div_country.appendChild(divText);
         countries.appendChild(div_country);
 
+
+        div_country.addEventListener('click', function () {            
+            window.location.href = "details.html"+ "?numcode=" + country.numericCode;
+        });
     }
 
 }
