@@ -41,6 +41,8 @@ function displayElements(data) {
 
         img.alt = country.name;
         img.className = 'country__div__img';
+        img.href = 'details.html';
+        
         divImg.appendChild(img);
         div_country.appendChild(divImg);
 

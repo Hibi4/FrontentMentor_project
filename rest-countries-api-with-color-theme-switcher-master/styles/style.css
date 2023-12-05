@@ -80,5 +80,46 @@
     margin-left: 100px;
 }
 
+/* details.html css file tag */
 
+.nav__details {
+    margin-top: 95px;
+    margin-left: 15px;
+}
+
+.back__button {
+    width: 100px;
+    display: flex;
+    padding-top: 10px;
+    /* padding-bottom: 5px; */
+    border: solid 1px gainsboro;
+    border-radius: 5px;
+}
+
+.back__button .span__direction {
+    margin-left: 15px;
+}
+
+.main__details {
+    display: grid;
+    grid-template-columns: 400px auto;
+    margin-top: 50px;
+    gap: 50px;
+}
+
+.main__details .details__flag__div img {
+    width: 350px;
+    height: 300px;
+    background-size: cover;
+}
+
+.details__country__div {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    gap: 50px;
+}
+
+.details__country__div__second__part {
+    margin-top: 40px;
+}
 
