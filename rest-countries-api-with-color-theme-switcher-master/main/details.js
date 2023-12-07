@@ -16,16 +16,61 @@ console.log( "NumCode: "+numcode);
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        console.log(displayCountryElement(data));
+        console.log(filterResults(data));
+        displayCountryElement(filterResults(data));
     })
-    
 
-function displayCountryElement(data) {
-    // const results = data.filter(country => )
+
+function filterResults(data) {
     const results = data.filter(country => country.numericCode === numcode);
-    // console.log("data result :"+results);
     return results;
 }
+
+function displayCurrencies(currencies) {
+    for (const elt of currencies) {
+        return elt.name;
+    }
+}
+
+/* function displayLanguages(languages) {
+    for(const key in languages) {
+        if (jsonData.hasOwnProperty(key)) {
+        languagesSpan.innerHTML += jsonData[key].nativeName + ' ';
+      }
+        if(languages.hasOwnProperty(key)) {
+            // document.getElementById('country__languages').innerHTML += elt.name + ' ';
+            document.getElementById('country__languages').innerHTML += languages[key].name = ' ';
+        }
+    }
+} */
+
+function displayLanguages(languages) {
+    
+    for(const elt of languages) {
+        // return elt.name + ' ';
+        document.getElementById('country__languages').innerHTML += elt.name + ' ';
+    }
+    
+}
+
+function displayCountryElement(data) {
+    
+    for (const elt of data) {
+        
+        document.querySelector('.details__country__name').innerHTML = elt.name;
+        document.getElementById('country__name').innerHTML = elt.nativeName;
+        document.getElementById('country__population').innerHTML = elt.population;
+        document.getElementById('country__region').innerHTML = elt.region;
+        document.getElementById('country__sub__region').innerHTML = elt.subregion;
+        document.getElementById('country__capital').innerHTML = elt.capital;
+        document.getElementById('country__level__domain').innerHTML = elt.topLevelDomain;
+        document.getElementById('country__currentcies').innerHTML = displayCurrencies(elt.currencies);
+        // document.getElementById('country__languages').innerHTML = displayLanguages(elt.languages);
+        displayLanguages(elt.languages);
+    }
+}
+
+
 
 // fetch data from the api
 /*  fetch('https://restcountries.eu/rest/v2/name/' + countryName)

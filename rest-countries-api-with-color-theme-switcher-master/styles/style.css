@@ -117,10 +117,21 @@
 .details__country__div {
     display: grid;
     grid-template-columns: 150px 150px;
-    gap: 50px;
+    gap: 90px;
+}
+
+.details__country__div__first__part {
+    width: 200px;
+}
+
+.details__country__div__second__part {
+    width: 300px;
 }
 
 .details__country__div__second__part {
     margin-top: 40px;
 }
 
+.country__description__text {
+    font-weight: 700;
+}
