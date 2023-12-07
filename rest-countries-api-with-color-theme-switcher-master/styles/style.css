@@ -104,6 +104,7 @@
     display: grid;
     grid-template-columns: 400px auto;
     margin-top: 50px;
+    margin-left: 300px;
     gap: 50px;
 }
 
