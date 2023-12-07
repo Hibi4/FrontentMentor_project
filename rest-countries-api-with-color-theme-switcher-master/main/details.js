@@ -1,6 +1,6 @@
 document.querySelector('.back__button').addEventListener('click', function () {
     console.log("From back button");
-    window.location.href = "index.html";
+    window.location.href = "index.html"; 
 });
 
 // add data to the details page according to the country name given in the url
@@ -8,15 +8,23 @@ const queryString = window.location.href;
 /* const urlParams = new URLSearchParams(queryString);
 const countryName = urlParams.get('name'); */
 // console.log( "country__name: "+ window.location.href.split('?')[1].split('=')[1]);
-let numcode = window.location.href.split('?')[1].split('=')[1];
+const numcode = window.location.href.split('?')[1].split('=')[1];
 console.log( "NumCode: "+numcode);
 
-
-// console.log(countryName);
 // Explain why I have used to fetch by numcode instead of name
 
-function displayCountryElement() {
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(displayCountryElement(data));
+    })
     
+
+function displayCountryElement(data) {
+    // const results = data.filter(country => )
+    const results = data.filter(country => country.numericCode === numcode);
+    // console.log("data result :"+results);
+    return results;
 }
 
 // fetch data from the api

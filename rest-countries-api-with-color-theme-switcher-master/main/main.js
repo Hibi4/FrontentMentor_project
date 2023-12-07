@@ -1,5 +1,13 @@
 const countries = document.querySelector('.countries');
 let isDark = true;
+/* population.textContent = 'Population: ' + country.population;
+region.textContent = 'Region: ' + country.region;
+capital.textContent = 'Capital: ' + country.capital; */
+let population_text = 'Population: ';
+const region_text = 'Region';
+const capital_text = 'Capital';
+
+
 
 fetch('data.json')
     .then(response => response.json())
@@ -65,10 +73,12 @@ function displayElements(data) {
         // Append the 'region' element to its parent container
         divText.appendChild(region); */
         // console.log(CountriesData(region, f, country.region));
-        const populationLabel = document.createElement('span');
-        populationLabel.textContent = 'Population: ';
+        /* const populationLabel = document.createElement('span');
+        populationLabel.textContent = 'Population: '; */
         
-        population.textContent = 'Population: ' + country.population;
+        population.textContent = population_text + country.population;
+        // population.textContent = 'Population: ' + country.population;
+        
         region.textContent = 'Region: ' + country.region;
         capital.textContent = 'Capital: ' + country.capital;
         
