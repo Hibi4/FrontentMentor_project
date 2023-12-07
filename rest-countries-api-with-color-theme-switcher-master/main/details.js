@@ -47,16 +47,23 @@ function displayCurrencies(currencies) {
 function displayLanguages(languages) {
     
     for(const elt of languages) {
-        // return elt.name + ' ';
         document.getElementById('country__languages').innerHTML += elt.name + ' ';
     }
-    
+}
+
+function displayBordersCountries(countries) {
+    for (const border of countries) {
+        document.getElementById('border__countries').innerHTML += border + ' ';
+        //  console.log(border + ' ');
+        // document.getElementById('')
+    }
 }
 
 function displayCountryElement(data) {
     
     for (const elt of data) {
-        
+        // img.src = country.flag;
+        document.getElementById('coutry__flag').src = elt.flag;
         document.querySelector('.details__country__name').innerHTML = elt.name;
         document.getElementById('country__name').innerHTML = elt.nativeName;
         document.getElementById('country__population').innerHTML = elt.population;
@@ -65,8 +72,8 @@ function displayCountryElement(data) {
         document.getElementById('country__capital').innerHTML = elt.capital;
         document.getElementById('country__level__domain').innerHTML = elt.topLevelDomain;
         document.getElementById('country__currentcies').innerHTML = displayCurrencies(elt.currencies);
-        // document.getElementById('country__languages').innerHTML = displayLanguages(elt.languages);
         displayLanguages(elt.languages);
+        displayBordersCountries(elt.borders)
     }
 }
 
