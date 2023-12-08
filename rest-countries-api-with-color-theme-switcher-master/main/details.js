@@ -20,11 +20,22 @@ fetch('data.json')
         displayCountryElement(filterResults(data));
     })
 
+/**
+ * 
+ * @param {*} data 
+ * @returns 
+ */
 
 function filterResults(data) {
     const results = data.filter(country => country.numericCode === numcode);
     return results;
 }
+
+/**
+ * 
+ * @param {*} currencies 
+ * @returns 
+ */
 
 function displayCurrencies(currencies) {
     for (const elt of currencies) {
@@ -44,6 +55,10 @@ function displayCurrencies(currencies) {
     }
 } */
 
+/**
+ * 
+ * @param {*} languages 
+ */
 function displayLanguages(languages) {
     
     for(const elt of languages) {
@@ -51,13 +66,42 @@ function displayLanguages(languages) {
     }
 }
 
+/**
+ * This function displays the border countries of a given country.
+ * @param {*} countries border countries 
+ */
 function displayBordersCountries(countries) {
+    /* const totalProps = countries.reduce((a, obj) => a + Object.keys(obj).length, 0);
+    console.log("Array size: "+totalProps); */
+    // console.log("border countries: "+countries.length);
+    /* if(totalProps === 0) {
+        console.log("No border countries");
+    } */
+    
+    /* console.log("Border array size: "+countries.length);
+    if(isNaN(countries.length)) {
+        console.log("This country has no border countries")
+    } */
+
     for (const border of countries) {
-        document.getElementById('border__countries').innerHTML += border + ' ';
-        //  console.log(border + ' ');
-        // document.getElementById('')
+        const button = document.createElement('button');
+        button.textContent = border;
+        button.className = 'border__country';
+        /* button.addEventListener('click', function () {
+            console.log("From border button");
+            window.location.href = "details.html?numcode=" + border;
+        }); */
+       // document.getElementById('border__countries').innerHTML += border + ' ';
+        
+        document.getElementById('border__countries').appendChild(button);
+
     }
 }
+
+/**
+ * 
+ * @param {*} data 
+ */
 
 function displayCountryElement(data) {
     
@@ -73,7 +117,7 @@ function displayCountryElement(data) {
         document.getElementById('country__level__domain').innerHTML = elt.topLevelDomain;
         document.getElementById('country__currentcies').innerHTML = displayCurrencies(elt.currencies);
         displayLanguages(elt.languages);
-        displayBordersCountries(elt.borders)
+        displayBordersCountries(elt.borders);
     }
 }
 

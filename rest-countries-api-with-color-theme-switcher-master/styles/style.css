@@ -63,8 +63,8 @@
 
 .countries {
     display: grid;
-    /* grid-template-columns: repeat(4, 1fr); */
-    grid-template-columns: 250px 250px 250px 250px;
+    grid-template-columns: repeat(4, 250px); 
+    /* grid-template-columns: 250px 250px 250px 250px; */
     margin-top: 60px;
     gap: 60px;
 }
@@ -84,7 +84,7 @@
 
 .nav__details {
     margin-top: 95px;
-    margin-left: 15px;
+    margin-left: 300px;
 }
 
 .back__button {
@@ -94,6 +94,7 @@
     /* padding-bottom: 5px; */
     border: solid 1px gainsboro;
     border-radius: 5px;
+    
 }
 
 .back__button .span__direction {
@@ -135,3 +136,24 @@
 .country__description__text {
     font-weight: 700;
 }
+
+.border__country {
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+    border: solid 1px gainsboro;
+    border-radius: 5px;
+    color: black;
+}
+
+.country__description {
+    color: gray;
+}
+
+/* .back__button {
+    width: 100px;
+    display: flex;
+    padding-top: 10px;
+    border: solid 1px gainsboro;
+    border-radius: 5px;
+} */
