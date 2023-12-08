@@ -150,10 +150,19 @@
     color: gray;
 }
 
-/* .back__button {
-    width: 100px;
-    display: flex;
-    padding-top: 10px;
-    border: solid 1px gainsboro;
-    border-radius: 5px;
-} */
+.search_bar {
+    position: relative;
+}
+
+.search_bar button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    border: none;
+    background-color: black; 
+    color: white;
+}
+
+
