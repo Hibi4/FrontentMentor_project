@@ -1,6 +1,5 @@
 document.querySelector('.back__button').addEventListener('click', function () {
-    console.log("From back button");
-    window.location.href = "index.html"; 
+    window.location.href = "index.html";
 });
 
 // add data to the details page according to the country name given in the url
@@ -13,6 +12,10 @@ console.log( "NumCode: "+numcode);
 
 // Explain why I have used to fetch by numcode instead of name
 
+/**
+ * This code displays the returned data from filterResults function. 
+ */
+
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
@@ -21,9 +24,9 @@ fetch('data.json')
     })
 
 /**
- * 
- * @param {*} data 
- * @returns 
+ * This function filters and returns the only data of the given country.
+ * @param {*} data of the database 
+ * @returns the data of the country according to the numericCode 
  */
 
 function filterResults(data) {
@@ -32,8 +35,8 @@ function filterResults(data) {
 }
 
 /**
- * 
- * @param {*} currencies 
+ * This function displays the currencies used in a country. 
+ * @param {*} currencies of the country 
  * @returns 
  */
 
@@ -56,8 +59,8 @@ function displayCurrencies(currencies) {
 } */
 
 /**
- * 
- * @param {*} languages 
+ * This function displays the differents languages spoken in a country.
+ * @param {*} languages of the country 
  */
 function displayLanguages(languages) {
     
@@ -82,7 +85,7 @@ function displayBordersCountries(countries) {
     if(isNaN(countries.length)) {
         console.log("This country has no border countries")
     } */
-
+    console.log("countries: "+countries);
     for (const border of countries) {
         const button = document.createElement('button');
         button.textContent = border;
@@ -99,14 +102,13 @@ function displayBordersCountries(countries) {
 }
 
 /**
- * 
- * @param {*} data 
+ * This function displays the asked elements of a specifiec country. 
+ * @param {*} data of the given country 
  */
 
 function displayCountryElement(data) {
     
     for (const elt of data) {
-        // img.src = country.flag;
         document.getElementById('coutry__flag').src = elt.flag;
         document.querySelector('.details__country__name').innerHTML = elt.name;
         document.getElementById('country__name').innerHTML = elt.nativeName;
