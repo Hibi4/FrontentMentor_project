@@ -107,7 +107,6 @@ function displayElements(data) {
 
 
 document.querySelector('.header__dark-mode i').addEventListener('click', function () {
-    // const backgroundColor = isDarkMode ? "hsl(228, 28%, 20%)" : "hsl(227, 47%, 96%)";
     
     if(isDark) {
         applyDarkMode();
@@ -157,6 +156,17 @@ function applyLightMode() {
     document.querySelector('.search_bar').style.backgroundColor = 'white';
     document.getElementById('search_country').style.backgroundColor = 'white';
 }
+
+document.querySelector('.search_bar button').addEventListener('click', function () {
+    console.log("Click on the search icon");
+    console.log("Given country is: "+document.getElementById('search_country').value);
+    const filterResults = filterCountries(data, document.getElementById('search_country').value);
+    /* console.log(e.target.value);
+    const filterResults = filterCountries(data, e.target.value);
+    countries.innerHTML = '';
+
+    displayElements(filterResults); */
+});
 
 /* const region = document.createElement('p');
         // Create a span element for the word 'Region'
