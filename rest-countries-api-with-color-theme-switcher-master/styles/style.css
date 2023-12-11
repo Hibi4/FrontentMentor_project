@@ -5,11 +5,17 @@
 .header {
     background-color: #f1f1f1;
     display: flex;
+    padding-top: 25px;
 }
 
 .header .header__logo {
     width: 50%;
     padding-left: 40px;
+}
+
+.header .header__logo p {
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .header .header__dark-mode {
@@ -23,6 +29,10 @@
     /* width: 30px;
     height: 30px; */
     margin-right: 10px;
+}
+
+.header__dark-mode p {
+    font-weight: 700;
 }
 
 .nav {

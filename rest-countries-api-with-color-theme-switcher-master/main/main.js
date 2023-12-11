@@ -105,7 +105,6 @@ function displayElements(data) {
 
 }
 
-
 document.querySelector('.header__dark-mode i').addEventListener('click', function () {
     
     if(isDark) {
