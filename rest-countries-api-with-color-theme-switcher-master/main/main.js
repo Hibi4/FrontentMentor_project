@@ -3,13 +3,15 @@ let isDark = true;
 let population_text = 'Population: ';
 const region_text = 'Region';
 const capital_text = 'Capital';
+let dataResult = null;
 
-
-
+/**
+ * 
+ */
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-
+        dataResult = data;
         displayElements(data);
 
         document.getElementById('region').addEventListener('change', function (e) {
@@ -24,6 +26,13 @@ fetch('data.json')
 
     });
 
+    /**
+     * 
+     * @param {*} data 
+     * @param {*} selectedRegion 
+     * @returns 
+     */
+
 function updateCountriesByRegion(data, selectedRegion) {
 
     const results = data.filter(country =>
@@ -32,6 +41,36 @@ function updateCountriesByRegion(data, selectedRegion) {
     return results;
 }
 
+function searchCountrybyName(data, countryName) {
+    const results = data.filter(country =>
+        country.name.trim().toLowerCase() === countryName.trim().toLowerCase()
+    );
+    return results;   
+}
+
+document.querySelector('.search_bar button').addEventListener('click', function () {
+    console.log("Click on the search icon");
+    console.log("Given country is: "+document.getElementById('search_country').value);
+    const result = searchCountrybyName(dataResult, document.getElementById('search_country').value);
+    
+    console.log("Result of the country's name: "+result.length);
+
+    // call the function to display the result
+    /* const input_coutry = filterCountries(data, document.getElementById('search_country').value);
+    console.log("input__country: "+input_coutry); */
+
+
+    /* console.log(e.target.value);
+    const filterResults = filterCountries(data, e.target.value);
+    countries.innerHTML = '';
+
+    displayElements(filterResults); */
+});
+
+/**
+ * 
+ * @param {*} data 
+ */
 function displayElements(data) {
 
     for (const country of data) {
@@ -40,14 +79,18 @@ function displayElements(data) {
         const img = document.createElement('img');
         const divImg = document.createElement('div');
         const divText = document.createElement('div');
-        // img.src = country.flag;
+        img.src = country.flag;
 
-        // img.alt = country.name;
-        // img.className = 'country__div__img';
-        // img.href = 'details.html';
-        
-        // divImg.appendChild(img);
-        divImg.style.backgroundImage = 'url(' + country.flag + ')';
+        img.alt = country.name;
+        img.className = 'country__div__img';
+        img.href = 'details.html';
+
+        divImg.appendChild(img);
+
+        /* divImg.style.backgroundImage = 'url(' + country.flag + ')';
+        divImg.style.backgroundSize = 'cover';
+        divImg.style.backgroundRepeat = 'no-repeat';
+        divImg.style.backgroundPosition = 'center'; */
         div_country.appendChild(divImg);
 
         const h4 = document.createElement('h4');
@@ -101,6 +144,10 @@ function displayElements(data) {
 
 }
 
+/**
+ * 
+ */
+
 document.querySelector('.header__dark-mode i').addEventListener('click', function () {
     
     if(isDark) {
@@ -112,6 +159,10 @@ document.querySelector('.header__dark-mode i').addEventListener('click', functio
     }
     
 });
+
+/**
+ * 
+ */
 
 function applyDarkMode() {
     document.body.style.backgroundColor = 'black';
@@ -144,6 +195,10 @@ function applyCommonStylesElements(elements, backgroundColor, textColor) {
     
 }
 
+/**
+ * 
+ */
+
 function applyLightMode() {
     document.querySelector('.body').style.backgroundColor = 'white';
     applyCommonStylesElements(document.querySelectorAll('.country__div'), 'white', 'black');
@@ -156,16 +211,6 @@ function applyLightMode() {
     document.getElementById('search_country').style.backgroundColor = 'white';
 }
 
-document.querySelector('.search_bar button').addEventListener('click', function () {
-    console.log("Click on the search icon");
-    console.log("Given country is: "+document.getElementById('search_country').value);
-    const filterResults = filterCountries(data, document.getElementById('search_country').value);
-    /* console.log(e.target.value);
-    const filterResults = filterCountries(data, e.target.value);
-    countries.innerHTML = '';
-
-    displayElements(filterResults); */
-});
 
 /* const region = document.createElement('p');
         // Create a span element for the word 'Region'
