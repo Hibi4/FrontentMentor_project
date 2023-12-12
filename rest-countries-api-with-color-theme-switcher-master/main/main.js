@@ -52,8 +52,8 @@ document.querySelector('.search_bar button').addEventListener('click', function 
     console.log("Click on the search icon");
     console.log("Given country is: "+document.getElementById('search_country').value);
     const result = searchCountrybyName(dataResult, document.getElementById('search_country').value);
-    
-    console.log("Result of the country's name: "+result.length);
+
+    console.log("Result of the country's name: "+dataResult.length);
 
     // call the function to display the result
     /* const input_coutry = filterCountries(data, document.getElementById('search_country').value);
