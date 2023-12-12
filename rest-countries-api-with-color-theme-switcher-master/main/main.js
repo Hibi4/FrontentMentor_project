@@ -25,7 +25,7 @@ fetch('data.json')
     });
 
 function updateCountriesByRegion(data, selectedRegion) {
-    
+
     const results = data.filter(country =>
         country.region.trim().toLowerCase() === selectedRegion.trim().toLowerCase() || selectedRegion === 'Filter by Region'
     );
@@ -40,13 +40,14 @@ function displayElements(data) {
         const img = document.createElement('img');
         const divImg = document.createElement('div');
         const divText = document.createElement('div');
-        img.src = country.flag;
+        // img.src = country.flag;
 
-        img.alt = country.name;
-        img.className = 'country__div__img';
+        // img.alt = country.name;
+        // img.className = 'country__div__img';
         // img.href = 'details.html';
         
-        divImg.appendChild(img);
+        // divImg.appendChild(img);
+        divImg.style.backgroundImage = 'url(' + country.flag + ')';
         div_country.appendChild(divImg);
 
         const h4 = document.createElement('h4');
@@ -80,6 +81,7 @@ function displayElements(data) {
         
         div_country.className = 'country__div';
         divText.className = 'country__div__text';
+        divImg.className = 'country__div__img__flag';
         h4.className = 'country__name__text';
         population.className = 'country__population';
         region.className = 'country__region';

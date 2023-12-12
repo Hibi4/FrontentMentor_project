@@ -50,7 +50,7 @@
     margin-left: 53%;
     width: auto;
 }
-
+ 
 /* .country__name__text {
    margin-top: 20px;
    margin-bottom: 20px;
@@ -74,11 +74,17 @@
     gap: 60px;
 }
 
-.countries .country__div__img {
+.countries .country__div__img__flag {
     width: 250px;
     height: 250px;
     background-size: cover;
 }
+
+/* .countries .country__div__img {
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+} */
 
 .main {
     margin-left: 100px;
