@@ -1,8 +1,5 @@
 const countries = document.querySelector('.countries');
 let isDark = true;
-/* population.textContent = 'Population: ' + country.population;
-region.textContent = 'Region: ' + country.region;
-capital.textContent = 'Capital: ' + country.capital; */
 let population_text = 'Population: ';
 const region_text = 'Region';
 const capital_text = 'Capital';
@@ -28,9 +25,7 @@ fetch('data.json')
     });
 
 function updateCountriesByRegion(data, selectedRegion) {
-
-    console.log("selected region: " + selectedRegion);
-
+    
     const results = data.filter(country =>
         country.region.trim().toLowerCase() === selectedRegion.trim().toLowerCase() || selectedRegion === 'Filter by Region'
     );
@@ -97,7 +92,6 @@ function displayElements(data) {
         div_country.appendChild(divText);
         countries.appendChild(div_country);
 
-
         div_country.addEventListener('click', function () {            
             window.location.href = "details.html"+ "?numcode=" + country.numericCode;
         });
@@ -119,8 +113,11 @@ document.querySelector('.header__dark-mode i').addEventListener('click', functio
 
 function applyDarkMode() {
     document.body.style.backgroundColor = 'black';
+    // document.querySelector('.body').style.backgroundColor = 'black';
     applyCommonStylesElements(document.querySelectorAll('.country__div'), 'hsl(207, 26%, 17%)', 'white');
     applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(207, 26%, 17%)', '');
+    document.querySelector('.header').style.backgroundColor = 'black';
+    document.querySelector('.header').style.color = 'white';
     document.getElementById('region').style.backgroundColor = 'hsl(209, 23%, 22%)';
     document.getElementById('region').style.color = 'white';
     document.querySelector('.search_bar').style.backgroundColor = 'hsl(209, 23%, 22%)';
@@ -146,10 +143,11 @@ function applyCommonStylesElements(elements, backgroundColor, textColor) {
 }
 
 function applyLightMode() {
-
     document.querySelector('.body').style.backgroundColor = 'white';
     applyCommonStylesElements(document.querySelectorAll('.country__div'), 'white', 'black');
     applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(0, 0%, 98%)', '');
+    document.querySelector('.header').style.backgroundColor = 'hsl(0, 0%, 98%)';
+    document.querySelector('.header').style.color = 'black';
     document.getElementById('region').style.backgroundColor = 'white';
     document.getElementById('region').style.color = 'black';
     document.querySelector('.search_bar').style.backgroundColor = 'white';
