@@ -1,3 +1,5 @@
+let isDarkMode = true;
+
 document.querySelector('.back__button').addEventListener('click', function () {
     window.location.href = "index.html";
 });
@@ -123,7 +125,39 @@ function displayCountryElement(data) {
     }
 }
 
+document.getElementById('moon_icon_details').addEventListener('click', function () {
+    console.log("Click on the moon icon from details page");
+    
+    if(isDarkMode) {
+        applyDarkMode();
+        isDarkMode = false;
+    } else {
+        applyLightMode();
+        isDarkMode = true;
+    }
+    
+});
 
+function applyDarkMode() {
+    document.querySelector('.header').style.backgroundColor = 'hsl(207, 26%, 17%)';
+    document.body.style.backgroundColor = 'hsl(207, 26%, 17%)';
+    // applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(207, 26%, 17%)', '');
+    // country__description__text
+    applyCommonStylesElements(document.querySelectorAll('.country__description__text'), '', 'white');
+}
+
+function applyLightMode() {
+    document.querySelector('.header').style.backgroundColor = 'white';
+    document.body.style.backgroundColor = 'white';
+}
+
+function applyCommonStylesElements(elements, backgroundColor, textColor) {
+    for (const elt of elements) {
+        elt.style.backgroundColor = backgroundColor;
+        elt.style.color = textColor;
+    }
+    
+}
 
 // fetch data from the api
 /*  fetch('https://restcountries.eu/rest/v2/name/' + countryName)
