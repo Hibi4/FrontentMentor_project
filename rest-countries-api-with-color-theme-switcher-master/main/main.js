@@ -166,7 +166,6 @@ document.querySelector('.header__dark-mode i').addEventListener('click', functio
 
 function applyDarkMode() {
     document.body.style.backgroundColor = 'black';
-    // document.querySelector('.body').style.backgroundColor = 'black';
     applyCommonStylesElements(document.querySelectorAll('.country__div'), 'hsl(207, 26%, 17%)', 'white');
     applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(207, 26%, 17%)', '');
     document.querySelector('.header').style.backgroundColor = 'black';
@@ -175,6 +174,7 @@ function applyDarkMode() {
     document.getElementById('region').style.color = 'white';
     document.querySelector('.search_bar').style.backgroundColor = 'hsl(209, 23%, 22%)';
     document.getElementById('search_country').style.backgroundColor = 'hsl(209, 23%, 22%)';
+    document.querySelector('.search_bar button').style.backgroundColor = 'hsl(209, 23%, 22%)';
     /* document.querySelector('.country__div__text').style.color = 'white';
     document.querySelector('.country__region').style.color = 'white';
     document.querySelector('.country__population').style.color = 'white';
@@ -209,6 +209,7 @@ function applyLightMode() {
     document.getElementById('region').style.color = 'black';
     document.querySelector('.search_bar').style.backgroundColor = 'white';
     document.getElementById('search_country').style.backgroundColor = 'white';
+    document.querySelector('.search_bar button').style.backgroundColor = 'black';
 }
 
 

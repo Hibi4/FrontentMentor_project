@@ -137,9 +137,6 @@
 
 .details__country__div__second__part {
     width: 300px;
-}
-
-.details__country__div__second__part {
     margin-top: 40px;
 }
 
@@ -228,15 +225,20 @@ input[type="text"] {
         width: 40%;
     }
 
+    .search_bar {
+        width: 290px;
+    }
+
     .main {
         margin: 0 auto;
         margin-left: 12px;
     }
 
-    #search_country {
+
+    /* #search_country {
         width: 240px;
         padding: 10px;
-    }
+    .details__country__div
 
     .countries {
         display: block;
@@ -262,16 +264,12 @@ input[type="text"] {
 
     .details__country__div {
         display: block;
-    }
-
-    .details__country__div {
         margin-top: 15px;
     }
 
     .border__country {
         padding: 5px;
     }
-    
 
 
     /* 
