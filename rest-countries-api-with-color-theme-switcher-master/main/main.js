@@ -165,10 +165,10 @@ document.querySelector('.header__dark-mode i').addEventListener('click', functio
  */
 
 function applyDarkMode() {
-    document.body.style.backgroundColor = 'black';
+    document.body.style.backgroundColor = 'hsl(207, 26%, 17%)';
     applyCommonStylesElements(document.querySelectorAll('.country__div'), 'hsl(207, 26%, 17%)', 'white');
     applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(207, 26%, 17%)', '');
-    document.querySelector('.header').style.backgroundColor = 'black';
+    document.querySelector('.header').style.backgroundColor = 'hsl(207, 26%, 17%)';
     document.querySelector('.header').style.color = 'white';
     document.getElementById('region').style.backgroundColor = 'hsl(209, 23%, 22%)';
     document.getElementById('region').style.color = 'white';
