@@ -129,6 +129,7 @@
     display: grid;
     grid-template-columns: 150px 150px;
     gap: 90px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .details__country__div__first__part {

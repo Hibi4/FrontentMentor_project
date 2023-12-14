@@ -11,7 +11,7 @@ let dataResult = null;
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        dataResult = data;
+        // dataResult = data;
         displayElements(data);
 
         document.getElementById('region').addEventListener('change', function (e) {
@@ -22,6 +22,15 @@ fetch('data.json')
 
             displayElements(filterResults);
             
+        });
+
+        // 
+        document.querySelector('.search_bar button').addEventListener('click', function () {
+            console.log("Click on the search icon");
+            console.log("Given country is: "+document.getElementById('search_country').value);
+            const result = searchCountrybyName(data, document.getElementById('search_country').value);
+        
+            console.log("Result of the country's name: "+data);
         });
 
     });
@@ -45,16 +54,16 @@ function searchCountrybyName(data, countryName) {
     const results = data.filter(country =>
         country.name.trim().toLowerCase() === countryName.trim().toLowerCase()
     );
-    return results;   
+    return results;
 }
 
-document.querySelector('.search_bar button').addEventListener('click', function () {
+/* document.querySelector('.search_bar button').addEventListener('click', function () {
     console.log("Click on the search icon");
     console.log("Given country is: "+document.getElementById('search_country').value);
     const result = searchCountrybyName(dataResult, document.getElementById('search_country').value);
 
     console.log("Result of the country's name: "+dataResult.length);
-
+*/ 
     // call the function to display the result
     /* const input_coutry = filterCountries(data, document.getElementById('search_country').value);
     console.log("input__country: "+input_coutry); */
@@ -65,7 +74,7 @@ document.querySelector('.search_bar button').addEventListener('click', function 
     countries.innerHTML = '';
 
     displayElements(filterResults); */
-});
+// });
 
 /**
  * 
@@ -137,7 +146,7 @@ function displayElements(data) {
         div_country.appendChild(divText);
         countries.appendChild(div_country);
 
-        div_country.addEventListener('click', function () {            
+        div_country.addEventListener('click', function () {
             window.location.href = "details.html"+ "?numcode=" + country.numericCode;
         });
     }
