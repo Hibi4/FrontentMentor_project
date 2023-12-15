@@ -1,4 +1,5 @@
 let isDarkMode = true;
+let dataResult;
 
 const queryString = window.location.href;
 const numcode = window.location.href.split('?')[1].split('=')[1];
@@ -18,6 +19,7 @@ document.querySelector('.back__button').addEventListener('click', function () {
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
+        dataResult = data;
         displayCountryElement(filterResults(data));
     })
 
@@ -44,8 +46,6 @@ function displayCurrencies(currencies) {
     }
 }
 
-
-
 /**
  * This function displays the differents languages spoken in a country.
  * @param {*} languages of the country 
@@ -58,20 +58,44 @@ function displayLanguages(languages) {
 }
 
 /**
+ * This function filters data by numericCode.
+ * @param {*} data of the database
+ * @returns the data of the country according to the numericCode
+ */
+
+function filterResults(data) {
+    const results = data.filter(country => country.numericCode === numcode);
+    return results;
+}
+
+/**
+ * This function searches a country by alpha3Code.
+ * @param {*} data of the database
+ * @param {*} alpha3Code of the country
+ * @returns the country searched
+ */
+
+function searchCountry(data, alpha3Code) {
+    const result = data.filter(country => country.alpha3Code === alpha3Code);
+    return result;
+}
+
+
+/**
  * This function displays the border countries of a given country.
  * @param {*} countries border countries 
  */
 function displayBordersCountries(countries) {
     
-    console.log("countries: "+countries);
     for (const border of countries) {
+        const border_countries = searchCountry(dataResult, border);
         const button = document.createElement('button');
         button.textContent = border;
         button.className = 'border__country';
-        /* button.addEventListener('click', function () {
-            console.log("From border button");
-            window.location.href = "details.html?numcode=" + border;
-        }); */
+
+        button.addEventListener('click', function () {
+            window.location.href = "details.html?numcode=" + border_countries[0].numericCode;
+        });
        // document.getElementById('border__countries').innerHTML += border + ' ';
         
         document.getElementById('border__countries').appendChild(button);
@@ -136,6 +160,7 @@ function applyDarkMode() {
 /**
  * This function applies the light mode.
  */
+
 function applyLightMode() {
     document.querySelector('.header').style.backgroundColor = 'white';
     document.body.style.backgroundColor = 'white';
