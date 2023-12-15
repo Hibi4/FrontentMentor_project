@@ -76,11 +76,8 @@ fetch('data.json')
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
 For future projects, I would like to use some Front-end frameworks (react, angular, next js etc...) to solve the challenges. I think it will be a good opportunity to learn how to use them and not forgetting to use talwind css with one of this frameworks.
 
@@ -89,11 +86,8 @@ For future projects, I would like to use some Front-end frameworks (react, angul
 - [Example resource 1](https://www.w3schools.com/icons/fontawesome_icons_directional.asp) - This link helped me to find the direction icon for the "come back button". No picture was needed. Only one sigle code's line (fa-direction).
 - [Example resource 2](https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-moon-o) - This link helped me to find the direction icon for the "come back button". No picture was needed. Only one sigle code's line (fa-direction). 
 
-- [Example resource 2](https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-moon-o) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-- [Example resource 2](https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-moon-o) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/hibi4)
+- Website - [Hibi](https://www.your-site.com)
+- Frontend Mentor - [@hibi4](https://www.frontendmentor.io/profile/hibi4)
