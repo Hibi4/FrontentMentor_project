@@ -35,11 +35,6 @@
     padding-left: 90px;
 }
 
-#search_country {
-    width: 290px;
-    padding: 10px;
-}
-
 .regions {
     margin-left: 53%;
     width: auto;
@@ -71,13 +66,13 @@
     margin-left: 100px;
 }
 
-form {
+.search__form {
     color: #555;
     display: flex;
     padding: 5px;
     border: 1px solid currentColor;
     border-radius: 5px;
-    width : 15%;
+    width : 25%;
 }
 
 input[type="search"] {
@@ -94,7 +89,6 @@ input[type="search"] {
 }
 
 input[type="search"]::placeholder {
-    /* color: red; */ 
     color: grey;
 }
 
@@ -243,6 +237,15 @@ input[type="text"] {
         display: block;
         margin-top: 50px;
         padding-left: 12px;
+    }
+
+    .search__form {
+        color: #555;
+        display: flex;
+        padding: 5px;
+        border: 1px solid currentColor;
+        border-radius: 5px;
+        width : 75%;
     }
 
     .regions {

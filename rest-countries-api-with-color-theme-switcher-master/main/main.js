@@ -66,7 +66,7 @@ function displaycountry() {
 
 /**
  * This function handles the event of the search bar.
- * @param {*} event 
+ * @param {*} event
  */
 
 function handleEvent(event) {
@@ -76,7 +76,7 @@ function handleEvent(event) {
 }
 
 document.getElementById("search_country").addEventListener("keyup", handleEvent);
-document.querySelector(".search_bar button").addEventListener("click", handleEvent);
+document.querySelector(".search__form button").addEventListener("click", handleEvent);
 
 /**
  * This function displays the countries.
@@ -162,9 +162,9 @@ function applyDarkMode() {
     document.querySelector('.header').style.color = 'white';
     document.getElementById('region').style.backgroundColor = 'hsl(209, 23%, 22%)';
     document.getElementById('region').style.color = 'white';
-    document.querySelector('.search_bar').style.backgroundColor = 'hsl(209, 23%, 22%)';
-    document.getElementById('search_country').style.backgroundColor = 'hsl(209, 23%, 22%)';
-    document.querySelector('.search_bar button').style.backgroundColor = 'hsl(209, 23%, 22%)';
+    // document.querySelector('.search_bar').style.backgroundColor = 'hsl(209, 23%, 22%)';
+    // document.getElementById('search_country').style.backgroundColor = 'hsl(209, 23%, 22%)';
+    // document.querySelector('.search_bar button').style.backgroundColor = 'hsl(209, 23%, 22%)';
 }
 
 
@@ -180,9 +180,9 @@ function applyLightMode() {
     document.querySelector('.header').style.color = 'black';
     document.getElementById('region').style.backgroundColor = 'white';
     document.getElementById('region').style.color = 'black';
-    document.querySelector('.search_bar').style.backgroundColor = 'white';
-    document.getElementById('search_country').style.backgroundColor = 'white';
-    document.querySelector('.search_bar button').style.backgroundColor = 'black';
+    // document.querySelector('.search_bar').style.backgroundColor = 'white';
+    // document.getElementById('search_country').style.backgroundColor = 'white';
+    // document.querySelector('.search_bar button').style.backgroundColor = 'black';
 }
 
 /**
