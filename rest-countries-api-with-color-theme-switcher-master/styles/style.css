@@ -1,7 +1,3 @@
-/* .body {
-    width: 90%;
-}*/ 
-
 .header {
     background-color: hsl(0, 0%, 98%);
     display: flex;
@@ -26,8 +22,6 @@
 
 .header__dark-mode i {
     font-size: 30px;
-    /* width: 30px;
-    height: 30px; */
     margin-right: 10px;
 }
 
@@ -50,16 +44,9 @@
     margin-left: 53%;
     width: auto;
 }
- 
-/* .country__name__text {
-   margin-top: 20px;
-   margin-bottom: 20px;
-} */
 
 .country__div__text {
     padding-left: 15px;
-    /* padding-bottom: 15px;
-    padding-top: 10px; */
 } 
 
 .regions select {
@@ -73,12 +60,6 @@
     margin-top: 60px;
     gap: 60px;
 }
-
-/* .countries .country__div__img__flag {
-    width: 250px;
-    height: 250px;
-    background-size: cover;
-} */
 
 .countries .country__div__img {
     width: 250px;
@@ -101,7 +82,6 @@
     width: 100px;
     display: flex;
     padding-top: 10px;
-    /* padding-bottom: 5px; */
     border: solid 1px gainsboro;
     border-radius: 5px;
     
@@ -175,12 +155,6 @@
 
 input[type="text"] {
     margin-left: 50px;
-    /* margin-left: 50px; */
-    /* width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 5px;
-    outline: none; */ 
 }
 
 /* Phone config. width: 320 et height: 649 */ 
@@ -234,17 +208,6 @@ input[type="text"] {
         margin: 0 auto;
         margin-left: 12px;
     }
-
-
-    /* #search_country {
-        width: 240px;
-        padding: 10px;
-    .details__country__div
-
-    .countries {
-        display: block;
-        margin-left: 18px;
-    }
     
 
     /* page details */
@@ -272,54 +235,4 @@ input[type="text"] {
         padding: 5px;
     }
 
-
-    /* 
-    .main__details {
-        display: grid;
-        grid-template-columns: 400px auto;
-        margin-top: 50px;
-        margin-left: 300px;
-        gap: 50px;
-    }
-
-    .main__details .details__flag__div img {
-        width: 350px;
-        height: 300px;
-        background-size: cover;
-    }
-
-    .details__country__div {
-        display: grid;
-        grid-template-columns: 150px 150px;
-        gap: 90px;
-    }
-    */
-
-    /* 
-    .country__div__text {
-        padding-left: 15px;
-    } 
-
-    .regions select {
-        padding: 10px;
-        width: 200px;
-    }
-
-    .countries {
-        display: grid;
-        grid-template-columns: repeat(4, 250px); 
-        margin-top: 60px;
-        gap: 60px;
-    }
-
-    .countries .country__div__img {
-        width: 250px;
-        height: 250px;
-        background-size: cover;
-    }
-
-    .main {
-        margin-left: 100px;
-    }
- */
 }
