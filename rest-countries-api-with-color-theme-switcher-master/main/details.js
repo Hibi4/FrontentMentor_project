@@ -139,11 +139,12 @@ document.getElementById('moon_icon_details').addEventListener('click', function 
 });
 
 function applyDarkMode() {
-    document.querySelector('.header').style.backgroundColor = 'hsl(207, 26%, 17%)';
-    document.body.style.backgroundColor = 'hsl(207, 26%, 17%)';
+    document.body.style.backgroundColor = 'hsl(200, 15%, 8%)';
     document.querySelector('.header').style.backgroundColor = 'hsl(207, 26%, 17%)';
     document.querySelector('.header').style.color = 'white';
     document.querySelector('.details__country__name').style.color = 'white';
+    document.querySelector('.back__button').style.backgroundColor = 'hsl(207, 26%, 17%)';
+    document.querySelector('.back__button').style.color = 'white';
     // applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(207, 26%, 17%)', '');
     // country__description__text
     applyCommonStylesElements(document.querySelectorAll('.country__description__text'), '', 'white');
@@ -156,6 +157,8 @@ function applyLightMode() {
     document.querySelector('.header').style.color = 'black';
     document.querySelector('.details__country__name').style.color = 'black';
     applyCommonStylesElements(document.querySelectorAll('.country__description__text'), '', 'black');
+    document.querySelector('.back__button').style.backgroundColor = 'white';
+    document.querySelector('.back__button').style.color = 'black';
 }
 
 function applyCommonStylesElements(elements, backgroundColor, textColor) {
