@@ -4,11 +4,7 @@ document.querySelector('.back__button').addEventListener('click', function () {
     window.location.href = "index.html";
 });
 
-// add data to the details page according to the country name given in the url
 const queryString = window.location.href;
-/* const urlParams = new URLSearchParams(queryString);
-const countryName = urlParams.get('name'); */
-// console.log( "country__name: "+ window.location.href.split('?')[1].split('=')[1]);
 const numcode = window.location.href.split('?')[1].split('=')[1];
 console.log( "NumCode: "+numcode);
 
@@ -47,17 +43,7 @@ function displayCurrencies(currencies) {
     }
 }
 
-/* function displayLanguages(languages) {
-    for(const key in languages) {
-        if (jsonData.hasOwnProperty(key)) {
-        languagesSpan.innerHTML += jsonData[key].nativeName + ' ';
-      }
-        if(languages.hasOwnProperty(key)) {
-            // document.getElementById('country__languages').innerHTML += elt.name + ' ';
-            document.getElementById('country__languages').innerHTML += languages[key].name = ' ';
-        }
-    }
-} */
+
 
 /**
  * This function displays the differents languages spoken in a country.
@@ -75,17 +61,7 @@ function displayLanguages(languages) {
  * @param {*} countries border countries 
  */
 function displayBordersCountries(countries) {
-    /* const totalProps = countries.reduce((a, obj) => a + Object.keys(obj).length, 0);
-    console.log("Array size: "+totalProps); */
-    // console.log("border countries: "+countries.length);
-    /* if(totalProps === 0) {
-        console.log("No border countries");
-    } */
     
-    /* console.log("Border array size: "+countries.length);
-    if(isNaN(countries.length)) {
-        console.log("This country has no border countries")
-    } */
     console.log("countries: "+countries);
     for (const border of countries) {
         const button = document.createElement('button');
@@ -144,8 +120,6 @@ function applyDarkMode() {
     document.querySelector('.details__country__name').style.color = 'white';
     document.querySelector('.back__button').style.backgroundColor = 'hsl(207, 26%, 17%)';
     document.querySelector('.back__button').style.color = 'white';
-    // applyCommonStylesElements(document.querySelectorAll('.country__div__text'), 'hsl(207, 26%, 17%)', '');
-    // country__description__text
     applyCommonStylesElements(document.querySelectorAll('.country__description__text'), '', 'white');
 }
 
@@ -167,74 +141,3 @@ function applyCommonStylesElements(elements, backgroundColor, textColor) {
     }
     
 }
-
-// fetch data from the api
-/*  fetch('https://restcountries.eu/rest/v2/name/' + countryName)
-    .then((res) => res.json())
-    .then((data) => {
-        console.log("display data from specific country");
-        console.log(data); */
-        // const countries = document.querySelector('.countries');
-        /* const div_country = document.createElement('div');
-        const img = document.createElement('img');
-        const divImg = document.createElement('div');
-        const divText = document.createElement('div');
-        img.src = data[0].flag;
-
-        img.alt = data[0].name;
-        img.className = 'country__div__img';
-        img.href = 'details.html';
-
-        divImg.appendChild(img);
-        div_country.appendChild(divImg);
-
-        const h4 = document.createElement('h4');
-        h4.textContent = data[0].name;
-        const population = document.createElement('p');
-        const region = document.createElement('p');
-        const capital = document.createElement('p');
-        const nativeName = document.createElement('p');
-        const subRegion = document.createElement('p');
-        const topLevelDomain = document.createElement('p');
-        const currencies = document.createElement('p');
-        const languages = document.createElement('p');
-        const borderCountries = document.createElement('p');
-        
-        const populationLabel = document.createElement('span');
-        populationLabel.textContent = 'Population: ';
-
-        population.textContent = 'Population: ' + data[0].population;
-        region.textContent = 'Region: ' + data[0].region;
-        capital.textContent = 'Capital: ' + data[0].capital;
-        nativeName.textContent = 'Native Name: ' + data[0].nativeName;
-        subRegion.textContent = 'Sub Region: ' + data[0].subregion;
-        topLevelDomain.textContent = 'Top Level Domain: ' + data[0].topLevelDomain;
-        currencies.textContent = 'Currencies: ' + data[0].currencies[0].name; 
-     });*/
-
-// Import Vue from the Vue.js library (make sure to include Vue in your project)
-/*     import Vue from 'vue';
-
-    // Create a new Vue instance
-    const app = new Vue({
-        data() {
-            return {
-                data: null,
-            };
-        },
-        mounted() {
-            fetch('data.json')
-                .then((res) => res.json())
-                .then((data) => {
-                    // this.data = data;
-                    console.log(data);
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
-        },
-    });
-
-    // Mount the Vue instance on an element in your HTML
-    app.$mount('#app'); // Replace '#app' with the ID of the element where you want to mount your Vue app
- */
