@@ -12,7 +12,6 @@ const countryName = urlParams.get('name'); */
 const numcode = window.location.href.split('?')[1].split('=')[1];
 console.log( "NumCode: "+numcode);
 
-// Explain why I have used to fetch by numcode instead of name
 
 /**
  * This code displays the returned data from filterResults function. 

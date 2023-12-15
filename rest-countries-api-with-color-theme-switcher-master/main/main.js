@@ -62,13 +62,24 @@ function searchCountrybyName(data, countryName) {
     return results;
 }
 
-document.querySelector('.search_bar button').addEventListener('click', function () {
-    console.log("Click on the search icon");
+function displaycountry() {
+    /* const result = searchCountrybyName(dataResult, document.getElementById('search_country').value);
+    console.log("Result of the country's name: "+result.length);
+    countries.innerHTML = '';
+    displayElements(result); */
+    const result = searchCountrybyName(dataResult, document.getElementById('search_country').value);
+    countries.innerHTML = '';
+    displayElements(result);
+}
+
+/* document.querySelector('.search_bar button').addEventListener('click', function () {
+    displaycountry(); */ 
+    /* console.log("Click on the search icon");
     console.log("Given country is: "+document.getElementById('search_country').value);
     const result = searchCountrybyName(dataResult, document.getElementById('search_country').value);
     console.log("Result of the country's name: "+result.length);
     countries.innerHTML = '';
-    displayElements(result);
+    displayElements(result); */ 
 
     // call the function to display the result
     /* const input_coutry = filterCountries(data, document.getElementById('search_country').value);
@@ -80,7 +91,24 @@ document.querySelector('.search_bar button').addEventListener('click', function 
     countries.innerHTML = '';
 
     displayElements(filterResults); */
- });
+/*  });
+
+document.getElementById('search_country').addEventListener('keyup', function (event) {
+    if(event.key === 'Enter') {
+        // console.log("Enter key pressed");
+        displaycountry();
+    }
+}); */
+
+function handleEvent(event) {
+    if (event.key === "Enter" || event.type === "click") {
+      // displayelements();
+      displaycountry();
+    }
+}
+  
+document.getElementById("search_country").addEventListener("keyup", handleEvent);
+document.querySelector(".search_bar button").addEventListener("click", handleEvent);
 
 /**
  * 
