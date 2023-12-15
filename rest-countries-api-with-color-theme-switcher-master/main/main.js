@@ -15,7 +15,6 @@ fetch('data.json')
         dataResult = data;
         displayElements(data);
         document.getElementById('region').addEventListener('change', function (e) {
-
             
             const filterResults = updateCountriesByRegion(data, e.target.value);
             countries.innerHTML = '';
@@ -111,7 +110,6 @@ function displayElements(data) {
         region.textContent = 'Region: ' + country.region;
         capital.textContent = 'Capital: ' + country.capital;
         
-        
         div_country.className = 'country__div';
         divText.className = 'country__div__text';
         divImg.className = 'country__div__img__flag';
@@ -162,9 +160,8 @@ function applyDarkMode() {
     document.querySelector('.header').style.color = 'white';
     document.getElementById('region').style.backgroundColor = 'hsl(209, 23%, 22%)';
     document.getElementById('region').style.color = 'white';
-    // document.querySelector('.search_bar').style.backgroundColor = 'hsl(209, 23%, 22%)';
-    // document.getElementById('search_country').style.backgroundColor = 'hsl(209, 23%, 22%)';
-    // document.querySelector('.search_bar button').style.backgroundColor = 'hsl(209, 23%, 22%)';
+    document.querySelector('.search__form').style.backgroundColor = 'hsl(209, 23%, 22%)';
+    document.getElementById('search_country').style.backgroundColor = 'hsl(209, 23%, 22%)';
 }
 
 
@@ -180,9 +177,8 @@ function applyLightMode() {
     document.querySelector('.header').style.color = 'black';
     document.getElementById('region').style.backgroundColor = 'white';
     document.getElementById('region').style.color = 'black';
-    // document.querySelector('.search_bar').style.backgroundColor = 'white';
-    // document.getElementById('search_country').style.backgroundColor = 'white';
-    // document.querySelector('.search_bar button').style.backgroundColor = 'black';
+    document.querySelector('.search__form').style.backgroundColor = 'white';
+    document.getElementById('search_country').style.backgroundColor = 'white';
 }
 
 /**
