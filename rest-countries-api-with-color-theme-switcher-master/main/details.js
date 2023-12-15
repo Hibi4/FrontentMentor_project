@@ -1,27 +1,28 @@
 let isDarkMode = true;
 
+const queryString = window.location.href;
+const numcode = window.location.href.split('?')[1].split('=')[1];
+
+/**
+ * This code allows to go back to the main page.
+ */
 document.querySelector('.back__button').addEventListener('click', function () {
     window.location.href = "index.html";
 });
 
-const queryString = window.location.href;
-const numcode = window.location.href.split('?')[1].split('=')[1];
-console.log( "NumCode: "+numcode);
-
 
 /**
- * This code displays the returned data from filterResults function. 
+ * This function fetches the data from the database. 
  */
 
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        console.log(filterResults(data));
         displayCountryElement(filterResults(data));
     })
 
 /**
- * This function filters and returns the only data of the given country.
+ * This function filters and returns only the data of the given country.
  * @param {*} data of the database 
  * @returns the data of the country according to the numericCode 
  */
@@ -32,9 +33,9 @@ function filterResults(data) {
 }
 
 /**
- * This function displays the currencies used in a country. 
+ *  This function displays the currencies used in a country.
  * @param {*} currencies of the country 
- * @returns 
+ * @returns the currencies of the country
  */
 
 function displayCurrencies(currencies) {
@@ -80,7 +81,7 @@ function displayBordersCountries(countries) {
 
 /**
  * This function displays the asked elements of a specifiec country. 
- * @param {*} data of the given country 
+ * @param {*} data of the given country
  */
 
 function displayCountryElement(data) {
@@ -100,6 +101,10 @@ function displayCountryElement(data) {
     }
 }
 
+/**
+ * This code allows to switch between dark and light mode.
+ */
+
 document.getElementById('moon_icon_details').addEventListener('click', function () {
     console.log("Click on the moon icon from details page");
     
@@ -113,6 +118,11 @@ document.getElementById('moon_icon_details').addEventListener('click', function 
     
 });
 
+
+/**
+ * This function applies the dark mode.
+ */
+
 function applyDarkMode() {
     document.body.style.backgroundColor = 'hsl(200, 15%, 8%)';
     document.querySelector('.header').style.backgroundColor = 'hsl(207, 26%, 17%)';
@@ -123,6 +133,9 @@ function applyDarkMode() {
     applyCommonStylesElements(document.querySelectorAll('.country__description__text'), '', 'white');
 }
 
+/**
+ * This function applies the light mode.
+ */
 function applyLightMode() {
     document.querySelector('.header').style.backgroundColor = 'white';
     document.body.style.backgroundColor = 'white';
@@ -133,6 +146,13 @@ function applyLightMode() {
     document.querySelector('.back__button').style.backgroundColor = 'white';
     document.querySelector('.back__button').style.color = 'black';
 }
+
+/**
+ * This function applies the same styles to the given elements.
+ * @param {*} elements of the DOM
+ * @param {*} backgroundColor to apply to the elements
+ * @param {*} textColor to apply to the elements
+ */
 
 function applyCommonStylesElements(elements, backgroundColor, textColor) {
     for (const elt of elements) {

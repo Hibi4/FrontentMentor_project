@@ -6,7 +6,7 @@ const capital_text = 'Capital';
 let dataResult;
 
 /**
- * 
+ * This function fetches the data from the database.
  */
 
 fetch('data.json')
@@ -26,7 +26,7 @@ fetch('data.json')
     });
 
     /**
-     * 
+     * This function filters the countries by region.
      * @param {*} data 
      * @param {*} selectedRegion 
      * @returns 
@@ -41,10 +41,10 @@ function updateCountriesByRegion(data, selectedRegion) {
 }
 
 /**
- * 
- * @param {*} data 
- * @param {*} countryName 
- * @returns 
+ * This function searches a country by name.
+ * @param {*} data of the database
+ * @param {*} countryName of the country
+ * @returns the country searched
  */
 
 function searchCountrybyName(data, countryName) {
@@ -54,24 +54,33 @@ function searchCountrybyName(data, countryName) {
     return results;
 }
 
+/**
+ * This function displays the country searched.
+ */
+
 function displaycountry() {
     const result = searchCountrybyName(dataResult, document.getElementById('search_country').value);
     countries.innerHTML = '';
     displayElements(result);
 }
 
+/**
+ * This function handles the event of the search bar.
+ * @param {*} event 
+ */
+
 function handleEvent(event) {
     if (event.key === "Enter" || event.type === "click") {
       displaycountry();
     }
 }
-  
+
 document.getElementById("search_country").addEventListener("keyup", handleEvent);
 document.querySelector(".search_bar button").addEventListener("click", handleEvent);
 
 /**
- * 
- * @param {*} data 
+ * This function displays the countries.
+ * @param {*} data of the database
  */
 
 function displayElements(data) {
@@ -126,7 +135,7 @@ function displayElements(data) {
 }
 
 /**
- * 
+ * This function handles the event of the dark mode.
  */
 
 document.querySelector('.header__dark-mode i').addEventListener('click', function () {
@@ -142,7 +151,7 @@ document.querySelector('.header__dark-mode i').addEventListener('click', functio
 });
 
 /**
- * 
+ * This function applies the dark mode.
  */
 
 function applyDarkMode() {
@@ -158,16 +167,9 @@ function applyDarkMode() {
     document.querySelector('.search_bar button').style.backgroundColor = 'hsl(209, 23%, 22%)';
 }
 
-function applyCommonStylesElements(elements, backgroundColor, textColor) {
-    for (const elt of elements) {
-        elt.style.backgroundColor = backgroundColor;
-        elt.style.color = textColor;
-    }
-    
-}
 
 /**
- * 
+ * This function applies the light mode.
  */
 
 function applyLightMode() {
@@ -181,6 +183,21 @@ function applyLightMode() {
     document.querySelector('.search_bar').style.backgroundColor = 'white';
     document.getElementById('search_country').style.backgroundColor = 'white';
     document.querySelector('.search_bar button').style.backgroundColor = 'black';
+}
+
+/**
+ * This function applies the same styles to the given elements.
+ * @param {*} elements of the DOM
+ * @param {*} backgroundColor to apply to the elements
+ * @param {*} textColor to apply to the elements
+ */
+
+function applyCommonStylesElements(elements, backgroundColor, textColor) {
+    for (const elt of elements) {
+        elt.style.backgroundColor = backgroundColor;
+        elt.style.color = textColor;
+    }
+    
 }
 
 
