@@ -3,7 +3,7 @@ let isDark = true;
 let population_text = 'Population: ';
 const region_text = 'Region';
 const capital_text = 'Capital';
-let dataResult = null;
+let dataResult;
 
 /**
  * 
@@ -11,27 +11,26 @@ let dataResult = null;
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        // dataResult = data;
+        dataResult = data;
         displayElements(data);
-
+        // console.log("Result (1) of the country's name: "+data);
         document.getElementById('region').addEventListener('change', function (e) {
 
-            console.log(updateCountriesByRegion(data, e.target.value));
+            // console.log(updateCountriesByRegion(data, e.target.value));
             const filterResults = updateCountriesByRegion(data, e.target.value);
             countries.innerHTML = '';
-
             displayElements(filterResults);
             
         });
 
         // 
-        document.querySelector('.search_bar button').addEventListener('click', function () {
+        /* document.querySelector('.search_bar button').addEventListener('click', function () {
             console.log("Click on the search icon");
             console.log("Given country is: "+document.getElementById('search_country').value);
             const result = searchCountrybyName(data, document.getElementById('search_country').value);
         
-            console.log("Result of the country's name: "+data);
-        });
+            console.log("Result of the country's name: "+result.length);
+        }); */ 
 
     });
 
@@ -50,6 +49,12 @@ function updateCountriesByRegion(data, selectedRegion) {
     return results;
 }
 
+/**
+ * 
+ * @param {*} data 
+ * @param {*} countryName 
+ * @returns 
+ */
 function searchCountrybyName(data, countryName) {
     const results = data.filter(country =>
         country.name.trim().toLowerCase() === countryName.trim().toLowerCase()
@@ -57,16 +62,17 @@ function searchCountrybyName(data, countryName) {
     return results;
 }
 
-/* document.querySelector('.search_bar button').addEventListener('click', function () {
+document.querySelector('.search_bar button').addEventListener('click', function () {
     console.log("Click on the search icon");
     console.log("Given country is: "+document.getElementById('search_country').value);
     const result = searchCountrybyName(dataResult, document.getElementById('search_country').value);
+    console.log("Result of the country's name: "+result.length);
+    countries.innerHTML = '';
+    displayElements(result);
 
-    console.log("Result of the country's name: "+dataResult.length);
-*/ 
     // call the function to display the result
     /* const input_coutry = filterCountries(data, document.getElementById('search_country').value);
-    console.log("input__country: "+input_coutry); */
+    console.log("input__country: "+input_coutry);
 
 
     /* console.log(e.target.value);
@@ -74,7 +80,7 @@ function searchCountrybyName(data, countryName) {
     countries.innerHTML = '';
 
     displayElements(filterResults); */
-// });
+ });
 
 /**
  * 
