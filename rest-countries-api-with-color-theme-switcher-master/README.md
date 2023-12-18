@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github URL](https://github.com/Hibi4/FrontentMentor_project.git)
-- Live Site URL: [Live site URL](https://your-live-site-url.com)
+- Live Site URL: [Live site URL](https://rest-countries-api-project-ruby.vercel.app/)
 
 ## My process
 
@@ -89,5 +89,5 @@ For future projects, I would like to use some Front-end frameworks (react, angul
 
 ## Author
 
-- Website - [Hibi](https://www.your-site.com)
+- Website - [Hibi](https://rest-countries-api-project-ruby.vercel.app/)
 - Frontend Mentor - [@hibi4](https://www.frontendmentor.io/profile/hibi4)
