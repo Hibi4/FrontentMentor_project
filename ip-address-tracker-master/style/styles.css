@@ -44,11 +44,11 @@
     gap: 80px;
     height: 180px;
     margin-left: 10em;
-    
     width: 75%;
     padding: 30px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    border: black 1px solid;
 }
 
 .localisation div:nth-child(1) {
@@ -67,11 +67,7 @@
     color: hsl(0, 0%, 59%);
 }
 
-/* .main {
-    background-color: black;
-    height: 100%;
-    width: 100%;
-} */ 
+#map { height: 380px; }
 
 
 

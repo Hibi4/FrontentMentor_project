@@ -10,6 +10,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="style/styles.css">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" /> -->
+  <!-- Leaflet CSS file -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  <!-- Leaflet JS file -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script> -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
   <title>Frontend Mentor | IP Address Tracker</title>
 </head>
 
@@ -28,11 +39,11 @@
   <div class="localisation">
     <div class="data__text ip__address">
       <h4>IP Address</h4>
-      <p id="ip__address">129.235.11.54</p>
+      <p id="ip__address"></p>
     </div>
     <div class="data__text location">
       <h4>Location</h4>
-      <p id="location">Conakry la vaisselle</p>
+      <p id="location"></p>
     </div>
     <div class="data__text timezone">
       <h4>Timezone</h4>
@@ -44,9 +55,9 @@
     </div>
   </div>
   <main class="main">
-    
+    <div id="map"></div>
   </main>
-
+  <script src="main/main.js"></script>
     <!-- <div class="input__data">
       <input type="text" placeholder="Search for any IP address or domain" />
       <button>></button> -->
