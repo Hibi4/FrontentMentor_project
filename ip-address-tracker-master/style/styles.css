@@ -9,9 +9,9 @@
 
 .header {
     width: 100%;
-    height: 200px;
+    height: 240px;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 25px;
     background: linear-gradient(to right, hsl(228, 45%, 44%) 30%, hsl(251, 84%, 54%));
     color: white;
 }
@@ -30,6 +30,10 @@
     margin-bottom: 10px;
 }
 
+input[type="text"] {
+    padding: 25px;
+}
+
 #valid__data button {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -40,14 +44,16 @@
 
 .localisation {
     display: grid;
+    position: absolute;
+    z-index: 9999;
+    background-color: white;
     grid-template-columns: repeat(4, 180px);
     gap: 80px;
     height: 180px;
     margin-left: 10em;
     width: 75%;
     padding: 30px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
     border: black 1px solid;
 }
 
@@ -67,7 +73,7 @@
     color: hsl(0, 0%, 59%);
 }
 
-#map { height: 380px; }
+#map { height: 500px; }
 
 
 
