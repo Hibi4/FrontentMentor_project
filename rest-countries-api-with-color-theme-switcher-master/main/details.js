@@ -58,17 +58,6 @@ function displayLanguages(languages) {
 }
 
 /**
- * This function filters data by numericCode.
- * @param {*} data of the database
- * @returns the data of the country according to the numericCode
- */
-
-function filterResults(data) {
-    const results = data.filter(country => country.numericCode === numcode);
-    return results;
-}
-
-/**
  * This function searches a country by alpha3Code.
  * @param {*} data of the database
  * @param {*} alpha3Code of the country
@@ -96,7 +85,6 @@ function displayBordersCountries(countries) {
         button.addEventListener('click', function () {
             window.location.href = "details.html?numcode=" + border_countries[0].numericCode;
         });
-       // document.getElementById('border__countries').innerHTML += border + ' ';
         
         document.getElementById('border__countries').appendChild(button);
 
