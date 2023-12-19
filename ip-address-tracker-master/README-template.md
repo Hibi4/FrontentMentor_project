@@ -97,6 +97,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 https://getbootstrap.com/docs/4.1/components/input-group/ 
 https://zestedesavoir.com/tutoriels/4053/leaflet-utilisation-avancee/creation-dune-interface-personnalisee/ 
+https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient 
+https://leafletjs.com/examples/quick-start/ 
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
