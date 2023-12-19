@@ -17,19 +17,43 @@
 
   <header class="header">
     <h3>IP Address Tracker </h3>
-    <div class="input__data">
-      <input type="text" placeholder="Search for any IP address or domain" />
-      <button>></button>
+    <div class="input-group mb-3 input__data">
+      <input type="text" class="form-control" placeholder="Search for any IP address or domain">
+      <div class="input-group-prepend" id="valid__data">
+        <button class="input-group-text"> > </button>
+      </div>
     </div>
-
   </header>
-  <main>
 
+  <div class="localisation">
+    <div class="data__text ip__address">
+      <h4>IP Address</h4>
+      <p id="ip__address">129.235.11.54</p>
+    </div>
+    <div class="data__text location">
+      <h4>Location</h4>
+      <p id="location">Conakry la vaisselle</p>
+    </div>
+    <div class="data__text timezone">
+      <h4>Timezone</h4>
+      <p id="timezone"></p>
+    </div>
+    <div class="data__text isp">
+      <h4>ISP</h4>
+      <p id="isp"></p>
+    </div>
+  </div>
+  <main class="main">
+    
   </main>
+
+    <!-- <div class="input__data">
+      <input type="text" placeholder="Search for any IP address or domain" />
+      <button>></button> -->
 
   <!-- IP Address Tracker
 
-  Search for any IP address or domain
+  
 
   IP Address
   Location
@@ -37,10 +61,10 @@
     UTC --> <!-- add offset value dynamically using the API -->
   <!-- ISP -->
 
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Hibi</a>.
-  </div>
+  </div> -->
 </body>
 
 </html>
