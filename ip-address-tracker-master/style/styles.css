@@ -73,4 +73,9 @@ input[type="text"] {
     color: hsl(0, 0%, 59%);
 }
 
+.data__text p {
+    color: black;
+    font-size: 20px;
+}
+
 #map { height: 500px; }
