@@ -9,14 +9,17 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 // marker icon 
 // var marker = L.marker([50.93404006958008, 4.327270030975342]).addTo(map);
 
-L.marker([50.93404006958008,4.327270030975342]).addTo(map)
+// L.marker([50.93404006958008,4.327270030975342]).addTo(map)
 
 const geoIpifyUrl = "https://geo.ipify.org/api/v2/country";
 const geoIpifyKey = "";
 const ipStackUrl = "http://api.ipstack.com";
 const ipStackKey = "";
 
-// Define a function to get the IP address from geo.ipify API
+/**
+ * 
+ * @returns 
+ */
 async function getIpFromGeoIpify() { 
   const response = await fetch(`${geoIpifyUrl}?apiKey=${geoIpifyKey}`);
   if(response.ok) { 
@@ -31,7 +34,11 @@ async function getIpFromGeoIpify() {
   }
 }
 
-// Define a function to get the location data from ipstack API
+/**
+ * 
+ * @param {*} ip 
+ * @returns 
+ */
 async function getLocationFromIpStack(ip) { 
   const response = await fetch(`${ipStackUrl}/${ip}?access_key=${ipStackKey}`);
   if(response.ok) {
@@ -42,21 +49,22 @@ async function getLocationFromIpStack(ip) {
   }
 }
 
-// Define a function to use both APIs and log the results
-async function useBothApis() { 
+/**
+ * 
+ */
+async function displayDataOnMap() { 
   try { 
     const ip = await getIpFromGeoIpify(); 
 
-    const location = await getLocationFromIpStack(ip); 
-    console.log(`IP address: ${ip}`);
-    console.log(`Location: ${location.latitude}`);
-    // , ${location.region_name}, ${location.city}
+    // const location = await getLocationFromIpStack(ip); 
+
+    // L.marker([location.latitude, location.longitude]).addTo(map);
   } catch (error) {
     console.error(error);
   }
 }
 
-useBothApis();
+displayDataOnMap();
 
 // fetch('https://api.openweathermap.org/data/2.5/weather?q=Leuven&appid=2b5b0b7b0b0b0b0b0b0b0b0b0b0b0b0b')
 
