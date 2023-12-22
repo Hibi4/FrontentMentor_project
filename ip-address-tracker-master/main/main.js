@@ -10,8 +10,8 @@ const ipStackUrl = "http://api.ipstack.com";
 const ipStackKey = "";
 
 /**
- * 
- * @returns 
+ * This function will return the ip address from the location.
+ * @returns the ip address
  */
 async function getIpFromGeoIpify() { 
   const response = await fetch(`${geoIpifyUrl}?apiKey=${geoIpifyKey}`);
@@ -28,9 +28,9 @@ async function getIpFromGeoIpify() {
 }
 
 /**
- * 
- * @param {*} ip 
- * @returns 
+ * This function will get the location from the ip address and return ipstack's data.
+ * @param {*} ip address from the location
+ * @returns ipstack's data
  */
 async function getLocationFromIpStack(ip) { 
   const response = await fetch(`${ipStackUrl}/${ip}?access_key=${ipStackKey}`);
@@ -43,7 +43,7 @@ async function getLocationFromIpStack(ip) {
 }
 
 /**
- * 
+ * This function will display the data and a marker on the map .
  */
 async function displayDataOnMap() { 
   try { 
