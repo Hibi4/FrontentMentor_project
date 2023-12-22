@@ -48,8 +48,8 @@ async function getLocationFromIpStack(ip) {
 async function displayDataOnMap() { 
   try { 
     const ip = await getIpFromGeoIpify(); 
-    // const location = await getLocationFromIpStack(ip); 
-    // L.marker([location.latitude, location.longitude]).addTo(map);
+    /* const location = await getLocationFromIpStack(ip); 
+    L.marker([location.latitude, location.longitude]).addTo(map); */
   } catch (error) {
     console.error(error);
   }

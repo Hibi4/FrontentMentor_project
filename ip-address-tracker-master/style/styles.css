@@ -85,6 +85,10 @@ input[type="text"] {
         width: 100%;
     }
 
+    .header {
+        background: linear-gradient(to right, hsl(228, 45%, 44%) 5%, hsl(251, 84%, 54%));
+    }
+
     .input__data {
         width: 90%;
     }
@@ -96,56 +100,46 @@ input[type="text"] {
 
     .localisation {
         display: block;
-        /* position: absolute;
-        z-index: 9999;
-        background-color: white;
-        grid-template-columns: repeat(2, 180px);
-        gap: 80px; */
-
         height: auto;
-        /* margin: 0 auto; */
         margin-left: 50px;
         padding: 5px;
-        /* margin-left: 15px;
-        width: 75%;
-        padding: 30px;
-        border-radius: 10px;
-        border: black 1px solid; */
     }
 
     .data__text h4 {
         font-size: 14px;
     }
 
+    .data__text p {
+        margin-top: -5px;
+    }
+
     .localisation div:nth-child(1) {
         border-right:none;
+    }
+
+    .data__text p {
+        color: black;
+        font-size: 20px;
+        margin-top: -5px;
     }
     
     .localisation div:nth-child(2) {
         border-right: none;
+        margin-top: -10px;
     }
     
     .localisation div:nth-child(3) {
         border-right: none;
+        margin-top: -10px;
+    }
+
+    .localisation div:nth-child(4) {
+        margin-top: -15px;
+        margin-bottom: -10px;
     }
 
 
 
-    /* 
-    .localisation {
-        display: grid;
-        position: absolute;
-        z-index: 9999;
-        background-color: white;
-        grid-template-columns: repeat(4, 180px);
-        gap: 80px;
-        height: 180px;
-        margin-left: 10em;
-        width: 75%;
-        padding: 30px;
-        border-radius: 10px;
-        border: black 1px solid;
-    }
-    */ 
+
 
 }
