@@ -2,5 +2,40 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style> */ 
-  .attribution { font-size: 11px; text-align: center; }
-  .attribution a { color: hsl(228, 45%, 44%); }
+.attribution { 
+    font-size: 11px; text-align: center; 
+    display: none;
+}
+  .attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.body {
+    background-color: hsl(232, 25%, 94%);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.main {
+    width: 70%;
+    height: 450px;
+    margin: 0 auto;
+}
+
+.main__div {
+    background-color: white;
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.img__profile {
+    width: 40px;
+}
+
+.span__reply {
+    float: right;
+}
+
+
+
+
