@@ -16,8 +16,10 @@
 }
 
 .main {
-    width: 70%;
-    height: 450px;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    width: 50%;
+   /*  height: 450px; */
     margin: 0 auto;
 }
 
@@ -35,6 +37,19 @@
 .span__reply {
     float: right;
 }
+
+.name {
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.main__div__reply {
+    margin-left: 50px;
+    width: 94%;
+}
+
+
 
 
 

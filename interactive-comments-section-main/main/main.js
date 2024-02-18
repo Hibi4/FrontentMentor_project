@@ -92,8 +92,9 @@ fetch('data.json')
           div__main.appendChild(div__content);
           div__main.appendChild(div__reply);
           main.appendChild(div__main);
+
           comment.replies.forEach(reply => {
-            // elements for replies
+            
             const div__reply__main = document.createElement('div');
             const div__reply__content = document.createElement('div');
             const p__reply__content = document.createElement('p');
@@ -113,9 +114,7 @@ fetch('data.json')
             const spanText__reply = document.createElement('span');
             const r__reply = document.createElement('div');
             
-
-            console.log("- Content: ", reply.content);
-            div__reply__main.className = 'main__div';
+            div__reply__main.className = 'main__div main__div__reply';
             img__reply__profile.className = 'img__profile';
             img__reply__profile.alt = 'profile image';
             date__reply__created.className = 'date__created';
