@@ -37,7 +37,6 @@ fetch('data.json')
           const div__main = document.createElement('div');
           const div__content = document.createElement('div');
           const p__content = document.createElement('p');
-          const div__scor = document.createElement('div');
           const img__profile = document.createElement('img');
           const date__created = document.createElement('span');
           const div__reply = document.createElement('div');
@@ -45,8 +44,9 @@ fetch('data.json')
           const span__header = document.createElement('span');
           const span__reply = document.createElement('span');
           const img__reply = document.createElement('img');
-          const p__header = document.createElement('p');
           const name = document.createElement('span');
+          const div__comment = document.createElement('div');
+          const p__header = document.createElement('p');
           const plusImg = document.createElement('img');
           const minusImg = document.createElement('img');
           const score = document.createElement('p');
@@ -59,18 +59,31 @@ fetch('data.json')
           img__profile.alt = 'profile image';
           
           date__created.className = 'date__created';
-          div__score.className = 'div__score';
           span__reply.className = 'span__reply';
           img__reply.src = '../images/icon-reply.svg';
           name.className = 'name';
+
+          // div__score 
+          div__score.className = 'div__score';
+          // div__score.style.backgroundColor = 'hsl(211, 10%, 45%)';
+          plusImg.src = '../images/icon-plus.svg';
+          plusImg.className = 'plus__icon__image';
+          score.innerHTML = comment.score;
+          score.className = 'score';
+          
+          console.log('Comment.score: '+comment.score);
+          minusImg.src = '../images/icon-minus.svg';
+          minusImg.className = 'minus__icon__image';
+          div__score.appendChild(plusImg);
+          div__score.appendChild(score);
+          div__score.appendChild(minusImg);
+
 
           img__profile.src = comment.user.image.png;
           date__created.innerHTML = comment.createdAt;
           name.innerHTML = comment.user.username;
           p__content.innerHTML = comment.content;
           spanText.innerHTML = ' Reply';
-
-          
 
           /* 
           div__main.appendChild(div__scor);
@@ -91,7 +104,13 @@ fetch('data.json')
 
           div__main.appendChild(div__content);
           div__main.appendChild(div__reply);
-          main.appendChild(div__main);
+
+          // div__comment
+          div__comment.className = 'div__comment';
+          div__comment.appendChild(div__score);
+          div__comment.appendChild(div__main);
+
+          main.appendChild(div__comment);
 
           comment.replies.forEach(reply => {
             
@@ -140,6 +159,7 @@ fetch('data.json')
             div__reply__content.appendChild(p__reply__content);
             div__reply__main.appendChild(div__reply__content);
             div__reply__main.appendChild(div__reply__reply);
+
             main.appendChild(div__reply__main); 
 
             /* img__profile.src = reply.user.image.png;
