@@ -104,8 +104,17 @@
 }
 
 .main__div__reply {
-    margin-left: 50px;
+    margin-left: 100px;
     width: 94%;
+}
+
+.div__score__reply {
+    margin-left: 50px;
+    background-color: hsl(239, 57%, 85%);
+    margin-top: 15px;
+    height: 130px;
+    width: 40px;
+    border-radius: 10px;
 }
 
 
