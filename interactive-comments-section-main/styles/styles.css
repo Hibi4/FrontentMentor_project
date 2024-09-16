@@ -166,7 +166,14 @@
     margin: 15px 10px;
     color: red;
     font-weight: bold;
+    cursor: pointer;
 }
+
+.textarea {
+    padding: 12px;
+    font-size: medium;
+}
+
 
 
 

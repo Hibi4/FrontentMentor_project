@@ -1,4 +1,29 @@
 const main = document.querySelector('.main');
+// const container = document.querySelector('.container');
+
+function loadDeleteModal() {
+  fetch('deleteModal.html')
+    .then(response => response.text())
+    .then(data => {
+      const modalContainer = document.getElementById('modal-container');
+      if (modalContainer) {
+        console.log('Modal container found');
+        modalContainer.innerHTML = data;
+          
+          // After inserting the modal HTML, initialize the Bootstrap modal
+        const modal = new bootstrap.Modal(document.querySelector('.modal'));
+        modal.show();
+        // modalContainer.innerHTML = data;
+        
+        // After inserting the modal HTML, initialize the Bootstrap modal
+        /* const modal = new bootstrap.Modal(document.querySelector('.modal'));
+        modal.show(); */ 
+      } else {
+        console.error('Modal container not found');
+      }
+    })
+    .catch(error => console.error('Error loading modal:', error));
+}
 
 /* 
 fetch('data.json')
@@ -21,6 +46,9 @@ function displayElements(data) {
         console.log(date__created);
     }
 } */
+
+
+
 fetch('data.json')
   .then(response => response.json())
   .then(data => {
@@ -271,9 +299,6 @@ function displayElements(data) {
   console.log("\n");
   //   });
 
-
-
-
 }
 
 // build the comment section
@@ -310,4 +335,17 @@ function commentSection() {
   div__main.appendChild(div__button);
   main.appendChild(div__main);
 
+
+  document.querySelector('.span__delete__icon').addEventListener('click', function() {
+    console.log('Delete icon clicked');
+    loadDeleteModal();
+  });
 }
+
+
+// append the modal after clincking the reply button
+/* function appendModal() {
+  const modal = document.createElement('div');
+  modal.className = 'modal';
+  document.body.appendChild(modal);
+}*/ 
