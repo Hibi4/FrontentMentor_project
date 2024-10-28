@@ -1,5 +1,25 @@
-/* #space__word__style {
+body {
+    background-image: url('../assets/home/background-home-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Pour s'assurer que l'image couvre tout l'écran */
+    min-height: 100vh; /* Pour garantir que le body prend toute la hauteur de la fenêtre */
+
+}
+
+.main__content {
+    color: whitesmoke;
+    font-weight: 400;
+    margin-left: 50px;
+    width: 50%;
+}
+
+.space__description {
+    /* width: 40%; */ 
     font-size: 2em;
+    color: grey;
+}
+
+#space__word__style {
+    font-size: 260px;
     color: #ffff;
-    font-weight: bold;
-} */ 
+}
