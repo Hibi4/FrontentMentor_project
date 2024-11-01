@@ -1,21 +1,67 @@
 body {
     background-image: url('../assets/home/background-home-desktop.jpg');
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
     background-size: cover; /* Pour s'assurer que l'image couvre tout l'écran */
     min-height: 100vh; /* Pour garantir que le body prend toute la hauteur de la fenêtre */
 
 }
 
-.main__content {
+.navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 25px 10px;    
+}
+
+.navbar-collapse ul li {
+    margin: 5px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 2rem;
+}
+
+.main__content h1 {
+    color: gray;
+    font-size: 25px;
+    /* font-size: 3em;
+    color: #ffff;
+    font-weight: 700;
+    margin-top: 50px; */ 
+}
+
+/* .main__content {
     color: whitesmoke;
     font-weight: 400;
     margin-left: 50px;
     width: 50%;
+} */ 
+
+/* .image__explore__div {
+    font-size: 15px;
+    background-color: yellow;
+    height: 160px;
+    width: 180px;
+    border-radius: 50%;
+ } */ 
+ .image__explore__div {
+    margin-top: 200px;
+    margin-left: 300px;
+    font-size: 30px;
+    background-color: white;
+    height: 260px;
+    width: 250px;
+    border-radius: 50%;
+    /* Ajout des propriétés pour centrer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Pour centrer le texte si multilignes */
 }
 
 .space__description {
     /* width: 40%; */ 
-    font-size: 2em;
+    font-size: 25px;
     color: grey;
 }
 
