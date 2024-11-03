@@ -16,50 +16,72 @@ console.log("js file");
         // this.className+= " active";
         this.classList.add("active");
     });
-} */ 
-    fetch('header.html')
+} */
+    // Variable globale pour suivre si le header a déjà été initialisé
+let headerInitialized = false;
+
+fetch('header.html')
     .then(response => response.text())
     .then(data => {
         document.querySelector('.header').innerHTML = data;
-        
-        setTimeout(() => {
+
+        // Attendre que le DOM soit complètement chargé
+        if (!headerInitialized) {
+            headerInitialized = true;
+            
             const navbar_nav = document.getElementById("navbarNav");
             const nav__items = navbar_nav.querySelectorAll(".nav-item");
-            
-            // Ajouter la classe active au premier élément par défaut si nécessaire
-            if (!document.querySelector('.nav-item.active')) {
-                nav__items[0].classList.add('active');
-            }
+
+            // Définir la page active basée sur l'URL actuelle
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             
             nav__items.forEach(item => {
+                const link = item.querySelector('a');
+                const href = link.getAttribute('href');
+                
+                if (href.includes(currentPage)) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+
+                // Gestionnaire d'événements pour les clics
                 item.addEventListener("click", function(e) {
                     e.preventDefault();
                     console.log("Click on link");
+
+                    // Supprimer active de tous les éléments
+                    nav__items.forEach(navItem => {
+                        navItem.classList.remove('active');
+                    });
+
+                    // Ajouter active au lien cliqué
+                    this.classList.add('active');
                     
-                    let current = document.querySelector(".nav-item.active");
-                    if (current) {
-                        current.classList.remove("active");
+                    // Navigation
+                    const newHref = this.querySelector('a').getAttribute('href');
+                    if (newHref && newHref !== '#') {
+                        window.location.href = newHref;
+                        
                     }
-                    
-                    this.classList.add("active");
                 });
             });
-        }, 100);
+        }
     })
     .catch(error => console.error('Erreur lors du chargement du header:', error));
-  /*  const navbar_nav = document.getElementById("navbarNav");
-    const nav__items = navbar_nav.querySelectorAll(".nav-item"); // Changement ici : .nav-link -> .nav-item
-    
-    nav__items.forEach(item => {
-        item.addEventListener("click", function() {
-            console.log("Click on link");
-            let current = document.querySelector(".nav-item.active");
-            if (current) {
-                current.classList.remove("active");
-            }
-            this.classList.add("active");
-        });
-    }); */
+/*  const navbar_nav = document.getElementById("navbarNav");
+  const nav__items = navbar_nav.querySelectorAll(".nav-item"); // Changement ici : .nav-link -> .nav-item
+  
+  nav__items.forEach(item => {
+      item.addEventListener("click", function() {
+          console.log("Click on link");
+          let current = document.querySelector(".nav-item.active");
+          if (current) {
+              current.classList.remove("active");
+          }
+          this.classList.add("active");
+      });
+  }); */
 
 /* var header = document.getElementById("myDIV");
 var btns = header.getElementsByClassName("btn");
