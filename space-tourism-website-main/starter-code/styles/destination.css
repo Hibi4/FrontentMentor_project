@@ -1,0 +1,42 @@
+body {
+    background-image: url('../assets/destination/background-destination-desktop.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover; /* Pour s'assurer que l'image couvre tout l'écran */
+    min-height: 100vh; /* Pour garantir que le body prend toute la hauteur de la fenêtre */
+    margin-left: 30px;
+}
+
+.grid__content__destination {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    /* grid-template-columns: repeat(50%, 2); */ 
+}
+
+.logo__image__destination {
+    height: 80px;
+    width: 80px;
+    object-fit: fill;
+}
+
+.nav__destination {
+    display: flex; /* Utiliser flexbox pour aligner les éléments */
+    justify-content: space-around;/* Espacement égal entre les éléments */
+    align-items: center; /* Centrer verticalement */
+    background-color: transparent; /* Fond semi-transparent */
+    padding: 15px 30px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */ /* Ombre pour un effet de profondeur */
+}
+
+.nav__link {
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Supprimer le soulignement par défaut */
+    font-size: 1.2rem; /* Taille de police */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition douce pour les effets */
+}
+
+.nav__link.active {
+    border-bottom: 2px solid #ffcc00; /* Soulignement pour l'élément actif */
+    padding-bottom: 5px; /* Espacement pour le soulignement */
+}

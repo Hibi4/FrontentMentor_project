@@ -1,0 +1,8 @@
+body {
+    background-image: url('../assets/home/background-home-desktop.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover; /* Pour s'assurer que l'image couvre tout l'écran */
+    min-height: 100vh; /* Pour garantir que le body prend toute la hauteur de la fenêtre */
+    margin-left: 30px;
+
+}
