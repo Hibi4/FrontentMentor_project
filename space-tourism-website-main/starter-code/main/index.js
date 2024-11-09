@@ -1,4 +1,4 @@
-fetch('data.json')
+/* fetch('data.json')
     .then(response => response.json())
     .then(data => {
         displayElements(data.destinations);
@@ -32,5 +32,5 @@ fetch('data.json')
             const nameElement = document.createElement('div'); // Créer un nouvel élément div pour chaque nom
             nameElement.textContent = destination.name; // Utiliser 'destination.name' pour obtenir le nom
             namesContainer.appendChild(nameElement); // Ajouter le nouvel élément au conteneur
-        }); */ 
-    }
+        }); 
+    } */ 

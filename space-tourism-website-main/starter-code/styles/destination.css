@@ -40,3 +40,33 @@ body {
     border-bottom: 2px solid #ffcc00; /* Soulignement pour l'élément actif */
     padding-bottom: 5px; /* Espacement pour le soulignement */
 }
+
+.container {
+    color: white;
+    display: grid;
+    grid-template-rows: 60px auto auto auto;
+    text-align: left;
+}
+
+.destinationName {
+    padding-top: 25px;
+}
+
+.destinationDescription {
+    margin-top: 45px;
+}
+
+.destinationDescription p {
+    font-size: 20px;
+    color: gray;
+}
+
+.line__tag {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.feet {
+    display: grid;
+    grid-template-columns: auto auto;
+}
