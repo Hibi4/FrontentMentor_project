@@ -8,10 +8,10 @@ body {
 
 .technology__main {
     display: grid;
-    grid-template-columns: 80px 1fr 150px;
+    grid-template-columns: 80px 50rem 150px;
     margin-top: 65px;
     margin-left: 20rem;
-    gap: 5rem;
+    
 }
 
 .technology__title {
@@ -29,17 +29,28 @@ body {
     font-size: 25px;
 }
 
+#technology__image {
+    height: 25rem;
+    margin-right: 35px;
+}
+
 .data__number {
     color: white;
     height: 60px;
     width: 60px;
     background-color: transparent;
     border-radius: 50%;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
     font-size: 25px;
     cursor: pointer;
+}
+
+.activeLink {
+    background-color: white;
+    color: black;
 }
 

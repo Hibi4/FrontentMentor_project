@@ -12,27 +12,29 @@ fetch('data.json')
         const technology__name = document.getElementById('technology__name');
         const technology__description = document.getElementById('technology__description');
         const technology__image = document.getElementById('technology__image');
-
-
+        
         links.forEach((technology, index) => {
+            
             technology.addEventListener('click', function () {
+                
+                links.forEach(d => d.classList.remove('activeLink'));
+                
+                this.classList.add('activeLink');
                 const tech = technologies[index];
                 if(tech) {
                     console.log(tech.name);
                     technology__name.innerText = tech.name;
                     technology__description.innerText = tech.description;
+                    technology__image.src = tech.images.portrait;
                 }
-                
-                /* if(tech) {
-                    console.log(tech.name);
-                    console.log("Click on logs" );
-                } else {
-                    console.log("in de else method")
-                } */ 
 
             })
+            
         })
+        
     }
+
+    
 /* 
 const steps = document.querySelectorAll(".step");
 
