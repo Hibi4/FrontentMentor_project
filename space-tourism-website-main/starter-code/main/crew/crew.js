@@ -18,7 +18,7 @@ fetch('data.json')
                     name.textContent = crewMember.name
                     rol.textContent = crewMember.role; // Afficher le nom de l'équipage
                     bio.textContent = crewMember.bio;
-                    console.log(crewMember.bio);
+                    // display image 
                 }
             })
             
