@@ -11,6 +11,7 @@ fetch('data.json')
         const rol = document.getElementById('crew__role');
         const name = document.getElementById('crew__name');
         const bio = document.getElementById('crew__bio');
+        const image = document.getElementById('crew__picture');
         steps.forEach((step, index) => {
             step.addEventListener('click', function () {
                 const crewMember = crew[index]; // Obtenir le membre de l'équipage correspondant à l'index
@@ -19,6 +20,7 @@ fetch('data.json')
                     rol.textContent = crewMember.role; // Afficher le nom de l'équipage
                     bio.textContent = crewMember.bio;
                     // display image 
+                    image.src = crewMember.images.png;
                 }
             })
             

@@ -46,7 +46,20 @@ body {
     font-size: 25px;
   }
 
-  /* 
-  const rol = document.getElementById('crew__role');
-        const name = document.getElementById('crew__name');
-        const bio = document.getElementById('crew__bio'); */ 
+.crew__information {
+  margin-top: 126px;
+  width: 50%;
+}
+
+.crew__main {
+  display: grid;
+  grid-template-columns: auto auto;
+  
+}
+
+#crew__picture {
+  margin-top: 80px;
+  height: 30em;
+  margin-right: 175px;
+  
+}
