@@ -48,6 +48,11 @@ body {
     text-align: left;
 }
 
+.logo__image__destination img {
+    margin-left: 130px;
+    margin-top: 35px;
+}
+
 .destinationName {
     padding-top: 25px;
 }
@@ -69,4 +74,12 @@ body {
 .feet {
     display: grid;
     grid-template-columns: auto auto;
+}
+
+.distance__tag p {
+    color: grey;
+}
+
+.travel__tag p {
+    color: grey;
 }

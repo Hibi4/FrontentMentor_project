@@ -30,23 +30,44 @@ fetch('data.json')
                 e.preventDefault(); // Empêcher le comportement par défaut du lien
                 // const destinationName = this.getAttribute('data-destination'); // Obtenir le nom de la destination
                 // displayMessage(destinationName); // Appeler la fonction pour afficher le message 
-
+                const destinationName = this.getAttribute('data-destination'); // Obtenir le nom de la destination
+                //document.getElementById('destinationName').appendChild(destinationName);
+                console.log(`Clicked on: ${destinationName}`); // Vérifiez si le clic est enregistré
+                displayDescription(destinationName, destinations); // Appeler la fonction pour afficher la description
             }); 
             
         });
        
     }
 
-    function displayMessage(destination) {
+    function displayDescription(destinationName, destinations) {
+        const messageContainer = document.querySelector('#destinationDescription'); // Utiliser le conteneur pour afficher la description
+        const messageName = document.getElementById('destinationName');
+        const distance = document.getElementById('distance');
+        const travel = document.getElementById('travel');
+        const image = document.getElementById('logo__image__destination');
+        messageName.textContent = destinationName;
+        //document.getElementById('destinationName').appendChild(destinationName);
+        const destination = destinations.find(dest => dest.name === destinationName); // Trouver la destination correspondante
+        
+        if (destination) {
+            messageContainer.textContent = destination.description; // Afficher la description
+            distance.textContent = destination.distance;
+            travel.textContent = destination.travel;
+            image.src = destination.images.png;
+            // console.log(destination.image[0]);
+        } else {
+            messageContainer.textContent = `Aucune description trouvée pour ${destinationName}.`; // Message par défaut
+        }
+    }
+    /* function displayMessage(destination) {
         const messageContainer = document.querySelector(".container");
         messageContainer.textContent = `Bienvenue sur ${destination}`; // Afficher le message 
         console.log(`Bienvenue sur ${destination}`);
         // display here the elements from json file 
         const nameDestination = document.createElement('h2');
         
-
-        
-    }
+    } */ 
 /*  document.getElementById('moon__link').innerHTML = destinations[0].name;
         document.getElementById('moon__link').style.textTransform = 'uppercase';
         
