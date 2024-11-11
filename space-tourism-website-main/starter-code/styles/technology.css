@@ -54,3 +54,12 @@ body {
     color: black;
 }
 
+#page__number__technology {
+    color: grey;
+}
+
+#technology__title__texte {
+    margin-left: 22rem;
+    color: white;
+}
+
