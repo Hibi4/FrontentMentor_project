@@ -3,7 +3,9 @@ console.log("moon js file");
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        displayElements(data.destinations);
+        displayElementsT(data.destinations);
+        // afficher l'élément 0 par défaut
+        setActiveDestination (0, data.destinations);
     })
     .catch(error => console.log("Erreur lors du chargement de données: "+error));
 
@@ -24,20 +26,76 @@ fetch('data.json')
         // const links = document.querySelectorAll('.nav__link');
         // const links = document.getElementsByClassName(".nav__link");
         const links = document.querySelectorAll(".nav__link");
-        links.forEach(link => {
+        links.forEach((link) => {
             link.addEventListener('click', function(e) {
                 
                 e.preventDefault(); // Empêcher le comportement par défaut du lien
                 // const destinationName = this.getAttribute('data-destination'); // Obtenir le nom de la destination
                 // displayMessage(destinationName); // Appeler la fonction pour afficher le message 
                 const destinationName = this.getAttribute('data-destination'); // Obtenir le nom de la destination
-                //document.getElementById('destinationName').appendChild(destinationName);
+                // document.getElementById('destinationName').appendChild(destinationName);
+                document.getElementById('destinationName').textContent= destinationName;
                 console.log(`Clicked on: ${destinationName}`); // Vérifiez si le clic est enregistré
                 displayDescription(destinationName, destinations); // Appeler la fonction pour afficher la description
             }); 
             
         });
        
+    }
+
+    function displayElementsT(destinations) {
+        const namesContainer = document.querySelector(".nav__destination");
+        namesContainer.innerHTML = '';
+        
+        destinations.forEach(destination => {
+            const nameElement = document.createElement('a'); // Créer un lien
+            nameElement.textContent = destination.name; // Utiliser 'destination.name'
+            nameElement.href = "#"; // Empêcher le rechargement de la page
+            nameElement.classList.add('nav__link'); // Ajouter une classe pour le style
+            nameElement.setAttribute('data-destination', destination.name); // Ajouter un attribut de données
+            namesContainer.appendChild(nameElement); // Ajouter le nouvel élément au conteneur
+        });
+
+        const links = document.querySelectorAll(".nav__link");
+        links.forEach((link, index) => {
+            link.addEventListener('click', function(e) {
+                
+                e.preventDefault(); // Empêcher le comportement par défaut du lien
+                console.log("link click");
+                // const destinationName = this.getAttribute('data-destination'); // Obtenir le nom de la destination
+                setActiveDestination(index, destinations);
+                // displayDescription(destinationName, destinations); // Appeler la fonction pour afficher la description
+            }); 
+            
+        });
+    }
+
+    function setActiveDestination(index, destinations) {
+        const messageContainer = document.querySelector('#destinationDescription'); // Utiliser le conteneur pour afficher la description
+        const messageName = document.getElementById('destinationName');
+
+        const distance = document.getElementById('distance');
+        const travel = document.getElementById('travel');
+        const image = document.getElementById('logo__image__destination');
+        const namesContainer = document.querySelector(".nav__destination");
+        // namesContainer.innerHTML = '';
+        // messageName.textContent = destinationName;
+
+
+        // const destination = destinations.find(dest => dest.name === destinationName); // Trouver la destination correspondante
+        const destination = destinations[index]; 
+        if (destination) {
+            messageName.textContent = destination.name;
+            messageContainer.textContent = destination.description; // Afficher la description
+            distance.textContent = destination.distance;
+            travel.textContent = destination.travel;
+            image.src = destination.images.png;
+            // console.log(destination.image[0]);
+        } else {
+            messageContainer.textContent = `Aucune description trouvée pour ${destinationName}.`; // Message par défaut
+        }
+
+
     }
 
     function displayDescription(destinationName, destinations) {
@@ -48,7 +106,7 @@ fetch('data.json')
         const image = document.getElementById('logo__image__destination');
         messageName.textContent = destinationName;
         //document.getElementById('destinationName').appendChild(destinationName);
-        const destination = destinations.find(dest => dest.name === destinationName); // Trouver la destination correspondante
+        const destination = destinations.find(dest => dest.name === destinationName);
         
         if (destination) {
             messageContainer.textContent = destination.description; // Afficher la description
