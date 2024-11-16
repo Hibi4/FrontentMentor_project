@@ -83,3 +83,54 @@ body {
 .travel__tag p {
     color: grey;
 }
+
+/* mobile responsive design */
+
+@media (max-width: 600px) {
+    body {
+        background-image: url('../assets/destination/background-destination-mobile.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover;
+        min-height: 100vh; 
+        margin-left: 10px;
+    }
+
+    .grid__content__destination {
+        display: block;
+    }
+
+    #destination__text {
+        margin-top: 10px;
+    }
+
+    .logo__image__destination img {
+        margin-top: 0px;
+        height: 110px;
+    }
+
+    .nav__destination {
+        margin-top: 50px;
+    }
+
+    #destinationName {
+        text-align: center;
+    }
+
+    .line__tag {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* .feet {
+        display: block;
+        justify-content: center;
+        justify-items: center;
+    } */
+
+}
+
+
+/* tablet responsive design */ 
+@media (min-width: 600px) and (max-width: 1200px) {
+    
+}

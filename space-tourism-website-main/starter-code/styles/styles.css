@@ -178,6 +178,6 @@ body {
 
 /* tablet CSS responsive */ 
 
-@media (min-width: 748px ) { 
+@media (min-width: 748px) and (max-width: 1200px) { 
     
 }
