@@ -54,7 +54,6 @@ body {
 .crew__main {
   display: grid;
   grid-template-columns: auto auto;
-  
 }
 
 #crew__picture {
@@ -62,3 +61,36 @@ body {
   height: 30em;
   margin-right: 175px;
 }
+
+/* responsive design for mobile */
+@media (max-width: 768px) { 
+  body {
+    background-image: url('../assets/crew/background-crew-mobile.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover; /* Pour s'assurer que l'image couvre tout l'écran */
+    min-height: 100vh; /* Pour garantir que le body prend toute la hauteur de la fenêtre */
+    margin-left: 30px;
+  }
+
+  .crew__information {
+    margin-top: 15px;
+    width: 100%;
+    order: 2;
+  }
+  
+  .crew__main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #crew__picture {
+    margin-top: 30px;
+    width: 90%;
+    height: fit-content;
+    order: 1;
+    object-fit: fill;
+  }
+
+}
+
+/* responsive design for tablet */
