@@ -1,15 +1,11 @@
+body {
+    background-image: url('../assets/home/background-home-desktop.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover; /* Pour s'assurer que l'image couvre tout l'écran */
+    min-height: 100vh; /* Pour garantir que le body prend toute la hauteur de la fenêtre */
+    margin-left: 30px;
 
-
-/* .navbar-collapse {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 25px 10px;
-    font-weight: 700;
-    
-} */
- 
-/*.navbar-collapse ul {
-    background-color: gray;
-}*/
+} 
 
 .navbar-collapse ul li {
     padding: 25px 10px;
@@ -107,3 +103,50 @@
     margin-top: 5rem;
     color: gray;
 } 
+
+/* mobile CSS responsive */ 
+/* 
+body {
+    background-image: url('../assets/home/background-home-desktop.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    min-height: 100vh; 
+    margin-left: 30px;
+
+} 
+
+.navbar-collapse ul li {
+    padding: 25px 10px;
+    background-color: rgb(62, 69, 69);
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 2rem;
+} */ 
+
+@media (max-width: 600px) { 
+    body {
+        /* 
+        background-image: url('../assets/home/background-home-desktop.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        min-height: 100vh; 
+        margin-left: 30px; */
+        background-image: url('../assets/home/background-home-mobile.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover;
+        min-height: 100px;
+        margin-left: 30px;
+    }
+}
+
+
+
+
+/* tablet CSS responsive */ 
+
+@media (min-width: 748px ) { 
+    
+}
