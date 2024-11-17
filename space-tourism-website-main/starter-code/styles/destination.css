@@ -13,11 +13,11 @@ body {
     /* grid-template-columns: repeat(50%, 2); */ 
 }
 
-.logo__image__destination {
+/*.logo__image__destination {
     height: 80px;
     width: 80px;
     object-fit: fill;
-}
+} */
 
 .nav__destination {
     display: flex; /* Utiliser flexbox pour aligner les éléments */
@@ -131,6 +131,30 @@ body {
 
 
 /* tablet responsive design */ 
-@media (min-width: 600px) and (max-width: 1200px) {
-    
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        background-image: url('../assets/destination/background-destination-tablet.jpg');
+    }
+
+    .grid__content__destination {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo__image__destination {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .logo__image__destination img {
+        margin-top: 0px;
+        height: 150px;
+    }
+
+    #destinationName {
+        text-align: center;
+    }
 }
