@@ -88,7 +88,6 @@ body {
 }
 
 .space__description {
-    /* width: 40%; */ 
     font-size: 25px;
     color: grey;
 }
@@ -124,16 +123,10 @@ body {
 
 @media (max-width: 600px) { 
     body {
-        /* 
-        background-image: url('../assets/home/background-home-desktop.jpg');
-        background-repeat: no-repeat; 
-        background-size: cover; 
-        min-height: 100vh; 
-        margin-left: 30px; */
         background-image: url('../assets/home/background-home-mobile.jpg');
         background-repeat: no-repeat; 
         background-size: cover;
-        min-height: 100px;
+        min-height: max-content;
         margin-left: 10px;
     }
 
@@ -144,8 +137,6 @@ body {
 
     .main {
         display: block;
-        grid-template-columns: 50% auto;
-        gap: 2rem;
     }
 
     .main__content {
@@ -171,6 +162,7 @@ body {
     .image__explore__div {
         margin-left: 80px;
     }
+
 }
 
 
