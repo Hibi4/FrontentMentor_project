@@ -1,11 +1,11 @@
 body {
     background-image: url('../assets/home/background-home-desktop.jpg');
-    background-repeat: no-repeat; 
-    background-size: cover; /* Pour s'assurer que l'image couvre tout l'écran */
-    min-height: 100vh; /* Pour garantir que le body prend toute la hauteur de la fenêtre */
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
     margin-left: 30px;
 
-} 
+}
 
 .navbar-collapse ul li {
     padding: 25px 10px;
@@ -25,35 +25,15 @@ body {
 
 .main__content h1 {
     width: 100%;
-    /* font-size: clamp(2rem, 8vw, 6rem); */ /* Taille de police responsive */
-    text-align: justify; 
-    text-transform: uppercase; 
+    text-align: justify;
+    text-transform: uppercase;
     letter-spacing: 4px;
     word-spacing: 8px;
     color: gray;
-    
+
 }
 
-/* .main__content {
-    color: whitesmoke;
-    font-weight: 400;
-    margin-left: 50px;
-    width: 50%;
-} */ 
-
-/* .image__explore__div {
-    font-size: 15px;
-    background-color: yellow;
-    height: 160px;
-    width: 180px;
-    border-radius: 50%;
- } */ 
-
-/*  .nav-item .active {
-    text-decoration: underline;
- } */ 
-
- .nav-item {
+.nav-item {
     position: relative;
 }
 
@@ -67,7 +47,7 @@ body {
     background-color: white;
 }
 
- .image__explore__div {
+.image__explore__div {
     margin-top: 350px;
     margin-left: 300px;
     font-size: 30px;
@@ -75,11 +55,10 @@ body {
     height: 260px;
     width: 250px;
     border-radius: 50%;
-    /* Ajout des propriétés pour centrer */
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Pour centrer le texte si multilignes */
+    text-align: center;
 }
 
 .link__number {
@@ -97,34 +76,17 @@ body {
     color: #ffff;
 }
 
-/* destination page */
 #destination__text {
     margin-top: 5rem;
     color: gray;
-} 
-
-/* mobile CSS responsive */ 
-/* 
-.main__content {
-    margin-left: 80px;
-    margin-top: 80px;
 }
 
-.main__content h1 {
-    width: 100%;
-    /* font-size: clamp(2rem, 8vw, 6rem); 
-    text-align: justify; 
-    text-transform: uppercase; 
-    letter-spacing: 4px;
-    word-spacing: 8px;
-    color: gray;
-    
-} */ 
+/* mobile CSS responsive */
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     body {
         background-image: url('../assets/home/background-home-mobile.jpg');
-        background-repeat: no-repeat; 
+        background-repeat: no-repeat;
         background-size: cover;
         min-height: max-content;
         margin-left: 10px;
@@ -165,14 +127,13 @@ body {
 
 }
 
-/* tablet CSS responsive */ 
+/* tablet CSS responsive */
 
 @media (min-width: 768px) and (max-width: 1024px) {
     body {
         background-color: url('../assets/home/background-home-tablet.jpg');
         background-repeat: no-repeat;
         background-size: cover;
-        /* margin-left: 60px; */ 
     }
 
     .main {
@@ -188,47 +149,4 @@ body {
     .image__explore__div {
         margin-top: 50px;
     }
-
-
-    /* 
-    body {
-        background-image: url('../assets/home/background-home-mobile.jpg');
-        background-repeat: no-repeat; 
-        background-size: cover;
-        min-height: max-content;
-        margin-left: 10px;
-    }
-
-    .navbar-toggler-icon {
-        background-color: white;
-        margin-top: -80px;
-    }
-
-    .main {
-        display: block;
-    }
-
-    .main__content {
-        margin-top: 0px;
-        margin-left: 0px;
-        width: max-content;
-    }
-
-    .main__content h1 {
-        letter-spacing: 0px;
-        word-spacing: 0px;
-    }
-
-    #space__word__style {
-        font-size: 130px;
-    }
-
-    .space__description {
-        display: block;
-        width: 100%;
-    }
-
-    .image__explore__div {
-        margin-left: 80px;
-    } */
 }

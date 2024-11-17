@@ -1,8 +1,8 @@
 body {
     background-image: url('../assets/destination/background-destination-desktop.jpg');
-    background-repeat: no-repeat; 
-    background-size: cover; /* Pour s'assurer que l'image couvre tout l'écran */
-    min-height: 100vh; /* Pour garantir que le body prend toute la hauteur de la fenêtre */
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
     margin-left: 30px;
 }
 
@@ -11,7 +11,7 @@ body {
     grid-template-columns: 80px 50rem 150px;
     margin-top: 65px;
     margin-left: 20rem;
-    
+
 }
 
 .technology__title {
@@ -62,12 +62,12 @@ body {
     color: white;
 }
 
-@media (max-width: 768px) {  
+@media (max-width: 768px) {
     body {
         background-image: url('../assets/destination/background-destination-mobile.jpg');
-        background-repeat: no-repeat; 
-        background-size: cover; /* Pour s'assurer que l'image couvre tout l'écran */
-        min-height: 100vh; /* Pour garantir que le body prend toute la hauteur de la fenêtre */
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100vh;
         margin-left: 10px;
     }
 
@@ -108,7 +108,7 @@ body {
     #technology__image {
         height: 20rem;
         margin-right: 0px;
-        
+
     }
 
     .technology__title {
@@ -121,7 +121,7 @@ body {
 }
 
 /* responsive design for tablet */
-@media (min-width: 768px) and (max-width: 1024px) { 
+@media (min-width: 768px) and (max-width: 1024px) {
     body {
         background-image: url('../assets/destination/background-destination-tablet.jpg');
     }
@@ -164,7 +164,7 @@ body {
         height: 30rem;
         width: 35rem;
         margin-right: 0px;
-        
+
     }
 
     .technology__title {
@@ -176,4 +176,3 @@ body {
     }
 
 }
-
