@@ -19,7 +19,7 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
 ### Links
 
 - Solution URL: [https://github.com/Hibi4/FrontentMentor_project.git]
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://space-tourism-39ngbqo6f-hibi4s-projects.vercel.app/index.html]
 
 ## My process
 
@@ -54,4 +54,4 @@ I tried to use talwind css after finishing to implement the CSS code, but I coul
 ## Author
 
 - Website - [Hibi](https://portfolio-ousmane.vercel.app/en/)
-- Frontend Mentor - [@hibi4](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@hibi4](https://www.frontendmentor.io/profile/Hibi4)
