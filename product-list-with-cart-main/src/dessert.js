@@ -261,7 +261,7 @@ function Dessert() {
                         const itemTotal = dessert.price * quantity;
 
                         return (
-                            <div key={id} className="cart-item">
+                            <div key={dessert.id} className="cart-item">
                                 <div className="cart-item-name"> <strong>{dessert.name}</strong></div>
                                 <div className="cart-item-quantity">x{quantity}</div>
                                 <div className="cart-item-price">${dessert.price.toFixed(2)}</div>
@@ -278,7 +278,7 @@ function Dessert() {
                     <div className="cart-total">
                         <strong>Total: ${calculateTotal().toFixed(2)}</strong>
                     </div>
-                    {Object.keys(productCounts).length > 0 && (
+                    { Object.keys(productCounts).length > 0 && (
                         <div id='confirm__order__btn'>
                             <button>Confirm Order</button>
                         </div>
