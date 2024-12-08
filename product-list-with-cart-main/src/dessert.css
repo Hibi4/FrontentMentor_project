@@ -146,6 +146,7 @@ border : 2px solid red;
 }
 
 .menu__choosen {
+    height: max-content;
     padding: 1rem;
     background-color: white;
     border-radius: 8px;
