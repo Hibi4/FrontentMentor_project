@@ -252,7 +252,6 @@ function Dessert() {
                             </div>
                         </div>
                     ))}
-
                 </div>
 
                 <div className='menu__choosen'>
@@ -279,6 +278,11 @@ function Dessert() {
                     <div className="cart-total">
                         <strong>Total: ${calculateTotal().toFixed(2)}</strong>
                     </div>
+                    {Object.keys(productCounts).length > 0 && (
+                        <div id='confirm__order__btn'>
+                            <button>Confirm Order</button>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

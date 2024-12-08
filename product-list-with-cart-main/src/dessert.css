@@ -125,6 +125,7 @@ border : 2px solid red;
     width: max-content;
     padding: 15px 25px;
     border-radius: 50px;
+    font-weight: 700;
 }
 
 .min__to__cart {
@@ -207,6 +208,24 @@ border : 2px solid red;
 
 .remove-item-button:hover {
     opacity: 1;
+}
+
+#confirm__order__btn {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+
+#confirm__order__btn button {
+    padding: 10px 40px;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: hsl(14, 84%, 48%);
+    color: white;
+    cursor: pointer;
 }
 
 /* left
