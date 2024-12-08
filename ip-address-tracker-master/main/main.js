@@ -1,8 +1,11 @@
 var map = L.map('map').setView([50.8655,4.3794], 6); 
+let ip__value = 0;
 
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+
 
 const geoIpifyUrl = "https://geo.ipify.org/api/v2/country";
 const geoIpifyKey = "";
@@ -21,6 +24,7 @@ async function getIpFromGeoIpify() {
     document.getElementById("location").innerHTML = data.location.region+ " "+ data.location.country;
     document.getElementById("timezone").innerHTML = "UTC "+data.location.timezone;
     document.getElementById("isp").innerHTML = data.isp;
+    ip__value = data.ip;
     return data.ip; 
   } else { 
     throw new Error(`An error occurred: ${response.status}`);
@@ -36,6 +40,7 @@ async function getLocationFromIpStack(ip) {
   const response = await fetch(`${ipStackUrl}/${ip}?access_key=${ipStackKey}`);
   if(response.ok) {
     const data = await response.json();
+    
     return data;
   } else {
     throw new Error(`An error occurred: ${response.status}`);
