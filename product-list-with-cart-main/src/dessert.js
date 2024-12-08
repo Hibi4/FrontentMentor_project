@@ -32,7 +32,7 @@ const CartIcon = () => (
 );
 
 const DecrementButton = ({ onClick }) => (
-    <button onClick={onClick}>
+    <button className='decrement__button' onClick={onClick}>
         <svg xmlns="http://www.w3.org/2000/svg" width="15"
             height="2" fill="none" viewBox="0 0 24 24">
             <path fill="#000000" d="M0 .375h10v1.25H0V.375Z" />
@@ -41,7 +41,7 @@ const DecrementButton = ({ onClick }) => (
 );
 
 const IncrementButton = ({ onClick }) => (
-    <button onClick={onClick}>
+    <button className='increment__button' onClick={onClick}>
         <svg xmlns="http://www.w3.org/2000/svg" width="10"
             height="10" fill="none" viewBox="0 0 10 10">
             <path fill="#000" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" />
@@ -240,7 +240,7 @@ function Dessert() {
                                         {productCounts[dessert.id] || 1}
                                         <IncrementButton onClick={() => handleIncrement(dessert.id)} />
                                     </button>
-                                    )}
+                                )}
                             </div>
 
                             <div className='name__tag'>

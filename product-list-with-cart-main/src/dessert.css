@@ -41,15 +41,25 @@ border : 2px solid red;
 }
 
 .img__tag {
-   height: 200px;
-   width: 100%;
-   border-radius: 5px;
-   object-fit: cover;
-   transition: border 0.2s ease-in-out;
+    height: 300px;
+    width: 300px; 
+    border-radius: 5px;
+    object-fit: cover;
+    transition: border 0.2s ease-in-out;
 }
 
 .img__tag.selected {
     border: 3px solid rgb(201, 66, 17);
+}
+
+.decrement__button {
+    border-radius: 50px;
+    border-color: white;
+}
+
+.increment__button {
+    border-radius: 50px;
+    border-color: white;
 }
 
 .add__to__cart {
@@ -71,19 +81,21 @@ border : 2px solid red;
 
 .selected__item {
     position: absolute;
-   bottom: -20px;
-   left: 30%;
-   transform: translateX(-50%);
-   background-color: white;
-   padding: 0.75rem 1.5rem;
-   border-radius: 50px;
-   border: 1px solid #e2e8f0;
-   display: flex;
-   align-items: center;
-   gap: 0.5rem;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
-   cursor: pointer;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    bottom: -20px;
+    left: 30%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgb(201, 66, 17);
+    color: white;
 }
 
 .name__tag {
@@ -115,11 +127,6 @@ border : 2px solid red;
     padding: 1rem;
 } 
 
-.img__tag {
-    height: 200px;
-    width: 200px;
-    border-radius: 5px;
-}
 .add__to__cart__div {
     background-color: rgb(201, 66, 17);
     width: max-content;
