@@ -239,6 +239,11 @@ border : 2px solid red;
     align-items: center;
 }
 
+#empty__text {
+    text-align: center;
+    color: gray;
+}
+
 /* mobile design */ 
 @media (max-width: 768px) {
     .container {

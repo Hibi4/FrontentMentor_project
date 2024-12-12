@@ -287,23 +287,35 @@ function Dessert() {
                                         <RemoveIcon />
                                     </button>
                                 </div>
+                                
                             );
                         })
+                        
                     ) : (
-                        <div className='empty__card'> 
-                            <EmptyCard />
-                        </div>
+                            <div>
+                                <div className='empty__card'>
+                                    <EmptyCard />
+                                </div>
+                                <div id='empty__text'>
+                                    <p>Your added items will appear here.</p>
+                                </div>
+                            </div>
                         
                     )}
 
 
-                    <div className="cart-total">
-                        <strong>Total: ${calculateTotal().toFixed(2)}</strong>
-                    </div>
+                    
                     {Object.keys(productCounts).length > 0 && (
-                        <div id='confirm__order__btn'>
-                            <button>Confirm Order</button>
+                        <div>
+                            <div className="cart-total">
+                                <strong>Total: ${calculateTotal().toFixed(2)}</strong>
+                            </div>
+
+                            <div id='confirm__order__btn'>
+                                <button>Confirm Order</button>
+                            </div>
                         </div>
+                    
                     )}
                 </div>
             </div>
