@@ -11,6 +11,7 @@ import meringue from './assets/images/image-meringue-desktop.jpg';
 import panna from './assets/images/image-panna-cotta-desktop.jpg';
 import tiramisu from './assets/images/image-tiramisu-desktop.jpg';
 import waffle from './assets/images/image-waffle-desktop.jpg';
+import { useState } from 'react';
 // inclusion des images 
 import baklavaMobile from './assets/images/image-baklava-mobile.jpg'
 import baklavaTablet from './assets/images/image-baklava-tablet.jpg'
@@ -39,8 +40,6 @@ import tiramisuDesktop from './assets/images/image-tiramisu-desktop.jpg';
 import waffleMobile from './assets/images/image-waffle-mobile.jpg';
 import waffleTablet from './assets/images/image-waffle-tablet.jpg';
 import waffleDesktop from './assets/images/image-waffle-desktop.jpg';
-import { useState } from 'react';
-
 
 
 const CartIcon = () => (
@@ -187,9 +186,9 @@ const desserts = [
     {
         id: 9,
         logo: {
-            mobile: cakeMobile,
-            tablet: cakeTablet,
-            desktop: cakeDesktop
+            mobile: brownieMobile,
+            tablet: brownieTablet,
+            desktop: brownieDesktop
         },
         description: 'Red Velvet Cake',
         name: 'Cake',
@@ -197,11 +196,7 @@ const desserts = [
     },
     {
         id: 10,
-        logo: {
-            mobile: brownieMobile,
-            tablet: brownieTablet,
-            desktop: brownieDesktop
-        },
+        logo: brownie,
         description: 'Salted Caramel Brownie',
         name: 'Brownie',
         price: 4.50
@@ -309,8 +304,6 @@ function Dessert() {
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
-    /* <img src={dessert.logo} className={`img__tag ${productCounts[dessert.id] ? 'selected' : ''}`} alt={dessert.name} /> */
-
     return (
         <>
             <div id='root'>
@@ -325,10 +318,10 @@ function Dessert() {
                                 <div className='img__tag__div'>
                                     <img
                                         srcSet={`
-                                            ${dessert.logo.mobile} 375w,
-                                            ${dessert.logo.tablet} 768w,
-                                            ${dessert.logo.desktop} 1440w
-                                        `}
+                                        ${dessert.logo.mobile} 375w,
+                                        ${dessert.logo.tablet} 768w,
+                                        ${dessert.logo.desktop} 1440w
+                                    `}
                                         sizes="(max-width: 375px) 375px,
                                         (max-width: 768px) 768px,
                                         1440px"
@@ -398,30 +391,25 @@ function Dessert() {
 
                         )}
 
+
+
+                        
                         {Object.keys(productCounts).length > 0 && (
                             <div>
                                 <div className="cart-total">
                                     <strong>Total: ${calculateTotal().toFixed(2)}</strong>
                                 </div>
-
-
                                 <div id='confirm__order__btn'>
                                     <button onClick={openModal}>Confirm Order</button>
                                 </div>
                             </div>
-
+                            
                         )}
                     </div>
                 </div>
             </div>
-
             {isModalOpen && (
-            /* 
-            src={dessert.logo.desktop}
-            className={`img__tag ${productCounts[dessert.id] ? 'selected' : ''}`}
-            alt={dessert.name}
-            */ 
-            <div className="modal-overlay">
+                <div className="modal-overlay">
                     <div className="modal-content">
                         <h2>Confirmation de commande</h2>
                         <div className="modal-items">
@@ -429,23 +417,23 @@ function Dessert() {
                                 const dessert = desserts.find(d => d.id === parseInt(id));
                                 return (
                                     <div key={id} className="modal-item">
-                                        <div>
-                                            <img src={dessert.logo.desktop} className={`img__tag__modal `} />
-                                        </div>
-                                        <div className='modal-item-second'>
-                                            <div>
-                                                <span className='name__tag__modal'>{dessert.name}</span>
-                                            </div>
-                                            <div>
-                                                <span className='quantity__tag__modal'>x{quantity}</span>
-                                                <span className='price__tag'> @ ${dessert.price} </span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <span>${(dessert.price * quantity).toFixed(2)}</span>
-                                        </div>
-
+                                    <div>
+                                        <img src={dessert.logo.desktop} className={`img__tag__modal `} />
                                     </div>
+                                    <div className='modal-item-second'>
+                                        <div>
+                                            <span className='name__tag__modal'>{dessert.name}</span>
+                                        </div>
+                                        <div>
+                                            <span className='quantity__tag__modal'>x{quantity}</span>
+                                            <span className='price__tag__modal'> @ ${dessert.price} </span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span>${(dessert.price * quantity).toFixed(2)}</span>
+                                    </div>
+
+                                </div>
                                 );
                             })}
                             <div className="modal-total">
@@ -464,6 +452,7 @@ function Dessert() {
             )}
         </>
     );
+
 }
 
 export default Dessert;
