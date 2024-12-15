@@ -275,6 +275,7 @@ border : 2px solid red;
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
+    border-bottom: 1px solid rgb(205, 189, 189);
 }
 
 .modal-actions {
@@ -282,6 +283,7 @@ border : 2px solid red;
     justify-content: flex-end;
     gap: 1rem;
     margin-top: 1rem;
+    
 }
 
 .modal-actions button {
@@ -302,6 +304,15 @@ border : 2px solid red;
 .quantity__tag__modal {
     color: hsl(14, 84%, 48%);
     font-weight: 700;
+}
+
+.modal-total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total__products {
+    font-size: 20px;
 }
 
 /* mobile design */ 

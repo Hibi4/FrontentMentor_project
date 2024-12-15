@@ -430,14 +430,20 @@ function Dessert() {
                                         </div>
                                     </div>
                                     <div>
-                                        <span>${(dessert.price * quantity).toFixed(2)}</span>
+                                        <span className='total__products'> <strong> ${(dessert.price * quantity).toFixed(2)} </strong></span>
                                     </div>
 
                                 </div>
                                 );
                             })}
                             <div className="modal-total">
-                                <strong>Total: ${calculateTotal().toFixed(2)}</strong>
+                                <div>
+                                    <span>Order Total</span>
+                                </div>
+                                <div>
+                                    <span> <strong>Total: ${calculateTotal().toFixed(2)}</strong></span>
+                                </div>
+                                
                             </div>
                         </div>
                         <div className="modal-actions">
