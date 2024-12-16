@@ -280,16 +280,20 @@ border : 2px solid red;
 
 .modal-actions {
     display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
+    justify-content: center;
+    /* gap: 1rem; */ 
     margin-top: 1rem;
     
 }
 
 .modal-actions button {
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: 15px;
+    padding: 0.5rem 10rem;
     cursor: pointer;
+    background-color: hsl(14, 84%, 48%);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .img__tag__modal {
@@ -313,6 +317,12 @@ border : 2px solid red;
 
 .total__products {
     font-size: 20px;
+    
+}
+
+.total__order {
+    font-size: 20px;
+    font-weight: 700;
 }
 
 /* mobile design */ 

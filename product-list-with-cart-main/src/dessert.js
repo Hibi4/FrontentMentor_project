@@ -196,7 +196,11 @@ const desserts = [
     },
     {
         id: 10,
-        logo: brownie,
+        logo: {
+            mobile: brownieMobile,
+            tablet: brownieTablet,
+            desktop: brownieDesktop
+        },
         description: 'Salted Caramel Brownie',
         name: 'Brownie',
         price: 4.50
@@ -390,9 +394,6 @@ function Dessert() {
                             </div>
 
                         )}
-
-
-
                         
                         {Object.keys(productCounts).length > 0 && (
                             <div>
@@ -441,17 +442,24 @@ function Dessert() {
                                     <span>Order Total</span>
                                 </div>
                                 <div>
-                                    <span> <strong>Total: ${calculateTotal().toFixed(2)}</strong></span>
+                                    <span className='total__order'> <strong>Total: ${calculateTotal().toFixed(2)}</strong></span>
                                 </div>
                                 
                             </div>
                         </div>
                         <div className="modal-actions">
-                            <button onClick={closeModal}>Annuler</button>
+                            <div>
+                                <button onClick={() => {
+                                    // Ajoutez ici la logique de confirmation
+                                    closeModal();}}>Start new Order
+                                </button>
+                            </div>
+                             
+                            { /*  <button onClick={closeModal}>Annuler</button> 
                             <button onClick={() => {
                                 // Ajoutez ici la logique de confirmation
                                 closeModal();
-                            }}>Confirmer</button>
+                            }}>Confirmer</button> */ }
                         </div>
                     </div>
                 </div>
