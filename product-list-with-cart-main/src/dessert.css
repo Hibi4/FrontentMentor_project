@@ -310,9 +310,19 @@ border : 2px solid red;
     font-weight: 700;
 }
 
+.price__tag__modal {
+    color: rgb(138, 127, 127);
+}
+
 .modal-total {
     display: flex;
     justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.modal-total div:nth-child(1) span {
+    color: rgb(138, 127, 127);
 }
 
 .total__products {
@@ -323,6 +333,15 @@ border : 2px solid red;
 .total__order {
     font-size: 20px;
     font-weight: 700;
+}
+
+.order__confirmed h2 {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.enjoy__text p {
+    color: rgb(138, 127, 127);
 }
 
 /* mobile design */ 
