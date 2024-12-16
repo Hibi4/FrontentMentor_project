@@ -450,9 +450,18 @@ function Dessert() {
                         <div className="modal-actions">
                             <div>
                                 <button onClick={() => {
+                                    // Réinitialiser tous les états
+                                    setProductCounts({});
+                                    setSelectedItems(new Set());
+                                    setCount(0);
+                                    closeModal();
+                                }}>Start new Order</button>
+                                {/* 
+                                    <button onClick={() => {
                                     // Ajoutez ici la logique de confirmation
                                     closeModal();}}>Start new Order
                                 </button>
+                                */ }
                             </div>
                              
                             { /*  <button onClick={closeModal}>Annuler</button> 
