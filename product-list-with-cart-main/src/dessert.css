@@ -178,10 +178,14 @@ border : 2px solid red;
 }
 
 .cart-total {
-    margin-top: 1rem;
-    text-align: right;
-    padding-top: 1rem;
-    border-top: 2px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.cart-total div:nth-child(1) p {
+    color: rgb(138, 127, 127);
 }
 
 .cart__text__title {
@@ -319,6 +323,7 @@ border : 2px solid red;
     color: rgb(138, 127, 127);
 }
 
+
 .modal-total {
     display: flex;
     justify-content: space-between;
@@ -347,6 +352,10 @@ border : 2px solid red;
 
 .enjoy__text p {
     color: rgb(138, 127, 127);
+}
+
+.carbon__neutral__tag {
+    text-align: center;
 }
 
 /* mobile design */ 
