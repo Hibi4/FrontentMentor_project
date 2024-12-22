@@ -247,12 +247,6 @@ function Dessert() {
         setCount(count - productCounts[id]); // Mettre à jour le compteur total
     };
 
-    /* const handleDecrement = (id) => {
-        setProductCounts(prev => ({
-            ...prev,
-            [id]: Math.max((prev[id] || 0) - 1, 0) // Empêche les valeurs négatives
-        }));
-    }; */
     const handleDecrement = (id) => {
         setCount(count - 1)
         setProductCounts(prev => {
@@ -293,7 +287,7 @@ function Dessert() {
             [id]: 1
         }));
     }
-    // Calculer le total du panier
+
     const calculateTotal = () => {
         return Object.entries(productCounts).reduce((total, [id, quantity]) => {
             const dessert = desserts.find(d => d.id === parseInt(id));
@@ -301,10 +295,8 @@ function Dessert() {
         }, 0);
     };
 
-    // Ajoutez l'état pour gérer l'affichage de la modal
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // Ajoutez ces fonctions pour gérer la modal
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 

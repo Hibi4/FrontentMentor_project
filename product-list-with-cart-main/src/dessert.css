@@ -199,9 +199,14 @@ border : 2px solid red;
     align-items: center;
 }
 
+.decrement__button svg {
+    background-color: black;
+    margin-bottom: 3px;
+}
+
 .remove-item-button {
     background: none;
-    border: none;
+    border-radius: 50px;
     padding: 5px;
     cursor: pointer;
     display: flex;
