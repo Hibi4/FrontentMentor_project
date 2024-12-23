@@ -32,7 +32,7 @@ const CarbonNeutral = () => (
 )
 
 const DecrementButton = ({ onClick }) => (
-    <button className='decrement__button' onClick={onClick}>
+    <button className='decrement-button' onClick={onClick}>
         <svg xmlns="http://www.w3.org/2000/svg" width="15"
             height="2" fill="none" viewBox="0 0 24 24">
             <path fill="#000000" d="M0 .375h10v1.25H0V.375Z" />
@@ -41,7 +41,7 @@ const DecrementButton = ({ onClick }) => (
 );
 
 const IncrementButton = ({ onClick }) => (
-    <button className='increment__button' onClick={onClick}>
+    <button className='increment-button' onClick={onClick}>
         <svg xmlns="http://www.w3.org/2000/svg" width="10"
             height="10" fill="none" viewBox="0 0 10 10">
             <path fill="#000" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" />
@@ -202,8 +202,6 @@ const desserts = [
 function Dessert() {
     const [count, setCount] = useState(0)
     const [selectedItems, setSelectedItems] = useState(new Set());
-    // const [productCount, setProductCount] = useState(0)
-
     const [productCounts, setProductCounts] = useState({});
 
     const handleIncrement = (id) => {
@@ -281,7 +279,7 @@ function Dessert() {
                     <div className='container-body'>
                         {desserts.map((dessert) => (
                             <div key={dessert.id}>
-                                <div className='img__tag__div'>
+                                <div className='img-tag-div'>
                                     <img
                                         srcSet={`
                                         ${dessert.logo.mobile} 375w,
@@ -292,7 +290,7 @@ function Dessert() {
                                         (max-width: 768px) 768px,
                                         1440px"
                                         src={dessert.logo.desktop}
-                                        className={`img__tag ${productCounts[dessert.id] ? 'selected' : ''}`}
+                                        className={`img-tag ${productCounts[dessert.id] ? 'selected' : ''}`}
                                         alt={dessert.name}
                                     />
 
@@ -404,7 +402,7 @@ function Dessert() {
                                 return (
                                     <div key={id} className="modal-item">
                                     <div>
-                                        <img src={dessert.logo.desktop} className={`img__tag__modal `} />
+                                        <img src={dessert.logo.desktop} className={`img-tag-modal `} />
                                     </div>
                                     <div className='modal-item-second'>
                                         <div>
