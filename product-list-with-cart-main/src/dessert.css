@@ -214,7 +214,7 @@
     opacity: 1;
 }
 
-#confirm__order__btn {
+#confirm-order-btn {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -223,7 +223,7 @@
     
 }
 
-#confirm__order__btn button {
+#confirm-order-btn button {
     padding: 10px 40px;
     border-radius: 50px;
     font-size: 20px;
@@ -299,16 +299,16 @@
     width: 80px;
 }
 
-.name__tag__modal {
+.name-tag-modal {
     font-weight: 700;
 }
 
-.quantity__tag__modal {
+.quantity-tag-modal {
     color: hsl(14, 84%, 48%);
     font-weight: 700;
 }
 
-.price-tag__modal {
+.price-tag-modal {
     color: rgb(138, 127, 127);
 }
 
@@ -324,22 +324,21 @@
     color: rgb(138, 127, 127);
 }
 
-.total__products {
+.total-products {
     font-size: 20px;
-    
 }
 
-.total__order {
+.total-order {
     font-size: 20px;
     font-weight: 700;
 }
 
-.order__confirmed h2 {
+.order-confirmed h2 {
     font-size: 35px;
     font-weight: 700;
 }
 
-.enjoy__text p {
+.enjoy-text p {
     color: rgb(138, 127, 127);
 }
 
@@ -360,7 +359,7 @@
         transform: none;
     }
 
-    .selected__item { 
+    .selectedItem { 
         transform: none;
         gap: 1.2rem;
     }
