@@ -369,7 +369,7 @@ function Dessert() {
                                 </div>
                                 <div className='carbon-neutral-tag'>
                                     <div>
-                                        <p> <CarbonNeutral /> This is a <strong>carbon-neutral</strong> delivery. </p>
+                                        <p> <span> <CarbonNeutral /> </span>  This is a <strong>carbon-neutral</strong> delivery. </p>
                                     </div>
                                 </div>
 
