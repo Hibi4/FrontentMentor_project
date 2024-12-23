@@ -3,7 +3,7 @@
     margin: 10px;
 }
 
-.title__text {
+.titleText {
     font-size: 16px;
     font-weight: 700;
 }
@@ -14,7 +14,7 @@
     margin: 20px;
 }
 
-.price__tag {
+.price-tag {
     width: max-content;
     font-size: medium;
     font-weight: 700;
@@ -60,7 +60,7 @@ border : 2px solid red;
     border-color: white;
 }
 
-.add__to__cart {
+.add-to-cart {
    position: absolute;
    bottom: -20px;
    left: 30%;
@@ -77,7 +77,7 @@ border : 2px solid red;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.selected__item {
+.selectedItem {
     position: absolute;
     bottom: -20px;
     left: 30%;
@@ -96,15 +96,15 @@ border : 2px solid red;
     color: white;
 }
 
-.name__tag {
+.name-tag {
     margin-top: 40px;
 }
 
-.name__tag p {
+.name-tag p {
     font-weight: 700;
 }
 
-.name__tag p:nth-child(1) {
+.name-tag p:nth-child(1) {
     color: gray;
 }
 
@@ -113,13 +113,12 @@ border : 2px solid red;
     justify-content: space-between;
 }
 
-.title__text h1 {
+.titleText h1 {
     margin-left: 40px;
 }
 
-.body__element {
+.container-body {
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
     padding: 1rem;
@@ -143,15 +142,15 @@ border : 2px solid red;
     margin-right: -13px;
 }
 
-.price__tag p {
+.price-tag p {
     color: rgb(201, 66, 17);
 }
 
-.cart__text__title {
+.cart-text-title {
     color: rgb(201, 66, 17);
 }
 
-.menu__choosen {
+.menu-choosen {
     height: max-content;
     padding: 1rem;
     background-color: white;
@@ -242,13 +241,13 @@ border : 2px solid red;
     cursor: pointer;
 }
 
-.empty__card {
+.empty-card {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#empty__text {
+#empty-text {
     text-align: center;
     color: gray;
 }
@@ -318,7 +317,7 @@ border : 2px solid red;
     font-weight: 700;
 }
 
-.price__tag__modal {
+.price-tag__modal {
     color: rgb(138, 127, 127);
 }
 
@@ -353,7 +352,7 @@ border : 2px solid red;
     color: rgb(138, 127, 127);
 }
 
-.carbon__neutral__tag {
+.carbon-neutral-tag {
     text-align: center;
 }
 
@@ -363,7 +362,7 @@ border : 2px solid red;
         display: block;
     }
 
-    .add__to__cart {
+    .add-to-cart {
         transform: none;
     }
 
@@ -372,7 +371,7 @@ border : 2px solid red;
         gap: 1.2rem;
     }
 
-    .body__element {
+    .container-body {
         display: block;
     }
 

@@ -225,7 +225,7 @@ function Dessert() {
             newSet.delete(id);
             return newSet;
         });
-        setCount(count - productCounts[id]); // Mettre à jour le compteur total
+        setCount(count - productCounts[id]);
     };
 
     const handleDecrement = (id) => {
@@ -273,12 +273,12 @@ function Dessert() {
     return (
         <>
             <div id='root'>
-                <div className="title__text">
+                <div className="titleText">
                     <h1>Desserts</h1>
                 </div>
                 <div className="container">
 
-                    <div className='body__element '>
+                    <div className='container-body'>
                         {desserts.map((dessert) => (
                             <div key={dessert.id}>
                                 <div className='img__tag__div'>
@@ -298,12 +298,11 @@ function Dessert() {
 
                                     {(!productCounts[dessert.id] || productCounts[dessert.id] === 0)
                                         ? (
-                                            <button className="add__to__cart" onClick={() => handleAddToCart(dessert.id)}>
-                                                 {/* <CartIcon /> */ }
+                                            <button className="add-to-cart" onClick={() => handleAddToCart(dessert.id)}>
                                                 <ShopIcon /> 
                                                 Add to Cart
                                             </button>
-                                        ) : (<button className="selected__item">
+                                        ) : (<button className="selectedItem">
                                             <DecrementButton onClick={() => handleDecrement(dessert.id)} />
                                             {productCounts[dessert.id] || 1}
                                             <IncrementButton onClick={() => handleIncrement(dessert.id)} />
@@ -311,19 +310,19 @@ function Dessert() {
                                         )}
                                 </div>
 
-                                <div className='name__tag'>
+                                <div className='name-tag'>
                                     <p>{dessert.description}</p>
                                     <p>{dessert.name}</p>
                                 </div>
-                                <div className='price__tag'>
+                                <div className='price-tag'>
                                     <p>${dessert.price}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
 
-                    <div className='menu__choosen'>
-                        <h1 className='cart__text__title'>Your Cart ({count})</h1>
+                    <div className='menu-choosen'>
+                        <h1 className='cart-text-title'>Your Cart ({count})</h1>
                         {Object.keys(productCounts).length > 0 ? (
                             Object.entries(productCounts).map(([id, quantity]) => {
                                 const dessert = desserts.find(d => d.id === parseInt(id));
@@ -348,10 +347,10 @@ function Dessert() {
 
                         ) : (
                             <div>
-                                <div className='empty__card'>
+                                <div className='empty-card'>
                                     <EmptyCard />
                                 </div>
-                                <div id='empty__text'>
+                                <div id='empt-text'>
                                     <p>Your added items will appear here.</p>
                                 </div>
                             </div>
@@ -368,7 +367,7 @@ function Dessert() {
                                         <p> <strong>${calculateTotal().toFixed(2)}</strong> </p>
                                     </div>
                                 </div>
-                                <div className='carbon__neutral__tag'>
+                                <div className='carbon-neutral-tag'>
                                     <div>
                                         <p> <CarbonNeutral /> This is a <strong>carbon-neutral</strong> delivery. </p>
                                     </div>
