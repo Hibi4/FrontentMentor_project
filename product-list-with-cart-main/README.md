@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/Hibi4/FrontentMentor_project.git]
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://product-list-with-cart-main-rouge.vercel.app/]
 
 ## My process
 
@@ -52,6 +52,8 @@ For future projects, I would like to continue to improve my React skills by crea
 
 ### Useful resources
 
+- https://react-bootstrap.netlify.app/docs/getting-started/introduction
+- https://react.dev/learn/start-a-new-react-project 
 - Using Cursor IDE helps me to solve some bugs. It is a very useful tool to debug the code.
 
 ## Author

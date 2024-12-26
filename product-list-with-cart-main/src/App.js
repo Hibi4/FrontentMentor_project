@@ -25,9 +25,3 @@ function App() {
 }
 
 export default Dessert;
-
-/* 
-Important links 
-https://react-bootstrap.netlify.app/docs/getting-started/introduction
-https://react.dev/learn/start-a-new-react-project 
-*/
