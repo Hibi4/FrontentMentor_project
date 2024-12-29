@@ -33,6 +33,12 @@
     background-color: grey;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5em;
+}
+
 .product__1 {
     height: 310px;
     width: 447px;
@@ -132,4 +138,40 @@
 
 .next-button {
     right: -20px;
+}
+
+.sneaker-price-div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.sneaker-price {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.sneaker-reduction {
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.sneaker-sales-div {
+    display: flex;
+    gap: 2em;
+    margin-top: 15px;
+}
+
+.sneaker-sales-div div button {
+    padding: 10px 15px;
+}
+
+.sneaker-sales-div div span {
+    font-size: 25px;
+} 
+
+.add-to-cart-div #add-to-cart-btn {
+    padding: 10px 35px;
 }

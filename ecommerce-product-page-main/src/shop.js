@@ -76,6 +76,35 @@ function Shop() {
                             ))}
                         </div>
                     </div>
+                    <div>
+                        <div>
+                            <p id='sneaker-title'>Sneaker company</p>
+                            <h1 id='sneaker-text'>Fall Limited Edition <br/> Sneakers</h1>
+                        </div>
+                        <div className='sneaker-description-div'>
+                            <p>These low-profile sneakers are your perfect casual wear <br/> companion.
+                                Featuring a durable rubber outer sole, they will <br/> 
+                                whistand everything the weather can offer.
+                            </p>
+                        </div>
+                        <div className='sneaker-price-div'>
+                            <span className='sneaker-price'>$125.00</span>
+                            <span className='sneaker-reduction'>50%</span>
+                        </div>
+                        <div className='sneaker-original-price-div'>
+                            <span className='sneaker-original-price'> $250.00 </span>
+                        </div>
+                        <div className='sneaker-sales-div'>
+                            <div>
+                                <button>-</button>
+                                <span>0</span>
+                                <button>+</button>
+                            </div>
+                            <div className='add-to-cart-div'>
+                                <button id='add-to-cart-btn'> <img src={cart} alt='' /> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
 
