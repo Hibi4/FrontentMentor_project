@@ -1,0 +1,128 @@
+.header {
+    display: grid;
+    grid-template-columns: 60em 20em;
+    gap: 2em;
+}
+
+.header-profile {
+    display: inline-flex;
+    gap: 60px;
+    margin-top: 25px;
+}
+
+.header-title ul li {
+    display: inline;
+    padding: 5px 10px;
+    color: hsl(219, 9%, 45%);
+}
+
+.header-title ul li:nth-child(1) {
+    color: black;
+    font-size: 20px;
+}
+
+.header-profile div:nth-child(1) img {
+    height: 40px;
+}
+
+.avatar-profile img {
+    height: 40px;
+}
+
+.line__height {
+    background-color: grey;
+}
+
+.product__1 {
+    height: 310px;
+    width: 447px;
+    cursor: pointer;
+}
+
+.thumbnail-images {
+    display: flex;
+    gap: 2em;
+}
+
+.thumbnail-images div {
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.product__2 {
+    height: 110px;
+    height: 110px;
+}
+
+.product__3 {
+    height: 110px;
+    height: 110px;
+}
+
+.product__4 {
+    height: 110px;
+    height: 110px;
+}
+
+.product__5 {
+    height: 110px;
+    height: 110px;
+}
+
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.close-button {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.prev-button {
+    left: -20px;
+}
+
+.next-button {
+    right: -20px;
+}
