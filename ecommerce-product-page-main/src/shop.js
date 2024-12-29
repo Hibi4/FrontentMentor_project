@@ -65,7 +65,7 @@ function Shop() {
                                 <div key={index}>
                                     <img 
                                         src={img} 
-                                        className={`product__${index + 2}`} 
+                                        className={`product__${index + 2} ${currentImage === img ? 'selected-thumbnail' : ''}`} 
                                         alt='' 
                                         onClick={() => {
                                             setCurrentImage(img);
@@ -88,7 +88,7 @@ function Shop() {
                         <button className="prev-button" onClick={previousImage}>
                             ‹
                         </button>
-                        <img src={currentImage} alt="" />
+                        <img src={currentImage} className='currentImage' alt="" />
                         <button className="next-button" onClick={nextImage}>
                             ›
                         </button>
