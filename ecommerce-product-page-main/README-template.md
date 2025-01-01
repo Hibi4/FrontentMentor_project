@@ -83,6 +83,9 @@ const proudOfThisFunc = () => {
 }
 ```
 
+Dans le code SVG original, il y avait xmlns:xlink qui causait une erreur en console car en React les attributs doivent être écrite avec la syntaxe camelCase. xmlns:xlink devient xmlnsXlink, fill-rule devient fillRule, 
+xlink:href devient xlinkHref
+
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
