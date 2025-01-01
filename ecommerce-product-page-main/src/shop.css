@@ -145,6 +145,11 @@
     margin-bottom: 5px;
 }
 
+.sneaker-original-price-div {
+    margin-top: 15px;
+    margin-bottom: 5px; 
+}
+
 .sneaker-price {
     font-size: 20px;
     margin-right: 10px;
@@ -170,6 +175,11 @@
 
 .sneaker-sales-div div span {
     font-size: 25px;
+    border-radius: 3px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: gainsboro;
 } 
 
 .add-to-cart-div #add-to-cart-btn {

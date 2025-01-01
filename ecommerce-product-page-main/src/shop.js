@@ -92,7 +92,7 @@ function Shop() {
                             <span className='sneaker-reduction'>50%</span>
                         </div>
                         <div className='sneaker-original-price-div'>
-                            <span className='sneaker-original-price'> $250.00 </span>
+                            <span className='sneaker-original-price'> <del>$250.00</del> </span>
                         </div>
                         <div className='sneaker-sales-div'>
                             <div>
