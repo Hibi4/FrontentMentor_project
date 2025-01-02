@@ -1,11 +1,18 @@
 
 .container {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 5em;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 20px; 
+    display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+main {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
 }
 
 .header {
