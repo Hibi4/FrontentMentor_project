@@ -100,7 +100,7 @@ function Shop() {
             </div>
             <main>
                 <div className='container'>
-                    <div>
+                    <div className='product-images'>
                         <div>
                             <img
                                 src={product__1}
@@ -161,16 +161,13 @@ function Shop() {
                 <div className="lightbox-overlay">
                     <div className="lightbox-content">
                         <button className="close-button" onClick={() => setShowLightbox(false)}>
-                            {/* × */ }
                             <CloseIcon />
                         </button>
                         <button className="prev-button" onClick={previousImage}>
-                            {/* ‹ */}
                             <PreviousIcon />
                         </button>
                         <img src={currentImage} className='currentImage' alt="" />
                         <button className="next-button" onClick={nextImage}>
-                            {/* › */}
                             <NextIcon />
                         </button>
                     </div>
