@@ -7,6 +7,17 @@ import product__3 from './images/image-product-3.jpg'
 import product__4 from './images/image-product-4.jpg'
 import { useState } from 'react'
 
+/* 
+
+const IncrementButton = ({ onClick }) => (
+    <button className='increment-button' onClick={onClick}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="10"
+            height="10" fill="none" viewBox="0 0 10 10">
+            <path fill="#000" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" />
+        </svg>
+    </button>
+); */ 
+
 const MinusIcon = () => (
     <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -56,9 +67,14 @@ const MenuIcon = () => (
     <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd" /></svg>
 );
 
+const ConsoleIcon = () => {
+    console.log("click on icon");
+}
+
 function Shop() {
     const [showLightbox, setShowLightbox] = useState(false);
     const [currentImage, setCurrentImage] = useState(product__1);
+    const [showCartModal, setShowCartModal] = useState(false);
 
     const images = [product__1, product__2, product__3, product__4];
 
@@ -88,13 +104,24 @@ function Shop() {
                 </div>
                 <div className='header-profile'>
                     <div>
-                        <img src={cart} alt='' />
+                        <img src={cart} onClick={() => setShowCartModal(!showCartModal)} alt='' />
                     </div>
                     <div className='avatar-profile'>
                         <img className='avatar' src={avatar} alt='' />
                     </div>
                 </div>
             </div>
+            
+            {showCartModal && (
+                <div className="cart-modal">
+                    <div className="cart-modal-header">
+                        <h3>Cart</h3>
+                    </div>
+                    <div className="cart-modal-content">
+                        <p>Your cart is empty</p>
+                    </div>
+                </div>
+            )}
             <div>
                 <hr className='line__height'></hr>
             </div>
@@ -150,7 +177,10 @@ function Shop() {
                                 <button> <PlusIcon /> </button>
                             </div>
                             <div className='add-to-cart-div'>
-                                <button id='add-to-cart-btn'> <span><img src={cart} alt='' /></span> <span className='add-to-cart-btn-text'> Add to cart </span></button>
+                                <button id='add-to-cart-btn'> 
+                                    <span><img src={cart} alt='' /></span> 
+                                    <span className='add-to-cart-btn-text'> Add to cart </span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -174,6 +204,8 @@ function Shop() {
                 </div>
             )}
         </div>
+
+
 
     )
 

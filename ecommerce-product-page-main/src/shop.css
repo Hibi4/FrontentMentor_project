@@ -234,3 +234,41 @@ main {
     margin-left: 15px;
     font-size: large;
 }
+
+/* article modal */
+.cart-modal {
+    position: absolute;
+    top: 80px; 
+    right: 200px;
+    width: 360px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px -20px rgba(29, 32, 38, 0.503143);
+    z-index: 1000;
+}
+
+.cart-modal-header {
+    padding: 24px;
+    border-bottom: 1px solid #E4E9F2;
+}
+
+.cart-modal-header h3 {
+    font-weight: 700;
+    font-size: 16px;
+    color: #1D2026;
+    margin: 0;
+}
+
+.cart-modal-content {
+    padding: 24px;
+    min-height: 188px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-modal-content p {
+    color: #69707D;
+    font-weight: 700;
+    font-size: 16px;
+}
