@@ -75,8 +75,36 @@ function Shop() {
     const [showLightbox, setShowLightbox] = useState(false);
     const [currentImage, setCurrentImage] = useState(product__1);
     const [showCartModal, setShowCartModal] = useState(false);
+    const [count, setCount] = useState(0);
+    const [cartItems, setCartItems] = useState([]);
 
     const images = [product__1, product__2, product__3, product__4];
+
+    const addToCart = () => {
+        const newItem = {
+            id: Date.now(),
+            image: product__1,
+            name: "Fall Limited Edition Sneakers",
+            price: 125.00,
+            quantity: count
+        };
+        setCartItems([...cartItems, newItem]);
+    };
+
+    const incrementCount = () => {
+        setCount(count + 1);
+    }
+
+    const decrementCount = () => {
+        if(count > 0) {
+            setCount(count - 1);
+        }
+            
+    }
+
+    const removeFromCart = (itemId) => {
+        setCartItems(cartItems.filter(item => item.id !== itemId));
+    };
 
     const nextImage = () => {
         const currentIndex = images.indexOf(currentImage);
@@ -118,7 +146,39 @@ function Shop() {
                         <h3>Cart</h3>
                     </div>
                     <div className="cart-modal-content">
-                        <p>Your cart is empty</p>
+                        {cartItems.length === 0 ? (
+                            <p>Your cart is empty</p>
+                        ) : (
+                            <>
+                                {cartItems.map(item => (
+                                    <div key={item.id} className="cart-item">
+                                        <img
+                                            src={item.image}
+                                            alt={item.name}
+                                            className="cart-item-image"
+                                        />
+                                        <div className="cart-item-details">
+                                            <p className="cart-item-name">{item.name}</p>
+                                            <p className="cart-item-price">
+                                                ${item.price.toFixed(2)} x {item.quantity}
+                                                <span className="total-price">
+                                                    ${(item.price * item.quantity).toFixed(2)}
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <button
+                                            className="delete-button"
+                                            onClick={() => removeFromCart(item.id)}
+                                        >
+                                            <img src={DeleteIcon} alt="delete" />
+                                        </button>
+                                    </div>
+                                ))}
+                                <button className="checkout-button">
+                                    Checkout
+                                </button>
+                            </>
+                        )}
                     </div>
                 </div>
             )}
@@ -172,14 +232,14 @@ function Shop() {
                         </div>
                         <div className='sneaker-sales-div'>
                             <div>
-                                <button><MinusIcon /> </button> 
-                                <span className='article-count'>0</span>
-                                <button> <PlusIcon /> </button>
+                                <button onClick={decrementCount}><MinusIcon /> </button> 
+                                <span className='article-count'> {count} </span>
+                                <button onClick={incrementCount}> <PlusIcon /> </button>
                             </div>
                             <div className='add-to-cart-div'>
-                                <button id='add-to-cart-btn'> 
-                                    <span><img src={cart} alt='' /></span> 
-                                    <span className='add-to-cart-btn-text'> Add to cart </span>
+                                <button id='add-to-cart-btn' onClick={addToCart}> 
+                                    <span><img src={cart} alt='' /></span>
+                                    <span className='add-to-cart-btn-text' > Add to cart </span>
                                 </button>
                             </div>
                         </div>
