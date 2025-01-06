@@ -237,7 +237,7 @@ function Shop() {
                                 <button onClick={incrementCount}> <PlusIcon /> </button>
                             </div>
                             <div className='add-to-cart-div'>
-                                <button id='add-to-cart-btn' onClick={addToCart}> 
+                                <button id='add-to-cart-btn' onClick={addToCart} disabled={count === 0}> 
                                     <span><img src={cart} alt='' /></span>
                                     <span className='add-to-cart-btn-text' > Add to cart </span>
                                 </button>
