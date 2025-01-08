@@ -256,10 +256,26 @@ function Shop() {
                         <button className="prev-button" onClick={previousImage}>
                             <PreviousIcon />
                         </button>
-                        <img src={currentImage} className='currentImage' alt="" />
+                        <div>
+                            <img src={currentImage} className='currentImage' alt="" />
+                        </div>
+
                         <button className="next-button" onClick={nextImage}>
                             <NextIcon />
                         </button>
+                        {/* Ajout des miniatures */}
+                        <div className='lightbox-thumbnails'>
+                            {images.map((img, index) => (
+                                <div key={index} className="thumbnail-container">
+                                    <img
+                                        src={img}
+                                        className={`thumbnail ${currentImage === img ? 'active-thumbnail' : ''}`}
+                                        alt=''
+                                        onClick={() => setCurrentImage(img)}
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             )}
