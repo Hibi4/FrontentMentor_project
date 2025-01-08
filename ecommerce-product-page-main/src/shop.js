@@ -104,6 +104,7 @@ function Shop() {
 
     const removeFromCart = (itemId) => {
         setCartItems(cartItems.filter(item => item.id !== itemId));
+        setCount(0)
     };
 
     const nextImage = () => {
@@ -151,35 +152,49 @@ function Shop() {
                         ) : (
                             <>
                                 {cartItems.map(item => (
-                                    <div key={item.id} className="cart-item">
-                                        <img
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="cart-item-image"
-                                        />
-                                        <div className="cart-item-details">
-                                            <p className="cart-item-name">{item.name}</p>
-                                            <p className="cart-item-price">
-                                                ${item.price.toFixed(2)} x {item.quantity}
-                                                <span className="total-price">
-                                                    ${(item.price * item.quantity).toFixed(2)}
-                                                </span>
-                                            </p>
+                                    <div>
+                                        <div key={item.id} className="cart-item">
+                                            <div>
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.name}
+                                                    className="cart-item-image"
+                                                />
+                                            </div>
+
+                                            <div className="cart-item-details">
+                                                <p className="cart-item-name">{item.name}</p>
+                                                <p className="cart-item-price">
+                                                    ${item.price.toFixed(2)} x {item.quantity}
+                                                    <span className="total-price">
+                                                        ${(item.price * item.quantity).toFixed(2)}
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <button
+                                                    className="delete-button"
+                                                    onClick={() => removeFromCart(item.id)}
+                                                >
+                                                    <img src={DeleteIcon} alt="delete" />
+                                                </button>
+                                            </div>
+                                            
                                         </div>
-                                        <button
-                                            className="delete-button"
-                                            onClick={() => removeFromCart(item.id)}
-                                        >
-                                            <img src={DeleteIcon} alt="delete" />
-                                        </button>
+                                        <div>
+                                            <button className="checkout-button">
+                                                Checkout
+                                            </button>
+                                        </div>
                                     </div>
+                                    
+                                    
                                 ))}
-                                <button className="checkout-button">
-                                    Checkout
-                                </button>
+
                             </>
                         )}
                     </div>
+                    
                 </div>
             )}
             <div>
@@ -263,7 +278,7 @@ function Shop() {
                         <button className="next-button" onClick={nextImage}>
                             <NextIcon />
                         </button>
-                        {/* Ajout des miniatures */}
+                        
                         <div className='lightbox-thumbnails'>
                             {images.map((img, index) => (
                                 <div key={index} className="thumbnail-container">
