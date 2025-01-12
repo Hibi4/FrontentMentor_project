@@ -74,18 +74,36 @@ function Shop() {
     const [showCartModal, setShowCartModal] = useState(false);
     const [count, setCount] = useState(0);
     const [cartItems, setCartItems] = useState([]);
+    // Calculer le nombre total d'articles dans le panier
+    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
     const images = [product__1, product__2, product__3, product__4];
 
     const addToCart = () => {
-        const newItem = {
-            id: Date.now(),
-            image: product__1,
-            name: "Fall Limited Edition Sneakers",
-            price: 125.00,
-            quantity: count
-        };
-        setCartItems([...cartItems, newItem]);
+        
+        const existingItemIndex = cartItems.findIndex(
+            item => item.name === "Fall Limited Edition Sneakers"
+        );
+
+        if (existingItemIndex !== -1) {
+            const updatedCartItems = [...cartItems];
+            updatedCartItems[existingItemIndex] = {
+                ...updatedCartItems[existingItemIndex],
+                quantity: updatedCartItems[existingItemIndex].quantity + count
+            };
+            setCartItems(updatedCartItems);
+        } else {
+            
+            const newItem = {
+                id: Date.now(),
+                image: product__1,
+                name: "Fall Limited Edition Sneakers",
+                price: 125.00,
+                quantity: count
+            };
+            setCartItems([...cartItems, newItem]);
+        }
+        setCount(0);
     };
 
     const incrementCount = () => {
@@ -129,9 +147,17 @@ function Shop() {
                     </ul>
                 </div>
                 <div className='header-profile'>
-                    <div>
-                        <img src={cart} onClick={() => setShowCartModal(!showCartModal)} alt='' />
+                    <div className="cart-icon-container">
+                        <img
+                            src={cart}
+                            onClick={() => setShowCartModal(!showCartModal)}
+                            alt=''
+                        />
+                        {totalItems > 0 && (
+                            <span className="cart-badge">{totalItems}</span>
+                        )}
                     </div>
+                     
                     <div className='avatar-profile'>
                         <img className='avatar' src={avatar} alt='avatar' />
                     </div>
