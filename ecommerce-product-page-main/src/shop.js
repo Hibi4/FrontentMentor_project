@@ -250,7 +250,7 @@ function Shop() {
                             ))}
                         </div>
                     </div>
-                    <div>
+                    <div className='product-description'>
                         <div>
                             <p id='sneaker-title'>Sneaker company</p>
                             <h1 id='sneaker-text'>Fall Limited Edition <br /> Sneakers</h1>

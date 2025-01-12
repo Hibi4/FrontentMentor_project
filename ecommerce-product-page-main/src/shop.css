@@ -391,3 +391,63 @@ main {
     min-width: 15px;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .container {
+        display: block;
+    }
+
+    .product-images {
+        height: auto;
+    }
+
+    .thumbnail-images {
+        display: none;
+    }
+
+    .sneaker-sales-div { 
+        display: block;
+    }
+
+    .add-to-cart-div #add-to-cart-btn {
+        margin-top: 25px;
+        width: 100%;
+    }
+
+    .sneaker-sales-div div span.article-count {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sneaker-sales-div div {
+        display: flex;
+        justify-content: space-between 
+    }
+
+    .sneaker-sales-div div button {
+        width: 100%;
+    }
+
+    /* 
+    .sneaker-sales-div {
+    display: flex;
+    gap: 2em;
+    margin-top: 15px;
+}
+
+.sneaker-sales-div div button {
+    padding: 10px 15px;
+    padding-top: 13px;
+}
+
+.sneaker-sales-div div span.article-count {
+    font-size: 25px;
+    border-radius: 3px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: gainsboro;
+}  */ 
+
+
+}
