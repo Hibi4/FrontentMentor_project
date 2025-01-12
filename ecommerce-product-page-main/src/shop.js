@@ -5,6 +5,7 @@ import product__1 from './images/image-product-1.jpg'
 import product__2 from './images/image-product-2.jpg'
 import product__3 from './images/image-product-3.jpg'
 import product__4 from './images/image-product-4.jpg'
+import deleteIcon from './images/delete-icon.png'
 import { useState } from 'react'
 
 /* 
@@ -48,12 +49,12 @@ const NextIcon = () => (
     </svg>
 );
 
-const DeleteIcon = () => (
+const DeleteP = () => (
     <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <defs>
-            <path d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z" id="a" />
+            <path d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z" id="a"/>
         </defs>
-        <use fill="#C3CAD9" fillRule="nonzero" xlinkHref="#a" />
+        <use fill="#C3CAD9" fillRule="nonzero" xlinkHref="#a"/>
     </svg>
 );
 
@@ -66,10 +67,6 @@ const CloseIcon = () => (
 const MenuIcon = () => (
     <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd" /></svg>
 );
-
-const ConsoleIcon = () => {
-    console.log("click on icon");
-}
 
 function Shop() {
     const [showLightbox, setShowLightbox] = useState(false);
@@ -136,7 +133,7 @@ function Shop() {
                         <img src={cart} onClick={() => setShowCartModal(!showCartModal)} alt='' />
                     </div>
                     <div className='avatar-profile'>
-                        <img className='avatar' src={avatar} alt='' />
+                        <img className='avatar' src={avatar} alt='avatar' />
                     </div>
                 </div>
             </div>
@@ -176,7 +173,7 @@ function Shop() {
                                                     className="delete-button"
                                                     onClick={() => removeFromCart(item.id)}
                                                 >
-                                                    <img src={DeleteIcon} alt="delete" />
+                                                <img src={deleteIcon} alt="delete" />
                                                 </button>
                                             </div>
                                             
