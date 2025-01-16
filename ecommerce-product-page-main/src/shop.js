@@ -74,7 +74,7 @@ function Shop() {
     const [showCartModal, setShowCartModal] = useState(false);
     const [count, setCount] = useState(0);
     const [cartItems, setCartItems] = useState([]);
-    // Calculer le nombre total d'articles dans le panier
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
     const images = [product__1, product__2, product__3, product__4];
@@ -136,6 +136,26 @@ function Shop() {
 
         <div>
             <div className='header'>
+                <div className='hamburger-menu'>
+                    <div className='hamburger' onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                        {/* ☰*/}
+                        {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+                    </div>
+                    <div>
+                        <span>Sneaker</span>
+                    </div>
+                    {/* Menu mobile */}
+                    <div className={`mobile-menu ${isMenuOpen ? 'show' : ''}`}>
+                        <ul>
+                            <li><strong>sneakers</strong></li>
+                            <li>Collections</li>
+                            <li>Men</li>
+                            <li>Women</li>
+                            <li>About</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </div>
                 <div className='header-title'>
                     <ul>
                         <li> <strong>sneakers</strong> </li>
@@ -157,7 +177,7 @@ function Shop() {
                             <span className="cart-badge">{totalItems}</span>
                         )}
                     </div>
-                     
+
                     <div className='avatar-profile'>
                         <img className='avatar' src={avatar} alt='avatar' />
                     </div>
