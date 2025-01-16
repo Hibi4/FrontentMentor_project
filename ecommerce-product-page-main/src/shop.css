@@ -491,14 +491,17 @@ main {
 
     .hamburger {
         display: block;
+        margin-right: 15px;
     }
 
     .header-title {
-        display: none; /* Cache le menu desktop sur mobile */
+        display: none;
     }
 
+    .cart-modal {
+        right: 116px;
+    }
 
-/* Overlay pour le fond sombre quand le menu est ouvert */
 .overlay {
     position: fixed;
     top: 0;
@@ -517,26 +520,12 @@ main {
     visibility: visible;
 }
 
-    /* 
-    .sneaker-sales-div {
+.product__1 {
     display: flex;
-    gap: 2em;
-    margin-top: 15px;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
 }
-
-.sneaker-sales-div div button {
-    padding: 10px 15px;
-    padding-top: 13px;
-}
-
-.sneaker-sales-div div span.article-count {
-    font-size: 25px;
-    border-radius: 3px;
-    padding-bottom: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    background-color: gainsboro;
-}  */ 
 
 
 }

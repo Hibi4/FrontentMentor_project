@@ -142,7 +142,7 @@ function Shop() {
                         {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
                     </div>
                     <div>
-                        <span>Sneaker</span>
+                        {!isMenuOpen && <span>Sneaker</span>}
                     </div>
                     {/* Menu mobile */}
                     <div className={`mobile-menu ${isMenuOpen ? 'show' : ''}`}>
@@ -229,15 +229,11 @@ function Shop() {
                                                 Checkout
                                             </button>
                                         </div>
-                                    </div>
-                                    
-                                    
+                                    </div>                                    
                                 ))}
-
                             </>
                         )}
-                    </div>
-                    
+                    </div> 
                 </div>
             )}
             <div>
