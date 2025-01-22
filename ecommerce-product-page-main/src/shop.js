@@ -241,16 +241,23 @@ function Shop() {
             </div>
             <main>
                 <div className='container'>
+
                     <div className='product-images'>
-                        <div>
+                        <div className='main-image-container'>
+                            <button className="mobile-prev-button" onClick={previousImage}>
+                                <PreviousIcon />
+                            </button>
                             <img
-                                src={product__1}
+                                src={currentImage}
                                 className='product__1'
                                 alt=''
-                                onClick={() => setShowLightbox(true)}
+                                onClick={() => window.innerWidth > 768 && setShowLightbox(true)}
                             />
+                            <button className="mobile-next-button" onClick={nextImage}>
+                                <NextIcon />
+                            </button>
                         </div>
-                        <div className='thumbnail-images'>
+                        <div className='thumbnail-images desktop-only'>
                             {images.map((img, index) => (
                                 <div key={index}>
                                     <img
@@ -259,13 +266,14 @@ function Shop() {
                                         alt=''
                                         onClick={() => {
                                             setCurrentImage(img);
-                                            setShowLightbox(true);
+                                            window.innerWidth > 768 && setShowLightbox(true);
                                         }}
                                     />
                                 </div>
                             ))}
                         </div>
                     </div>
+
                     <div className='product-description'>
                         <div>
                             <p id='sneaker-title'>Sneaker company</p>
@@ -286,12 +294,12 @@ function Shop() {
                         </div>
                         <div className='sneaker-sales-div'>
                             <div>
-                                <button onClick={decrementCount}><MinusIcon /> </button> 
+                                <button onClick={decrementCount}><MinusIcon /> </button>
                                 <span className='article-count'> {count} </span>
                                 <button onClick={incrementCount}> <PlusIcon /> </button>
                             </div>
                             <div className='add-to-cart-div'>
-                                <button id='add-to-cart-btn' onClick={addToCart} disabled={count === 0}> 
+                                <button id='add-to-cart-btn' onClick={addToCart} disabled={count === 0}>
                                     <span><img src={cart} alt='' /></span>
                                     <span className='add-to-cart-btn-text' > Add to cart </span>
                                 </button>

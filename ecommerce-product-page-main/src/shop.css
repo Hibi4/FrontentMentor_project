@@ -1,7 +1,7 @@
 .container {
     max-width: 1200px;
-    margin: 0 auto; 
-    padding: 0 20px; 
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -76,28 +76,28 @@ main {
 
 .thumbnail-images div {
     /* height: 80px;
-    width: 80px; */ 
+    width: 80px; */
     cursor: pointer;
 }
 
 .product__2 {
     height: 110px;
-    
+
 }
 
 .product__3 {
     height: 110px;
-    
+
 }
 
 .product__4 {
     height: 110px;
-    
+
 }
 
 .product__5 {
     height: 110px;
-   
+
 }
 
 .selected-thumbnail {
@@ -176,7 +176,8 @@ main {
     cursor: pointer;
 }
 
-.prev-button, .next-button {
+.prev-button,
+.next-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -215,7 +216,7 @@ main {
 
 .sneaker-original-price-div {
     margin-top: 15px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
 }
 
 .sneaker-original-price {
@@ -254,7 +255,7 @@ main {
     padding-left: 15px;
     padding-right: 15px;
     background-color: gainsboro;
-} 
+}
 
 .add-to-cart-div #add-to-cart-btn {
     padding: 10px 35px;
@@ -272,7 +273,7 @@ main {
 /* article modal */
 .cart-modal {
     position: absolute;
-    top: 80px; 
+    top: 80px;
     right: 200px;
     width: 360px;
     background: white;
@@ -404,13 +405,15 @@ main {
 
 .hamburger {
     cursor: pointer;
-    display: none; /* Caché par défaut sur desktop */
+    display: none;
+    /* Caché par défaut sur desktop */
 }
 
 .mobile-menu {
     position: fixed;
     top: 0;
-    /* left: -250px;*/  /* Caché par défaut */
+    /* left: -250px;*/
+    /* Caché par défaut */
     left: -350px;
     /* width: 250px; */
     width: 150px;
@@ -444,6 +447,35 @@ main {
     color: #ff7d1a;
 }
 
+.main-image-container {
+    position: relative;
+    width: 100%;
+}
+
+.mobile-prev-button,
+.mobile-next-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.mobile-prev-button {
+    left: 16px;
+}
+
+.mobile-next-button {
+    right: 16px;
+}
+
 @media (max-width: 768px) {
     .container {
         display: block;
@@ -451,7 +483,7 @@ main {
 
     .header-title {
         display: none;
-        
+
     }
 
     .hamburger-menu {
@@ -466,7 +498,7 @@ main {
         display: none;
     }
 
-    .sneaker-sales-div { 
+    .sneaker-sales-div {
         display: block;
     }
 
@@ -482,7 +514,7 @@ main {
 
     .sneaker-sales-div div {
         display: flex;
-        justify-content: space-between 
+        justify-content: space-between
     }
 
     .sneaker-sales-div div button {
@@ -502,30 +534,64 @@ main {
         right: 116px;
     }
 
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 90;
-}
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 90;
+    }
 
-.overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
+    .overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
 
-.product__1 {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    margin: auto;
-}
+    .product__1 {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin: auto;
+        margin-top: 15px;
+    }
 
+    .mobile-prev-button,
+    .mobile-next-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .product__1 {
+        width: 80%;
+        height: auto;
+    }
+
+    .main-image-container {
+        margin: 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .mobile-prev-button:hover,
+    .mobile-next-button:hover {
+        background: #f7f8fd;
+    }
+
+    .mobile-prev-button svg,
+    .mobile-next-button svg {
+        width: 12px;
+        height: 18px;
+    }
 
 }
