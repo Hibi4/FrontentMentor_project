@@ -406,18 +406,14 @@ main {
 .hamburger {
     cursor: pointer;
     display: none;
-    /* Caché par défaut sur desktop */
 }
 
 .mobile-menu {
     position: fixed;
     top: 0;
-    /* left: -250px;*/
-    /* Caché par défaut */
     left: -350px;
-    /* width: 250px; */
-    width: 150px;
-    height: 100vh;
+    width: 250px;
+    height: 100%;
     background: white;
     padding: 80px 20px 20px;
     transition: left 0.3s ease;
