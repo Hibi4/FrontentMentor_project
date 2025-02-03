@@ -75,8 +75,6 @@ main {
 }
 
 .thumbnail-images div {
-    /* height: 80px;
-    width: 80px; */
     cursor: pointer;
 }
 
@@ -92,12 +90,10 @@ main {
 
 .product__4 {
     height: 110px;
-
 }
 
 .product__5 {
     height: 110px;
-
 }
 
 .selected-thumbnail {
@@ -295,8 +291,6 @@ main {
 }
 
 .cart-modal-content {
-    /* padding: 24px;
-    min-height: 188px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -479,7 +473,6 @@ main {
 
     .header-title {
         display: none;
-
     }
 
     .hamburger-menu {

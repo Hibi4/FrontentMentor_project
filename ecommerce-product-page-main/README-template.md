@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github link](https://github.com/Hibi4/FrontentMentor_project.git)]
+- Solution URL: [Github link](https://github.com/Hibi4/FrontentMentor_project.git)
 - Live Site URL: [live site URL](https://ecommerce-product-app-pearl.vercel.app/)
 
 ## My process

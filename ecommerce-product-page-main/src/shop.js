@@ -8,17 +8,6 @@ import product__4 from './images/image-product-4.jpg'
 import deleteIcon from './images/delete-icon.png'
 import { useState } from 'react'
 
-/* 
-
-const IncrementButton = ({ onClick }) => (
-    <button className='increment-button' onClick={onClick}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="10"
-            height="10" fill="none" viewBox="0 0 10 10">
-            <path fill="#000" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" />
-        </svg>
-    </button>
-); */
-
 const MinusIcon = () => (
     <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -49,14 +38,14 @@ const NextIcon = () => (
     </svg>
 );
 
-const DeleteP = () => (
+/* const DeleteP = () => (
     <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <defs>
             <path d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z" id="a" />
         </defs>
         <use fill="#C3CAD9" fillRule="nonzero" xlinkHref="#a" />
     </svg>
-);
+); */
 
 const CloseIcon = () => (
     <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
@@ -331,7 +320,7 @@ function Shop() {
                                     <img
                                         src={img}
                                         className={`thumbnail ${currentImage === img ? 'active-thumbnail' : ''}`}
-                                        alt=''
+                                        alt='lightbox-thumbnails'
                                         onClick={() => setCurrentImage(img)}
                                     />
                                 </div>
