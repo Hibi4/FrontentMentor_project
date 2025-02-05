@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+How to solve this error in console: 
+Module not found: Error: Can't resolve 'web-vitals'
+ 
+ npm install web-vitals 
+
+ https://react-bootstrap.netlify.app/docs/components/navs/ 
+ npm install react-bootstrap bootstrap 

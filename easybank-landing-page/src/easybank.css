@@ -1,0 +1,90 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 30% auto;
+}
+
+.bookmark-text {
+    height: max-content;
+}
+
+.bookmark-text-description p {
+    color: grey;
+}
+
+.bookmark-btn button {
+    margin:5px;
+    width: max-content;
+    
+}
+
+.bookmark-picture img {
+    height: 60%;
+}
+
+#firefox-btn {
+    background-color: gainsboro;
+    color: black;
+}
+
+/* .features {
+    text-align: center;
+    
+} */
+.features-title {
+    text-align: center;
+}
+
+.features-description {
+    text-align: center;
+    margin: 0 auto;
+    width: 40%;
+    color: grey;
+}
+
+.bookmark-link {
+    display: flex;
+    justify-content: center;
+}
+
+.features-bookmark {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    padding: 3px;
+    margin: 0 auto;
+}
+
+.features-bookmark-description {
+    width: 50%;
+    text-align: center;
+}
+
+.extensions {
+    text-align: center;
+}
+
+.extensions-browsers {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.extensions-browsers-div {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    border-radius: solid 2px;
+    border-style: solid; 
+    border-color: gainsboro;
+}
+
+#more-info-btn-extensions {
+    width: 90%;
+}
