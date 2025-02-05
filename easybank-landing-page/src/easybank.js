@@ -8,6 +8,8 @@ import features__bookmark__logo from './images/illustration-features-tab-1.svg'
 import logo__chrome from './images/logo-chrome.svg'
 import logo__firefox from './images/logo-firefox.svg'
 import logo__opera from './images/logo-opera.svg'
+import icon__fb from './images/icon-facebook.svg'
+import icon__twitter from './images/icon-twitter.svg'
 //import { Button } from 'bootstrap';
 
 function Easybank() {
@@ -94,8 +96,8 @@ function Easybank() {
                     </div>
                     <div>
                         <p>
-                            organize your bookmarks however you like. Our simple drag-and-drop interface gives you 
-                            complete control over how you manage your favourite sites. 
+                            organize your bookmarks however you like. Our simple drag-and-drop interface gives you
+                            complete control over how you manage your favourite sites.
                         </p>
                     </div>
                     <div>
@@ -111,8 +113,8 @@ function Easybank() {
                 </div>
                 <div>
                     <p>
-                        We've got more browsers in the pipeline. Please don't let us know if you have got a favourite 
-                        you would like us to prioritize. 
+                        We've got more browsers in the pipeline. Please don't let us know if you have got a favourite
+                        you would like us to prioritize.
                     </p>
                 </div>
                 <div className='extensions-browsers'>
@@ -159,7 +161,65 @@ function Easybank() {
                         </div>
                     </div>
                 </div>
-                
+
+            </div>
+            <div className='extensions'>
+                <div>
+                    <h1>
+                        Frequently Asked Questions
+                    </h1>
+                </div>
+                <div>
+                    <p>
+                        Here are some of FAQ's. If you have any other questions you would like answered please.
+                        Please feel free to email us.
+                    </p>
+                </div>
+                <div></div>
+                <div>
+                    <Button variant="primary" id='more-info-btn'>More info</Button>
+                </div>
+            </div>
+            <div className='footer'>
+                <div className='footer-description'>
+                    <div>
+                        <p>35 000 + Already joined</p>
+                    </div>
+                    <div>
+                        <p>
+                            Stay up-to-date with what we're doing
+                        </p>
+                    </div>
+                    <div className='footer-contact'>
+                        <input type='text' id='footer-textInput' placeholder='enter your email adress' />
+                        <Button variant="danger" id='footerBtn'>Contact us</Button>
+                    </div>
+                    <div className='footer-bookmark'>
+                        <div className='footer-bookmark-features'>
+                            <div>
+                                <img src={bookmark} alt='bookmark-logo-footer' />
+                            </div>
+                            <div>
+                                <p>Features</p>
+                            </div>
+                            <div>
+                                <p>Pricing</p>
+                            </div>
+                            <div>
+                                <p>Contact</p>
+                            </div>
+                        </div>
+                        <div className='footer-bookmark-social-media'>
+                            <div>
+                                <img src={icon__fb} alt='bookmark-logo-footer' />
+                            </div>
+                            <div>
+                                <img src={icon__twitter} alt='bookmark-logo-footer' />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
         </div>

@@ -88,3 +88,54 @@
 #more-info-btn-extensions {
     width: 90%;
 }
+
+.footer {
+    display: grid;
+    grid-template-rows: auto auto;
+
+}
+
+.footer-description {
+    margin-top: 30px;
+    background-color: rgb(56, 56, 201);
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.footer-bookmark {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 40px;
+}
+
+.footer-bookmark-features {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-left: 45px;
+}
+
+.footer-contact {
+    display: inline-flex;
+    gap: 30px;
+}
+
+#footer-textInput {
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px;
+  
+}
+
+.footer-bookmark-social-media {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-right: 45px;
+}
