@@ -77,3 +77,8 @@ Module not found: Error: Can't resolve 'web-vitals'
 
  https://react-bootstrap.netlify.app/docs/components/navs/ 
  npm install react-bootstrap bootstrap 
+
+ https://codepen.io/tag/faq 
+
+ https://www.w3schools.com/howto/howto_js_accordion.asp 
+ https://codepen.io/Suneharakhan/pen/PovJRJd
