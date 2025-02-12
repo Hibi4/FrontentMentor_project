@@ -185,17 +185,19 @@ function Easybank() {
                     </p>
                 </div>
                 <div className='accordion-questions'>
+                    <hr />
                     <button className={`accordion ${activePanel === 0 ? 'active' : ''}`} onClick={() => toggleAccordion(0)}>
-                        <span>Section 1</span>
+                        <span className='accordion-span-questions'>What is Bookmark?</span>
                         <span className="accordion-icon">{activePanel === 0 ? '-' : '+'}</span>
                     </button>
                     <div className={`panel ${activePanel === 0 ? 'show' : ''}`}>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
+                    <hr />
 
                     <button className={`accordion ${activePanel === 1 ? 'active' : ''}`} onClick={() => toggleAccordion(1)}>
-                        <span>Section 2</span>
+                        <span className='accordion-span-questions'>How can I request a new browser?</span>
                         <span className="accordion-icon">{activePanel === 1 ? '-' : '+'}</span>
                     </button>
                     <div className={`panel ${activePanel === 1 ? 'show' : ''}`}>
@@ -203,9 +205,9 @@ function Easybank() {
                             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
                             ea commodo consequat.</p>
                     </div>
-
+                    <hr />
                     <button className={`accordion ${activePanel === 2 ? 'active' : ''}`} onClick={() => toggleAccordion(2)}>
-                        <span>Section 3</span>
+                        <span className='accordion-span-questions'>Is there a mobile app?</span>
                         <span className="accordion-icon">{activePanel === 2 ? '-' : '+'}</span>
                     </button>
                     <div className={`panel ${activePanel === 2 ? 'show' : ''}`}>
@@ -213,6 +215,17 @@ function Easybank() {
                             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                             consequat.</p>
                     </div>
+                    <hr />
+                    <button className={`accordion ${activePanel === 3 ? 'active' : ''}`} onClick={() => toggleAccordion(3)}>
+                        <span className='accordion-span-questions'>What about other Chromium browsers?</span>
+                        <span className="accordion-icon">{activePanel === 3 ? '-' : '+'}</span>
+                    </button>
+                    <div className={`panel ${activePanel === 3 ? 'show' : ''}`}>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.</p>
+                    </div>
+                    <hr />
                 </div>
                 <div>
                     <Button variant="primary" id='more-info-btn'>More info</Button>
