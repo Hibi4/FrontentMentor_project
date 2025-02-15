@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 import bookmark from './images/logo-bookmark.svg'
 import hero from './images/illustration-hero.svg'
 import features__bookmark__logo from './images/illustration-features-tab-1.svg'
+import speedy__search__logo from './images/illustration-features-tab-2.svg'
+import share__bookmark__logo from './images/illustration-features-tab-3.svg'
 import logo__chrome from './images/logo-chrome.svg'
 import logo__firefox from './images/logo-firefox.svg'
 import logo__opera from './images/logo-opera.svg'
@@ -16,7 +18,8 @@ import { useState } from 'react';
 
 function Easybank() {
 
-    const[activePanel, setActivePanel] = useState(null);
+    const [activePanel, setActivePanel] = useState(null);
+    const [activeFeature, setActiveFeature] = useState('bookmark');
 
     const toggleAccordion = (index) => {
         setActivePanel(activePanel === index ? null : index);
@@ -81,38 +84,94 @@ function Easybank() {
             </div>
             <div className='bookmark-link'>
                 <Nav
-                    activeKey="/home"
-                    onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+                    activeKey={activeFeature}
+                    onSelect={(selectedKey) => setActiveFeature(selectedKey)}
                 >
                     <Nav.Item>
-                        <Nav.Link href="/home">Simple Bookmarking</Nav.Link>
+                        <Nav.Link eventKey="bookmark">Simple Bookmarking</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="link-1">Speedy Searching</Nav.Link>
+                        <Nav.Link eventKey="speedy">Speedy Searching</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="link-2">Easy Sharing</Nav.Link>
+                        <Nav.Link eventKey="sharing">Easy Sharing</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </div>
             <div className='features-bookmark'>
-                <div className='features-bookmark-logo'>
-                    <img src={features__bookmark__logo} alt='features-bookmark-logo' />
-                </div>
-                <div className='features-bookmark-description'>
-                    <div>
-                        <h1>Bookmark in one click</h1>
-                    </div>
-                    <div>
-                        <p>
-                            organize your bookmarks however you like. Our simple drag-and-drop interface gives you
-                            complete control over how you manage your favourite sites.
-                        </p>
-                    </div>
-                    <div>
-                        <Button variant="primary" id='more-info-btn'>More info</Button>
-                    </div>
-                </div>
+                {/* bookmark speed */}
+                {activeFeature === 'bookmark' && (
+                    <>
+                        <div className='features-bookmark-logo'>
+                            <img src={features__bookmark__logo} alt='features-bookmark-logo' />
+                        </div>
+                        <div className='features-bookmark-description'>
+                            <div>
+                                <h1>Bookmark in one click</h1>
+                            </div>
+                            <div>
+                                <p>
+                                    organize your bookmarks however you like. Our simple drag-and-drop interface gives you
+                                    complete control over how you manage your favourite sites.
+                                </p>
+                            </div>
+                            <div>
+                                <Button variant="primary" id='more-info-btn'>More info</Button>
+                            </div>
+                        </div>
+                    </>
+                )}
+                {activeFeature === 'speedy' && (
+                    <>
+                        { /* speedy search */}
+                        <div className='features-bookmark-logo'>
+                            <img src={speedy__search__logo} alt='speedy search' />
+                        </div>
+                        <div className='features-bookmark-description'>
+                            <div>
+                                <h1>Intelligent search</h1>
+                            </div>
+                            <div>
+                                <p>
+                                    organize your bookmarks however you like. Our simple drag-and-drop interface gives you
+                                    complete control over how you manage your favourite sites.
+                                </p>
+                            </div>
+                            <div>
+                                <Button variant="primary" id='more-info-btn'>More info</Button>
+                            </div>
+                        </div>
+                    </>
+                )}
+                
+                 { /* speedy share bookmark */}
+                {(activeFeature === 'sharing' && 
+                    <>
+                        <div className='features-bookmark-logo'>
+                            <img src={share__bookmark__logo} alt='share bookmark' />
+                        </div>
+                        <div className='features-bookmark-description'>
+                            <div>
+                                <h1>Share bookmarks</h1>
+                            </div>
+                            <div>
+                                <p>
+                                    Easily share your bookmarks and collections with others. Create
+                                    a shareable link that you can send at the click of the button.
+                                </p>
+                            </div>
+                            <div>
+                                <Button variant="primary" id='more-info-btn'>More info</Button>
+                            </div>
+                        </div>
+                    </>
+                )}
+                
+
+
+               
+
+
             </div>
             <div className='extensions'>
                 <div>
