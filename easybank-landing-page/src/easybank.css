@@ -237,4 +237,141 @@
     font-size: 18px;
 }
 
+@media (max-width: 768px) {
+    .main {
+        display: block;
+    }
+
+    .bookmark-text {
+        width: 100%;
+        height: max-content;
+    }
+
+    .bookmark-picture img {
+        height: 70%;
+        margin-top: 20px;
+    }
+
+    .features-title {
+        font-weight: 700;
+    }
+
+    .features-description {
+        width: 80%;
+    } 
+
+    .features-bookmark {
+        display: block;
+    }
+
+
+
+    .features-bookmark-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .features-bookmark-logo img {
+        width: 80%;
+    }
+
+    .features-bookmark-description {
+        margin-top: 10px;
+        width: 90%;
+    } 
+    
+    .extensions-browsers {
+        display: block;
+    }
+
+    #more-info-btn {
+        width: 90%;
+    }
+
+    .accordion-questions {
+        width: 90%;
+    }
+
+    .footer-contact {
+        display: grid;
+        gap: 30px;
+        justify-content: center;
+       
+    } 
+
+    .footer-bookmark {
+        display: block;
+    } 
+
+    .footer-bookmark-features {
+        display: block;
+    }
+
+    .footer-bookmark-features div:nth-child(2) {
+        margin-top: 10px;
+    }
+
+    .footer-bookmark-social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-right: -50px;
+    }
+
+    /* 
+    .footer {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.footer-description {
+    margin-top: 30px;
+    background-color: #3179e4;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.footer-bookmark {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 40px;
+    margin-top: 70px;
+}
+
+.footer-bookmark-features {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-left: 45px;
+}
+
+.footer-contact {
+    display: inline-flex;
+    gap: 30px;
+}
+
+#footer-textInput {
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px;
+  
+}
+
+.footer-bookmark-social-media {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-right: 45px;
+} */ 
+
+}
+
 
