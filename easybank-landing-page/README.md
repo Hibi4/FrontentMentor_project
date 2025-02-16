@@ -82,3 +82,4 @@ Module not found: Error: Can't resolve 'web-vitals'
 
  https://www.w3schools.com/howto/howto_js_accordion.asp 
  https://codepen.io/Suneharakhan/pen/PovJRJd
+ https://www.w3schools.com/cssref/tryit.php?filename=trycss_border-bottom 
