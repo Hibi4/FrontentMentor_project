@@ -88,13 +88,13 @@ function Easybank() {
                     onSelect={(selectedKey) => setActiveFeature(selectedKey)}
                 >
                     <Nav.Item>
-                        <Nav.Link eventKey="bookmark">Simple Bookmarking</Nav.Link>
+                        <Nav.Link eventKey="bookmark" className='link'>Simple Bookmarking</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="speedy">Speedy Searching</Nav.Link>
+                        <Nav.Link eventKey="speedy" className='link'>Speedy Searching</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="sharing">Easy Sharing</Nav.Link>
+                        <Nav.Link eventKey="sharing" className='link'>Easy Sharing</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </div>
@@ -166,11 +166,6 @@ function Easybank() {
                         </div>
                     </>
                 )}
-                
-
-
-               
-
 
             </div>
             <div className='extensions'>

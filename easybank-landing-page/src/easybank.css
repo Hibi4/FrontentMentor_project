@@ -62,6 +62,25 @@
     justify-content: center;
 }
 
+.bookmark-link .link {
+    color: grey !important;
+    size: 18px;
+    border-bottom: 3px solid gainsboro;
+}
+
+.bookmark-link .link.active {
+    color: black !important;
+    border-bottom: 5px solid red;
+}
+
+/* .bookmark-link .link {
+    border-bottom-color: red;
+} */
+
+/* .nav-link .active {
+    background-color: yellow;
+} */ 
+
 .features-bookmark {
     display: flex;
     justify-content: center;
