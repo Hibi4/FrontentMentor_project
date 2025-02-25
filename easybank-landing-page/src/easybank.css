@@ -42,10 +42,6 @@
     color: black;
 }
 
-/* .features {
-    text-align: center;
-    
-} */
 .features-title {
     text-align: center;
 }
@@ -70,16 +66,8 @@
 
 .bookmark-link .link.active {
     color: black !important;
-    border-bottom: 5px solid red;
+    border-bottom: 3px solid red;
 }
-
-/* .bookmark-link .link {
-    border-bottom-color: red;
-} */
-
-/* .nav-link .active {
-    background-color: yellow;
-} */ 
 
 .features-bookmark {
     display: flex;
@@ -256,19 +244,226 @@
     font-size: 18px;
 }
 
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.close-icon-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-icon-container svg {
+    pointer-events: auto;
+}
+
+.mobile-menu-links {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 1001;
+}
+
+.mobile-menu-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu-links li {
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.mobile-menu-links li:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/* .mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu-links {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu-links.show {
+    display: block;
+    transform: translateY(0);
+}
+
+.mobile-menu-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu-links li {
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.mobile-menu-links li:last-child {
+    border-bottom: none;
+} */ 
+
+/* 
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -350px;
+    width: 250px;
+    height: 100%;
+    background: white;
+    padding: 80px 20px 20px;
+    transition: left 0.3s ease;
+    z-index: 100;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.show {
+    left: 0;
+    z-index: -999;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.mobile-menu li:hover {
+    color: #ff7d1a;
+} */ 
+
+@media (min-width: 769px) {
+
+    .close-icon-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 10px; /* Ajoute une zone de clic plus large */
+    }
+    
+    .close-icon {
+        cursor: pointer;
+    }
+    
+    .mobile-menu,
+    .mobile-menu-overlay {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
+
     .main {
-        display: block;
+        display: grid;
     }
 
     .bookmark-text {
         width: 100%;
         height: max-content;
+        margin-top: -80px;
+    }
+
+    .bookmark-text-title {
+        text-align: center;
     }
 
     .bookmark-picture img {
         height: 70%;
         margin-top: 20px;
+    }
+
+    .bookmark-text {
+        order: 2;
+    }
+
+    .bookmark-picture {
+        order: 1;
+    }
+
+    .mobile-menu {
+        display: block;
+    } 
+
+    .header-link {
+        display: none;
+    }
+
+    .mobile-menu-overlay {
+        background-color: #293535;
+    }
+
+    .mobile-menu-overlay .close-menu-button {
+        float: right;
+        margin-right: 35px;
+        margin-top: 10px;
+        background-color: transparent;
+    }
+
+    .nav {
+        display: grid !important;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .nav div {
+        border-block-start-style: solid;
+        color: lightgray;
+    }
+
+    .nav div:nth-last-child(1) {
+        border-block-end-style: solid;
+        color: lightgray;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .mobile-nav {
+        margin-top: 10px;
+        text-align: center;
     }
 
     .features-title {
@@ -282,8 +477,6 @@
     .features-bookmark {
         display: block;
     }
-
-
 
     .features-bookmark-logo {
         display: flex;
@@ -316,7 +509,6 @@
         display: grid;
         gap: 30px;
         justify-content: center;
-       
     } 
 
     .footer-bookmark {
