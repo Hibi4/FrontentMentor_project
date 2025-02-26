@@ -22,6 +22,7 @@ function Easybank() {
         <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
             <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fillRule="evenodd" />
         </svg>
+       
     );
 
     const MenuIcon = () => (
@@ -49,7 +50,7 @@ function Easybank() {
                     <img src={bookmark} alt='bookmark-logo' />
                 </div>
                 {/* start button menu mobile */ }
-                {/* le problème est que l'état de la variable ne change pas */} 
+                
                 <div className='mobile-menu' onClick={() =>
                     setIsMenuOpen(!isMenuOpen)}>
                     {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -57,13 +58,19 @@ function Easybank() {
                     {isMenuOpen && (
                     <div className="mobile-menu-overlay">
                         {/* Bouton de fermeture <div></div> */}
-                        
-                        <button 
-                            className="close-menu-button"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            <CloseIcon style={{ fontSize: 30, color: '#fff' }} />
-                        </button>
+                            <div className='mobile-menu-header'>
+                                <div className='mobile-menu-header-picture'>
+                                    <img src={bookmark} alt='bookmark-logo' className='white-logo' />
+                                </div>
+                                <div>
+                                    <button
+                                        className="close-menu-button"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        <CloseIcon style={{ fontSize: 30, color: '#fff' }} />
+                                    </button>
+                                </div>
+                            </div>
 
                         {/* Liens du menu */}
                             <nav className="mobile-nav">

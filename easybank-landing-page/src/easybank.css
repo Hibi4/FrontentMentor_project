@@ -407,6 +407,10 @@
         margin-top: -80px;
     }
 
+    .white-logo {
+        filter: brightness(0) invert(1);
+    }
+
     .bookmark-text-title {
         text-align: center;
     }
@@ -436,10 +440,18 @@
         background-color: #293535;
     }
 
+    .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        /* margin-top: 15px; */
+        margin: 15px 20px 0px 15px;
+
+    }
+
     .mobile-menu-overlay .close-menu-button {
         float: right;
-        margin-right: 35px;
-        margin-top: 10px;
+        /* margin-right: 35px; */ 
+        /* margin-top: 10px; */ 
         background-color: transparent;
     }
 
