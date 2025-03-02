@@ -12,31 +12,24 @@ import logo__firefox from './images/logo-firefox.svg'
 import logo__opera from './images/logo-opera.svg'
 import icon__fb from './images/icon-facebook.svg'
 import icon__twitter from './images/icon-twitter.svg'
-//import { Button } from 'bootstrap';
 
 import { useState } from 'react';
 
 function Easybank() {
 
+    const [activePanel, setActivePanel] = useState(null);
+    const [activeFeature, setActiveFeature] = useState('bookmark');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const CloseIcon = () => (
         <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
             <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fillRule="evenodd" />
         </svg>
-       
     );
 
     const MenuIcon = () => (
         <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fillRule="evenodd" /></svg>
     );
-
-    const [activePanel, setActivePanel] = useState(null);
-    const [activeFeature, setActiveFeature] = useState('bookmark');
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const handleMenuToggle = () => {
-        setIsMenuOpen(!isMenuOpen);
-        /* console.log("close icon" ,!isMenuOpen); */ 
-    };
 
     const toggleAccordion = (index) => {
         setActivePanel(activePanel === index ? null : index);
@@ -56,8 +49,8 @@ function Easybank() {
                     {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
 
                     {isMenuOpen && (
-                    <div className="mobile-menu-overlay">
-                        {/* Bouton de fermeture <div></div> */}
+                        <div className="mobile-menu-overlay">
+                            {/* close button */}
                             <div className='mobile-menu-header'>
                                 <div className='mobile-menu-header-picture'>
                                     <img src={bookmark} alt='bookmark-logo' className='white-logo' />
@@ -72,31 +65,31 @@ function Easybank() {
                                 </div>
                             </div>
 
-                        {/* Liens du menu */}
+                            {/* Menu links */}
                             <nav className="mobile-nav">
                                 <Nav
                                     activeKey="/home"
                                     onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
                                 >
                                     <Nav.Item>
-                                        <Nav.Link href="/home">Features</Nav.Link>
+                                        <Nav.Link href="/features">Features</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link eventKey="link-1">Pricing</Nav.Link>
+                                        <Nav.Link eventKey="/pricing">Pricing</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link eventKey="link-2">Contact</Nav.Link>
+                                        <Nav.Link eventKey="/contact">Contact</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Button variant="danger">Login</Button>
+                                        <Button variant="/login">Login</Button>
                                     </Nav.Item>
                                 </Nav>
                             </nav>
-                    </div>
-                )}
-                
+                        </div>
+                    )}
+
                 </div>
-                {/* end button menu mobile */ }
+                {/* end menu mobile */ }
                 <div className='header-link'>
                     <Nav
                         activeKey="/home"
@@ -117,61 +110,6 @@ function Easybank() {
                     </Nav>
                 </div>
             </div>
-            
-                {/* start mobile menu */ }
-                {/* 
-                <div className={`mobile-menu ${isMenuOpen ? 'show' : ''}`}>
-                        <ul>
-                            <li><strong>sneakers</strong></li>
-                            <li>Collections</li>
-                            <li>Men</li>
-                            <li>Women</li>
-                            <li>About</li>
-                            <li>Contact</li>
-                        </ul>
-                    </div>
-                */ }
-                {/* end mobile menu */ }
-                {/* <div className='header-link'>
-                    <Nav
-                        activeKey="/home"
-                        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-                    >
-                        <Nav.Item>
-                            <Nav.Link href="/home">Features</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="link-1">Pricing</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="link-2">Contact</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Button variant="danger">Login</Button>
-                        </Nav.Item>
-                    </Nav>
-                </div> */ }
-                {/* 
-                <div className='header-link'>
-                    <Nav
-                        activeKey="/home"
-                        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-                    >
-                        <Nav.Item>
-                            <Nav.Link href="/home">Features</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="link-1">Pricing</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="link-2">Contact</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Button variant="danger">Login</Button>
-                        </Nav.Item>
-                    </Nav>
-                </div>
-                */}
             
             <div className='main'>
                 <div className='bookmark-text'>
