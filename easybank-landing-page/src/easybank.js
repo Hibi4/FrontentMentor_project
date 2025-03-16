@@ -104,20 +104,20 @@ function Easybank() {
                             {/* Menu links */}
                             <nav className="mobile-nav">
                                 <Nav
-                                    activeKey="/home"
+                                    activeKey="/link not working yet"
                                     onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
                                 >
                                     <Nav.Item>
-                                        <Nav.Link href="/features">Features</Nav.Link>
+                                        <Nav.Link href="/link not working yet">Features</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link eventKey="/pricing">Pricing</Nav.Link>
+                                        <Nav.Link eventKey="/link not working yet">Pricing</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link eventKey="/contact">Contact</Nav.Link>
+                                        <Nav.Link eventKey="/link not working yet">Contact</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Button variant="/login">Login</Button>
+                                        <Button variant="/link not working yet">Login</Button>
                                     </Nav.Item>
                                 </Nav>
                             </nav>
@@ -128,17 +128,17 @@ function Easybank() {
                 {/* end menu mobile */}
                 <div className='header-link'>
                     <Nav
-                        activeKey="/home"
+                        activeKey="/link not working yet"
                         onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
                     >
                         <Nav.Item>
-                            <Nav.Link href="/home">Features</Nav.Link>
+                            <Nav.Link href="">Features</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link eventKey="link-1">Pricing</Nav.Link>
+                            <Nav.Link eventKey="">Pricing</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link eventKey="link-2">Contact</Nav.Link>
+                            <Nav.Link eventKey="">Contact</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Button variant="danger">Login</Button>
