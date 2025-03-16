@@ -13,13 +13,49 @@ import logo__opera from './images/logo-opera.svg'
 import icon__fb from './images/icon-facebook.svg'
 import icon__twitter from './images/icon-twitter.svg'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Easybank() {
 
     const [activePanel, setActivePanel] = useState(null);
     const [activeFeature, setActiveFeature] = useState('bookmark');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const handleEscapeKey = (event) => {
+            if (event.key === 'Escape') {
+                setIsMenuOpen(false);
+            }
+        };
+
+        if (isMenuOpen) {
+            document.addEventListener('keydown', handleEscapeKey);
+
+            const scrollY = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.width = '100%';
+        } else {
+            document.body.style.overflow = '';
+
+            if (document.body.style.position === 'fixed') {
+                const scrollY = parseInt(document.body.style.top || '0', 10) * -1;
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                window.scrollTo(0, scrollY);
+            }
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleEscapeKey);
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+        };
+    }, [isMenuOpen]);
 
     const CloseIcon = () => (
         <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
@@ -42,8 +78,8 @@ function Easybank() {
                 <div className='header-logo'>
                     <img src={bookmark} alt='bookmark-logo' />
                 </div>
-                {/* start button menu mobile */ }
-                
+                {/* start button menu mobile */}
+
                 <div className='mobile-menu' onClick={() =>
                     setIsMenuOpen(!isMenuOpen)}>
                     {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -89,7 +125,7 @@ function Easybank() {
                     )}
 
                 </div>
-                {/* end menu mobile */ }
+                {/* end menu mobile */}
                 <div className='header-link'>
                     <Nav
                         activeKey="/home"
@@ -110,7 +146,7 @@ function Easybank() {
                     </Nav>
                 </div>
             </div>
-            
+
             <div className='main'>
                 <div className='bookmark-text'>
                     <div className='bookmark-text-title'>
@@ -202,9 +238,9 @@ function Easybank() {
                         </div>
                     </>
                 )}
-                
-                 { /* speedy share bookmark */}
-                {(activeFeature === 'sharing' && 
+
+                { /* speedy share bookmark */}
+                {(activeFeature === 'sharing' &&
                     <>
                         <div className='features-bookmark-logo'>
                             <img src={share__bookmark__logo} alt='share bookmark' />
