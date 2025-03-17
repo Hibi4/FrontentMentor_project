@@ -90,8 +90,9 @@ For future projects, I would like to continue to improve my React skills by crea
 - [Example resource 5](https://codepen.io/Suneharakhan/pen/PovJRJd) - I use the example explained in this url to code my accordion. 
 - [Example resource 6](npm install react-bootstrap bootstrap) - this command line helps me to install bootstrap.
 
+- Cursor IDE helps me to solve a lot bugs during the development.
+
 ## Author
 
 - Website - [https://portfolio-ousmane.vercel.app/en/]
 - Frontend Mentor - [@hibi4](https://www.frontendmentor.io/profile/Hibi4)
-
