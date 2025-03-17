@@ -20,6 +20,7 @@ function Easybank() {
     const [activePanel, setActivePanel] = useState(null);
     const [activeFeature, setActiveFeature] = useState('bookmark');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [email, setEmail] = useState('');
 
     useEffect(() => {
         const handleEscapeKey = (event) => {
@@ -70,6 +71,22 @@ function Easybank() {
     const toggleAccordion = (index) => {
         setActivePanel(activePanel === index ? null : index);
     };
+
+    const validateEmail = (email) => {
+        // Simple regex for email validation
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
+    const handleSubmit = () => {
+        if(validateEmail(email)) {
+            setEmail('');
+            alert('le mail est bien formaté');
+        } else {
+            setEmail('');
+            alert('le mail n"est pas bien formaté');
+        }
+    }
 
     return (
         <div>
@@ -391,8 +408,10 @@ function Easybank() {
                         </p>
                     </div>
                     <div className='footer-contact'>
-                        <input type='text' id='footer-textInput' placeholder='enter your email adress' />
-                        <Button variant="danger" id='footerBtn'>Contact us</Button>
+                        <input type='text' id='footer-textInput' placeholder='enter your email adress'
+                         value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <Button variant="danger" id='footerBtn' onClick={() => {handleSubmit()} }>Contact us</Button>
+                        
                     </div>
                     <div className='footer-bookmark'>
                         <div className='footer-bookmark-features'>
