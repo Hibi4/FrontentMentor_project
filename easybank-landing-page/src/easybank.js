@@ -80,11 +80,11 @@ function Easybank() {
 
     const handleSubmit = () => {
         if(validateEmail(email)) {
-            setEmail('');
-            alert('le mail est bien formaté');
+            setEmail('Mail valid');
+            alert("Mail valid");
         } else {
-            setEmail('');
-            alert('le mail n"est pas bien formaté');
+            setEmail('Please enter a valid mail.');
+            alert("Please enter a valid mail.");
         }
     }
 
