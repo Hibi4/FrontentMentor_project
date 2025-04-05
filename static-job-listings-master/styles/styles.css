@@ -2,8 +2,35 @@
     .attribution a { color: hsl(228, 45%, 44%); } */ 
 
 
+.header {
+    height: 200px;
+    width: 100%;
+}
+
+.header img {
+    height: 200px;
+    width: 100%;
+    background-color: darkcyan;
+}
+
+.main {
+    height: 650px;
+    width: 100%;
+    background-color: hsl(180, 52%, 96%);
+}
+
+.divMain {
+    display: flex;
+    gap: 2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .attribution {
-    font-size: 11px; text-align: center;
+    position: relative;
+    text-align: center;
+    bottom: 0;
+    font-size: 18px;
 }
 
 .attribution a {
