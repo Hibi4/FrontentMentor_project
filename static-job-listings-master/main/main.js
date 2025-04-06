@@ -27,7 +27,9 @@ function displayElemets(data) {
         const div_job_title = document.createElement('div');
         const profile_div = document.createElement('div');
         const role_div = document.createElement('div');
+        
         const position_div = document.createElement('div');
+        const duration_div = document.createElement('div');
         const postedAt_div = document.createElement('div');
         const logo_div = document.createElement('div');
         const languages_div = document.createElement('div');
@@ -36,6 +38,7 @@ function displayElemets(data) {
         const span_company = document.createElement('span');
         const old = document.createElement('span');
         const job_title = document.createElement('span');
+        const featured_text = document.createElement('span');
         const contract = document.createElement('span');
         const span_duration = document.createElement('span');
         const span_position = document.createElement('span');
@@ -51,22 +54,25 @@ function displayElemets(data) {
         div_picture.className = 'div_picture';
         second_div.className = 'second_div';
         div_job_title.className = 'div_job_title';
+        contract_div.className = 'contract_div';
+        
         
         role_div.className = 'role_div';
         position_div.className = 'position_div';
         postedAt_div.className = 'postedAt_div';
         logo_div.className = 'logo_div';
+        span_contract.className = 'span_contract';
         languages_div.className = 'languages_div';
 
         // 
         span_company.textContent = elt.company;
         logo.src = elt.logo;
         job_title.textContent = elt.position;
-        span_duration.textContent = elt.postedAt;
+        span_duration.textContent = elt.postedAt + ' - ' + elt.contract + ' - ' + elt.location;
+        // span_contract.textContent = elt.contract;
         // old.textContent = elt.new;
         
         profile_div.appendChild(span_company);
-        console.log("elt : "+elt.new);
         
         // put this code into a private function and called it. 
         if(elt.new === true) {
@@ -76,14 +82,27 @@ function displayElemets(data) {
             old.textContent = " ";
             profile_div.appendChild(old);
         }
+
+        if(elt.featured === true) {
+            featured_text.textContent = ' Featured';
+            profile_div.appendChild(featured_text);
+            
+        } else {
+            featured_text.textContent = ' ';
+            profile_div.appendChild(featured_text);
+        }
+
         // profile_div.appendChild(old);
         div_picture.appendChild(logo);
         main_div.appendChild(div_picture);
         contract_div.appendChild(span_duration);
         div_job_title.appendChild(job_title);
+        duration_div.appendChild(span_contract);
         second_div.appendChild(profile_div);
+        // second_div.appendChild(featured_div);
         second_div.appendChild(div_job_title);
         second_div.appendChild(contract_div);
+        second_div.appendChild(duration_div);
         main_div.appendChild(second_div);
 //        main_div.appendChild(logo);
         // main_div.appendChild(profile_div);
