@@ -83,24 +83,15 @@ function displayElemets(data) {
         profile_div.appendChild(span_company);
         
         // put this code into a private function and called it. 
-        if(elt.new === true) {
+        if(elt.new) {
             old.textContent = " New";
             profile_div.appendChild(old);
-        } else {
-            old.textContent = " ";
-            profile_div.appendChild(old);
-            
         }
 
-        if(elt.featured === true) {
+        if(elt.featured) {
             featured_text.textContent = ' Featured';
             profile_div.appendChild(featured_text);
             main_div.classList.add('featured-listing');
-        } else {
-            featured_text.textContent = ' ';
-            profile_div.appendChild(featured_text);
-            // main_div.classList.add('featured-listing');
-            document.querySelectorAll('.featured-listing').display= 'none';
         }
 
         // profile_div.appendChild(old);
