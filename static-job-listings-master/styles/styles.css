@@ -36,7 +36,7 @@
 
 .listing_div .divMain {
     border-radius: 8px;
-    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.1);
     width: 100%;
     margin-bottom: 20px;
     padding: 30px 40px;
@@ -115,7 +115,8 @@
     color: white;
 }
 
-.role_span, .position_span {
+.role_span,
+.position_span {
     background-color: hsl(180, 52%, 96%);
     color: hsl(180, 29%, 50%);
     font-weight: 700;
@@ -126,7 +127,8 @@
     transition: all 0.2s;
 }
 
-.role_span:hover, .position_span:hover {
+.role_span:hover,
+.position_span:hover {
     background-color: hsl(180, 29%, 50%);
     color: white;
 }
@@ -171,7 +173,69 @@
 
 /* .profile_div span:nth-last-child() {
 
-} */ 
+} */
 
-/* CSS mobile design */ 
+/* CSS mobile design */
 
+@media (max-width: 767px) {
+    .listing_div {
+        margin-left: 5px;
+    }
+
+    .listing_div .divMain {
+        display: block;
+        padding-left: 5px;
+    }
+
+    .third_div {
+        justify-content: flex-start;
+    }
+
+    .language_span {
+        background-color: hsl(180, 52%, 96%);
+        color: hsl(180, 29%, 50%);
+        font-weight: 700;
+        padding: 8px 12px !important;
+        border-radius: 4px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .main {
+        padding-top: 0px;
+    }
+
+    .listing_div {
+        width: 90%;
+    }
+
+    .divMain {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .third_div {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid hsl(180, 8%, 52%);
+        width: 100%;
+    }
+
+    .language_span {
+        margin-top: 10px;
+    }
+
+    .div_picture {
+        position: relative;
+        top: -20px;
+    }
+
+    .div_picture img {
+        width: 50px;
+        height: auto;
+    }
+}
