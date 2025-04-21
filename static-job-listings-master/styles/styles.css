@@ -175,6 +175,75 @@
     margin-left: 8px;
 }
 
+/* Style pour la zone de filtres */
+.filter-container {
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.1);
+    padding: 20px 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-tag {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.filter-text {
+    background-color: hsl(180, 52%, 96%);
+    color: hsl(180, 29%, 50%);
+    font-weight: 700;
+    padding: 8px 12px;
+}
+
+.remove-filter {
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+    font-weight: 700;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.remove-filter:hover {
+    background-color: hsl(180, 14%, 20%);
+}
+
+.clear-button {
+    background: none;
+    border: none;
+    color: hsl(180, 8%, 52%);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.clear-button:hover {
+    color: hsl(180, 29%, 50%);
+    text-decoration: underline;
+}
+
 /* .profile_div span:nth-last-child() {
 
 } */
@@ -238,5 +307,11 @@
     .position_span,
     .language_span {
         margin-top: 10px;
+    }
+
+    .filter-container {
+        width: 90%;
+        margin-top: -15px;
+        padding: 15px;
     }
 }
