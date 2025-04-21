@@ -182,19 +182,13 @@ function displayJobs(data) {
         if(elt.new) {
             old.textContent = " New";
             profile_div.appendChild(old);
-        } else {
-            old.textContent = " ";
-            profile_div.appendChild(old);
         }
  
         if(elt.featured === true) {
             featured_text.textContent = ' Featured';
             profile_div.appendChild(featured_text);
             main_div.classList.add('featured-listing');
-        } else {
-            featured_text.textContent = ' ';
-            profile_div.appendChild(featured_text);
-        }
+        } 
  
         div_picture.appendChild(logo);
         main_div.appendChild(div_picture);
