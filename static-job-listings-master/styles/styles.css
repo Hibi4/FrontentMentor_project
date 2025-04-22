@@ -59,12 +59,12 @@
     height: auto;
 }
 
-.second_div {
+.jobDiv {
     padding: 10px;
     flex-grow: 1;
 }
 
-.third_div {
+.toolDiv {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -73,7 +73,7 @@
     margin-left: auto;
 }
 
-.third_div span {
+.toolDiv span {
     padding: 10px;
 }
 
@@ -260,7 +260,7 @@
         padding-left: 5px;
     }
 
-    .third_div {
+    .toolDiv {
         justify-content: flex-start;
     }
 }
@@ -268,10 +268,6 @@
 @media (max-width: 768px) {
     .main {
         padding-top: 20px;
-    }
-
-    .listing_div {
-        width: 90%;
     }
 
     .divMain {
@@ -291,11 +287,11 @@
         height: auto;
     }
 
-    .second_div {
+    .jobDiv {
         margin-top: 20px;
     }
 
-    .third_div {
+    .toolDiv {
         margin-top: 20px;
         padding-top: 20px;
         border-top: 1px solid hsl(180, 8%, 52%);

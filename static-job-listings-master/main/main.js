@@ -120,7 +120,7 @@ function displayJobs(data) {
         
         const jobListing_div = document.createElement('div');
         const main_div = document.createElement('div');
-        const second_div = document.createElement('div');
+        const jobDiv = document.createElement('div');
         const div_picture = document.createElement('div');
         const div_job_title = document.createElement('div');
         const profile_div = document.createElement('div');
@@ -132,7 +132,7 @@ function displayJobs(data) {
         const logo_div = document.createElement('div');
         const languages_div = document.createElement('div');
         const contract_div = document.createElement('div');
-        const third_div = document.createElement('div');
+        const toolDiv = document.createElement('div');
   
         const span_company = document.createElement('span');
         const old = document.createElement('span');
@@ -149,10 +149,10 @@ function displayJobs(data) {
         main_div.className = 'divMain';
         profile_div.className = 'profile_div';
         div_picture.className = 'div_picture';
-        second_div.className = 'second_div';
+        jobDiv.className = 'jobDiv';
         div_job_title.className = 'div_job_title';
         contract_div.className = 'contract_div';
-        third_div.className = 'third_div';
+        toolDiv.className = 'toolDiv';
         
         
         role_div.className = 'role_div';
@@ -189,18 +189,18 @@ function displayJobs(data) {
         contract_div.appendChild(span_duration);
         div_job_title.appendChild(job_title);
         duration_div.appendChild(span_contract);
-        second_div.appendChild(profile_div);
-        second_div.appendChild(div_job_title);
-        second_div.appendChild(contract_div);
-        second_div.appendChild(duration_div);
+        jobDiv.appendChild(profile_div);
+        jobDiv.appendChild(div_job_title);
+        jobDiv.appendChild(contract_div);
+        jobDiv.appendChild(duration_div);
 
         // Role
         role_span.addEventListener('click', () => addFilter(elt.role));
-        third_div.appendChild(role_span);
+        toolDiv.appendChild(role_span);
         
         // Level
         position_span.addEventListener('click', () => addFilter(elt.level));
-        third_div.appendChild(position_span);
+        toolDiv.appendChild(position_span);
         
         // Languages
         elt.languages.forEach(language => {
@@ -208,7 +208,7 @@ function displayJobs(data) {
             language_span.className = 'language_span';
             language_span.textContent = language;
             language_span.addEventListener('click', () => addFilter(language));
-            third_div.appendChild(language_span);
+            toolDiv.appendChild(language_span);
         });
         
         // tools
@@ -217,11 +217,11 @@ function displayJobs(data) {
             tool_span.className = 'language_span';
             tool_span.textContent = tool;
             tool_span.addEventListener('click', () => addFilter(tool));
-            third_div.appendChild(tool_span);
+            toolDiv.appendChild(tool_span);
         });
         
-        main_div.appendChild(second_div);
-        main_div.appendChild(third_div);
+        main_div.appendChild(jobDiv);
+        main_div.appendChild(toolDiv);
         
         jobListing_div.appendChild(main_div);
         main.appendChild(jobListing_div);
