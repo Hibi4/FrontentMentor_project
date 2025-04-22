@@ -1,13 +1,14 @@
 const main = document.querySelector('.main');
 
-// Variables globales pour le filtrage
+// Global variables for filtering
+
 let activeFilters = [];
 let allJobsData = [];
 
-// Créer la zone de filtres
+// Create the filter area
 const filterContainer = document.createElement('div');
 filterContainer.className = 'filter-container';
-filterContainer.style.display = 'none'; // Caché par défaut
+filterContainer.style.display = 'none';
 
 const filterWrapper = document.createElement('div');
 filterWrapper.className = 'filter-wrapper';
@@ -29,7 +30,7 @@ filterWrapper.appendChild(filtersDiv);
 filterWrapper.appendChild(clearButton);
 filterContainer.appendChild(filterWrapper);
 
-// Insérer la zone de filtres avant le contenu principal
+// Insert filter area before main content
 main.insertBefore(filterContainer, main.firstChild);
 
 fetch('data.json')
@@ -44,19 +45,19 @@ fetch('data.json')
         })
     );
 
-// Fonction d'ajout de filtre
+// Add filter function
 function addFilter(filterValue) {
-    // Vérifier si le filtre existe déjà
+    // Check if the filter already exists
     if (activeFilters.includes(filterValue)) {
-        return; // Ne pas ajouter de doublons
+        return; // Do not add duplicates
     }
 
     activeFilters.push(filterValue);
     
-    // Rendre visible le conteneur de filtres
+    // Make the filter container visible
     filterContainer.style.display = 'block';
     
-    // Créer l'élément de filtre
+    // Create the filter element
     const filterTag = document.createElement('div');
     filterTag.className = 'filter-tag';
     
@@ -77,7 +78,7 @@ function addFilter(filterValue) {
             filterContainer.style.display = 'none';
         }
         
-        // display the remain offers / Réafficher les offres selon les filtres restants
+        // Re-display offers according to the remaining filters
         displayJobs(allJobsData);
     });
     
@@ -85,17 +86,17 @@ function addFilter(filterValue) {
     filterTag.appendChild(removeBtn);
     filtersDiv.appendChild(filterTag);
     
-    // Filtrer les offres d'emploi
+    // Filter the offers
     displayJobs(allJobsData);
 }
 
-// Fonction pour vérifier si une offre correspond aux filtres actifs
+// Function to check if an offer matches active filters
 function jobMatchesFilters(job) {
     if (activeFilters.length === 0) {
-        return true; // Pas de filtres, afficher tous les emplois
+        return true; // No filter, show all jobs 
     }
     
-    // Créer un tableau de toutes les propriétés filtrables du job
+    // Create a table of all filterable properties of the job
     const jobTags = [
         job.role,
         job.level,
@@ -103,21 +104,20 @@ function jobMatchesFilters(job) {
         ...job.tools
     ];
     
-    // Vérifier si tous les filtres actifs sont présents dans ce job
+    // Check if all active filters are present in this job
     return activeFilters.every(filter => jobTags.includes(filter));
 }
 
 function displayJobs(data) {
-    // Effacer tous les emplois affichés
     // Remove the displayed jobs 
     const jobListings = document.querySelectorAll('.listing_div');
     jobListings.forEach(listing => listing.remove());
     
-    // Afficher uniquement les emplois qui correspondent aux filtres
+    // Show only jobs that match filters
     const filteredJobs = data.filter(jobMatchesFilters);
     
     for (const elt of filteredJobs) {
-        // Créer les éléments (code existant)
+        
         const jobListing_div = document.createElement('div');
         const main_div = document.createElement('div');
         const second_div = document.createElement('div');
@@ -138,12 +138,8 @@ function displayJobs(data) {
         const old = document.createElement('span');
         const job_title = document.createElement('span');
         const featured_text = document.createElement('span');
-        const contract = document.createElement('span');
         const span_duration = document.createElement('span');
-        const span_role = document.createElement('span');
-        const span_day = document.createElement('span');
         const span_contract = document.createElement('span');
-        const span_location = document.createElement('span');
         const logo = document.createElement('img');
         const role_span = document.createElement('span');
         const position_span = document.createElement('span');
@@ -168,7 +164,6 @@ function displayJobs(data) {
         role_span.className = 'role_span';
         position_span.className = 'position_span';
  
-        // Définir le contenu des éléments
         span_company.textContent = elt.company;
         logo.src = elt.logo;
         job_title.textContent = elt.position;
@@ -178,17 +173,16 @@ function displayJobs(data) {
         
         profile_div.appendChild(span_company);
         
-        // put this code into a private function and called it. 
         if(elt.new) {
             old.textContent = " New";
             profile_div.appendChild(old);
         }
  
-        if(elt.featured === true) {
+        if(elt.featured) {
             featured_text.textContent = ' Featured';
             profile_div.appendChild(featured_text);
             main_div.classList.add('featured-listing');
-        } 
+        }
  
         div_picture.appendChild(logo);
         main_div.appendChild(div_picture);
@@ -199,8 +193,7 @@ function displayJobs(data) {
         second_div.appendChild(div_job_title);
         second_div.appendChild(contract_div);
         second_div.appendChild(duration_div);
-        
-        // Ajouter les tags dans third_div avec les gestionnaires d'événements
+
         // Role
         role_span.addEventListener('click', () => addFilter(elt.role));
         third_div.appendChild(role_span);
@@ -209,7 +202,7 @@ function displayJobs(data) {
         position_span.addEventListener('click', () => addFilter(elt.level));
         third_div.appendChild(position_span);
         
-        // Langages
+        // Languages
         elt.languages.forEach(language => {
             const language_span = document.createElement('span');
             language_span.className = 'language_span';
@@ -218,7 +211,7 @@ function displayJobs(data) {
             third_div.appendChild(language_span);
         });
         
-        // Outils
+        // tools
         elt.tools.forEach(tool => {
             const tool_span = document.createElement('span');
             tool_span.className = 'language_span';
@@ -234,18 +227,3 @@ function displayJobs(data) {
         main.appendChild(jobListing_div);
     }
 }
-
-/* 
-"id": 4,
-    "company": "MyHome",
-    "logo": "./images/myhome.svg",
-    "new": false,
-    "featured": false,
-    "position": "Junior Frontend Developer",
-    "role": "Frontend",
-    "level": "Junior",
-    "postedAt": "5d ago",
-    "contract": "Contract",
-    "location": "USA Only",
-    "languages": ["CSS", "JavaScript"],
-    "tools": [] */ 
