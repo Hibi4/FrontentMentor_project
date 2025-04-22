@@ -13,7 +13,6 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -44,23 +43,28 @@ Users should be able to:
 
 ### What I learned
 
-For this project, I used Flexbox, CSS Grid and Javascript. It's not new to me, but I practice my knowledge on this project. I learn some new CSS properties in order to allow me to learn new things.
+For this project, I used Flexbox, CSS Grid and Javascript. It's not new to me, but I practiced my knowledge on this project. I learn some new CSS properties in order to allow me to learn new things.
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
  I never use 'flex-grow' before. I learn many things by using it. 
   flex-grow: 1;
 ```
 ```js
 
-- Using 'every' method was new to me . I did not realize this method exit before. It is a game changer.
+- Using 'every' method was 'new' to me. I did not realize 'this' method exit before. It is a game changer.
 - Using 'includes' is very helpful.
   return activeFilters.every(filter => jobTags.includes(filter));
 
+- I even learn 'using a' spread operator 'in' JavaScript inside a array.
+
+  const jobTags = [
+    job.role,
+    job.level,
+    ...job.languages,
+    ...job.tools
+  ];
 ```
 
 ### Continued development
@@ -69,9 +73,9 @@ I would like to continue improving this side projects by adding new features.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-- Vibe Coding : Using cursor IDE, helps me to solve some complex bugs after not finding the solution by myself.
+- [Example resource 1](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/every) - This helped me to read the documentation about JS methods and view practical examples.
+
+- [Vibe Coding]Using cursor IDE, helps me to solve some complex bugs after not finding the solution by myself.
 
 ## Author
 
