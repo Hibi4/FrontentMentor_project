@@ -1,4 +1,3 @@
-console.log("Javascript js");
 const main = document.querySelector('.main');
 
 // Variables globales pour le filtrage
@@ -69,16 +68,16 @@ function addFilter(filterValue) {
     removeBtn.className = 'remove-filter';
     removeBtn.innerHTML = '&times;';
     removeBtn.addEventListener('click', () => {
-        // Supprimer le filtre
-        activeFilters = activeFilters.filter(f => f !== filterValue);
+        // remove the filters
+        activeFilters = activeFilters.filter(filter => filter !== filterValue);
         filterTag.remove();
         
-        // Si plus de filtres, cacher le conteneur
+        // If there is no active filters, hide the container
         if (activeFilters.length === 0) {
             filterContainer.style.display = 'none';
         }
         
-        // Réafficher les offres selon les filtres restants
+        // display the remain offers / Réafficher les offres selon les filtres restants
         displayJobs(allJobsData);
     });
     
@@ -110,6 +109,7 @@ function jobMatchesFilters(job) {
 
 function displayJobs(data) {
     // Effacer tous les emplois affichés
+    // Remove the displayed jobs 
     const jobListings = document.querySelectorAll('.listing_div');
     jobListings.forEach(listing => listing.remove());
     
