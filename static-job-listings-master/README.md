@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Hibi4/FrontentMentor_project.git)
-- Live Site URL: [Add live site URL here](https://static-job-listings-omega.vercel.app/)
+- Solution URL: [Github solution URL](https://github.com/Hibi4/FrontentMentor_project.git)
+- Live Site URL: [live site URL](https://static-job-listings-omega.vercel.app/)
 
 ## My process
 
