@@ -116,114 +116,157 @@ function displayJobs(data) {
     // Show only jobs that match filters
     const filteredJobs = data.filter(jobMatchesFilters);
     
-    for (const elt of filteredJobs) {
-        
-        const jobListing_div = document.createElement('div');
-        const main_div = document.createElement('div');
-        const jobDiv = document.createElement('div');
-        const div_picture = document.createElement('div');
-        const div_job_title = document.createElement('div');
-        const profile_div = document.createElement('div');
-        const role_div = document.createElement('div');
-        
-        const position_div = document.createElement('div');
-        const duration_div = document.createElement('div');
-        const postedAt_div = document.createElement('div');
-        const logo_div = document.createElement('div');
-        const languages_div = document.createElement('div');
-        const contract_div = document.createElement('div');
-        const toolDiv = document.createElement('div');
-  
-        const span_company = document.createElement('span');
-        const old = document.createElement('span');
-        const job_title = document.createElement('span');
-        const featured_text = document.createElement('span');
-        const span_duration = document.createElement('span');
-        const span_contract = document.createElement('span');
-        const logo = document.createElement('img');
-        const role_span = document.createElement('span');
-        const position_span = document.createElement('span');
-  
-        // styles 
-        jobListing_div.className = 'listing_div';
-        main_div.className = 'divMain';
-        profile_div.className = 'profile_div';
-        div_picture.className = 'div_picture';
-        jobDiv.className = 'jobDiv';
-        div_job_title.className = 'div_job_title';
-        contract_div.className = 'contract_div';
-        toolDiv.className = 'toolDiv';
-        
-        
-        role_div.className = 'role_div';
-        position_div.className = 'position_div';
-        postedAt_div.className = 'postedAt_div';
-        logo_div.className = 'logo_div';
-        span_contract.className = 'span_contract';
-        languages_div.className = 'languages_div';
-        role_span.className = 'role_span';
-        position_span.className = 'position_span';
- 
-        span_company.textContent = elt.company;
-        logo.src = elt.logo;
-        job_title.textContent = elt.position;
-        span_duration.textContent = elt.postedAt + ' - ' + elt.contract + ' - ' + elt.location;
-        role_span.textContent = elt.role;
-        position_span.textContent = elt.level;
-        
-        profile_div.appendChild(span_company);
-        
-        if(elt.new) {
-            old.textContent = " New";
-            profile_div.appendChild(old);
-        }
- 
-        if(elt.featured) {
-            featured_text.textContent = ' Featured';
-            profile_div.appendChild(featured_text);
-            main_div.classList.add('featured-listing');
-        }
- 
-        div_picture.appendChild(logo);
-        main_div.appendChild(div_picture);
-        contract_div.appendChild(span_duration);
-        div_job_title.appendChild(job_title);
-        duration_div.appendChild(span_contract);
-        jobDiv.appendChild(profile_div);
-        jobDiv.appendChild(div_job_title);
-        jobDiv.appendChild(contract_div);
-        jobDiv.appendChild(duration_div);
+    // show the filtered offers
+    filteredJobs.forEach(createJobCard);
+}
 
-        // Role
-        role_span.addEventListener('click', () => addFilter(elt.role));
-        toolDiv.appendChild(role_span);
-        
-        // Level
-        position_span.addEventListener('click', () => addFilter(elt.level));
-        toolDiv.appendChild(position_span);
-        
-        // Languages
-        elt.languages.forEach(language => {
-            const language_span = document.createElement('span');
-            language_span.className = 'language_span';
-            language_span.textContent = language;
-            language_span.addEventListener('click', () => addFilter(language));
-            toolDiv.appendChild(language_span);
-        });
-        
-        // tools
-        elt.tools.forEach(tool => {
-            const tool_span = document.createElement('span');
-            tool_span.className = 'language_span';
-            tool_span.textContent = tool;
-            tool_span.addEventListener('click', () => addFilter(tool));
-            toolDiv.appendChild(tool_span);
-        });
-        
-        main_div.appendChild(jobDiv);
-        main_div.appendChild(toolDiv);
-        
-        jobListing_div.appendChild(main_div);
-        main.appendChild(jobListing_div);
+// Function to create the job card
+function createJobCard(job) {
+    // Create the main elements
+    const elements = createElements();
+    
+    // Apply styles to elements
+    applyStyles(elements);
+    
+    // Fill up the elements with the given data
+    fillElements(elements, job);
+    
+    // Add the features 
+    addBadges(elements, job);
+    
+    // Structure the elements in the DOM
+    buildJobCardStructure(elements);
+    
+    // Add the events tags (role, level, languages, tools)
+    addTags(elements, job);
+    
+    // Add to the main container
+    elements.jobListing_div.appendChild(elements.main_div);
+    main.appendChild(elements.jobListing_div);
+}
+
+// Create the necessary elements
+function createElements() {
+    return {
+        jobListing_div: document.createElement('div'),
+        main_div: document.createElement('div'),
+        jobDiv: document.createElement('div'),
+        div_picture: document.createElement('div'),
+        div_job_title: document.createElement('div'),
+        profile_div: document.createElement('div'),
+        role_div: document.createElement('div'),
+        position_div: document.createElement('div'),
+        duration_div: document.createElement('div'),
+        postedAt_div: document.createElement('div'),
+        logo_div: document.createElement('div'),
+        languages_div: document.createElement('div'),
+        contract_div: document.createElement('div'),
+        toolDiv: document.createElement('div'),
+        span_company: document.createElement('span'),
+        old: document.createElement('span'),
+        job_title: document.createElement('span'),
+        featured_text: document.createElement('span'),
+        span_duration: document.createElement('span'),
+        span_contract: document.createElement('span'),
+        logo: document.createElement('img'),
+        role_span: document.createElement('span'),
+        position_span: document.createElement('span')
+    };
+}
+
+// Apply CSS to elements 
+function applyStyles(elements) {
+    elements.jobListing_div.className = 'listing_div';
+    elements.main_div.className = 'divMain';
+    elements.profile_div.className = 'profile_div';
+    elements.div_picture.className = 'div_picture';
+    elements.jobDiv.className = 'jobDiv';
+    elements.div_job_title.className = 'div_job_title';
+    elements.contract_div.className = 'contract_div';
+    elements.toolDiv.className = 'toolDiv';
+    elements.role_div.className = 'role_div';
+    elements.position_div.className = 'position_div';
+    elements.postedAt_div.className = 'postedAt_div';
+    elements.logo_div.className = 'logo_div';
+    elements.span_contract.className = 'span_contract';
+    elements.languages_div.className = 'languages_div';
+    elements.role_span.className = 'role_span';
+    elements.position_span.className = 'position_span';
+}
+
+// Fill up the elements avec the job data
+function fillElements(elements, job) {
+    elements.span_company.textContent = job.company;
+    elements.logo.src = job.logo;
+    elements.job_title.textContent = job.position;
+    elements.span_duration.textContent = job.postedAt + ' - ' + job.contract + ' - ' + job.location;
+    elements.role_span.textContent = job.role;
+    elements.position_span.textContent = job.level;
+    
+    elements.profile_div.appendChild(elements.span_company);
+}
+
+// Ajoute les badges (New, Featured) si nécessaire
+function addBadges(elements, job) {
+    if(job.new) {
+        elements.old.textContent = " New";
+        elements.profile_div.appendChild(elements.old);
     }
+
+    if(job.featured) {
+        elements.featured_text.textContent = ' Featured';
+        elements.profile_div.appendChild(elements.featured_text);
+        elements.main_div.classList.add('featured-listing');
+    }
+}
+
+// Structure les éléments dans le DOM
+function buildJobCardStructure(elements) {
+    elements.div_picture.appendChild(elements.logo);
+    elements.main_div.appendChild(elements.div_picture);
+    
+    elements.contract_div.appendChild(elements.span_duration);
+    elements.div_job_title.appendChild(elements.job_title);
+    elements.duration_div.appendChild(elements.span_contract);
+    
+    // Assembler la section des infos du job
+    elements.jobDiv.appendChild(elements.profile_div);
+    elements.jobDiv.appendChild(elements.div_job_title);
+    elements.jobDiv.appendChild(elements.contract_div);
+    elements.jobDiv.appendChild(elements.duration_div);
+    
+    // Ajouter le jobDiv au main_div
+    elements.main_div.appendChild(elements.jobDiv);
+}
+
+// Ajoute les tags cliquables (role, level, languages, tools)
+function addTags(elements, job) {
+    // Role
+    elements.role_span.addEventListener('click', () => addFilter(job.role));
+    elements.toolDiv.appendChild(elements.role_span);
+    
+    // Level
+    elements.position_span.addEventListener('click', () => addFilter(job.level));
+    elements.toolDiv.appendChild(elements.position_span);
+    
+    // Languages
+    job.languages.forEach(language => {
+        const language_span = document.createElement('span');
+        language_span.className = 'language_span';
+        language_span.textContent = language;
+        language_span.addEventListener('click', () => addFilter(language));
+        elements.toolDiv.appendChild(language_span);
+    });
+    
+    // Tools
+    job.tools.forEach(tool => {
+        const tool_span = document.createElement('span');
+        tool_span.className = 'language_span';
+        tool_span.textContent = tool;
+        tool_span.addEventListener('click', () => addFilter(tool));
+        elements.toolDiv.appendChild(tool_span);
+    });
+    
+    // Ajouter le toolDiv au main_div
+    elements.main_div.appendChild(elements.toolDiv);
 }
