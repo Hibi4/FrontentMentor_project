@@ -34,3 +34,47 @@
     font-weight: 700;
     font-size: 32px;
 }
+
+.rule-btn {
+    margin-top: 30%;
+    margin-right: 20%;
+    float: right;
+}
+
+/* Styles pour la modal */
+.modal {
+  z-index: 1050 !important;
+  background-color: grey;
+}
+
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+
+.modal-dialog {
+  z-index: 1050 !important;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+}
+
+.modal-content {
+    background-color: white;
+  position: relative !important;
+}
+.modal-backdrop {
+    opacity: 0.75 !important;
+}
+
+.rules-button {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

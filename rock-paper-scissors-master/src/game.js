@@ -1,35 +1,53 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './game.css'
-import background from './images/bg-pentagon.svg'
-
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import './game.css';
+import image_rules from './images/image-rules.svg';
 
 function Game() {
-    {/* 
-         <img src={icon__fb} alt='bookmark-logo-footer' />    
-    */ }
+    const [showRules, setShowRules] = useState(false);
 
     return (
-       <div className='main'> 
-       <div className='header'>
-       <div className='names-tag'>
-               <p>Rock</p>
-               <p>Paper</p>
-               <p>Scissors</p>
-          </div>
-          <div className='score-tag'>
-               <span>Score</span> <br/>
-               <span id='score'>12</span>
-               {/* <p>Score</p>
-               <p className='score'>
-                    <span>1254</span>
-               </p> */ }
-          </div>
-       </div>
-          
-          {/* <img src={background} alt='Background'/>*/ }
-       </div> 
-    )
+        <>
+            <div className='main'>
+                <div className='header'>
+                    <div className='names-tag'>
+                        <p>Rock</p>
+                        <p>Paper</p>
+                        <p>Scissors</p>
+                    </div>
+                    <div className='score-tag'>
+                        <span>Score</span> <br />
+                        <span id='score'>12</span>
+                    </div>
+                </div>
+                
+                <div className='rule-btn'>
+                    <Button variant="outline-light" onClick={() => setShowRules(true)}>
+                        Règles
+                    </Button>
+                </div>
+            </div>
+            
+            <Modal
+                show={showRules}
+                onHide={() => setShowRules(false)}
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>Règles du jeu</Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="text-center">
+                    <img src={image_rules} alt="Règles du jeu" style={{maxWidth: '100%'}} />
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowRules(false)}>
+                        Fermer
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </>
+    );
 }
 
 export default Game;
