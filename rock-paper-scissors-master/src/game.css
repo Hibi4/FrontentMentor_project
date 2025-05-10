@@ -1,0 +1,36 @@
+.main {
+    min-height: 100vh;
+    width: 100%;
+    background-color: hsl(237, 49%, 15%);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid white;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.names-tag p {
+    color: white;
+    font-size: 18px;
+}
+
+.score-tag {
+    height: 80px;
+    width: 20%;
+    background-color: white;
+    margin-right: 20px;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 20px;
+}
+
+#score {
+    font-weight: 700;
+    font-size: 32px;
+}
