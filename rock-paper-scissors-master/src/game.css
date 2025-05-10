@@ -62,7 +62,9 @@
 
 .modal-content {
     background-color: white;
-  position: relative !important;
+    position: relative !important;
+    padding: 30px;
+    border-radius: 5px;
 }
 .modal-backdrop {
     opacity: 0.75 !important;

@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import './game.css';
 import image_rules from './images/image-rules.svg';
+import closeIcon from './images/icon-close.svg'
 
 function Game() {
     const [showRules, setShowRules] = useState(false);
@@ -34,17 +35,18 @@ function Game() {
                 onHide={() => setShowRules(false)}
                 centered
             >
-                <Modal.Header closeButton>
+                <Modal.Header className="d-flex justify-content-between align-items-center border-0">
                     <Modal.Title>Règles du jeu</Modal.Title>
+                    <div> <img src={closeIcon} alt="close Icon" onClick={() => setShowRules(false)} style={{cursor : 'pointer'}} /> </div>
                 </Modal.Header>
                 <Modal.Body className="text-center">
                     <img src={image_rules} alt="Règles du jeu" style={{maxWidth: '100%'}} />
                 </Modal.Body>
-                <Modal.Footer>
+                {/* <Modal.Footer>
                     <Button variant="secondary" onClick={() => setShowRules(false)}>
                         Fermer
                     </Button>
-                </Modal.Footer>
+                </Modal.Footer>*/ }
             </Modal>
         </>
     );
