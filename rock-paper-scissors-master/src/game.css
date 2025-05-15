@@ -5,14 +5,16 @@
 } */ 
 
 .main {
+    position: relative;
     min-height: 100vh;
     width: 100%;
     background-color: hsl(237, 49%, 15%);
     display: flex; /* why not using block here */ 
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 50px 0;
+    justify-content: space-around;
+    /* justify-content: space-between; 
+    padding: 50px 0; */ 
 }
 
 .header {
@@ -50,9 +52,14 @@
 }
 
 .rule-btn {
-    margin-top: 30%;
-    margin-right: 20%;
-    float: right;
+    /* margin-top: 30%;
+    margin-right: 20%; 
+    float: right; */ 
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin: 0;
+    float: none;
 }
 
 /* Styles pour la modal */
@@ -109,7 +116,6 @@
     flex: 1;
     position: relative;
     width: 100%;
-    margin-top: 10%;
 }
 
 .triangle-bg {
@@ -194,23 +200,23 @@
 
 /* Positionnement spécifique pour chaque élément lors d'un choix */
 .choices .user-pick .paper-item {
-    top: 45%;
+    top: 60%;
     left: 33%;
 }
 
 .choices .user-pick .scissors-item  {
-    top: 45%;
+    top: 60%;
     right: 58%;
 }
 
 .choices .user-pick .rock-item {
-    top: 45%;
+    top: 60%;
 }
 
 .rule-btn button {
     font-size: 20px;
     border: 1px solid white;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     align-self: flex-end;
     cursor: pointer;
@@ -270,9 +276,4 @@
     .choices {
         gap: 12rem;
     }
-}
-
-#choices-game-item {
-    top: 50%;
-    right: 50%;
 }
