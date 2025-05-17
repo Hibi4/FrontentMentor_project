@@ -13,6 +13,16 @@ function Game() {
      const [showRules, setShowRules] = useState(false);
      const [playerChoice, setPlayerChoice] = useState(null);
      const [step, setStep] = useState('selection');
+     const [randomString, setRandomString] = useState('');
+     const strings = ['rock', 'paper', 'scissors'];
+
+     /* function to pick randomly one item */
+
+     const pickRandomString = () => {
+          const randomIndex = Math.floor(Math.random() * strings.length);
+          setRandomString(strings[randomIndex]);
+          console.log("random string is : "+strings[randomIndex]);
+     }     
 
      const handleItemClick = (choice) => {
           console.log(`You choose ${choice}`);
@@ -96,6 +106,7 @@ function Game() {
                                         <h4>The house picked</h4>
                                         <div className='game-item-placeholder'>
                                              {/* Ici, vous pourriez plus tard ajouter la logique pour le choix de la maison */}
+                                             <img src={getImage(playerChoice)} alt={playerChoice} />
                                         </div>
                                    </div>
                               </div>
