@@ -12,21 +12,37 @@ import rock from './images/icon-rock.svg'
 function Game() {
      const [showRules, setShowRules] = useState(false);
      const [playerChoice, setPlayerChoice] = useState(null);
+     const [computerChoice, setComputerChoice] = useState(null);
      const [step, setStep] = useState('selection');
-     const [randomString, setRandomString] = useState('');
-     const strings = ['rock', 'paper', 'scissors'];
+     // const [randomString, setRandomString] = useState('');
+     // const strings = ['rock', 'paper', 'scissors'];
 
      /* function to pick randomly one item */
 
      const pickRandomString = () => {
-          const randomIndex = Math.floor(Math.random() * strings.length);
-          setRandomString(strings[randomIndex]);
-          console.log("random string is : "+strings[randomIndex]);
-     }     
+          const choices = ['rock', 'paper', 'scissors'];
+          const randomIndex = Math.floor(Math.random() * choices.length);
+          return choices[randomIndex];
+          
+     }
+
+     const computerchoice = (randomString) => {
+          if(randomString === 'rock') { return rock ; }
+          if(randomString === 'paper') { return paper ; }
+          if(randomString === 'scissors') { return scissors ; }
+          return null;
+     }
 
      const handleItemClick = (choice) => {
           console.log(`You choose ${choice}`);
           setPlayerChoice(choice);
+
+          // set a timer here for 3 seconds and generate the computer choice 
+          // Générer le choix de l'ordinateur
+          const computerPick = pickRandomString();
+          console.log(`Computer choose ${computerPick}`);
+          setComputerChoice(computerPick);
+          
           setStep('result');
      }
 
@@ -46,6 +62,7 @@ function Game() {
 
      const resetGame = () => {
           setPlayerChoice(null);
+          setComputerChoice(null);
           setStep('selection');
      }
 
@@ -104,14 +121,22 @@ function Game() {
 
                                    <div className='house-pick'>
                                         <h4>The house picked</h4>
-                                        <div className='game-item-placeholder'>
-                                             {/* Ici, vous pourriez plus tard ajouter la logique pour le choix de la maison */}
-                                             <img src={getImage(playerChoice)} alt={playerChoice} />
-                                        </div>
+                                             <div className={`game-item ${getItemClass(computerChoice)}`}>
+                                                  <div className='game-item-inner'>
+                                                       <img src={getImage(computerChoice)} alt={computerChoice} />
+                                                  </div>
+                                             </div>
+                                        {/* <div className='game-item-placeholder'>
+                                             
+                                             <img src={getImage(computerChoice)} alt={'randomString'} className='computerChoice' />
+                                        </div> */ }
                                    </div>
                               </div>
 
                               <div className='result-actions'>
+                                   <div>
+                                        <h3 className='result-text'>YOU WIN</h3>
+                                   </div>
                                    <Button variant="light" onClick={resetGame} className="play-again-btn">
                                         Play Again
                                    </Button>
