@@ -340,3 +340,42 @@
         gap: 12rem;
     }
 }
+
+@media (max-width: 768px) {
+    .header {
+        width: 90%;
+    }
+
+    .names-tag p {
+        line-height: 1px;
+    }
+
+    .score-tag {
+        height: 70px;
+        width: 30%;
+        padding-top: 0px;
+    }
+
+    .triangle-img {
+        width: 90%;
+    }
+
+    .paper-item {
+        left: -25px;
+    }
+
+    .scissors-item {
+        right: -25px;
+    }
+
+    /*.rock-item {
+        bottom: -25px;
+    } */
+
+    .rule-btn {
+        position: relative;
+        right: 0;
+    }
+    
+    
+}
