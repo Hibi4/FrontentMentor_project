@@ -293,13 +293,13 @@
 }
 
 .house-pick .game-item-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -307,14 +307,6 @@
     width: 60%;
     height: 60%;
 }
-
-/* .game-item-placeholder {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    
-    background-color: white;
-} */ 
 
 .result-actions {
     margin-top: 2rem;
@@ -357,8 +349,20 @@
     }
 
     .triangle-img {
-        width: 90%;
+        width: 90%;   
     }
+
+    .triangle-bg {
+        margin-top: -20vh;
+    }
+
+    /* .game-area {
+        margin-top: 20vh;
+    } */ 
+
+    /* .triangle-bg {
+        margin-top: -90px;
+    } */
 
     .paper-item {
         left: -25px;
@@ -368,14 +372,10 @@
         right: -25px;
     }
 
-    /*.rock-item {
-        bottom: -25px;
-    } */
-
     .rule-btn {
         position: relative;
+        margin-top: -10vh;
         right: 0;
     }
-    
     
 }
