@@ -14,8 +14,23 @@ function Game() {
      const [playerChoice, setPlayerChoice] = useState(null);
      const [computerChoice, setComputerChoice] = useState(null);
      const [step, setStep] = useState('selection');
-     // const [randomString, setRandomString] = useState('');
-     // const strings = ['rock', 'paper', 'scissors'];
+     const gameRules = {
+          rock: 'scissors',
+          scissors: 'paper',
+          paper: 'rock'
+     }
+
+     /* 
+     Game rules : 
+     Rock beats Scissors
+     Scissors beats Paper
+     Paper beats Rock
+     */ 
+     const getResult = (playerChoice, computerChoice) => {
+          if(playerChoice === computerChoice) { return 'TIE'; }
+          return gameRules[playerChoice] === computerChoice ? 'WIN' : 'LOSE';
+     }
+
 
      /* function to pick randomly one item */
 
@@ -26,12 +41,12 @@ function Game() {
           
      }
 
-     const computerchoice = (randomString) => {
+     /* const computerchoice = (randomString) => {
           if(randomString === 'rock') { return rock ; }
           if(randomString === 'paper') { return paper ; }
           if(randomString === 'scissors') { return scissors ; }
           return null;
-     }
+     } */
 
      const handleItemClick = (choice) => {
           console.log(`You choose ${choice}`);
@@ -135,7 +150,7 @@ function Game() {
 
                               <div className='result-actions'>
                                    <div>
-                                        <h3 className='result-text'>YOU WIN</h3>
+                                        <h3 className='result-text'>YOU {getResult(playerChoice, computerChoice)}</h3>
                                    </div>
                                    <Button variant="light" onClick={resetGame} className="play-again-btn">
                                         Play Again

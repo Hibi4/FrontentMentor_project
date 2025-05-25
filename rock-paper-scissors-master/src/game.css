@@ -348,6 +348,10 @@
         padding-top: 0px;
     }
 
+    .modal-dialog { 
+        width: 90%;
+    }
+
     .triangle-img {
         width: 90%;   
     }
@@ -355,14 +359,6 @@
     .triangle-bg {
         margin-top: -20vh;
     }
-
-    /* .game-area {
-        margin-top: 20vh;
-    } */ 
-
-    /* .triangle-bg {
-        margin-top: -90px;
-    } */
 
     .paper-item {
         left: -25px;
