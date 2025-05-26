@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import './game.css';
@@ -14,6 +14,9 @@ function Game() {
      const [playerChoice, setPlayerChoice] = useState(null);
      const [computerChoice, setComputerChoice] = useState(null);
      const [step, setStep] = useState('selection');
+     const [roundOutcome, setRoundOutcome] = useState(''); // State for the round's outcome text
+     const [playerScore, setPlayerScore] = useState(0);
+     const [computerScore, setComputerScore] = useState(0);
      const gameRules = {
           rock: 'scissors',
           scissors: 'paper',
@@ -25,11 +28,55 @@ function Game() {
      Rock beats Scissors
      Scissors beats Paper
      Paper beats Rock
-     */ 
+     */
      const getResult = (playerChoice, computerChoice) => {
-          if(playerChoice === computerChoice) { return 'TIE'; }
+          if (playerChoice === computerChoice) { return 'TIE'; }
+          /* if(gameRules[playerChoice] === computerChoice) { 
+               setPlayerScore( (playerScore) => playerScore + 1);
+               return 'WIN'; 
+          } */
+          // setComputerScore( (computerScore) => computerScore + 1);
+          //return 'LOSE';
           return gameRules[playerChoice] === computerChoice ? 'WIN' : 'LOSE';
+          /* if (result === 'WIN') {
+               setPlayerScore((playerScore) => playerScore + 1);
+          } else if (result === 'LOSE') {
+               setComputerScore((computerScore) => computerScore + 1);
+          }
+          return result;*/
      }
+
+     /* const playGame = (playerChoice, computerChoice) => {
+          const result = getResult(playerChoice, computerChoice);
+
+          if (result === 'WIN') {
+               // setPlayerChoice((playerChoice) => playerChoice + 1);
+               setPlayerScore( (prev) => prev + 1 );
+          } else if (result === 'LOSE') {
+               setComputerScore( (prev) => prev + 1 );
+               // setComputerChoice((computerChoice) => computerChoice + 1);
+          }
+          return result
+     }
+ */
+     useEffect(() => {
+          if (step === 'result' && playerChoice && computerChoice) {
+               const result = getResult(playerChoice, computerChoice);
+               setRoundOutcome(result);
+
+               if (result === 'WIN') {
+                    setPlayerScore((prev) => prev + 1);
+               } else if (result === 'LOSE') {
+                    setComputerScore((prev) => prev + 1);
+               }
+          }
+     }, [step, playerChoice, computerChoice]);
+     /* 
+     useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  }) */
 
 
      /* function to pick randomly one item */
@@ -38,15 +85,8 @@ function Game() {
           const choices = ['rock', 'paper', 'scissors'];
           const randomIndex = Math.floor(Math.random() * choices.length);
           return choices[randomIndex];
-          
-     }
 
-     /* const computerchoice = (randomString) => {
-          if(randomString === 'rock') { return rock ; }
-          if(randomString === 'paper') { return paper ; }
-          if(randomString === 'scissors') { return scissors ; }
-          return null;
-     } */
+     }
 
      const handleItemClick = (choice) => {
           console.log(`You choose ${choice}`);
@@ -57,7 +97,7 @@ function Game() {
           const computerPick = pickRandomString();
           console.log(`Computer choose ${computerPick}`);
           setComputerChoice(computerPick);
-          
+
           setStep('result');
      }
 
@@ -92,7 +132,7 @@ function Game() {
                          </div>
                          <div className='score-tag'>
                               <span>Score</span> <br />
-                              <span id='score'>12</span>
+                              <span id='score'> {playerScore} </span>
                          </div>
                     </div>
                     {/* start conditional rendering */}
@@ -136,11 +176,11 @@ function Game() {
 
                                    <div className='house-pick'>
                                         <h4>The house picked</h4>
-                                             <div className={`game-item ${getItemClass(computerChoice)}`}>
-                                                  <div className='game-item-inner'>
-                                                       <img src={getImage(computerChoice)} alt={computerChoice} />
-                                                  </div>
+                                        <div className={`game-item ${getItemClass(computerChoice)}`}>
+                                             <div className='game-item-inner'>
+                                                  <img src={getImage(computerChoice)} alt={computerChoice} />
                                              </div>
+                                        </div>
                                         {/* <div className='game-item-placeholder'>
                                              
                                              <img src={getImage(computerChoice)} alt={'randomString'} className='computerChoice' />
@@ -150,15 +190,20 @@ function Game() {
 
                               <div className='result-actions'>
                                    <div>
+                                        <h3 className='result-text'>YOU {roundOutcome}</h3>
+                                   </div>
+                                   {/*
+                                   <div>
                                         <h3 className='result-text'>YOU {getResult(playerChoice, computerChoice)}</h3>
                                    </div>
+                                   */ }
                                    <Button variant="light" onClick={resetGame} className="play-again-btn">
                                         Play Again
                                    </Button>
                               </div>
                          </div>
                     )}
-                    
+
 
                     <div className='rule-btn'>
                          <Button
