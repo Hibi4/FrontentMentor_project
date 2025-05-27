@@ -360,6 +360,35 @@
         margin-top: -20vh;
     }
 
+    .game-area {
+        margin-top: 0px;
+    }
+
+    .choices .user-pick .paper-item {
+        top: 42%;
+        left: 10%;
+    }
+
+    .choices .user-pick .scissors-item {
+        top: 42%;
+    }
+
+    .choices .user-pick .rock-item {
+        top: 42%;
+    }
+
+    .choices {
+        gap: 2rem;
+    }
+
+    .choices h4 {
+        width: max-content;
+    }
+
+    .house-pick h4 {
+        width: max-content;
+    }
+
     .paper-item {
         left: -25px;
     }
