@@ -205,7 +205,7 @@ function Game() {
                     )}
 
 
-                    <div className='rule-btn'>
+                    <div className='rule-btn' id='rule-btn'>
                          <Button
                               variant="outline-light"
                               onClick={() => setShowRules(true)}

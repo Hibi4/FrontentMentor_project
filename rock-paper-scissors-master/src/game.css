@@ -365,16 +365,16 @@
     }
 
     .choices .user-pick .paper-item {
-        top: 42%;
+        top: 37%;
         left: 10%;
     }
 
     .choices .user-pick .scissors-item {
-        top: 42%;
+        top: 37%;
     }
 
     .choices .user-pick .rock-item {
-        top: 42%;
+        top: 37%;
     }
 
     .choices {
@@ -399,7 +399,7 @@
 
     .rule-btn {
         position: relative;
-        margin-top: -10vh;
+        /* margin-top: -10vh; */ 
         right: 0;
     }
     
