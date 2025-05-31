@@ -397,6 +397,33 @@
         right: -25px;
     }
 
+    .choices .user-pick, .choices .house-pick {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Inverser l'ordre des éléments */
+    /* .choices .user-pick h4, .choices .house-pick h4 {
+        order: 2; 
+    } */ 
+
+     .choices .user-pick h4 {
+        order: 2;
+     }
+
+    /*.choices .house-pick h4 {
+        order: 2;
+    }*/
+
+    /* .choices .user-pick .game-item .paper-item {
+        order: 2;
+    } */ 
+
+    /* .user-pick .game-item, .house-pick .game-item {
+        order: 1; 
+    } */
+
     .rule-btn {
         position: relative;
         /* margin-top: -10vh; */ 

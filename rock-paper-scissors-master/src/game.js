@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import './game.css';
 import bg_triangle from './images/bg-triangle.svg'
+import bg_pentagone from './images/bg-pentagon.svg'
 import image_rules from './images/image-rules.svg'
 import closeIcon from './images/icon-close.svg'
 import paper from './images/icon-paper.svg'
@@ -16,6 +17,7 @@ function Game() {
      const [step, setStep] = useState('selection');
      const [roundOutcome, setRoundOutcome] = useState(''); // State for the round's outcome text
      const [playerScore, setPlayerScore] = useState(0);
+     const [isBonusMode, setIsBonusMode] = useState(false);
      const [computerScore, setComputerScore] = useState(0);
      const gameRules = {
           rock: 'scissors',
@@ -65,7 +67,15 @@ function Game() {
                setRoundOutcome(result);
 
                if (result === 'WIN') {
-                    setPlayerScore((prev) => prev + 1);
+                    setPlayerScore((prev) => {
+                         const newScore = prev + 1;
+                         if(newScore === 3 ) {
+                              setIsBonusMode(true);
+                              console.log("Vous passez en mode pentagone");
+                         }
+                         return newScore; // why return here 
+                    });
+
                } else if (result === 'LOSE') {
                     setComputerScore((prev) => prev + 1);
                }
@@ -136,11 +146,36 @@ function Game() {
                          </div>
                     </div>
                     {/* start conditional rendering */}
-                    {step === 'selection' ? (
+                    { step === 'selection' && !isBonusMode ? (
                          // Selection screen with triangle
                          <div className='game-tag'>
                               <div className='triangle-bg'>
                                    <img src={bg_triangle} alt='triangle_bg' className='triangle-img' />
+
+                                   <div className='game-item paper-item' onClick={() => handleItemClick('paper')}>
+                                        <div className='game-item-inner'>
+                                             <img src={paper} alt='paper' />
+                                        </div>
+                                   </div>
+
+                                   <div className='game-item scissors-item' onClick={() => handleItemClick('scissors')}>
+                                        <div className='game-item-inner'>
+                                             <img src={scissors} alt='scissors' />
+                                        </div>
+                                   </div>
+
+                                   <div className='game-item rock-item' onClick={() => handleItemClick('rock')}>
+                                        <div className='game-item-inner'>
+                                             <img src={rock} alt='rock' />
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    ) : step === 'selection' && isBonusMode ? (
+                         // Rendu du pentagone bonus
+                         <div className='game-tag'>
+                              <div className='pentagon-bg'>
+                                   <img src={bg_pentagone} alt='pentagon_bg' className='pentagon-img' />
 
                                    <div className='game-item paper-item' onClick={() => handleItemClick('paper')}>
                                         <div className='game-item-inner'>
@@ -181,10 +216,6 @@ function Game() {
                                                   <img src={getImage(computerChoice)} alt={computerChoice} />
                                              </div>
                                         </div>
-                                        {/* <div className='game-item-placeholder'>
-                                             
-                                             <img src={getImage(computerChoice)} alt={'randomString'} className='computerChoice' />
-                                        </div> */ }
                                    </div>
                               </div>
 
@@ -203,6 +234,8 @@ function Game() {
                               </div>
                          </div>
                     )}
+                    
+                    
 
 
                     <div className='rule-btn' id='rule-btn'>
