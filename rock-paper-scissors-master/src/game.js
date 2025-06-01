@@ -9,6 +9,8 @@ import closeIcon from './images/icon-close.svg'
 import paper from './images/icon-paper.svg'
 import scissors from './images/icon-scissors.svg'
 import rock from './images/icon-rock.svg'
+import lizard from './images/icon-lizard.svg'
+import spock from './images/icon-spock.svg'
 
 function Game() {
      const [showRules, setShowRules] = useState(false);
@@ -22,7 +24,9 @@ function Game() {
      const gameRules = {
           rock: 'scissors',
           scissors: 'paper',
-          paper: 'rock'
+          paper: 'rock',
+          lizard: 'spock',
+          spock: 'lizard'
      }
 
      /* 
@@ -115,6 +119,8 @@ function Game() {
           if (choice === 'rock') { return rock; }
           if (choice === 'paper') { return paper; }
           if (choice === 'scissors') { return scissors }
+          if (choice === 'lizard') { return lizard; }
+          if (choice === 'spock') { return spock; }
           return null;
      }
 
@@ -122,6 +128,8 @@ function Game() {
           if (choice === 'rock') { return 'rock-item'; }
           if (choice === 'paper') { return 'paper-item'; }
           if (choice === 'scissors') { return 'scissors-item'; }
+          if (choice === 'lizard') { return 'lizard-item'; }
+          if (choice === 'spock') { return 'spock-item'; }
           return '';
      }
 
@@ -139,6 +147,8 @@ function Game() {
                               <p>Rock</p>
                               <p>Paper</p>
                               <p>Scissors</p>
+                              <p> {isBonusMode ? 'Lizard' : ''} </p>
+                              <p> {isBonusMode ? 'Spock' : ''} </p>
                          </div>
                          <div className='score-tag'>
                               <span>Score</span> <br />
@@ -173,29 +183,41 @@ function Game() {
                          </div>
                     ) : step === 'selection' && isBonusMode ? (
                          // Rendu du pentagone bonus
-                         <div className='game-tag'>
-                              <div className='pentagon-bg'>
-                                   <img src={bg_pentagone} alt='pentagon_bg' className='pentagon-img' />
+                              <div className='game-tag'>
+                                   <div className='pentagon-bg'>
+                                        <img src={bg_pentagone} alt='pentagon_bg' className='pentagon-img' />
 
-                                   <div className='game-item paper-item' onClick={() => handleItemClick('paper')}>
-                                        <div className='game-item-inner'>
-                                             <img src={paper} alt='paper' />
+                                        <div className='game-item paper-item' onClick={() => handleItemClick('paper')}>
+                                             <div className='game-item-inner'>
+                                                  <img src={paper} alt='paper' />
+                                             </div>
                                         </div>
-                                   </div>
 
-                                   <div className='game-item scissors-item' onClick={() => handleItemClick('scissors')}>
-                                        <div className='game-item-inner'>
-                                             <img src={scissors} alt='scissors' />
+                                        <div className='game-item scissors-item' onClick={() => handleItemClick('scissors')}>
+                                             <div className='game-item-inner'>
+                                                  <img src={scissors} alt='scissors' />
+                                             </div>
                                         </div>
-                                   </div>
 
-                                   <div className='game-item rock-item' onClick={() => handleItemClick('rock')}>
-                                        <div className='game-item-inner'>
-                                             <img src={rock} alt='rock' />
+                                        <div className='game-item rock-item' onClick={() => handleItemClick('rock')}>
+                                             <div className='game-item-inner'>
+                                                  <img src={rock} alt='rock' />
+                                             </div>
+                                        </div>
+
+                                        <div className='game-item lizard-item' onClick={() => handleItemClick('lizard')}>
+                                             <div className='game-item-inner'>
+                                                  <img src={lizard} alt='lizard' />
+                                             </div>
+                                        </div>
+
+                                        <div className='game-item spock-item' onClick={() => handleItemClick('spock')}>
+                                             <div className='game-item-inner'>
+                                                  <img src={spock} alt='spock' />
+                                             </div>
                                         </div>
                                    </div>
                               </div>
-                         </div>
                     ) : (
                          // Result screen with user choice
                          <div className='game-area'>

@@ -327,6 +327,55 @@
     font-weight: 700;
 }
 
+/* Bonus mode */
+.pentagon-bg {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pentagon-img {
+    position: absolute;
+    max-width: 100%;
+    z-index: 1;
+}
+
+/* Styles pour les nouveaux éléments */
+.lizard-item {
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+    box-shadow: 0px 5px 0px 0px hsl(261, 73%, 40%);
+}
+
+.spock-item {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+    box-shadow: 0px 5px 0px 0px hsl(189, 59%, 33%);
+}
+
+/* Ajuster les positions des éléments existants pour le pentagone */
+.pentagon-bg .paper-item {
+    top: 20%;
+    left: 0;
+}
+
+.pentagon-bg .scissors-item {
+    top: 20%;
+    right: 0;
+}
+
+.pentagon-bg .rock-item {
+    bottom: 20%;
+    left: 20%;
+}
+
 @media (min-width: 768px) {
     .choices {
         gap: 12rem;
