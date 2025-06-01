@@ -150,7 +150,7 @@ function Game() {
                               <p> {isBonusMode ? 'Lizard' : ''} </p>
                               <p> {isBonusMode ? 'Spock' : ''} </p>
                          </div>
-                         <div className='score-tag'>
+                         <div className={`score-tag ${isBonusMode ? 'bonus-mode' : ''}`}>
                               <span>Score</span> <br />
                               <span id='score'> {playerScore} </span>
                          </div>
