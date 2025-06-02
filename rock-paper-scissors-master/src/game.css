@@ -219,17 +219,17 @@
 }
 
 .choices .user-pick .paper-item {
-    top: 53%;
+    top: 51%;
     left: 33%;
 }
 
 .choices .user-pick .scissors-item  {
-    top: 53%;
+    top: 51%;
     right: 58%;
 }
 
 .choices .user-pick .rock-item {
-    top: 53%;
+    top: 51%;
 }
 
 .computerChoice {

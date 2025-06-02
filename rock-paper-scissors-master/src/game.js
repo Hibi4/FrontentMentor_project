@@ -5,6 +5,7 @@ import './game.css';
 import bg_triangle from './images/bg-triangle.svg'
 import bg_pentagone from './images/bg-pentagon.svg'
 import image_rules from './images/image-rules.svg'
+import image_rules_bonus from './images/image-rules-bonus.svg'
 import closeIcon from './images/icon-close.svg'
 import paper from './images/icon-paper.svg'
 import scissors from './images/icon-scissors.svg'
@@ -288,7 +289,7 @@ function Game() {
                          </div>
                     </Modal.Header>
                     <Modal.Body className="text-center">
-                         <img src={image_rules} alt="Règles du jeu" style={{ maxWidth: '100%' }} />
+                         <img src= {isBonusMode ? image_rules_bonus : image_rules }  alt="Règles du jeu" style={{ maxWidth: '100%' }} />
                     </Modal.Body>
                </Modal>
           </>
