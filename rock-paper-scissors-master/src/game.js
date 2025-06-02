@@ -25,16 +25,30 @@ function Game() {
      const gameRules = {
           rock: 'scissors',
           scissors: 'paper',
-          paper: 'rock',
-          lizard: 'spock',
-          spock: 'lizard'
+          paper: 'rock', 
      }
 
+/* lizard: 'spock',
+          spock: 'lizard',
+          rock: 'lizard',
+          lizard: 'paper',
+          paper: 'spock',
+          spock: 'rock',
+          rock: 'scissors',
+          scissors: 'lizard' */ 
      /* 
      Game rules : 
-     Rock beats Scissors
-     Scissors beats Paper
-     Paper beats Rock
+     Rock beats Scissors (check)
+     Scissors beats Paper (check)
+     Paper beats Rock (check)
+     Lizard beats Spock (check)
+     Spock beats Scissors (check)
+     Scissors beats Lizard (check)
+     Lizard beats Paper (check)
+     Paper beats Spock (check)
+     Spock beats Rock (check)
+     Rock beats Lizard (check)
+     
      */
      const getResult = (playerChoice, computerChoice) => {
           if (playerChoice === computerChoice) { return 'TIE'; }
@@ -246,11 +260,7 @@ function Game() {
                                    <div>
                                         <h3 className='result-text'>YOU {roundOutcome}</h3>
                                    </div>
-                                   {/*
-                                   <div>
-                                        <h3 className='result-text'>YOU {getResult(playerChoice, computerChoice)}</h3>
-                                   </div>
-                                   */ }
+                                   
                                    <Button variant="light" onClick={resetGame} className="play-again-btn">
                                         Play Again
                                    </Button>
