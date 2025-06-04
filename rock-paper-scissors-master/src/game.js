@@ -114,7 +114,6 @@ function Game() {
           const choices = ['rock', 'paper', 'scissors'];
           const randomIndex = Math.floor(Math.random() * choices.length);
           return choices[randomIndex];
-
      }
 
      const handleItemClick = (choice) => {
@@ -267,9 +266,6 @@ function Game() {
                               </div>
                          </div>
                     )}
-                    
-                    
-
 
                     <div className='rule-btn' id='rule-btn'>
                          <Button
