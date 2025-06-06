@@ -1,5 +1,7 @@
 # Frontend Mentor - Rock, Paper, Scissors solution
 
+![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
+
 This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
@@ -27,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github solution URL](https://github.com/Hibi4/FrontentMentor_project.git)
+- Live Site URL: [live site URL](https://rock-paper-scissors-game-topaz-one.vercel.app/)
 
 ## My process
 
