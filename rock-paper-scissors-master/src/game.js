@@ -58,7 +58,7 @@ function Game() {
           } */
           // setComputerScore( (computerScore) => computerScore + 1);
           //return 'LOSE';
-          return gameRules[playerChoice] === computerChoice ? 'WIN' : 'LOSE';
+          return gameRules[playerChoice] === computerChoice ? 'YOU WIN' : 'YOU LOSE';
           /* if (result === 'WIN') {
                setPlayerScore((playerScore) => playerScore + 1);
           } else if (result === 'LOSE') {
@@ -81,31 +81,28 @@ function Game() {
      }
  */
      useEffect(() => {
-          if (step === 'result' && playerChoice && computerChoice) {
-               const result = getResult(playerChoice, computerChoice);
-               setRoundOutcome(result);
+          setRoundOutcome('');
+          setTimeout(() => {
 
-               if (result === 'WIN') {
-                    setPlayerScore((prev) => {
-                         const newScore = prev + 1;
-                         if(newScore === 13 ) {
-                              setIsBonusMode(true);
-                         }
-                         return newScore; // why return here 
-                    });
+               if (step === 'result' && playerChoice && computerChoice) {
+                    const result = getResult(playerChoice, computerChoice);
+                    setRoundOutcome(result);
 
-               } else if (result === 'LOSE') {
-                    setComputerScore((prev) => prev + 1);
+                    if (result === 'WIN') {
+                         setPlayerScore((prev) => {
+                              const newScore = prev + 1;
+                              if (newScore === 13) {
+                                   setIsBonusMode(true);
+                              }
+                              return newScore; // why return here 
+                         });
+
+                    } else if (result === 'LOSE') {
+                         setComputerScore((prev) => prev + 1);
+                    }
                }
-          }
+          }, 1000)
      }, [step, playerChoice, computerChoice]);
-     /* 
-     useEffect(() => {
-    setTimeout(() => {
-      setCount((count) => count + 1);
-    }, 1000);
-  }) */
-
 
      /* function to pick randomly one item */
 
@@ -256,7 +253,7 @@ function Game() {
 
                               <div className='result-actions'>
                                    <div>
-                                        <h3 className='result-text'>YOU {roundOutcome}</h3>
+                                        <h3 className='result-text'> {roundOutcome}</h3>
                                    </div>
                                    
                                    <Button variant="light" onClick={resetGame} className="play-again-btn">

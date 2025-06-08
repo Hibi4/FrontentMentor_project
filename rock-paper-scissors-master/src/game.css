@@ -344,6 +344,7 @@
 }
 
 .result-text {
+    height: 30px;
     color: white;
     font-size: 25px;
     font-weight: 700;
