@@ -18,7 +18,7 @@ function Game() {
      const [playerChoice, setPlayerChoice] = useState(null);
      const [computerChoice, setComputerChoice] = useState(null);
      const [step, setStep] = useState('selection');
-     const [roundOutcome, setRoundOutcome] = useState(''); // State for the round's outcome text
+     const [roundOutcome, setRoundOutcome] = useState('');
      const [playerScore, setPlayerScore] = useState(0);
      const [isBonusMode, setIsBonusMode] = useState(false);
      const [computerScore, setComputerScore] = useState(0);
@@ -88,9 +88,8 @@ function Game() {
                if (result === 'WIN') {
                     setPlayerScore((prev) => {
                          const newScore = prev + 1;
-                         if(newScore === 3 ) {
+                         if(newScore === 13 ) {
                               setIsBonusMode(true);
-                              console.log("Vous passez en mode pentagone");
                          }
                          return newScore; // why return here 
                     });
@@ -155,7 +154,7 @@ function Game() {
 
      return (
           <>
-               <div className='main'>
+               <div className={`main ${isBonusMode ? 'bonus-mode' : ''}`}>
                     <div className='header'>
                          <div className='names-tag'>
                               <p>Rock</p>
@@ -196,7 +195,7 @@ function Game() {
                               </div>
                          </div>
                     ) : step === 'selection' && isBonusMode ? (
-                         // Rendu du pentagone bonus
+                         // render prentagone bonus
                               <div className='game-tag'>
                                    <div className='pentagon-bg'>
                                         <img src={bg_pentagone} alt='pentagon_bg' className='pentagon-img' />
@@ -233,7 +232,7 @@ function Game() {
                                    </div>
                               </div>
                     ) : (
-                         // Result screen with user choice
+                         /* Result screen with user choice */ 
                          <div className='game-area'>
                               <div className='choices'>
                                    <div className='user-pick'>
@@ -273,7 +272,7 @@ function Game() {
                               onClick={() => setShowRules(true)}
                               style={{ backgroundColor: 'transparent', color: 'white' }}
                          >
-                              Règles
+                              Rules
                          </Button>
                     </div>
                </div>
@@ -284,7 +283,7 @@ function Game() {
                     centered
                >
                     <Modal.Header className="modal_header">
-                         <Modal.Title>Règles du jeu</Modal.Title>
+                         <Modal.Title>Game's rules</Modal.Title>
                          <div>
                               <img
                                    src={closeIcon}
@@ -295,7 +294,7 @@ function Game() {
                          </div>
                     </Modal.Header>
                     <Modal.Body className="text-center">
-                         <img src= {isBonusMode ? image_rules_bonus : image_rules }  alt="Règles du jeu" style={{ maxWidth: '100%' }} />
+                         <img src= {isBonusMode ? image_rules_bonus : image_rules }  alt="Game's rules" style={{ maxWidth: '100%' }} />
                     </Modal.Body>
                </Modal>
           </>

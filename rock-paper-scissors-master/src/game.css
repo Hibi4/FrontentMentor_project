@@ -228,6 +228,10 @@
     right: 58%;
 }
 
+.bonus-mode .choices .user-pick .scissors-item {
+    top: 53%;
+}
+
 .choices .user-pick .rock-item {
     top: 51%;
 }
