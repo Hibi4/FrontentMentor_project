@@ -23,33 +23,13 @@ function Game() {
      const [isBonusMode, setIsBonusMode] = useState(false);
      const [computerScore, setComputerScore] = useState(0);
      const gameRules = {
-          rock: 'scissors',
-          scissors: 'paper',
-          paper: 'rock', 
+          rock: ['scissors', 'lizard'],     // Rock bat Scissors et Lizard
+          scissors: ['paper', 'lizard'],    // Scissors bat Paper et Lizard
+          paper: ['rock', 'spock'],         // Paper bat Rock et Spock
+          lizard: ['paper', 'spock'],       // Lizard bat Paper et Spock
+          spock: ['rock', 'scissors']       // Spock bat Rock et Scissors
      }
 
-/* lizard: 'spock',
-          spock: 'lizard',
-          rock: 'lizard',
-          lizard: 'paper',
-          paper: 'spock',
-          spock: 'rock',
-          rock: 'scissors',
-          scissors: 'lizard' */ 
-     /* 
-     Game rules : 
-     Rock beats Scissors (check)
-     Scissors beats Paper (check)
-     Paper beats Rock (check)
-     Lizard beats Spock (check)
-     Spock beats Scissors (check)
-     Scissors beats Lizard (check)
-     Lizard beats Paper (check)
-     Paper beats Spock (check)
-     Spock beats Rock (check)
-     Rock beats Lizard (check)
-     
-     */
      const getResult = (playerChoice, computerChoice) => {
           if (playerChoice === computerChoice) { return 'TIE'; }
           /* if(gameRules[playerChoice] === computerChoice) { 
@@ -58,7 +38,8 @@ function Game() {
           } */
           // setComputerScore( (computerScore) => computerScore + 1);
           //return 'LOSE';
-          return gameRules[playerChoice] === computerChoice ? 'YOU WIN' : 'YOU LOSE';
+          // return gameRules[playerChoice].includes(computerChoice) ? 'YOU WIN' : 'YOU LOSE';
+          return gameRules[playerChoice].includes(computerChoice) ? 'YOU WIN' : 'YOU LOSE';
           /* if (result === 'WIN') {
                setPlayerScore((playerScore) => playerScore + 1);
           } else if (result === 'LOSE') {
@@ -88,10 +69,12 @@ function Game() {
                     const result = getResult(playerChoice, computerChoice);
                     setRoundOutcome(result);
 
-                    if (result === 'WIN') {
+                    console.log("result score: "+result);
+
+                    if (result === 'YOU WIN') {
                          setPlayerScore((prev) => {
                               const newScore = prev + 1;
-                              if (newScore === 13) {
+                              if (newScore === 3) {
                                    setIsBonusMode(true);
                               }
                               return newScore; // why return here 
@@ -116,8 +99,6 @@ function Game() {
           console.log(`You choose ${choice}`);
           setPlayerChoice(choice);
 
-          // set a timer here for 3 seconds and generate the computer choice 
-          // Générer le choix de l'ordinateur
           const computerPick = pickRandomString();
           console.log(`Computer choose ${computerPick}`);
           setComputerChoice(computerPick);

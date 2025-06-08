@@ -61,23 +61,29 @@ Users should be able to:
 ```
 ```js
 useEffect(() => {
-          if (step === 'result' && playerChoice && computerChoice) {
-               const result = getResult(playerChoice, computerChoice);
-               setRoundOutcome(result);
+          setRoundOutcome('');
+          setTimeout(() => {
 
-               if (result === 'WIN') {
-                    setPlayerScore((prev) => {
-                         const newScore = prev + 1;
-                         if(newScore === 3 ) {
-                              setIsBonusMode(true);
-                         }
-                         return newScore; // why return here 
-                    });
+               if (step === 'result' && playerChoice && computerChoice) {
+                    const result = getResult(playerChoice, computerChoice);
+                    setRoundOutcome(result);
 
-               } else if (result === 'LOSE') {
-                    setComputerScore((prev) => prev + 1);
+                    console.log("result score: "+result);
+
+                    if (result === 'YOU WIN') {
+                         setPlayerScore((prev) => {
+                              const newScore = prev + 1;
+                              if (newScore === 3) {
+                                   setIsBonusMode(true);
+                              }
+                              return newScore; // why return here 
+                         });
+
+                    } else if (result === 'LOSE') {
+                         setComputerScore((prev) => prev + 1);
+                    }
                }
-          }
+          }, 1000)
      }, [step, playerChoice, computerChoice]);
 
      /* function to pick randomly one item */
