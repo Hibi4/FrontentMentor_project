@@ -32,35 +32,10 @@ function Game() {
 
      const getResult = (playerChoice, computerChoice) => {
           if (playerChoice === computerChoice) { return 'TIE'; }
-          /* if(gameRules[playerChoice] === computerChoice) { 
-               setPlayerScore( (playerScore) => playerScore + 1);
-               return 'WIN'; 
-          } */
-          // setComputerScore( (computerScore) => computerScore + 1);
-          //return 'LOSE';
-          // return gameRules[playerChoice].includes(computerChoice) ? 'YOU WIN' : 'YOU LOSE';
+          
           return gameRules[playerChoice].includes(computerChoice) ? 'YOU WIN' : 'YOU LOSE';
-          /* if (result === 'WIN') {
-               setPlayerScore((playerScore) => playerScore + 1);
-          } else if (result === 'LOSE') {
-               setComputerScore((computerScore) => computerScore + 1);
-          }
-          return result;*/
      }
-
-     /* const playGame = (playerChoice, computerChoice) => {
-          const result = getResult(playerChoice, computerChoice);
-
-          if (result === 'WIN') {
-               // setPlayerChoice((playerChoice) => playerChoice + 1);
-               setPlayerScore( (prev) => prev + 1 );
-          } else if (result === 'LOSE') {
-               setComputerScore( (prev) => prev + 1 );
-               // setComputerChoice((computerChoice) => computerChoice + 1);
-          }
-          return result
-     }
- */
+     
      useEffect(() => {
           setRoundOutcome('');
           setTimeout(() => {
