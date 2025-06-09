@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# Frontend Mentor - Rock, Paper, Scissors solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
-## Available Scripts
+This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### The challenge
 
-### `npm test`
+Users should be able to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- View the optimal layout for the game depending on their device's screen size
+- Play Rock, Paper, Scissors against the computer
+- When the player and the computer choose the same item, 
+     - 'Tie' will be displayed, 
+     - 'Win' if the player wins, 
+     - 'Lose' if computer wins
+- Maintain the state of the score after refreshing the browser _(optional)_
+- **Bonus**: Play Rock, Paper, Scissors, Lizard, Spock against the computer _(optional)_
 
-### `npm run build`
+### Links
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Solution URL: [Github solution URL](https://github.com/Hibi4/FrontentMentor_project.git)
+- Live Site URL: [live site URL](https://rock-paper-scissors-game-topaz-one.vercel.app/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## My process
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Built with
 
-### `npm run eject`
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### What I learned
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- I learned how to use React and how to create a project with it. I also learned how to use React Hook Form to handle the form and how to use React Testing Library to test the project. I also practiced my skills to use CSS Grid and Flexbox to create the layout of the project. I also learned how to use the useEffect hook applying setTimeout method to handle the logic of the project and the random method to pick an item.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+```html
+<h1>Some HTML code I'm proud of</h1>
+```
+```css
+.main {
+  min-height: 100vh;
+}
+```
+```js
+useEffect(() => {
+          setRoundOutcome('');
+          setTimeout(() => {
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+               if (step === 'result' && playerChoice && computerChoice) {
+                    const result = getResult(playerChoice, computerChoice);
+                    setRoundOutcome(result);
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+                    console.log("result score: "+result);
 
-### Code Splitting
+                    if (result === 'YOU WIN') {
+                         setPlayerScore((prev) => {
+                              const newScore = prev + 1;
+                              if (newScore === 3) {
+                                   setIsBonusMode(true);
+                              }
+                              return newScore; 
+                         });
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+                    } else if (result === 'LOSE') {
+                         setComputerScore((prev) => prev + 1);
+                    }
+               }
+          }, 1000)
+     }, [step, playerChoice, computerChoice]);
 
-### Analyzing the Bundle Size
+     /* function to pick randomly one item */
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+     const pickRandomString = () => {
+          const choices = ['rock', 'paper', 'scissors'];
+          const randomIndex = Math.floor(Math.random() * choices.length);
+          return choices[randomIndex];
+     }
 
-### Making a Progressive Web App
+     /* modal to show the rules */
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+     <Modal
+                    show={showRules}
+                    onHide={() => setShowRules(false)}
+                    centered
+               >
+                    <Modal.Header className="modal_header">
+                         <Modal.Title>Game's rule</Modal.Title>
+                         <div>
+                              <img
+                                   src={closeIcon}
+                                   alt="close Icon"
+                                   onClick={() => setShowRules(false)}
+                                   style={{ cursor: 'pointer' }}
+                              />
+                         </div>
+                    </Modal.Header>
+```
 
-### Advanced Configuration
+### Continued development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+I'm still not completely comfortable with React and I want to continue focusing on it. I want to learn more about the use of hooks and how to use them in a project.
 
-### Deployment
+### Useful resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started
 
-### `npm run build` fails to minify
+- [Example resource 1](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started) - This helped me to read and understand the basics of React.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Library for React : https://react.dev/
+- React Hook Form : https://react-hook-form.com/
+- React Testing Library : https://testing-library.com/docs/react-testing-library/intro/
+- npx create-react-app moz-todo-react 
+
+## Author
+
+- Website - [hibi](https://portfolio-ousmane.vercel.app/en/)
+- Frontend Mentor - [@hibi4](https://www.frontendmentor.io/profile/hibi4)
