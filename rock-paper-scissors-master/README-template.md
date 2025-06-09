@@ -47,8 +47,7 @@ Users should be able to:
 
 ### What I learned
 
-- I learned how to use React and how to create a project with it. I also learned how to use React Hook Form to handle the form and how to use React Testing Library to test the project. I also learned how to use CSS Grid and Flexbox to create the layout of the project. I also learned how to use the useEffect hook to handle the logic of the project and the random method to pick an item.
-
+- I learned how to use React and how to create a project with it. I also learned how to use React Hook Form to handle the form and how to use React Testing Library to test the project. I also practiced my skills to use CSS Grid and Flexbox to create the layout of the project. I also learned how to use the useEffect hook applying setTimeout method to handle the logic of the project and the random method to pick an item.
 
 
 ```html

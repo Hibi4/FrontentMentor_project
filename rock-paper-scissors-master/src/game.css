@@ -1,9 +1,3 @@
-/* .main {
-    min-height: 100vh;
-    width: 100%;
-    background-color: hsl(237, 49%, 15%);
-} */ 
-
 .main {
     position: relative;
     min-height: 100vh;
@@ -14,8 +8,6 @@
     align-items: center;
     justify-content: space-around;
     padding-top: 10px;
-    /* justify-content: space-between; 
-    padding: 50px 0; */ 
 }
 
 .header {
@@ -34,6 +26,7 @@
     font-size: 20px;
     font-weight: 700;
     padding-left: 15px;
+    line-height: 1px;
 }
 
 .score-tag {
@@ -44,7 +37,6 @@
     color: black;
     text-align: center;
     border-radius: 5px;
-    /* padding-top: 20px; */
 }
 
 .score-tag.bonus-mode {
@@ -56,66 +48,12 @@
     font-size: 32px;
 }
 
-.names-tag p {
-    line-height: 1px;
-}
-
 .rule-btn {
-    /* margin-top: 30%;
-    margin-right: 20%; 
-    float: right; */ 
     position: absolute;
     bottom: 20px;
     right: 20px;
     margin: 0;
     float: none;
-}
-
-/* Styles pour la modal */
-.modal {
-  z-index: 1050 !important;
-  background-color: grey;
-}
-
-.modal-backdrop {
-  z-index: 1040 !important;
-}
-
-.modal-dialog {
-  z-index: 1050 !important;
-  position: fixed !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  margin: 0 !important;
-}
-
-.modal-content {
-    background-color: white;
-    position: relative !important;
-    padding: 30px;
-    border-radius: 5px;
-}
-.modal-backdrop {
-    opacity: 0.75 !important;
-}
-
-.rules-button {
-    font-size: 1rem;
-    padding: 0.5rem 2rem;
-    border-radius: 8px;
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.modal_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px;
 }
 
 .game-tag {
@@ -175,30 +113,54 @@
     height: 60%;
 }
 
-.choices .game-item .paper-item {
-    top: 45%;
+/* Styles for the modal */
+.modal {
+  z-index: 1050 !important;
+  background-color: grey;
 }
 
-/* Positionnement spécifique pour chaque élément */
-.paper-item {
-    top: 0;
-    left: -50px;
-    background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-    box-shadow: 0px 5px 0px 0px hsl(230, 89%, 45%);
+.modal-backdrop {
+  z-index: 1040 !important;
 }
 
-.scissors-item {
-    top: 0;
-    right: -50px;
-    background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-    box-shadow: 0px 5px 0px 0px hsl(39, 89%, 30%);
+.modal-dialog {
+  z-index: 1050 !important;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
 }
 
-.rock-item {
-    bottom: -30px;
-    background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-    box-shadow: 0px 5px 0px 0px hsl(349, 71%, 30%);
+.modal-content {
+    background-color: white;
+    position: relative !important;
+    padding: 30px;
+    border-radius: 5px;
 }
+.modal-backdrop {
+    opacity: 0.75 !important;
+}
+
+.rules-button {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.modal_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+
+/* end for the modal css style */ 
 
 .game-are-inner {
     height: 110px;
@@ -207,11 +169,33 @@
     background: hsl(217, 67%, 15%);
 }
 
-/* Positionnement spécifique pour chaque élément lors d'un choix */
+.paper-item {
+    top: 0;
+    left: -50px;
+    background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
 
-/* .choices .user-pick .lizard-item {
-    top: 53%; 
-} */
+.scissors-item {
+    top: 0;
+    right: -50px;
+    background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.rock-item {
+    bottom: -30px;
+    background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.game-area {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choices .game-item .paper-item {
+    top: 45%;
+}
 
 .choices .user-pick .spock-item, .choices .user-pick .lizard-item {
     top: 53%;
@@ -251,13 +235,6 @@
     cursor: pointer;
 }
 
-.game-area {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .choices {
     display: flex;
     justify-content: center;
@@ -281,28 +258,24 @@
     text-align: center;
 }
 
-/* Styles pour les choix de la machine */
 .house-pick .rock-item {
     background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-    box-shadow: 0px 5px 0px 0px hsl(349, 71%, 30%);
     top: 10px;
 }
 
 .house-pick .paper-item {
     background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-    box-shadow: 0px 5px 0px 0px hsl(230, 89%, 45%);
+    /* box-shadow: 0px 5px 0px 0px hsl(230, 89%, 45%); */ 
     left: 10px;
     top: 10px;
 }
 
 .house-pick .scissors-item {
     background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-    box-shadow: 0px 5px 0px 0px hsl(39, 89%, 30%);
     right: 10px;
     top: 5px;
 }
 
-/* Assurez-vous que les styles de base sont appliqués */
 .house-pick .game-item {
     position: relative;
     width: 120px;
@@ -366,13 +339,13 @@
     z-index: 1;
 }
 
-/* Styles pour les nouveaux éléments */
+/* New styles for the bonus elements */
 .lizard-item {
     bottom: -5px;
     left: 58%;
     /* transform: translateX(-50%); */
     background: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
-    box-shadow: 0px 5px 0px 0px hsl(261, 73%, 40%);
+    /* box-shadow: 0px 5px 0px 0px hsl(261, 73%, 40%); */ 
 }
 
 .spock-item {
@@ -380,7 +353,7 @@
     left: 37%;
     /* transform: translateX(-50%); */
     background: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
-    box-shadow: 0px 5px 0px 0px hsl(189, 59%, 33%);
+    /* box-shadow: 0px 5px 0px 0px hsl(189, 59%, 33%); */ 
 }
 
 /* Ajuster les positions des éléments existants pour le pentagone */
@@ -438,6 +411,10 @@
         margin-top: 0px;
     }
 
+    .choices {
+        gap: 2rem;
+    }
+
     .choices .user-pick .paper-item {
         top: 37%;
         left: 10%;
@@ -449,10 +426,6 @@
 
     .choices .user-pick .rock-item {
         top: 37%;
-    }
-
-    .choices {
-        gap: 2rem;
     }
 
     .choices h4 {
@@ -477,30 +450,12 @@
         align-items: center;
     }
 
-    /* Inverser l'ordre des éléments */
-    /* .choices .user-pick h4, .choices .house-pick h4 {
-        order: 2; 
-    } */ 
-
      .choices .user-pick h4 {
         order: 2;
      }
 
-    /*.choices .house-pick h4 {
-        order: 2;
-    }*/
-
-    /* .choices .user-pick .game-item .paper-item {
-        order: 2;
-    } */ 
-
-    /* .user-pick .game-item, .house-pick .game-item {
-        order: 1; 
-    } */
-
     .rule-btn {
         position: relative;
-        /* margin-top: -10vh; */ 
         right: 0;
     }
     
