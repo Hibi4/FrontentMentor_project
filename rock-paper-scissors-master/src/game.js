@@ -30,7 +30,7 @@ function Game() {
           spock: ['rock', 'scissors']       // Spock bat Rock et Scissors
      }
 
-     const getResult = (playerChoice, computerChoice) => {
+     const getWinner = (playerChoice, computerChoice) => {
           if (playerChoice === computerChoice) { return 'TIE'; }
           
           return gameRules[playerChoice].includes(computerChoice) ? 'YOU WIN' : 'YOU LOSE';
@@ -41,7 +41,7 @@ function Game() {
           setTimeout(() => {
 
                if (step === 'result' && playerChoice && computerChoice) {
-                    const result = getResult(playerChoice, computerChoice);
+                    const result = getWinner(playerChoice, computerChoice);
                     setRoundOutcome(result);
 
                     console.log("result score: "+result);

@@ -24,6 +24,10 @@ Users should be able to:
 
 - View the optimal layout for the game depending on their device's screen size
 - Play Rock, Paper, Scissors against the computer
+- When the player and the computer choose the same item, 
+     - 'Tie' will be displayed, 
+     - 'Win' if the player wins, 
+     - 'Lose' if computer wins
 - Maintain the state of the score after refreshing the browser _(optional)_
 - **Bonus**: Play Rock, Paper, Scissors, Lizard, Spock against the computer _(optional)_
 
@@ -54,8 +58,8 @@ Users should be able to:
 <h1>Some HTML code I'm proud of</h1>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.main {
+  min-height: 100vh;
 }
 ```
 ```js
@@ -75,7 +79,7 @@ useEffect(() => {
                               if (newScore === 3) {
                                    setIsBonusMode(true);
                               }
-                              return newScore; // why return here 
+                              return newScore; 
                          });
 
                     } else if (result === 'LOSE') {
@@ -101,7 +105,7 @@ useEffect(() => {
                     centered
                >
                     <Modal.Header className="modal_header">
-                         <Modal.Title>Règles du jeu</Modal.Title>
+                         <Modal.Title>Game's rule</Modal.Title>
                          <div>
                               <img
                                    src={closeIcon}
