@@ -420,12 +420,21 @@
         left: 10%;
     }
 
-    .choices .user-pick .scissors-item {
+    .choices .user-pick .scissors-item, .choices .user-pick .rock-item {
         top: 37%;
     }
 
-    .choices .user-pick .rock-item {
-        top: 37%;
+    .bonus-mode .choices .user-pick .paper-item { 
+        top: 40%;
+    }
+
+    .bonus-mode .choices .user-pick .scissors-item, .bonus-mode .choices .user-pick .rock-item {
+        top: 40%;
+    }
+
+    .bonus-mode .choices .user-pick .spock-item, .bonus-mode .choices .user-pick .lizard-item {
+        top: 41%;
+        left: 5%;
     }
 
     .choices h4 {
