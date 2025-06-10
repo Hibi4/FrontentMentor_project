@@ -1,4 +1,4 @@
-FrontentMentor_project
+## FrontentMentor_project
 
 This repository contains a collection of frontend projects created to help me practice and improve my web development skills. Each project focuses on different aspects of frontend development, from layout and styling to interactivity and modern frameworks.
 Table of Contents
@@ -20,7 +20,7 @@ Tech Stack
     JavaScript (Vanilla JS)
     React JS (in some projects)
 
-Projects
+## Projects
 
 Each folder in this repository contains a separate frontend project. Some are simple HTML/CSS/JS projects, while others are built with React JS. Check individual project folders for specific instructions and details.
 Getting Started
@@ -35,7 +35,7 @@ bash
 
 cd FrontentMentor_project/<project-folder>
 
-Open the project:
+## Open the project:
 
     For HTML/CSS/JS projects: Open index.html directly in your browser.
     For React projects:
@@ -46,7 +46,7 @@ Open the project:
 
         (Make sure you have Node.js and npm installed.)
 
-Contributing
+## Contributing
 
 Contributions are welcome! Feel free to fork the repository, suggest improvements, or add new projects.
 License
