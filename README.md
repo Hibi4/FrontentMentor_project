@@ -5,21 +5,21 @@ This repository contains a collection of **frontend projects** created to help m
 ## **Table of Contents**
  
 > - Overview
-> Tech Stack  
-> Projects  
-> Getting Started  
-> Contributing  
-> License 
+> - Tech Stack  
+> - Projects  
+> - Getting Started  
+> - Contributing  
+> - License 
 
 ## Overview
 
 The projects in this repository are inspired by frontend challenges and exercises. They are intended for learning purposes and to showcase progress in various frontend technologies.
 Tech Stack
 
-    HTML
-    CSS (Vanilla CSS)
-    JavaScript (Vanilla JS)
-    React JS (in some projects)
+> - HTML
+> - CSS (Vanilla CSS)
+> - JavaScript (Vanilla JS)
+> - React JS (in some projects)
 
 ## Projects
 
