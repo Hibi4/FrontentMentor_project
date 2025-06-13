@@ -27,9 +27,9 @@ Each folder in this repository contains a separate frontend project. Some are si
 Getting Started
 
 2. Navigate to a project folder:
-```bash
-    git clone https://github.com/Hibi4/FrontentMentor_project.git
-```
+
+> - git clone https://github.com/Hibi4/FrontentMentor_project.git
+
 
 ## Open the project:
 
