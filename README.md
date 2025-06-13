@@ -31,8 +31,7 @@ Getting Started
 git clone https://github.com/Hibi4/FrontentMentor_project.git
 
 ## Getting started:
-
-> - For HTML/CSS/JS projects: Open index.html directly in your browser.
+   For HTML/CSS/JS projects: Open index.html directly in your browser.
 
 For React projects:
 
