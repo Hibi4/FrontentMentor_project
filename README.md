@@ -26,10 +26,9 @@ Tech Stack
 Each folder in this repository contains a separate frontend project. Some are simple HTML/CSS/JS projects, while others are built with React JS. Check individual project folders for specific instructions and details.
 Getting Started
 
-    Clone the repository:
-    bash
-
+```bash
 git clone https://github.com/Hibi4/FrontentMentor_project.git
+```
 
 Navigate to a project folder:
 bash
