@@ -5,7 +5,7 @@ This repository contains a collection of **frontend projects** created to help m
 ## **Table of Contents**
 
     > 
-    >  Overview
+    >>  Overview
     > - Tech Stack
     > - Projects
     > - Getting Started
