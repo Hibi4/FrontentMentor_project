@@ -3,17 +3,15 @@
 This repository contains a collection of **frontend projects** created to help me practice and improve my web development skills. Each project focuses on different aspects of frontend development, from layout and styling to interactivity and modern frameworks.
 
 ## **Table of Contents**
+ 
+    * Overview
+    * Tech Stack
+    Projects
+    Getting Started
+    Contributing
+    License
 
-    > 
-    >>  Overview
-    > - Tech Stack
-    > - Projects
-    > - Getting Started
-    > - Contributing
-    > - License
-    >
-
-Overview
+## Overview
 
 The projects in this repository are inspired by frontend challenges and exercises. They are intended for learning purposes and to showcase progress in various frontend technologies.
 Tech Stack
