@@ -28,8 +28,7 @@ Getting Started
 
 2. Navigate to a project folder:
 
-> git clone https://github.com/Hibi4/FrontentMentor_project.git
-
+git clone https://github.com/Hibi4/FrontentMentor_project.git
 
 ## Getting started:
 
