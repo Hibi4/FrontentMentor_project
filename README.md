@@ -31,16 +31,15 @@ Getting Started
 > git clone https://github.com/Hibi4/FrontentMentor_project.git
 
 
-## Open the project:
+## Getting started:
 
-    For HTML/CSS/JS projects: Open index.html directly in your browser.
-    For React projects:
-    bash
+> - For HTML/CSS/JS projects: Open index.html directly in your browser.
 
-        npm install
-        npm start
+For React projects:
 
-        (Make sure you have Node.js and npm installed.)
+> - npm install
+> - npm start
+> - (Make sure you have Node.js and npm installed.)
 
 ## Contributing
 
