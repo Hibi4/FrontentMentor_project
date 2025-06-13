@@ -1,7 +1,8 @@
 ## FrontentMentor_project
 
-This repository contains a collection of frontend projects created to help me practice and improve my web development skills. Each project focuses on different aspects of frontend development, from layout and styling to interactivity and modern frameworks.
-Table of Contents
+This repository contains a collection of **frontend projects** created to help me practice and improve my web development skills. Each project focuses on different aspects of frontend development, from layout and styling to interactivity and modern frameworks.
+
+## **Table of Contents**
 
     Overview
     Tech Stack
