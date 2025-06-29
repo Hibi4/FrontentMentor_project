@@ -1,0 +1,46 @@
+.body {
+    background-color: hsl(26, 66%, 93%); /* bg- */ 
+    height: 100vh; /* h-screen */ 
+    width: 100%;  /*w-full */ 
+}
+
+.container {
+    display: flex; /* flex */ 
+    grid-template-rows: 80px 1fr; /* grid-rows-2 */ 
+    justify-content: center; /* justify-center */ 
+    /*gap: 5px;*/ /* gap-5 */ 
+}
+
+.header {
+    line-height: 1px; /* leading-none; leading-number */ 
+    font-size: 18px; /* text-18 */ 
+    width: 40%; /* w-40 */ 
+    /* height: 80px; */ 
+    padding: 8px 10px; /* px-2.5 py-2 */ 
+    background-color: hsl(10, 79%, 65%); /* bg-red-400 */ 
+    color: white; /* text-white */ 
+    border-radius: 15px; /* rounded-2xl */
+}
+
+.container div p {
+    line-height: 1px; /* leading-none; leading-number */
+}
+
+.main {
+    display: flex; /* flex */
+    grid-template-columns: 40px auto auto;
+    width: 40%; /* w-40 */ 
+}
+
+.attribution {
+    position: relative; /* relative */
+    bottom: 0; /* bottom-0 */ 
+    text-align: center; /* text-center */ 
+    font-size: 18px; /* text-18 */
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* grid grid-rows-2 md:grid-rows-6 for responsive */ 

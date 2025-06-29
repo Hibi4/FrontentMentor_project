@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+  <title>Frontend Mentor | Expenses chart component</title>
+  
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+</head>
+<body class="bg-orange-50">
+  <div class="container flex flex-col justify-center items-center">
+    <header class="header leading-none text-18 w-150 px-2.5 py-2 bg-red-400 text-white rounded-2xl">
+      <div>
+        <!-- Balance -->
+         <p class="leading-none">My balance</p> <br/>
+         <p class="leading-none text-2xl">$921.48</p>
+      </div>
+      <div>
+        <!-- logo -->
+      </div>
+    </header> <!-- h-max -->
+    <main class="main flex grid-cols-[40px_auto_auto] w-150 bg-red-400 mt-10 rounded-2xl bg-white h-50">
+      <div>
+        <h1 class="pl-10 pt-5 font-bold text-2xl">Spending - Last 7 days</h1>
+      </div>
+      <div></div>
+      <div></div>
+    </main>
+  </div>
+  
+
+  <!-- My balance
+  $921.48
+
+  Spending - Last 7 days
+
+  mon
+  tue
+  wed
+  thu
+  fri
+  sat
+  sun
+
+  Total this month
+  $478.33
+
+  +2.4%
+  from last month -->
+  
+  <div class="attribution relative bottom-0 text-center text-18">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="main/main.js"></script>
+</body>
+</html>
