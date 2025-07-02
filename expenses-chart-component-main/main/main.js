@@ -17,18 +17,19 @@ fetch("data.json")
             // Determine the color of the bar based on the amount
             const isMax = item.amount === maxValue;
             // console.log(maxValue);
-            const color = isMax ? "bg-cyan-500" : "bg-red-500";
-            console.log("color: " + heightPercent);
+            const color = isMax ? "bg-cyan-500" : "bg-orange-600";
+            
             // Why the color is not working 
             return `
                 <div class="flex flex-col items-center">
-                    <div class="${color} rounded-md w-7" style="height: ${heightPercent}%"></div>
+                    
+                    <div class=" ${color} rounded-md w-7" style="height: ${heightPercent}px;"></div>
                     <span class="mt-2 text-xs text-gray-500">${item.day}</span>
                 </div>
             `;
         }).join('');
 
-        charts.className = "flex items-end justify-between h-40 w-full gap-3 px-4";
+        charts.className = "flex items-end justify-between h-40 w-full gap-3 px-4 mt-5";
         
     }).catch(error => {
         charts.innerHTML = "<p class='text-red-500'>Error to upload the data: " + error + "</p>";
