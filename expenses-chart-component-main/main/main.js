@@ -17,7 +17,7 @@ fetch("data.json")
             // Determine the color of the bar based on the amount
             const isMax = item.amount === maxValue;
             // console.log(maxValue);
-            const color = isMax ? "bg-cyan-500" : "bg-orange-600";
+            const color = isMax ? "bg-cyan-500" : "bg-orange-700";
             
             // Why the color is not working 
             return `

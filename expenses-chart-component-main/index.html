@@ -20,14 +20,18 @@
 <body>
   <div class="min-h-screen flex items-center justify-center bg-orange-50">
     <div class="container flex flex-col justify-center items-center">
-      <header class="header leading-none text-18 w-150 px-2.5 py-2 bg-red-400 text-white rounded-2xl">
+      <header class="header flex leading-none text-18 w-150 px-2.5 py-2 pt-5 pb-5 bg-orange-700 text-white rounded-2xl">
         <div>
           <!-- Balance -->
-          <p class="leading-none">My balance</p> <br />
+          <p class="leading-none font-mono">My balance</p> <br />
           <p class="leading-none text-2xl font-bold">$921.48</p>
         </div>
-        <div>
-          <!-- logo -->
+        <!-- logo -->
+        <div class="flex items-center justify-end flex-1">
+           <div class="relative w-10 h-10">
+            <span class="absolute right-0 top-1/2 -translate-y-1/2 w-7 h-7 bg-black rounded-full "></span>
+            <span class="absolute right-5 top-1/2 -translate-y-1/2 w-7 h-7 bg-transparent rounded-full border-2 border-white-400"></span>
+           </div>
         </div>
       </header> <!-- h-max -->
       <!--    <main class="main flex grid-cols-[40px_auto_auto] w-150 bg-red-400 mt-10 rounded-2xl bg-white h-50">
@@ -43,7 +47,7 @@
         <div class="mt-10 w-130 border-t-[5px] border-gray-100 h-10"></div>
         <div>
           <div class="pt-5 text-gray-400">
-            <p>Total this month</p>
+            <p class="font-serif">Total this month</p>
           </div>
   
           <div class="flex justify-between"> <!-- display: flex; justify-content: space-between -->
@@ -55,7 +59,7 @@
                 <p class="font-bold">+2.4%</p>
               </div>
               <div>
-                <p class="text-gray-400">from last month</p>
+                <p class="text-gray-400 font-mono">from last month</p>
               </div>
             </div>
           </div>
