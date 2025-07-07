@@ -1,6 +1,6 @@
 const charts = document.getElementById("charts");
 
-// charge data
+// charge data from the JSON file
 
 fetch("data.json")
     .then(response => response.json())
@@ -16,10 +16,9 @@ fetch("data.json")
 
             // Determine the color of the bar based on the amount
             const isMax = item.amount === maxValue;
-            // console.log(maxValue);
+            
             const color = isMax ? "bg-cyan-500" : "bg-orange-700";
             
-            // Why the color is not working 
             return `
                 <div class="flex flex-col items-center">
                     
