@@ -2,25 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <!-- tailwind cdn -->
+  <!-- tailwind CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <!-- <link rel="stylesheet" href="styles/styles.css"> -->
-  <title>Frontend Mentor | Expenses chart component</title>
   
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <!-- <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style> -->
+  <title>Frontend Mentor | Expenses chart component</title>
 </head>
+
 <body>
   <div class="min-h-screen flex items-center justify-center bg-orange-50">
     <div class="container flex flex-col justify-center items-center">
-      <!-- <header class="header max-sm:-mt-24 w-[90%] flex leading-none max-md:text-18 w-150 px-2.5 py-2 pt-5 pb-5 bg-orange-700 text-white rounded-2xl"> -->
       <header class="header w-[90%] max-sm:-mt-24 md:w-150 flex leading-none max-md:text-18 px-2.5 py-2 pt-5 pb-5 bg-orange-700 text-white rounded-2xl">
         <div>
           <!-- Balance -->
@@ -34,11 +28,7 @@
             <span class="absolute right-5 top-1/2 -translate-y-1/2 w-7 h-7 bg-transparent rounded-full border-2 border-white-400"></span>
            </div>
         </div>
-      </header> <!-- h-max -->
-      <!--    <main class="main flex grid-cols-[40px_auto_auto] w-150 bg-red-400 mt-10 rounded-2xl bg-white h-50">
-   -->
-      <!-- <div class="container flex flex-col justify-center items-center"> -->
-      <!-- <header class="header w-[90%] md:w-150 flex leading-none max-sm:-mt-24 max-md:text-18 px-2.5 py-2 pt-5 pb-5 bg-orange-700 text-white rounded-2xl"> -->
+      </header>
         <main class="main w-[90%] md:w-150 pl-10 flex flex-col bg-red-400 mt-10 rounded-2xl bg-white h-90 border-[1px] border-gray-100">
         <div>
           <h1 class="pt-5 font-bold text-2xl">Spending - Last 7 days</h1>
@@ -52,8 +42,7 @@
             <p class="font-serif">Total this month</p>
           </div>
   
-          <div class="flex justify-between"> <!-- display: flex; justify-content: space-between -->
-            <div>
+          <div class="flex justify-between">
               <p class="font-bold text-3xl">$478.33</p>
             </div>
             <div class="mr-5">
