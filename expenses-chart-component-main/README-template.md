@@ -51,7 +51,7 @@ I learned all tailwind CSS code inside this project. It was completely new for m
 
 ### Continued development
 
-This was my first time using Tailwind CSS in a project, and I really enjoyed the experience. I’m looking forward to using it more frequently, especially in combination with React.js.
+This was my first time using Tailwind CSS in a project, and I really enjoyed the experience. I’m looking forward to using it more frequently, especially in combination with React JS.
 
 ### Useful resources
 
