@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL here](https://github.com/Hibi4/FrontentMentor_project.git)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution URL](https://github.com/Hibi4/FrontentMentor_project.git)
+- Live Site URL: [live site URL](https://expenses-chart-component-ivory.vercel.app/)
 
 ## My process
 
@@ -57,7 +57,9 @@ This was my first time using Tailwind CSS in a project, and I really enjoyed the
 
 - [Example resource 1](https://tailwindcss.com/docs/ ) - I used Tailwind CSS for this project, and I found the documentation to be incredibly helpful. It provided clear guidance and made it easy to find exactly what I needed throughout the development process.
 
-- [Vibe coding](https://www.example.com) - Additionally, I leveraged AI tools to assist me during development. They were especially useful for debugging my code and offering suggestions, which significantly improved my workflow and efficiency..
+- [Vibe coding](https://www.example.com) - Additionally, I leveraged AI tools to assist me during development. They were especially useful for debugging my code and offering suggestions, which significantly improved my workflow and efficiency.
+
+- Git command : git rm -r --cache file_name/folder_name. This command allows to remove files only from the Git repository without deleting them from your local file system.
 
 ## Author
 
