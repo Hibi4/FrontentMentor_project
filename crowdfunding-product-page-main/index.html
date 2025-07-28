@@ -8,6 +8,8 @@
   
   <title>Frontend Mentor | Crowdfunding product page</title>
 
+  <!-- Bootstrap CDN -->
+  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
   <!-- tailwind CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -35,9 +37,35 @@
       
     </header>
   <!-- </div> -->
-  <div class=" bg-sky-50 h-120 w-full">
-<!-- oklch(98.5% 0.001 106.423) -->
+  <div class="relative bg-sky-50 h-120 w-full flex flex-col items-center">
+    <!-- icon image -->
+    <div class="absolute -top-22 z-10 flex justify-center w-full">
+      <img src="/images/logo-mastercraft.svg" alt="Mastercraft" class="w-16 h-16 rounded-full shadow-lg" />
+    </div>
+    <div class="bg-white text-2xl border-2 border-gray-400 rounded-lg h-60 w-180 p-10 -mt-16">
+    <!-- <div class="bg-white text-2xl border-2 border-gray-400 rounded-lg h-60 w-180 p-10" style="margin: auto;"> -->
+      
+      <h1 class="font-bold text-align">Mastercraft Bamboo Monitor Riser</h1>
+      <h4 class="text-sm">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</h4>
+      <div class="flex justify-between pt-10">
+        <div>
+          <button type="button" class="rounded-full bg-green-400 p-3 w-60 text-white">Back this project</button>
+        </div>
+        <div>
+          <button type="button" class="flex items-center bg-gray-200 rounded-full shadow px-4 py-2">
+            <span class="flex items-center justify-center w-12 h-10 rounded-full mr-2">
+              <img src="./images/icon-bookmark.svg" alt="Bookmark" class="w-6 h-6" />
+            </span>
+            <span class="font-bold text-gray-700">Bookmark</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+        
+    </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   <!-- About
   Discover
   Get Started
