@@ -188,11 +188,19 @@
   </div>
   <!-- start Modal -->
   <div id="modal" class="fixed inset-0 bg-gray-50 bg-opacity-50 hidden z-50 flex items-center justify-center">
-    <div class="bg-white rounded-lg shadow-xl p-14 w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
-      <h2 class="text-2xl font-bold">Back this project</h2>
+    <div class="bg-white rounded-lg shadow-xl p-14 w-11/12 max-w-4xl max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between ">
+        <div>
+          <h2 class="text-2xl font-bold">Back this project</h2>
+        </div>
+        <div class="cursor-pointer">
+          <img src="./images/icon-close-modal.svg" alt="icon-close-modal " onclick="closeModal()" />
+        </div>
+      </div>
+      
       <p class="text-gray-600 mt-4">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
       <div class="flex flex-col gap-4 mt-4">
-        <div>
+        <div class="border-2 border-gray-400 rounded-lg p-10">
           <div class="flex gap-6 items-center mx-4">
             <div>
               <input type="radio" name="reward" id="no-reward">
@@ -205,7 +213,7 @@
             you will be signed up to receive product updates via email</label>
           </div>
         </div>
-        <div>
+        <div class="border-2 border-gray-400 rounded-lg p-10">
           <div class="gap-6 items-center mx-4">
             <div class="flex items-center">
               <div>
@@ -226,7 +234,7 @@
             </div>  
           </div>
         </div>
-        <div>
+        <div class="border-2 border-gray-400 rounded-lg p-10">
           <div class="gap-6 items-center mx-4">
             <div class="flex items-center">
               <div>
@@ -247,7 +255,7 @@
             </div>
           </div>
         </div>
-        <div class="opacity-50 pointer-events-none cursor-not-allowed">
+        <div class="border-2 border-gray-400 rounded-lg p-10 opacity-50 pointer-events-none cursor-not-allowed">
           <div class="gap-6 items-center mx-4">
             <div class="flex items-center">
               <div>
