@@ -158,8 +158,8 @@
         </div>
     
         <!-- Mahogany special edition -->
-        <div class="border-2 border-gray-400 p-8 rounded-sm mt-4 bg-[#d3d3d352]">
-          <div class="flex justify-between mt-4">
+        <div class="border-2 border-gray-400 p-8 rounded-sm mt-4 opacity-50 pointer-events-none cursor-not-allowed">
+          <div class="flex justify-between mt-4" disabled>
             <div>
               <h4 class="font-bold text-2xl">Black Edition Stand</h4>
             </div>
@@ -187,26 +187,91 @@
     </div>
   </div>
   <!-- start Modal -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
-    <div class="bg-white rounded-lg shadow-xl w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
+  <div id="modal" class="fixed inset-0 bg-gray-50 bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-xl p-14 w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
       <h2 class="text-2xl font-bold">Back this project</h2>
-      <p class="text-gray-600">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
-      <div class="flex flex-col gap-4">
-        <div class="flex gap-6 items-center mx-4">
-          <input type="radio" name="reward" id="no-reward">
-          <label for="no-reward">Pledge with no reward</label>
+      <p class="text-gray-600 mt-4">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+      <div class="flex flex-col gap-4 mt-4">
+        <div>
+          <div class="flex gap-6 items-center mx-4">
+            <div>
+              <input type="radio" name="reward" id="no-reward">
+            </div>
+            <div>
+              <label for="no-reward" class="font-bold text-xl">Pledge with no reward. </label> <br>
+            </div>
+          </div>
+          <div class="flex gap-6 items-center mx-14"> <label for="">Choose to support us without a reward if you simply believe in our project. As a backer, 
+            you will be signed up to receive product updates via email</label>
+          </div>
         </div>
-        <div class="flex flex-col gap-2">
-          <input type="radio" name="reward" id="bamboo-stand">
-          <label for="bamboo-stand">Bamboo Stand</label>
-          <p class="text-gray-600">Pledge $25 or more</p>
+        <div>
+          <div class="gap-6 items-center mx-4">
+            <div class="flex items-center">
+              <div>
+                <input type="radio" name="reward" id="bamboo-stand">
+              </div>
+              <div class="flex justify-between items-center mb-2 w-full">
+                <div class="text-xl font-bold mx-6">
+                  <span for="bamboo-stand">Bamboo Stand</span>
+                  <span class="text-green-600">Pledge $25 or more</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-2xl">101</span><span class="text-sm align-top"> left</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-6 items-center mx-14"> <label for="">Choose to support us without a reward if you simply believe in our project. As a backer, 
+              you will be signed up to receive product updates via email</label>
+            </div>  
+          </div>
         </div>
-        <div class="flex flex-col gap-2">
-          <input type="radio" name="reward" id="black-edition-stand">
-          <label for="black-edition-stand">Black Edition Stand</label>
-          <p class="text-gray-600">Pledge $75 or more</p>
+        <div>
+          <div class="gap-6 items-center mx-4">
+            <div class="flex items-center">
+              <div>
+                <input type="radio" name="reward" id="bamboo-stand">
+              </div>
+              <div class="flex justify-between items-center mb-2 w-full">
+                <div class="text-xl font-bold mx-6">
+                  <span for="bamboo-stand">Bamboo Stand</span>
+                  <span class="text-green-600">Pledge $25 or more</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-2xl">64</span><span class="text-sm align-top"> left</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-6 items-center mx-14"> <label>You get an ergonomic stand made of natural bamboo.
+              You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.</label>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col gap-2"></div>
+        <div class="opacity-50 pointer-events-none cursor-not-allowed">
+          <div class="gap-6 items-center mx-4">
+            <div class="flex items-center">
+              <div>
+                <input type="radio" name="reward" id="mahogany-stand" disabled>
+              </div>
+              <div class="flex justify-between items-center mb-2 w-full">
+                <div class="text-xl font-bold mx-6">
+                  <span for="mahogany-stand">Mahogany Special Edition</span>
+                  <span class="text-green-600">Pledge $200 or more</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-2xl">0</span><span class="text-sm align-top"> left</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-6 items-center mx-14"> <label>
+                You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You'll be added
+                to our Backer member list. Shipping is included.
+              </label>
+        
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
