@@ -212,7 +212,27 @@
           <div class="flex gap-6 items-center mx-14"> <label for="">Choose to support us without a reward if you simply believe in our project. As a backer, 
             you will be signed up to receive product updates via email</label>
           </div>
-        </div>
+          <div class="border-t border-gray-300 pt-6 mt-6">
+               <div class="flex justify-between items-center">
+                 <div class="text-gray-600">
+                   <p>Enter your pledge</p>
+                 </div>
+                 <div class="flex items-center gap-4">
+                   <div class="relative">
+                     <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                     <input type="number" name="pledge__amount" id="no-reward-amount" placeholder="1" min="0"
+                       class="pl-8 pr-4 py-2 border-2 border-green-300 rounded-full w-32 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:border-transparent" />
+                   </div>
+                   <div>
+                     <button onclick="handleRewardSelection('no-reward', document.getElementById('no-reward-amount').value)"
+                       class="rounded-full bg-cyan-700 p-3 w-32 text-white hover:bg-cyan-800 transition-colors">
+                       Continue
+                     </button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+            </div>
         <div class="border-2 border-gray-400 rounded-lg p-10">
           <div class="gap-6 items-center mx-4">
             <div class="flex items-center">
@@ -229,9 +249,37 @@
                 </div>
               </div>
             </div>
-            <div class="flex gap-6 items-center mx-14"> <label for="">Choose to support us without a reward if you simply believe in our project. As a backer, 
+            <div class="flex gap-6 items-center mx-14"> <label for="">Choose to support us without a reward if you simply believe in our project. As a backer,
               you will be signed up to receive product updates via email</label>
-            </div>  
+            </div>
+            
+            <div class="border-t border-gray-300 pt-6 mt-6">
+            <div class="flex justify-between items-center ">
+               <div class="text-gray-600">
+                 <p>Enter your pledge</p>
+               </div>
+               <div class="flex items-center gap-4">
+                 <div class="relative">
+                   <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                   <input 
+                     type="number" 
+                     name="pledge__amount" 
+                     id="bamboo-stand-amount" 
+                     placeholder="25"
+                     min="0"
+                     class="pl-8 pr-4 py-2 border-2 border-green-300 rounded-full w-32 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:border-transparent"
+                   />
+                 </div>
+                 <div>
+                   <button 
+                     onclick="handleRewardSelection('bamboo-stand', document.getElementById('bamboo-stand-amount').value)" 
+                     class="rounded-full bg-cyan-700 p-3 w-32 text-white hover:bg-cyan-800 transition-colors"
+                   >
+                     Continue
+                   </button>
+                 </div>
+               </div>
+             </div> </div>
           </div>
         </div>
         <div class="border-2 border-gray-400 rounded-lg p-10">
@@ -253,6 +301,33 @@
             <div class="flex gap-6 items-center mx-14"> <label>You get an ergonomic stand made of natural bamboo.
               You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.</label>
             </div>
+            <div class="border-t border-gray-300 pt-6 mt-6">
+            <div class="flex justify-between mt-6 items-center">
+               <div class="text-gray-600">
+                 <p>Enter your pledge</p>
+               </div>
+               <div class="flex items-center gap-4">
+                 <div class="relative">
+                   <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                   <input 
+                     type="number" 
+                     name="pledge__amount" 
+                     id="black-edition-amount" 
+                     placeholder="0"
+                     min="75"
+                     class="pl-8 pr-4 py-2 border-2 border-green-300 rounded-full w-32 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:border-transparent"
+                   />
+                 </div>
+                 <div>
+                   <button 
+                     onclick="handleRewardSelection('black-edition', document.getElementById('black-edition-amount').value)" 
+                     class="rounded-full bg-cyan-700 p-3 w-32 text-white hover:bg-cyan-800 transition-colors"
+                   >
+                     Continue
+                   </button>
+                 </div>
+               </div>
+             </div> </div>
           </div>
         </div>
         <div class="border-2 border-gray-400 rounded-lg p-10 opacity-50 pointer-events-none cursor-not-allowed">
@@ -275,7 +350,6 @@
                 You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You'll be added
                 to our Backer member list. Shipping is included.
               </label>
-        
             </div>
           </div>
         </div>
@@ -283,7 +357,26 @@
       </div>
     </div>
   </div>
-   <!-- end Modal -->
+   <!-- end default Modal -->
+   
+   <!-- Success Modal -->
+   <div id="successModal" class="fixed inset-0 bg-gray-50 bg-opacity-50 hidden z-50 flex items-center justify-center">
+     <div class="bg-white rounded-lg shadow-xl p-14 w-11/12 max-w-2xl text-center">
+       <div class="flex justify-center mb-6">
+         <img src="./images/icon-check.svg" alt="Success" class="w-16 h-16" />
+       </div>
+       <h2 class="text-2xl font-bold mb-4">Thanks for your support!</h2>
+       <p class="text-gray-600 mb-8">
+         Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. 
+         You will get an email once our campaign is completed.
+       </p>
+       <button onclick="closeSuccessModal()" class="rounded-full bg-cyan-700 p-3 w-40 text-white">
+         Got it!
+       </button>
+     </div>
+   </div>
+   <!-- end Success Modal -->
+   
   <script src="main/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   <!-- About
