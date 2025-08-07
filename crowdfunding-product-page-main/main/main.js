@@ -1,6 +1,10 @@
 const modal = document.getElementById('modal');
 const successModal = document.getElementById('successModal');
 const backButton = document.querySelector('button[class*="bg-cyan-700"]');
+// Mobile menu functionality
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
 
 function openModal() {
     modal.classList.remove('hidden');
@@ -107,6 +111,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function openMobileMenu() {
+    mobileMenu.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+mobileMenuBtn.addEventListener('click', openMobileMenu);
+closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+
+// Close mobile menu when clicking outside
+mobileMenu.addEventListener('click', function (e) {
+    if (e.target === mobileMenu) {
+        closeMobileMenu();
+    }
+});
+
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
         if (!modal.classList.contains('hidden')) {
@@ -114,6 +138,9 @@ document.addEventListener('keydown', function (e) {
         }
         if (!successModal.classList.contains('hidden')) {
             closeSuccessModal();
+        }
+        if (!mobileMenu.classList.contains('hidden')) {
+            closeMobileMenu();
         }
     }
 });
