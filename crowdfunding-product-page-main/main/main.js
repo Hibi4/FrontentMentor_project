@@ -79,6 +79,34 @@ successModal.addEventListener('click', function (e) {
     }
 });
 
+// Gestion de l'affichage des sections de pledge selon la sélection
+function handleRadioSelection(rewardType) {
+    // Cacher toutes les sections de pledge
+    const pledgeSections = document.querySelectorAll('[id$="-pledge-section"]');
+    pledgeSections.forEach(section => {
+        section.classList.add('hidden');
+    });
+    
+    // Afficher la section correspondante
+    const targetSection = document.getElementById(`${rewardType}-pledge-section`);
+    if (targetSection) {
+        targetSection.classList.remove('hidden');
+    }
+}
+
+// Ajouter les event listeners pour les radio buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const radioButtons = document.querySelectorAll('input[name="reward"]');
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.checked) {
+                console.log("input id: "+this.id);
+                handleRadioSelection(this.id);
+            }
+        });
+    });
+});
+
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
         if (!modal.classList.contains('hidden')) {
