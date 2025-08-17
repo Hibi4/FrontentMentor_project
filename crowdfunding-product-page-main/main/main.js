@@ -3,6 +3,7 @@ const successModal = document.getElementById('successModal');
 const backButton = document.querySelector('button[class*="bg-cyan-700"]');
 // Mobile menu functionality
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileCloseBtn = document.getElementById('mobile-close-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
 
@@ -24,12 +25,11 @@ function openSuccessModal() {
 function closeSuccessModal() {
     successModal.classList.add('hidden');
     document.body.style.overflow = 'auto';
-    closeModal(); // Ferme aussi la modal principale
+    closeModal(); // close the main modal 
 }
 
-// Gestion des boutons "Select Reward" dans la modal
 function handleRewardSelection(rewardType, amount = null) {
-    // Validation du montant selon le type de récompense
+    
     let minAmount = 1;
     let rewardName = '';
     
@@ -39,11 +39,11 @@ function handleRewardSelection(rewardType, amount = null) {
             rewardName = 'No Reward';
             break;
         case 'bamboo-stand':
-            minAmount = 25;
+            minAmount = 5;
             rewardName = 'Bamboo Stand';
             break;
         case 'black-edition':
-            minAmount = 75;
+            minAmount = 5;
             rewardName = 'Black Edition Stand';
             break;
         default:
@@ -51,20 +51,18 @@ function handleRewardSelection(rewardType, amount = null) {
             rewardName = 'Unknown';
     }
     
-    // Validation du montant
+    // amount validation
     if (amount && parseInt(amount) < minAmount) {
         alert(`Le montant minimum pour ${rewardName} est de $${minAmount}`);
         return;
     }
     
     if (!amount || amount === '') {
-        alert('Veuillez entrer un montant');
+        alert('Please enter an amount');
         return;
     }
     
-    console.log('Reward selected:', rewardType, 'Amount:', amount);
-    
-    // Ferme la modal principale et ouvre la modal de remerciement
+    // close the main modal and open sucess modal 
     closeModal();
     openSuccessModal();
 }
@@ -84,21 +82,21 @@ successModal.addEventListener('click', function (e) {
 });
 
 // Gestion de l'affichage des sections de pledge selon la sélection
+// 
 function handleRadioSelection(rewardType) {
-    // Cacher toutes les sections de pledge
+    
     const pledgeSections = document.querySelectorAll('[id$="-pledge-section"]');
     pledgeSections.forEach(section => {
         section.classList.add('hidden');
     });
     
-    // Afficher la section correspondante
     const targetSection = document.getElementById(`${rewardType}-pledge-section`);
     if (targetSection) {
         targetSection.classList.remove('hidden');
     }
 }
 
-// Ajouter les event listeners pour les radio buttons
+// add event listeners to the radio buttons 
 document.addEventListener('DOMContentLoaded', function() {
     const radioButtons = document.querySelectorAll('input[name="reward"]');
     radioButtons.forEach(radio => {
@@ -113,15 +111,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function openMobileMenu() {
     mobileMenu.classList.remove('hidden');
+    mobileMenuBtn.classList.add('hidden');
+    mobileCloseBtn.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
 
+/* 
+linear-gradient(to bottom, rgba(255,0,0,0), rgb(217, 209, 209)) */ 
+
 function closeMobileMenu() {
     mobileMenu.classList.add('hidden');
+    mobileMenuBtn.classList.remove('hidden');
+    mobileCloseBtn.classList.add('hidden');
     document.body.style.overflow = 'auto';
 }
 
 mobileMenuBtn.addEventListener('click', openMobileMenu);
+mobileCloseBtn.addEventListener('click', closeMobileMenu);
 closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
 
 // Close mobile menu when clicking outside
