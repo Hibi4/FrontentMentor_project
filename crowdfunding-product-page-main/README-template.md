@@ -1,5 +1,7 @@
 # Frontend Mentor - Crowdfunding product page solution
 
+![Design preview for the Crowdfunding-product-page-main coding challenge](./design/desktop-preview.jpg)
+
 This is a solution to the [Crowdfunding product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/crowdfunding-product-page-7uvcZe7ZR). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
@@ -41,6 +43,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
+- Vanilla JavaScript
 - Mobile-first workflow
 - Tailwind CSS 
 - [Styled Components](https://styled-components.com/) - For styles
@@ -54,11 +57,7 @@ To see how you can add code snippets, see below:
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+
 ```js
 
 function openModal() {
@@ -79,10 +78,11 @@ This is one my few project using Tailwind CSS in a project, and I really enjoyed
 
 ### Useful resources
 
-https://tailwindcss.com/docs/
+- [Tailwind](https://tailwindcss.com/docs/) - I used Tailwind CSS for this project, and I found the documentation to be incredibly helpful. It provided clear guidance and made it easy to find exactly what I needed throughout the development process.
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Vibe coding](cursor.com) - Additionally, I leveraged AI tools to assist me during development. They were especially useful for debugging my code and offering suggestions, which significantly improved my workflow and efficiency.
+
+- [HTML](https://www.w3schools.com/tags/tag_hr.asp) - I used some examples from this site to add in my web page.
 
 ## Author
 

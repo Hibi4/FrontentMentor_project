@@ -81,8 +81,8 @@ successModal.addEventListener('click', function (e) {
     }
 });
 
-// Gestion de l'affichage des sections de pledge selon la sélection
-// 
+// Manage the section's displaying according to the user selection
+
 function handleRadioSelection(rewardType) {
     
     const pledgeSections = document.querySelectorAll('[id$="-pledge-section"]');
@@ -96,7 +96,7 @@ function handleRadioSelection(rewardType) {
     }
 }
 
-// add event listeners to the radio buttons 
+// add event listeners to the radio buttons
 document.addEventListener('DOMContentLoaded', function() {
     const radioButtons = document.querySelectorAll('input[name="reward"]');
     radioButtons.forEach(radio => {
@@ -115,9 +115,6 @@ function openMobileMenu() {
     mobileCloseBtn.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
-
-/* 
-linear-gradient(to bottom, rgba(255,0,0,0), rgb(217, 209, 209)) */ 
 
 function closeMobileMenu() {
     mobileMenu.classList.add('hidden');

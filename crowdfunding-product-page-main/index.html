@@ -10,20 +10,12 @@
 
   <title>Frontend Mentor | Crowdfunding product page</title>
 
-  <!-- Bootstrap CDN -->
-  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
   <!-- tailwind CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <!-- <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style> -->
 </head>
 
 <body>
-  <!-- <div class="container flex flex-col"> -->
       <header class="bg-[url('/images/image-hero-mobile.jpg')] md:bg-[url('/images/image-hero-desktop.jpg')] bg-no-repeat bg-cover h-90 w-full">
       
         <!-- Desktop Navigation -->
@@ -44,11 +36,11 @@
             <p>crowfund</p>
           </div>
           <div class="flex items-center">
-            <!-- Hamburger Menu Button (visible quand menu fermé) -->
+            
             <button id="mobile-menu-btn" class="text-white focus:outline-none">
               <img src="./images/icon-hamburger.svg" alt="Menu" class="w-6 h-6" />
             </button>
-            <!-- Close Menu Button (visible quand menu ouvert) -->
+            
             <button id="mobile-close-btn" class="text-white focus:outline-none hidden">
               <img src="./images/icon-close-menu.svg" alt="Close" class="w-6 h-6" />
             </button>
@@ -56,8 +48,8 @@
         </div>
       
         <!-- Mobile Menu Overlay -->
-         <!-- linear-gradient(to bottom, rgba(255,0,0,0), rgb(217, 209, 209)) -->
-        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-transparent bg-opacity-50 z-50 hidden">
+        
+          <div id="mobile-menu" class="md:hidden fixed inset-0 bg-transparent bg-gradient-to-b from-transparent via-gray-800/50 to-gray-900/80 bg-opacity-50 z-50 hidden">
           <div class="bg-white rounded-lg mx-5 mt-20 p-8">
             <div class="hidden flex justify-between items-center mb-8">
               <h3 class="hidden md:block text-2xl font-bold text-black">crowfund</h3>
@@ -65,7 +57,7 @@
                 <img src="./images/icon-close-menu.svg" alt="Close" class="w-6 h-6" />
               </button>
             </div>
-            <!--<hr style="height:2px;border-width:0;color:gray;background-color:gray">-->
+            
             <nav class="space-y-4">
               <a href="#" class="block text-lg font-medium text-black hover:text-gray-600">About</a>
               <hr class="h-0.5 w-80 bg-gray-500">
@@ -77,9 +69,9 @@
         </div>
       
       </header>
-  <!-- </div> -->
+
   <div class="relative bg-sky-50 h-auto w-full flex flex-col items-center">
-    <!-- icon image -->
+
     <div class="absolute -top-22 z-10 flex justify-center w-full">
       <img src="/images/logo-mastercraft.svg" alt="Mastercraft" class="w-16 h-16 rounded-full shadow-lg" />
     </div>
@@ -88,8 +80,7 @@
       <h4 class="text-sm">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</h4>
               <div class="pt-4 flex justify-between md:pt-10">
           <div>
-            <!-- <button type="button" class="w-32 rounded-full bg-cyan-700 p-3 md:px-4 md:py-4 md:w-60 text-white font-medium md:text-sm md-text-base">Back this project</button> -->
-            <!-- Bouton à améliorer -->
+            
             <button type="button" class="w-36 rounded-full bg-cyan-700 px-4 py-3 md:w-60 text-white font-medium text-sm md:text-base">Back this project</button>
           </div>
           <div>
@@ -106,7 +97,7 @@
     <div class="bg-white border-2 border-gray-400 p-8 rounded-lg w-180 flex flex-col mt-8">
       <!-- Statistiques -->
       <div class="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:items-center md:space-y-0">
-      <!-- <div class="block mx-auto md:flex md:flex-row md:justify-between md:items-center"> -->
+      
         <div>
           <p class="text-3xl font-bold text-black">$89.914</p>
           <p class="text-gray-600 text-sm">of $100,000 backed</p>
@@ -130,8 +121,7 @@
       </div>
     </div>
 
-    <!-- about project section -->
-    <!-- bg-white text-2xl border-2 border-gray-400 rounded-lg h-60 w-180 p-10 -mt-16 -->
+    
     <div class="pl-[190px] pr-[190px] bg-white border-2 border-gray-400 md:p-8 rounded-lg w-180 flex flex-col mt-8">
       <div>
         <h4 class="font-bold text-2xl mt-8">About this project</h4>
@@ -325,7 +315,7 @@
                 </div>
               </div>
             </div>
-            <!-- w-[100%] flex gap-6 md:items-center md:mx-14 -->
+            
             <div class="w-[100%] flex pr-0 gap-6 md:items-center md:pr-4 md:mx-14"> <label>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
               member list. Shipping is included.</label>
             </div>
@@ -412,70 +402,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
-  <!-- About
-  Discover
-  Get Started
-
-  Mahogany Special Edition
-  Pledge $200 or more
-  You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
-  to our Backer member list. Shipping is included.
-  0 left
-  Out of Stock -->
-
-  <!-- Selection modal start -->
-
-  <!-- Back this project
-  Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
-
-  Pledge with no reward
-  Choose to support us without a reward if you simply believe in our project. As a backer, 
-  you will be signed up to receive product updates via email.
-
-  Bamboo Stand
-  Pledge $25 or more
-  You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
-  you’ll be added to a special Backer member list.
-  101 left -->
-
-  <!-- Selected pledge start -->
-  <!-- Enter your pledge
-  $25
-  Continue -->
-  <!-- Selected pledge end -->
-
-  <!-- Black Edition Stand
-  Pledge $75 or more
-  You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
-  member list. Shipping is included.
-  64 left -->
-
-  <!-- Selected pledge start -->
-  <!-- Enter your pledge
-  $75
-  Continue -->
-  <!-- Selected pledge end -->
-
-  <!-- Mahogany Special Edition
-  Pledge $200 or more
-  You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
-  to our Backer member list. Shipping is included.
-  0 left -->
-
-  <!-- Selected pledge  start -->
-  <!-- Enter your pledge
-  $200
-  Continue -->
-  <!-- Selected pledge end -->
-
-  <!-- Selection modal end -->
-
-  <!-- Success modal start -->
-
-  <!-- Thanks for your support!
-  Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-  an email once our campaign is completed.
-  Got it! -->
 
   <!-- Success modal end -->
 
