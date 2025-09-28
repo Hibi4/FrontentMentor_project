@@ -107,8 +107,6 @@
     color: white;
 }
 
-
-
 .first-div-tag .content-light h3 {
     color: #040918;
 }
@@ -259,3 +257,55 @@ input:checked + .slider:before {
     font-weight: 700;
     color: white;
 }
+
+
+/* start mobile design */ 
+
+
+@media (max-width: 768px) {
+    .body-base {
+        padding: 40px 0px 40px 10px;
+    }
+
+    .header-base {
+        width: 90%;
+    }
+
+    /* Centre le bloc et supprime la grande marge droite */
+    .extension-list-tag {
+        display: flex;                 /* garder flex pour justify-content */
+        flex-direction: column;        /* empile le titre et les boutons */
+        justify-content: center;       /* centre horizontalement le contenu */
+        align-items: center;           /* centre les éléments */
+        text-align: center;            /* centre le texte du titre */
+        gap: 12px;                     
+        margin: 10px auto;             /* remplace 10px 125px 10px 10px */
+        width: 100%;
+    }
+
+    .buttons-extensions {
+        justify-content: center;       /* centre les boutons */
+        flex-wrap: wrap;               /* permet le retour à la ligne si besoin */
+        gap: 8px;
+    }
+
+    .extensions-names { 
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+
+
+/* 
+
+/* 
+.extension-list-tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 125px 10px 10px;
+} */ 
+
+/* end mobile design */ 
