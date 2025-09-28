@@ -11,21 +11,35 @@ function Extension() {
     const [filter, setFilter] = useState('all'); // 'all' | 'active' | 'inactive'
     const [isDarker, setDarker] = useState(false);
 
+    /**
+     * This method swap the boolean.
+     */
     const handleDarkerToggle = () => {
         setDarker(!isDarker);
     }
 
+    /**
+     * Add toggle to the button
+     * @param {name} name of the item 
+     */
     const handleToggle = (name) => {
         setExtensions(prev => prev.map(item => (
             item.name === name ? { ...item, isActive: !item.isActive } : item
         )));
     };
 
+    /**
+     * Delete Item 
+     * @param {name} name of the item 
+     */
+    const deleteItem = (name) => {
+        setExtensions(prev => prev.filter(item => item.name !== name));
+    }
+
     return (
         <>
-            {/* <div className={ `header-base ${isDarker ? 'header-dark' : 'body-light'}` }> */}
             <div className={`body-base ${isDarker ? 'body-dark' : 'body-light'} ` }>
-                {/* <div className={`header ${isDarker ? '' */}
+                
                 <div className={` header-base ${isDarker ? 'header-dark' : 'header-light'} ` }>
                     <div>
                         <img src={logo} alt="logo" />
@@ -40,7 +54,7 @@ function Extension() {
                 <div className='extension-list-text' style={{fontFamily:'verdana', fontSize:'20px', fontWeight: 'bold', color: 'white'}}>
                     <p className={`extensions-title ${isDarker ? 'extensions-title-dark' : 'extensions-title-light'} }`}> Extensions List</p>
                 </div>
-                {/* `extensions-title ${isDarker ? 'extensions-title-dark' : 'extensions-title-light'} }`}> */ }
+                
                 <div className={`buttons-extensions ${isDarker ? 'buttons-extensions-dark' : 'buttons-extensions-light'}`}>
                     <div>
                         <button 
@@ -83,7 +97,7 @@ function Extension() {
                                     <div className='logo'>
                                         <img src={item.logo} alt={item.name} />
                                     </div>
-                                    { /* {` buttons-extensions ${isDarker ? 'buttons-extensions-dark' : 'buttons-extensions-light'}` } */ }
+                                    
                                     <div className={`content ${isDarker ? 'content-darker' : 'content-light'} `}>
                                         <h3>{item.name}</h3>
                                         <p>{item.description}</p>
@@ -93,7 +107,7 @@ function Extension() {
                             </div>
                             <div className='remove-tag'>
                                 <div>
-                                    <button type='button' className='remove-btn'>Remove</button>
+                                    <button type='button' className='remove-btn' onClick={ () => deleteItem (item.name) } >Remove</button>
                                 </div>
                                 <div className='status'>
                                     <label className='switch'>
@@ -111,4 +125,3 @@ function Extension() {
     ) 
 }
 export default Extension;
-/* https://coreui.io/blog/how-to-loop-inside-react-jsx/ */ 
