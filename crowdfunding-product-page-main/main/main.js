@@ -6,6 +6,10 @@ const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileCloseBtn = document.getElementById('mobile-close-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+// bookmark-span
+// const bookmarkSpan = document.querySelector('.bookmark-span');
+
+let bookmarked = false;
 
 function openModal() {
     modal.classList.remove('hidden');
@@ -16,6 +20,20 @@ function closeModal() {
     modal.classList.add('hidden');
     document.body.style.overflow = 'auto';
 }
+
+function isBookmarked(isBoomarked) {
+    if(isBoomarked) {
+        document.getElementById("bookmark-span").innerHTML = "Bookmark";
+    } else {
+        document.getElementById("bookmark-span").innerHTML = "Bookmarked";
+        
+    }
+}
+
+document.getElementById("bookmark-span").addEventListener('click', function () {
+    bookmarked = !bookmarked; // change the state l'état
+    isBookmarked(bookmarked); // Call the function
+});
 
 function openSuccessModal() {
     successModal.classList.remove('hidden');
@@ -39,11 +57,11 @@ function handleRewardSelection(rewardType, amount = null) {
             rewardName = 'No Reward';
             break;
         case 'bamboo-stand':
-            minAmount = 5;
+            minAmount = 25;
             rewardName = 'Bamboo Stand';
             break;
         case 'black-edition':
-            minAmount = 5;
+            minAmount = 75;
             rewardName = 'Black Edition Stand';
             break;
         default:
@@ -53,7 +71,7 @@ function handleRewardSelection(rewardType, amount = null) {
     
     // amount validation
     if (amount && parseInt(amount) < minAmount) {
-        alert(`Le montant minimum pour ${rewardName} est de $${minAmount}`);
+        alert(`The minimum amount for ${rewardName} is $${minAmount}`);
         return;
     }
     

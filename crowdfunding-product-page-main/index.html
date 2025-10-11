@@ -19,6 +19,7 @@
       <header class="bg-[url('/images/image-hero-mobile.jpg')] md:bg-[url('/images/image-hero-desktop.jpg')] bg-no-repeat bg-cover h-90 w-full">
       
         <!-- Desktop Navigation -->
+         <!-- hsl(0deg 26.07% 84.88% / 20%) -->
         <div class="hidden md:flex justify-between text-white text-lg pt-5 px-5" style="z-index: -1;">
           <div class="text-2xl font-bold px-20">
             <p>crowfund</p>
@@ -70,7 +71,7 @@
       
       </header>
 
-  <div class="relative bg-sky-50 h-auto w-full flex flex-col items-center">
+  <div class="relative bg-gray-100 h-auto w-full flex flex-col items-center">
 
     <div class="absolute -top-22 z-10 flex justify-center w-full">
       <img src="/images/logo-mastercraft.svg" alt="Mastercraft" class="w-16 h-16 rounded-full shadow-lg" />
@@ -88,7 +89,7 @@
               <span class="w-6 h-6 flex items-center justify-center md:w-10 md:h-10 md:w-12 md:h-10 rounded-full mr-2">
                 <img src="./images/icon-bookmark.svg" alt="Bookmark" class="w-5 h-5 md:w-6 md:h-6" />
               </span>
-              <span class="hidden md:block font-bold text-gray-700">Bookmark</span>
+              <span class="hidden md:block font-bold text-gray-700" id="bookmark-span">Bookmark</span>
             </button>
           </div>
         </div>
@@ -282,7 +283,7 @@
                 <div class="flex items-center gap-4">
                   <div class="relative">
                     <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
-                    <input type="number" name="pledge__amount" id="bamboo-stand-amount" placeholder="25" min="0"
+                    <input type="number" name="pledge__amount" id="bamboo-stand-amount" placeholder="25" min="25"
                       class="pl-8 pr-4 py-2 border-2 border-green-300 rounded-full w-32 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:border-transparent" />
                   </div>
                   <div>
