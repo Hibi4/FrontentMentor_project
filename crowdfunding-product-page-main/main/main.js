@@ -6,8 +6,6 @@ const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileCloseBtn = document.getElementById('mobile-close-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
-// bookmark-span
-// const bookmarkSpan = document.querySelector('.bookmark-span');
 
 let bookmarked = false;
 
@@ -22,16 +20,12 @@ function closeModal() {
 }
 
 function isBookmarked(isBoomarked) {
-    if(isBoomarked) {
-        document.getElementById("bookmark-span").innerHTML = "Bookmark";
-    } else {
-        document.getElementById("bookmark-span").innerHTML = "Bookmarked";
-        
-    }
+    const element = document.getElementById("bookmark-span");
+    element.innerHTML = isBoomarked ? "Bookmarked" : "Bookmark";
 }
 
 document.getElementById("bookmark-span").addEventListener('click', function () {
-    bookmarked = !bookmarked; // change the state l'état
+    bookmarked = !bookmarked; 
     isBookmarked(bookmarked); // Call the function
 });
 
