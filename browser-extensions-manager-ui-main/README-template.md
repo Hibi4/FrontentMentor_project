@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github solution URL](https://github.com/Hibi4/FrontentMentor_project.git)
-- Live Site URL: [Live site URL](https://frontent-mentor-project.vercel.app/)
+- Live Site URL: [Live site URL](https://browser-extensions-manager-rho.vercel.app/)
 
 ## My process
 
@@ -48,7 +48,8 @@ Users should be able to:
 
 ### What I learned
 
-I learned how to use React and how to create a project with it. I also learned how to use React Hook Form to handle the form and how to use React Testing Library to test the project. I also practiced my skills to use CSS Grid and Flexbox to create the layout of the project.
+- I learned and practiced how to use React Hook Form to handle the form and how to use   React Testing Library to test the project. 
+- I also practiced my skills to use CSS Grid and Flexbox to create the layout of the project.
 
 To see how you can add code snippets, see below:
 
@@ -85,13 +86,13 @@ const deleteItem = (name) => {
 
 ### Continued development
 
-I'm still not fully completely comfortable with React and I want to continue focusing on it. I want to learn more about the use of hooks and how to use them in a project.
+I'm still not fully completely comfortable with React and I want to continue focusing on it, learn more about the use of hooks and how to use them in a project.
 
 
 ### Useful resources
 
 - [Example resource 1](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started) - This helped me to read and understand the basics of React.
-- [Example resource 2](https://coreui.io/blog/how-to-loop-inside-react-jsx/) - This sites helps me to watch some examples about loops.
+- [Example resource 2](https://coreui.io/blog/how-to-loop-inside-react-jsx/) - This site helps me to watch some examples about loops.
 
 ## Author
 
