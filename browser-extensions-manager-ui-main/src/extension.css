@@ -1,3 +1,22 @@
+:root {
+
+}
+
+/* Racine par thème */
+.body-dark { 
+    --bg: hsl(225, 23%, 24%);
+    --text-strong: #fff;
+    --text-muted: gainsboro;
+    --btn-bg: hsl(226, 11%, 37%);
+  }
+  
+  .body-light {
+    --bg: hsl(200, 60%, 99%);
+    --text-strong: #040918;
+    --text-muted: hsl(225, 23%, 24%);
+    --btn-bg: hsl(200, 60%, 99%);
+  }
+
 .body-base {
     background: linear-gradient(180deg, #040918 0%, #091540 100%);
     padding: 40px 0px 40px 35px;  /* top right bottom left */
@@ -17,15 +36,17 @@
 }
 
 .header-dark {
-    background-color: hsl(225, 23%, 24%);
+    background-color: hsl(225, 23%, 24%); 
+    /* background-color: var(--bg); */ 
 }
 
 .header-light {
-    background: hsl(200, 60%, 99%);
+    /*background: hsl(200, 60%, 99%); */ 
+    background: var(--btn-bg);
 }
 
 .sun-logo {
-    background-color: hsl(226, 11%, 37%);
+    background-color: var(--btn-bg);
     padding: 10px;
     border-radius: 5px;
 }
@@ -69,12 +90,12 @@
 }
 
 .buttons-extensions-dark button {
-    background-color: hsl(226, 11%, 37%);
+    background-color: var(--btn-bg);
     color: #EBF2FC;
 }
 
 .buttons-extensions-light button {
-    background-color: hsl(200, 60%, 99%);
+    background-color: var(--btn-bg);
     color: #040918;
 }
 
@@ -118,12 +139,14 @@
     border: 1px solid #ccc;
 }
 
-.container-darker {
-    background-color: hsl(225, 23%, 24%);
-}
+ .container-darker {
+    /*background-color: hsl(225, 23%, 24%);  */
+    background-color: var(--bg);
+} 
 
 .container-light {
-    background-color: hsl(200, 60%, 99%);
+    /*background-color: hsl(200, 60%, 99%);*/
+    background-color: var(--btn-bg);
 }
 
 .container-elements {
@@ -134,19 +157,16 @@
     border-radius: 8px;    
 }
 
-.container-elements-description .content p {
-    margin: 0;
-    color: gainsboro;
-    font-size: 16px;
-    line-height: 1.4;
+.content p {
+    margin: 0;  font-size: 16px;  line-height: 1.4;  color: gainsboro;
 }
 
-.container-elements-description .content-darker .content p { 
-    color: hsl(200, 60%, 99%);
+.content-darker p { 
+    color:hsl(200, 60%, 99%); 
 }
 
-.container-elements-description .content-light p { 
-    color: hsl(225, 23%, 24%);
+.content-light p {
+     color: hsl(225, 23%, 24%); 
 }
 
 .remove-tag {
@@ -168,7 +188,7 @@
     transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .05s ease;
 }
 
-.container-darker .remove-tag .remove-btn {
+.container-darker .remove-btn {
     color: hsl(200, 60%, 99%);
 }
 
