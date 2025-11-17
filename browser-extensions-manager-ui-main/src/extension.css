@@ -1,7 +1,3 @@
-:root {
-
-}
-
 /* Racine par thème */
 .body-dark { 
     --bg: hsl(225, 23%, 24%);
@@ -36,12 +32,10 @@
 }
 
 .header-dark {
-    background-color: hsl(225, 23%, 24%); 
-    /* background-color: var(--bg); */ 
+    background-color: hsl(225, 23%, 24%);
 }
 
 .header-light {
-    /*background: hsl(200, 60%, 99%); */ 
     background: var(--btn-bg);
 }
 
@@ -140,12 +134,10 @@
 }
 
  .container-darker {
-    /*background-color: hsl(225, 23%, 24%);  */
     background-color: var(--bg);
 } 
 
 .container-light {
-    /*background-color: hsl(200, 60%, 99%);*/
     background-color: var(--btn-bg);
 }
 
