@@ -1,0 +1,55 @@
+.ticket-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('./assets/images/background-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+}
+
+.ticket-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.ticket-title h1 {
+    color: white;
+}
+
+.ticket-presentation {
+    text-align: center;
+    color: white;
+}
+
+.ticket-score {
+    text-align: center;
+    color: gray;
+}
+
+.upload-ticket {
+    display: grid;
+    color: white;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.generateBtn button {
+    padding: 12px 10px;
+    background-color: hsl(7, 71%, 60%);
+    border: none;
+    font-size: 18px;
+    width: 100%;
+}
