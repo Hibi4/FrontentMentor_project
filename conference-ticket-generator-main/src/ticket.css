@@ -279,6 +279,7 @@ input:focus {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #fff;
+    font-weight: 700;
 }
 
 .ticket-date-location {
@@ -297,7 +298,7 @@ input:focus {
 .ticket-avatar {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: 20%;
     object-fit: cover;
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
@@ -332,7 +333,7 @@ input:focus {
     position: relative;
 }
 
-.ticket-stub::before,
+/* .ticket-stub::before,
 .ticket-stub::after {
     content: '';
     position: absolute;
@@ -349,7 +350,7 @@ input:focus {
 
 .ticket-stub::after {
     bottom: -6px;
-}
+} */ 
 
 .ticket-number {
     writing-mode: vertical-rl;
