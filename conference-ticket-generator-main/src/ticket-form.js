@@ -5,14 +5,30 @@ import upload from './assets/images/icon-upload.svg'
 import info from './assets/images/icon-info.svg'
 
 function TicketForm({ onGenerateTicket }) {
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase);
+    }
+    
     const fileInputRef = useRef(null);
     const [selectedFile, setSelectedFile] = useState(null);
     const [uploadError, setUploadError] = useState('');
+    const [nameError, setnameError] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [githubError, setGithubError] = useState('');
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
         github: ''
     });
+
+    // Handler for when the input loses focus (onBlur)
+
+    const handleBlur = () => {
+        if(formData.email && !validateEmail(formData.email)) {
+            setEmailError('Please enter a valid email address.');
+        }
+    }
 
     const handleFileChange = (event) => {
         const file = event.target.files?.[0];
@@ -45,17 +61,34 @@ function TicketForm({ onGenerateTicket }) {
     };
 
     const handleSubmit = () => {
-        // Valider les champs requis
-        if (!formData.fullName || !formData.email || !formData.github) {
-            alert('Veuillez remplir tous les champs requis.');
+        // valider les champs requis 
+        if(!formData.fullName) {
+            setnameError('Please enter a name');
             return;
         }
+        
+        if(!formData.email) {
+            setEmailError('Please enter a valid email');
+            return;
+        }
+
+        if(!formData.github) {
+            setGithubError('Please enter a github name');
+            return;
+        }
+
+        // Valider les champs requis
+        /* if (!formData.fullName || !formData.email || !formData.github) {
+            alert('Veuillez remplir tous les champs requis.');
+            return;
+        } */ 
 
         // Passer les données au composant parent
         onGenerateTicket({
             ...formData,
             avatar: selectedFile
         });
+        // setInputError('');
     };
 
     return (
@@ -90,7 +123,7 @@ function TicketForm({ onGenerateTicket }) {
                             onChange={handleFileChange} />
                     </div>
                     <div className="file-feedback">
-                        {selectedFile && <p className="file-name">{selectedFile.name}</p>}
+                        {selectedFile && <p className="file-name">{selectedFile.name}</p>} 
                         {uploadError && <p className="file-error">{uploadError}</p>}
                     </div>
                     <div className="warning-tag">
@@ -113,6 +146,15 @@ function TicketForm({ onGenerateTicket }) {
                         onChange={handleInputChange}
                     />
                 </div>
+                <div className="file-feedback">
+                    {nameError && <p className="input-error"> {nameError} </p>}
+                </div>
+                {/* 
+                <div className="file-feedback">
+                    {selectedFile && <p className="file-name">{selectedFile.name}</p>}
+                    {uploadError && <p className="file-error">{uploadError}</p>}
+                </div>
+                */ }
                 
                 <div className="email">
                     <label htmlFor="email">Email adress</label> <br></br>
@@ -122,8 +164,12 @@ function TicketForm({ onGenerateTicket }) {
                         id="email"
                         className="email"
                         value={formData.email}
+                        onBlur={handleBlur} // Validate on blur for better UX
                         onChange={handleInputChange}
                     />
+                </div>
+                <div className="file-feedback">
+                    {emailError && <p className="input-error"> {emailError} </p>}
                 </div>
                 <div className="github">
                     <label htmlFor="github">Github Username</label> <br></br>
@@ -135,6 +181,9 @@ function TicketForm({ onGenerateTicket }) {
                         value={formData.github}
                         onChange={handleInputChange}
                     />
+                </div>
+                <div className="file-feedback">
+                    {githubError && <p className="input-error"> {githubError} </p>}
                 </div>
                 <div className="generateBtn">
                     <button onClick={handleSubmit}>Generate My ticket</button>

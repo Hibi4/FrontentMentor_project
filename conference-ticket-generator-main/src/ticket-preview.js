@@ -27,7 +27,7 @@ function TicketPreview({ ticketData }) {
                     <p className="ticket-ready">Your ticket is ready.</p>
                     <p className="email-message">
                         We've emailed your ticket to <span className="highlight">{ticketData?.email || 'email@example.com'}</span> 
-                        and will send updates in the run up to the event.
+                         and will send updates in the run up to the event.
                     </p>
                 </div>
 

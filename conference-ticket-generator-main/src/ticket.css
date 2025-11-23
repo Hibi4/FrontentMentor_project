@@ -126,6 +126,11 @@
     color: #ff9c9c;
 }
 
+.input-error {
+    font-size: 0.8rem;
+    color: hsl(7, 71%, 60%);
+}
+
 .upload-tag p {
     margin: 0;
     font-size: 0.95rem;
@@ -224,6 +229,7 @@ input:focus {
 
 .congrats-message .highlight {
     color: #f47b4d;
+    padding-right: 5px;
 }
 
 .ticket-ready {
@@ -360,3 +366,77 @@ input:focus {
     letter-spacing: 2px;
     padding-left: 60%;
 }
+
+
+/*
+// src/components/EmailInput.js
+
+import React, { useState } from 'react';
+
+// You can place the validation function here or import it from a utils file
+const validateEmail = (email) => {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
+};
+
+const EmailInput = () => {
+  // State to hold the email value
+  const [email, setEmail] = useState('');
+  // State to hold the validation error message
+  const [error, setError] = useState('');
+
+  // Handler for when the input value changes
+  const handleEmailChange = (e) => {
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+
+    // Optional: Clear the error message as the user types
+    if (error) {
+      setError('');
+    }
+  };
+
+  // Handler for when the input loses focus (onBlur)
+  // This is a good time to show a validation error
+  const handleBlur = () => {
+    if (email && !validateEmail(email)) {
+      setError('Please enter a valid email address.');
+    }
+  };
+
+  // Handler for form submission
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    if (!email) {
+      setError('Email is required.');
+    } else if (!validateEmail(email)) {
+      setError('Please enter a valid email address.');
+    } else {
+      // If valid, you can proceed with form submission logic
+      console.log('Form submitted with valid email:', email);
+      alert(`Form submitted successfully with email: ${email}`);
+      setError(''); // Clear any previous errors
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} noValidate>
+      <div className="form-group">
+        <label htmlFor="email-input">Email Address</label>
+        <input
+          type="email"
+          id="email-input"
+          name="email"
+          value={email}
+          onChange={handleEmailChange}
+          onBlur={handleBlur} // Validate on blur for better UX
+          className={error ? 'input-error' : ''}
+          aria-describedby="email-error" // For accessibility
+        />
+        { Conditionally render the error message */
+    /*    {error && <p id="email-error" className="error-message">{error}</p>}
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};*/
