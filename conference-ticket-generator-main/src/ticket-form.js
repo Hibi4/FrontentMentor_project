@@ -5,6 +5,11 @@ import upload from './assets/images/icon-upload.svg'
 import info from './assets/images/icon-info.svg'
 
 function TicketForm({ onGenerateTicket }) {
+    /**
+     * This function returns the validated email.
+     * @param {*} email to validate
+     * @returns true is the email is valid
+     */
     const validateEmail = (email) => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(String(email).toLowerCase);
@@ -61,7 +66,7 @@ function TicketForm({ onGenerateTicket }) {
     };
 
     const handleSubmit = () => {
-        // valider les champs requis 
+        // validate input field
         if(!formData.fullName) {
             setnameError('Please enter a name');
             return;
@@ -77,13 +82,7 @@ function TicketForm({ onGenerateTicket }) {
             return;
         }
 
-        // Valider les champs requis
-        /* if (!formData.fullName || !formData.email || !formData.github) {
-            alert('Veuillez remplir tous les champs requis.');
-            return;
-        } */ 
-
-        // Passer les données au composant parent
+        // pass the data to the parent component
         onGenerateTicket({
             ...formData,
             avatar: selectedFile
@@ -92,104 +91,113 @@ function TicketForm({ onGenerateTicket }) {
     };
 
     return (
-        <div className="ticket-container">
-            <div className="ticket-title">
-                <div>
-                    <img src={logo} alt="mark" />
+        <div className="ticket-form-container">
+            
+            <div className="ticket-container">
+                {/*
+            <div>
+                <img src={bottom} alt="bottom-icon" className="bottom-icon" />
+            </div>
+            */}
+                <div className="ticket-title">
+                    <div>
+                        <img src={logo} alt="mark" />
+                    </div>
+                    <div>
+                        <h1>Coding Conf</h1>
+                    </div>
                 </div>
-                <div>
-                    <h1>Coding Conf</h1>
+                <div className="ticket-presentation">
+                    <h1>Your journey to coding conf 2025 starts here !</h1>
                 </div>
-            </div>
-            <div className="ticket-presentation">
-                <h1>Your journey to coding conf 2025 starts here !</h1>
-            </div>
-            <div className="ticket-score">
-                <h4>Secure your spot at next year's biggest coding conference</h4>
-            </div>
-            {/* form body */}
-            <div className="upload-ticket">
-                <div className="avatar">
-                    <h3>Upload Avatar</h3>
-                    <div className="upload-tag" onClick={() => fileInputRef.current?.click()}>
-                        <div className="avatar">
-                            <img src={upload} alt="icon-upload" />
+                <div className="ticket-score">
+                    <h4>Secure your spot at next year's biggest coding conference</h4>
+                </div>
+                {/* form body */}
+                <div className="upload-ticket">
+                    <div className="avatar">
+                        <h3>Upload Avatar</h3>
+                        <div className="upload-tag" onClick={() => fileInputRef.current?.click()}>
+                            <div className="avatar">
+                                <img src={upload} alt="icon-upload" />
+                            </div>
+                            <p>Drag & drop or click to upload</p>
+                            <input ref={fileInputRef}
+                                type="file"
+                                accept=".jpg,.jpeg,.png"
+                                className="file-input"
+                                onChange={handleFileChange} />
                         </div>
-                        <p>Drag & drop or click to upload</p>
-                        <input ref={fileInputRef}
-                            type="file"
-                            accept=".jpg,.jpeg,.png"
-                            className="file-input"
-                            onChange={handleFileChange} />
+                        <div className="file-feedback">
+                            {selectedFile && <p className="file-name">{selectedFile.name}</p>}
+                            {uploadError && <p className="file-error">{uploadError}</p>}
+                        </div>
+                        <div className="warning-tag">
+                            <div>
+                                <img src={info} alt="icon-info" />
+                            </div>
+                            <div>
+                                <p id="warning-upload">Upload your photo (JPG or PNG, max-size: 500KB).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="fullName">
+                        <label htmlFor="fullName">Full Name</label> <br></br>
+                        <input
+                            type="text"
+                            name="fullName"
+                            id="fullName"
+                            className="fullName"
+                            value={formData.fullName}
+                            onChange={handleInputChange}
+                        />
                     </div>
                     <div className="file-feedback">
-                        {selectedFile && <p className="file-name">{selectedFile.name}</p>} 
-                        {uploadError && <p className="file-error">{uploadError}</p>}
+                        {nameError && <p className="input-error"> {nameError} </p>}
                     </div>
-                    <div className="warning-tag">
-                        <div>
-                            <img src={info} alt="icon-info" />
-                        </div>
-                        <div>
-                            <p id="warning-upload">Upload your photo (JPG or PNG, max-size: 500KB).</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="fullName">
-                    <label htmlFor="fullName">Full Name</label> <br></br>
-                    <input 
-                        type="text" 
-                        name="fullName" 
-                        id="fullName"
-                        className="fullName"
-                        value={formData.fullName}
-                        onChange={handleInputChange}
-                    />
-                </div>
-                <div className="file-feedback">
-                    {nameError && <p className="input-error"> {nameError} </p>}
-                </div>
-                {/* 
+                    {/* 
                 <div className="file-feedback">
                     {selectedFile && <p className="file-name">{selectedFile.name}</p>}
                     {uploadError && <p className="file-error">{uploadError}</p>}
                 </div>
                 */ }
-                
-                <div className="email">
-                    <label htmlFor="email">Email adress</label> <br></br>
-                    <input 
-                        type="email" 
-                        name="email"
-                        id="email"
-                        className="email"
-                        value={formData.email}
-                        onBlur={handleBlur} // Validate on blur for better UX
-                        onChange={handleInputChange}
-                    />
-                </div>
-                <div className="file-feedback">
-                    {emailError && <p className="input-error"> {emailError} </p>}
-                </div>
-                <div className="github">
-                    <label htmlFor="github">Github Username</label> <br></br>
-                    <input 
-                        type="text" 
-                        name="github"
-                        id="github"
-                        className="github"
-                        value={formData.github}
-                        onChange={handleInputChange}
-                    />
-                </div>
-                <div className="file-feedback">
-                    {githubError && <p className="input-error"> {githubError} </p>}
-                </div>
-                <div className="generateBtn">
-                    <button onClick={handleSubmit}>Generate My ticket</button>
+
+                    <div className="email">
+                        <label htmlFor="email">Email adress</label> <br></br>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            className="email"
+                            value={formData.email}
+                            onBlur={handleBlur} // Validate on blur for better UX
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="file-feedback">
+                        {emailError && <p className="input-error"> {emailError} </p>}
+                    </div>
+                    <div className="github">
+                        <label htmlFor="github">Github Username</label> <br></br>
+                        <input
+                            type="text"
+                            name="github"
+                            id="github"
+                            className="github"
+                            value={formData.github}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="file-feedback">
+                        {githubError && <p className="input-error"> {githubError} </p>}
+                    </div>
+                    <div className="generateBtn">
+                        <button onClick={handleSubmit}>Generate My ticket</button>
+                    </div>
                 </div>
             </div>
         </div>
+        
     )
 }
 

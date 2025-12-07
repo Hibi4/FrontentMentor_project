@@ -1,6 +1,7 @@
 import React from "react"
 import './ticket.css'
 import logo from './assets/images/logo-mark.svg'
+import github from './assets/images/icon-github.svg'
 
 function TicketPreview({ ticketData }) {
     // Créer une URL pour l'image de l'avatar si elle existe
@@ -47,7 +48,13 @@ function TicketPreview({ ticketData }) {
                             <div className="ticket-user-details">
                                 <h2>{ticketData?.fullName || 'User Name'}</h2>
                                 <div className="ticket-github">
-                                    <span>@{ticketData?.github || 'username'}</span>
+                                    <div>
+                                    <img src={github} alt="Avatar" className="github-avatar" />
+                                    </div>
+                                    <div>
+                                        <span>@{ticketData?.github || 'username'}</span>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
