@@ -57,6 +57,11 @@ function TicketForm({ onGenerateTicket }) {
         setUploadError('');
     };
 
+    /**
+     * Update the input's value 
+     * @param {*} e entered value 
+     */
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
@@ -87,18 +92,12 @@ function TicketForm({ onGenerateTicket }) {
             ...formData,
             avatar: selectedFile
         });
-        // setInputError('');
     };
 
     return (
         <div className="ticket-form-container">
             
             <div className="ticket-container">
-                {/*
-            <div>
-                <img src={bottom} alt="bottom-icon" className="bottom-icon" />
-            </div>
-            */}
                 <div className="ticket-title">
                     <div>
                         <img src={logo} alt="mark" />
