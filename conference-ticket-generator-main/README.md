@@ -1,22 +1,26 @@
-# Frontend Mentor - Conference ticket generator
+# Frontend Mentor - Conference ticket generator solution
 
-![Design preview for the Conference ticket generator coding challenge](./preview.jpg)
+![Design preview for the Crowdfunding-product-page-main coding challenge](./preview.jpg)
 
-## Welcome! 👋
+This is a solution to the [Conference ticket generator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-Thanks for checking out this front-end coding challenge.
+## Table of contents
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this conference ticket generator and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to: 
+Users should be able to:
 
 - Complete the form with their details
 - Receive form validation messages if:
@@ -29,74 +33,91 @@ Your users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Links
 
-## Where to find everything
+- Solution URL: [Github solution URL](https://github.com/Hibi4/FrontentMentor_project.git)
+- Live Site URL: [live site URL](https://conference-ticket-generator-amber-ten.vercel.app/)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+## My process
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Built with
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+### What I learned
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+- I learned and practiced how to use React Hook Form to handle the form and how to use React Testing Library to test the project.
+- I also practiced my skills to use CSS Grid and Flexbox to create the layout of the project.
+- Blur Event : I use the onBlur Event for the input tag. The onBlur event in React is a synthetic event that is triggered when an element loses focus. It is commonly used with form elements like input fields, text areas, and buttons to handle situations when the user moves away from an element, either by clicking elsewhere on the page or navigating to another element using the keyboard (e.g., pressing the "Tab" key). Source: https://www.geeksforgeeks.org/reactjs/react-onblur-event/ 
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- I learned on how you can pass data from one component to another component. I use it in the current project. 
 
-## Building your project
+To see how you can add code snippets, see below:
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+```css
+:root { ... }
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+transition: border-color 0.3s ease, box-shadow 0.3s ease; 
 
-## Deploying your project
+input:focus {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-focus);
+    outline: none;
+}
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+flex: 1; 
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+writing-mode: vertical-rl; 
+```
+```js
+    const [formData, setFormData] = useState({
+      fullName: '',
+      email: '',
+      github: ''
+    });
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
 
-## Create a custom `README.md`
+    // pass the data to the parent component
+    onGenerateTicket({
+      ...formData,
+      avatar: selectedFile
+    });
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+    {!showTicket ? (
+        <TicketForm onGenerateTicket={handleGenerateTicket} />
+      ) : (
+        <TicketPreview ticketData={ticketData} />
+    )}
+```
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+### Continued development
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+I'm still not fully completely comfortable with React and I want to continue focusing on it, learn more about the use of hooks and how to use them in a project.
 
-## Submitting your solution
+### Useful resources
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+- [Example resource 1](https://www.w3schools.com/howto/howto_css_image_text.asp) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+- [Example resource 2](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-position) - This article helps me to read and understand some examples about background positions.
 
-## Sharing your solution
+- Vibe coding : I use cursor IDE to resolve some complex task. 
 
-There are multiple places you can share your solution:
+## Author
 
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+- Website - [Hibi](https://portfolio-ousmane.vercel.app/en/)
+- Frontend Mentor - [@hibi4](https://www.frontendmentor.io/profile/Hibi4)
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
