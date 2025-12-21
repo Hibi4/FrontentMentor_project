@@ -1,10 +1,10 @@
 import React from "react"
 import './ticket.css'
-import logo from './assets/images/logo-mark.svg'
+import logo_mark from './assets/images/logo-mark.svg'
 import github from './assets/images/icon-github.svg'
 
 function TicketPreview({ ticketData }) {
-    // Créer une URL pour l'image de l'avatar si elle existe
+    // Create an URL for avartar's image if it exists
     const avatarUrl = ticketData?.avatar ? URL.createObjectURL(ticketData.avatar) : null;
 
     return (
@@ -13,7 +13,7 @@ function TicketPreview({ ticketData }) {
                 <div className="ticket-preview-header">
                     <div className="ticket-title">
                         <div>
-                            <img src={logo} alt="mark" />
+                            <img src={logo_mark} alt="mark" />
                         </div>
                         <div>
                             <h1>Coding Conf</h1>
@@ -36,7 +36,7 @@ function TicketPreview({ ticketData }) {
                     <div className="ticket-card">
                         <div className="ticket-main">
                             <div className="ticket-logo-section">
-                                <img src={logo} alt="Coding Conf" />
+                                <img src={logo_mark} alt="Coding Conf" />
                                 <span>Coding Conf</span>
                             </div>
                             <div className="ticket-date-location">

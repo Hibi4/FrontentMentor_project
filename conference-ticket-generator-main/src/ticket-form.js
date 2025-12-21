@@ -42,13 +42,13 @@ function TicketForm({ onGenerateTicket }) {
         }
 
         if (file.size > 500 * 1024) {
-            setUploadError('Fichier supérieur à 500KB.');
+            setUploadError('Please upload a file smaller than 500 KB.');
             setSelectedFile(null);
             return;
         }
 
         if (!['image/jpeg', 'image/png'].includes(file.type)) {
-            setUploadError('Formats acceptés : JPG ou PNG.');
+            setUploadError('File does not support. You must use .png or .jpeg.');
             setSelectedFile(null);
             return;
         }
@@ -154,12 +154,6 @@ function TicketForm({ onGenerateTicket }) {
                     <div className="file-feedback">
                         {nameError && <p className="input-error"> {nameError} </p>}
                     </div>
-                    {/* 
-                <div className="file-feedback">
-                    {selectedFile && <p className="file-name">{selectedFile.name}</p>}
-                    {uploadError && <p className="file-error">{uploadError}</p>}
-                </div>
-                */ }
 
                     <div className="email">
                         <label htmlFor="email">Email adress</label> <br></br>

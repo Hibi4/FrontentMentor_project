@@ -25,7 +25,7 @@
     --border-color-focus: #f47b4d;
     --border-color-avatar: rgba(255, 255, 255, 0.2);
     
-    /* Ombres */
+    /* shodows */
     --shadow-card: 0 2.5rem 3.75rem rgba(5, 0, 25, 0.45);
     --shadow-card-preview: 0 2.5rem 3.75rem rgba(5, 0, 25, 0.5);
     --shadow-button: 0 1.125rem 1.875rem rgba(248, 102, 92, 0.35);
@@ -202,10 +202,6 @@
     background: var(--color-bg-upload-hover);
     cursor: pointer;
 }
-
-/* .file-input {
-    display: none;
-} */ 
 
 .file-feedback {
     margin-top: 10px;
@@ -462,7 +458,7 @@ input:focus {
     padding-left: 60%;
 }
 
-/* start mobile design */
+/* Mobile design */
 
 @media (max-width: 768px) {
 
