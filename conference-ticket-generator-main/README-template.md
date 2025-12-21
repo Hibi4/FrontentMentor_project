@@ -1,6 +1,8 @@
 # Frontend Mentor - Conference ticket generator solution
 
-This is a solution to the [Conference ticket generator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+![Design preview for the Crowdfunding-product-page-main coding challenge](./src/design/desktop-design-form.jpg)
+
+This is a solution to the [Conference ticket generator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -34,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github solution URL](https://github.com/Hibi4/FrontentMentor_project.git)
-- Live Site URL: [Add live site URL](https://your-live-site-url.com)
+- Live Site URL: [live site URL](https://conference-ticket-generator-amber-ten.vercel.app/)
 
 ## My process
 
@@ -46,21 +48,18 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
 - I learned and practiced how to use React Hook Form to handle the form and how to use React Testing Library to test the project.
 - I also practiced my skills to use CSS Grid and Flexbox to create the layout of the project.
+- Blur Event : I use the onBlur Event for the input tag. The onBlur event in React is a synthetic event that is triggered when an element loses focus. It is commonly used with form elements like input fields, text areas, and buttons to handle situations when the user moves away from an element, either by clicking elsewhere on the page or navigating to another element using the keyboard (e.g., pressing the "Tab" key). Source: https://www.geeksforgeeks.org/reactjs/react-onblur-event/ 
+
+- I learned on how you can pass data from one component to another component. I use it in the current project. 
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
 :root { ... }
 
@@ -96,11 +95,13 @@ writing-mode: vertical-rl;
       ...formData,
       avatar: selectedFile
     });
+
+    {!showTicket ? (
+        <TicketForm onGenerateTicket={handleGenerateTicket} />
+      ) : (
+        <TicketPreview ticketData={ticketData} />
+    )}
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
