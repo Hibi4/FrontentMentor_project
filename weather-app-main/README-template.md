@@ -104,6 +104,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 https://create-react-app.dev/docs/getting-started/
 
+https://www.w3schools.com/csS/css_border_width.asp 
+
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
