@@ -13,14 +13,14 @@ function Weather() {
                 <div><img src={logo} className='' alt="logo" /> </div>
                 <div className='units'>
                     <img src={units} alt='units' /> Units
-                </div>
-                {/* <select name="cars" id="cars" >
+                    <select name="units" className="units-select" >
+                        <option value=""></option>
                         <option value="volvo">Volvo</option>
                         <option value="saab">Saab</option>
                         <option value="opel">Opel</option>
                         <option value="audi">Audi</option>
-                    </select> */ 
-                }
+                    </select>                
+                </div>                
             </div>
             <div className='weather-title'>How is the sky today?</div>
             <div className='search-container'>

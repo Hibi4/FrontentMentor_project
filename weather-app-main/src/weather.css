@@ -26,15 +26,55 @@
 }
 
 .units {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
     background-color: hsl(243, 27%, 20%);
+    border-radius: 999px;
     padding: 12px;
     border-radius: 5px;
 }
 
+.units img {
+    width: 18px;
+    height: 18px;
+}
+
+/* style du select dans le pill */
+.units-select {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    /* padding-right: 18px; */          /* place pour la flèche */
+    outline: none;
+    line-height: 1;
+}
+
+.units::after {
+    /* content: '▾'; */ 
+    position: absolute;
+    right: 12px;
+    font-size: 40px;
+    color: hsl(0, 0%, 80%);
+    pointer-events: none;
+}
+
+/* .units select {
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: 40px;
+} */ 
+
 .weather-title {
     color: white;
-    font-size: 40px;
+    font-size: 60px;
     text-align: center;
+    font-weight: 700;
 }
 
 .search-container {
@@ -49,6 +89,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    width: 30%;
 }
 
 .search-icon {
