@@ -112,6 +112,8 @@ https://freefrontend.com/css-box-shadow-examples/
 
 https://refine.dev/blog/box-shadow-css/#css-box-shadow-examples 
 
+https://open-meteo.com/en/docs?hourly=temperature_2m,relative_humidity_2m 
+
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author

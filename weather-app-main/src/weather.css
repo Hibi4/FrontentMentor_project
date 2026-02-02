@@ -126,8 +126,27 @@
    /* border-radius: 16px;
 } */ 
 
-.large-picture {
+/* 
+.ticket-form-container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('./assets/images/background-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+} */ 
+
+/* .large-picture {
     width: 90%;
+} */ 
+
+.picture-container {
+    width: 90%;
+    height: 45%;
+    background-image: url('./assets/images/bg-today-large.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
 }
 
 .forecast {
@@ -153,8 +172,26 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */ 
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-
+/* Temporary code. It should be changed */ 
 .forecast1 p {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+.forecast2 p {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+.forecast3 p {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+.forecast4 p {
     color: white;
     text-align: center;
     font-size: 24px;
@@ -190,6 +227,8 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     border-color: rgb(88 76 76);
     background-color: hsl(243, 27%, 20%);
 }
+
+/* end Temporary code. It should be changed */ 
 
 /* background-color: hsl(243, 27%, 20%); */ 
 

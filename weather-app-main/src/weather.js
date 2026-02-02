@@ -47,16 +47,20 @@ function Weather() {
             const { latitude, longitude, name, country } = geoData.results[0];
 
             // STEP 2: Weather - Get current weather using Lat/Lon
-            const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+            const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation,relativehumidity_2m`;
             const weatherRes = await fetch(weatherUrl);
             const weatherData = await weatherRes.json();
+            console.log("WeatherData: ", weatherData);
 
             setWeather({
                 city: name,
                 country: country,
                 temp: weatherData.current_weather.temperature,
+                time: weatherData.current_weather.time,
                 wind: weatherData.current_weather.windspeed,
-                code: weatherData.current_weather.weathercode
+                code: weatherData.current_weather.weathercode,
+                prec: weatherData.hourly?.precipitation?.[0] || 0,
+                humidity: weatherData.hourly?.relativehumidity_2m?.[0] || 0
             })
             
     /* 
@@ -169,16 +173,26 @@ return (
                 <div className='container'>
                     <div>
                         <div className='picture-container'>
-                            <img src={large} className='large-picture' alt="large" />
+                            {/* <img src={large} className='large-picture' alt="large" />*/ }
+                            
                         </div>
                         <div className='forecast'>
                             <div className='forecast1'>
                                 <p>Feels like</p>
-                                <p>18 C</p>
+                                <p>{weather.temp} °C</p>
                             </div>
-                            <div className='forecast2'></div>
-                            <div className='forecast3'></div>
-                            <div className='forecast4'></div>
+                            <div className='forecast2'>
+                                <p>Humidity</p>
+                                <p>{weather.humidity}%</p>
+                            </div>
+                            <div className='forecast3'>
+                                <p>Wind</p>
+                                <p> {weather.wind} Km/h </p>
+                            </div>
+                            <div className='forecast4'>
+                                <p>Precipitation</p>
+                                <p> {weather.prec} mm</p>
+                            </div>
                         </div>
                         {/* Daily forecast */}
                         <div className='daily-forecast'>
