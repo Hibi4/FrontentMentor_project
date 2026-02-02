@@ -106,6 +106,12 @@ https://create-react-app.dev/docs/getting-started/
 
 https://www.w3schools.com/csS/css_border_width.asp 
 
+https://getcssscan.com/css-box-shadow-examples
+
+https://freefrontend.com/css-box-shadow-examples/ 
+
+https://refine.dev/blog/box-shadow-css/#css-box-shadow-examples 
+
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
