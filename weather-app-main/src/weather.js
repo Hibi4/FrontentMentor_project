@@ -1,9 +1,17 @@
 import React, { useState } from 'react'
 import logo from './assets/images/logo.svg'
-import large from './assets/images/bg-today-large.svg'
+// import large from './assets/images/bg-today-large.svg'
 import units from './assets/images/icon-units.svg'
 import rain from './assets/images/icon-rain.webp'
 import search from './assets/images/icon-search.svg'
+import iconSunny from './assets/images/icon-sunny.webp'
+import iconDrizzle from './assets/images/icon-drizzle.webp'
+import iconRain from './assets/images/icon-rain.webp'
+import iconSnow from './assets/images/icon-snow.webp'
+import iconStorm from './assets/images/icon-storm.webp'
+import iconFog from './assets/images/icon-fog.webp'
+import iconOvercast from './assets/images/icon-overcast.webp'
+import iconPartlyCloudy from './assets/images/icon-partly-cloudy.webp'
 import './weather.css'
 
 function Weather() {
@@ -11,20 +19,21 @@ function Weather() {
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null);
     const [error, setError] = useState('');
+    const [currentDay, setCurrentDay] = useState('');
 
     const getWeatherDescription = (code) => {
         const weatherCodes = {
-            0 : 'Clear sky',
-            1 : 'Mainly clear', 2: 'Partly cloudy', 3: 'Overcast',
-            45 : 'Fog', 48 : 'Depositing rime fog',
-            51 : 'Light drizzle', 53: 'Moderate drizzle', 55: 'Dense drizzle',
-            61 : 'Slight rain', 63 : 'Moderate rain', 65: 'Heavy rain',
-            71 : 'Slight snow', 73: 'Moderate snow', 75: 'Heavy snow',
-            80 : 'Slight rain showers', 81: 'Moderate rain showers', 82: 'Violent rain showers',
-            95 : 'Thunderstorm', 96: 'Thunderstorm with hail', 99: 'Thunderstorm with heavy hail'
+            0 : iconSunny,
+            1 : iconDrizzle,
+            2 : iconRain,
+            3 : iconSnow,
+            4 : iconStorm,
+            5 : iconFog,
+            6 : iconOvercast,
+            7 : iconPartlyCloudy,
         }
-
-        return weatherCodes[code] || 'Unknown';
+        
+        return weatherCodes[code] || 'Unknown'; 
     }
 
     const handleSearch = async (e) => {
@@ -47,20 +56,40 @@ function Weather() {
             const { latitude, longitude, name, country } = geoData.results[0];
 
             // STEP 2: Weather - Get current weather using Lat/Lon
-            const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation,relativehumidity_2m`;
+            // const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation,relativehumidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`;
+            const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,precipitation,relativehumidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`;
             const weatherRes = await fetch(weatherUrl);
             const weatherData = await weatherRes.json();
             console.log("WeatherData: ", weatherData);
+
+            // Extraire le jour de la semaine à partir de la date
+            const getDayName = (dateString) => {
+                if (!dateString) return '';
+                const date = new Date(dateString + 'T00:00:00');
+                return date.toLocaleDateString('en-US', { weekday: 'long' }); // Ex: "Monday", "Tuesday"
+            };
+
+            const currentDate = weatherData.current_weather.time?.split('T')[0];
+            const dayName = getDayName(currentDate);
+            setCurrentDay(dayName);
 
             setWeather({
                 city: name,
                 country: country,
                 temp: weatherData.current_weather.temperature,
-                time: weatherData.current_weather.time,
+                apparentTemp: weatherData.hourly?.apparent_temperature?.[0] || weatherData.current_weather.temperature,
+                time: weatherData.current_weather.time?.split('T')[0],
+                date: currentDate,
+                day: dayName, // Jour de la semaine (ex: "Monday")
                 wind: weatherData.current_weather.windspeed,
                 code: weatherData.current_weather.weathercode,
                 prec: weatherData.hourly?.precipitation?.[0] || 0,
-                humidity: weatherData.hourly?.relativehumidity_2m?.[0] || 0
+                humidity: weatherData.hourly?.relativehumidity_2m?.[0] || 0,
+                daily: weatherData.daily || null,
+                minTemp: weatherData.daily?.temperature_2m_min?.[0] || 0,
+                maxTemp: weatherData.daily?.temperature_2m_max?.[0] || 0,
+                hourlyTimes: weatherData.hourly?.time || [],
+                hourlyTemperatures: weatherData.hourly?.temperature_2m || []
             })
             
     /* 
@@ -174,12 +203,20 @@ return (
                     <div>
                         <div className='picture-container'>
                             {/* <img src={large} className='large-picture' alt="large" />*/ }
-                            
+                            <div className='weather-location'>
+                                <p> {weather.city}, {weather.country} </p>
+                                <p> {weather.day}, {weather.time} </p>
+                            </div>
+                            <div className='weather-grade'>
+                                <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' /> {/* width: 10rem */ }
+                                <p> {weather.temp} °C </p> {/* width: 3rem */ }
+                                {/* <img src={weather.icon} alt="weather-icon" />*/ }
+                            </div>
                         </div>
                         <div className='forecast'>
                             <div className='forecast1'>
                                 <p>Feels like</p>
-                                <p>{weather.temp} °C</p>
+                                <p>{weather.apparentTemp} °C</p>
                             </div>
                             <div className='forecast2'>
                                 <p>Humidity</p>
@@ -212,6 +249,7 @@ return (
                             </div>
                         </div>
                     </div>
+                    {/* Hourly forecast */}
                     <div className='hourly-forecast'>
                         <div className='hourly-title'>
                             <div>
@@ -219,14 +257,14 @@ return (
                             </div>
                             <div>
                                 <select>
-                                    <option>Tuesday</option>
+                                    <option> {currentDay} </option>
                                 </select>
                             </div>
                         </div>
                         <div>
                             <div className='forecast-meteo'>
                                 <div className='hourly-item-left'>
-                                    <img src={rain} className='rain' alt='rain' />
+                                    <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' />
                                     <p>3 PM</p>
                                 </div>
                                 <div className='hourly-item-right'>

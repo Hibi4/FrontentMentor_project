@@ -96,6 +96,10 @@
     min-width: 300px;
 }
 
+input::placeholder {
+    color: white;
+}
+
 .search-button {
     padding: 15px;
     border-radius: 10px;
@@ -141,12 +145,45 @@
 } */ 
 
 .picture-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0px 40px 0px 40px; */ 
     width: 90%;
     height: 45%;
     background-image: url('./assets/images/bg-today-large.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
+    color: white;
+    font-weight: 700;
+}
+
+.weather-grade {
+    display: inline-flex;
+    align-items: center;
+}
+
+.weather-location {
+    padding-left: 40px;
+}
+
+.weather-location p:nth-child(1) {
+    font-size: 2rem;
+}
+
+.weather-location p:nth-last-child(1) {
+    color: gainsboro;
+}
+
+.weather-grade img {
+    width: 10rem;
+}
+
+.weather-grade p {
+    width: auto;
+    padding-right: 40px;
+    font-size: 2rem;
 }
 
 .forecast {
