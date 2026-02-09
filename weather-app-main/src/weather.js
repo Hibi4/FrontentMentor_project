@@ -19,7 +19,8 @@ function Weather() {
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null);
     const [error, setError] = useState('');
-    const [currentDay, setCurrentDay] = useState('');
+    // const [currentDay, setCurrentDay] = useState('');
+    const [selectedDay, setSelectedDay] = useState('');
 
     const getWeatherDescription = (code) => {
         const weatherCodes = {
@@ -35,6 +36,100 @@ function Weather() {
         
         return weatherCodes[code] || 'Unknown'; 
     }
+
+    // Fonction pour extraire le jour de la semaine à partir d'une date
+    const getDayName = (dateString) => {
+        if (!dateString) return '';
+        const date = new Date(dateString + 'T00:00:00');
+        return date.toLocaleDateString('en-US', { weekday: 'long' }); // Ex: "Monday", "Tuesday"
+    };
+
+    // Fonction pour générer les 5 prochains jours à partir d'une date
+    const getNext5Days = (startDate) => {
+        if (!startDate) return [];
+        const days = [];
+        const start = new Date(startDate + 'T00:00:00');
+        
+        for (let i = 0; i < 5; i++) {
+            const nextDate = new Date(start);
+            nextDate.setDate(start.getDate() + i);
+            const dateString = nextDate.toISOString().split('T')[0];
+            days.push({
+                date: dateString,
+                dayName: getDayName(dateString)
+            });
+        }
+        
+        return days;
+    };
+
+    // Fonction pour formater l'heure en format 12h (ex: "3 PM", "4 PM")
+    const formatHour = (dateString) => {
+        if (!dateString) return '';
+        const date = new Date(dateString);
+        const hour = date.getHours();
+        const period = hour >= 12 ? 'PM' : 'AM';
+        const displayHour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
+        return `${displayHour} ${period}`;
+    };
+
+    // Fonction pour récupérer les températures des heures suivantes
+    const getNextHoursData = (hourlyTimes, hourlyTemperatures, selectedDate = null, count = 8) => {
+        if (!hourlyTimes || !hourlyTemperatures || hourlyTimes.length === 0) return [];
+        
+        let filteredTimes = hourlyTimes;
+        let filteredTemperatures = hourlyTemperatures;
+        
+        // Si une date est sélectionnée, filtrer les données pour ce jour
+        if (selectedDate) {
+            const selectedDateStr = selectedDate.split('T')[0]; // Format YYYY-MM-DD
+            const filteredIndices = [];
+            
+            hourlyTimes.forEach((time, index) => {
+                if (time) {
+                    const timeDateStr = time.split('T')[0];
+                    if (timeDateStr === selectedDateStr) {
+                        filteredIndices.push(index);
+                    }
+                }
+            });
+            
+            filteredTimes = filteredIndices.map(i => hourlyTimes[i]);
+            filteredTemperatures = filteredIndices.map(i => hourlyTemperatures[i]);
+        } else {
+            // Si aucune date sélectionnée, utiliser la logique originale (heures suivantes)
+            const now = new Date();
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+            const startHour = currentMinute >= 30 ? currentHour + 1 : currentHour;
+            
+            let startIndex = hourlyTimes.findIndex(time => {
+                if (!time) return false;
+                const timeDate = new Date(time);
+                const timeHour = timeDate.getHours();
+                return timeHour > startHour || (timeHour === startHour && currentMinute < 30);
+            });
+            
+            if (startIndex === -1) startIndex = 1;
+            
+            filteredTimes = hourlyTimes.slice(startIndex);
+            filteredTemperatures = hourlyTemperatures.slice(startIndex);
+        }
+        
+        // Récupérer les heures avec leurs températures
+        const nextHours = [];
+        for (let i = 0; i < count && i < filteredTimes.length; i++) {
+            if (filteredTimes[i] && filteredTemperatures[i] !== undefined) {
+                nextHours.push({
+                    time: filteredTimes[i],
+                    temperature: Math.round(filteredTemperatures[i]),
+                    formattedTime: formatHour(filteredTimes[i])
+                });
+            }
+        }
+        
+        return nextHours;
+    };
 
     const handleSearch = async (e) => {
         e.preventDefault();
@@ -57,21 +152,15 @@ function Weather() {
 
             // STEP 2: Weather - Get current weather using Lat/Lon
             // const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation,relativehumidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`;
-            const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,precipitation,relativehumidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`;
+            const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,precipitation,relativehumidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto&forecast_days=7`;
             const weatherRes = await fetch(weatherUrl);
             const weatherData = await weatherRes.json();
             console.log("WeatherData: ", weatherData);
 
-            // Extraire le jour de la semaine à partir de la date
-            const getDayName = (dateString) => {
-                if (!dateString) return '';
-                const date = new Date(dateString + 'T00:00:00');
-                return date.toLocaleDateString('en-US', { weekday: 'long' }); // Ex: "Monday", "Tuesday"
-            };
-
             const currentDate = weatherData.current_weather.time?.split('T')[0];
             const dayName = getDayName(currentDate);
             setCurrentDay(dayName);
+            setSelectedDay(currentDate); // Initialiser avec la date actuelle
 
             setWeather({
                 city: name,
@@ -256,84 +345,27 @@ return (
                                 <h4>Hourly forecast</h4>
                             </div>
                             <div>
-                                <select>
-                                    <option> {currentDay} </option>
+                                <select value={selectedDay} onChange={(e) => setSelectedDay(e.target.value)}>
+                                    {weather && getNext5Days(weather.date).map((day, index) => (
+                                        <option key={index} value={day.date}>
+                                            {day.dayName}
+                                        </option>
+                                    ))}
                                 </select>
                             </div>
                         </div>
                         <div>
-                            <div className='forecast-meteo'>
-                                <div className='hourly-item-left'>
-                                    <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' />
-                                    <p>3 PM</p>
+                            {weather && getNextHoursData(weather.hourlyTimes, weather.hourlyTemperatures, selectedDay, 8).map((hourData, index) => (
+                                <div key={index} className='forecast-meteo'>
+                                    <div className='hourly-item-left'>
+                                        <img src={getWeatherDescription(weather.code)} className='rain' alt='weather-icon' />
+                                        <p>{hourData.formattedTime}</p>
+                                    </div>
+                                    <div className='hourly-item-right'>
+                                        <p>{hourData.temperature}°</p>
+                                    </div>
                                 </div>
-                                <div className='hourly-item-right'>
-                                    <p>30°</p>
-                                </div>
-                            </div>
-                            <div className='forecast-meteo'>
-                                <div className='hourly-item-left'>
-                                    <img src={rain} className='rain' alt='rain' />
-                                    <p>3 PM</p>
-                                </div>
-                                <div className='hourly-item-right'>
-                                    <p>30°</p>
-                                </div>
-                            </div>
-                            <div className='forecast-meteo'>
-                                <div className='hourly-item-left'>
-                                    <img src={rain} className='rain' alt='rain' />
-                                    <p>3 PM</p>
-                                </div>
-                                <div className='hourly-item-right'>
-                                    <p>30°</p>
-                                </div>
-                            </div>
-                            <div className='forecast-meteo'>
-                                <div className='hourly-item-left'>
-                                    <img src={rain} className='rain' alt='rain' />
-                                    <p>3 PM</p>
-                                </div>
-                                <div className='hourly-item-right'>
-                                    <p>30°</p>
-                                </div>
-                            </div>
-                            <div className='forecast-meteo'>
-                                <div className='hourly-item-left'>
-                                    <img src={rain} className='rain' alt='rain' />
-                                    <p>3 PM</p>
-                                </div>
-                                <div className='hourly-item-right'>
-                                    <p>30°</p>
-                                </div>
-                            </div>
-                            <div className='forecast-meteo'>
-                                <div className='hourly-item-left'>
-                                    <img src={rain} className='rain' alt='rain' />
-                                    <p>3 PM</p>
-                                </div>
-                                <div className='hourly-item-right'>
-                                    <p>30°</p>
-                                </div>
-                            </div>
-                            <div className='forecast-meteo'>
-                                <div className='hourly-item-left'>
-                                    <img src={rain} className='rain' alt='rain' />
-                                    <p>3 PM</p>
-                                </div>
-                                <div className='hourly-item-right'>
-                                    <p>30°</p>
-                                </div>
-                            </div>
-                            <div className='forecast-meteo'>
-                                <div className='hourly-item-left'>
-                                    <img src={rain} className='rain' alt='rain' />
-                                    <p>3 PM</p>
-                                </div>
-                                <div className='hourly-item-right'>
-                                    <p>30°</p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
             
                     </div>
