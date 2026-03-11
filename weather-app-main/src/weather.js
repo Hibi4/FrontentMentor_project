@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import logo from './assets/images/logo.svg'
 // import large from './assets/images/bg-today-large.svg'
 import units from './assets/images/icon-units.svg'
-import rain from './assets/images/icon-rain.webp'
+// import rain from './assets/images/icon-rain.webp'
 import search from './assets/images/icon-search.svg'
 import iconSunny from './assets/images/icon-sunny.webp'
 import iconDrizzle from './assets/images/icon-drizzle.webp'
@@ -23,18 +23,21 @@ function Weather() {
     const [selectedDay, setSelectedDay] = useState('');
 
     const getWeatherDescription = (code) => {
-        const weatherCodes = {
-            0 : iconSunny,
-            1 : iconDrizzle,
-            2 : iconRain,
-            3 : iconSnow,
-            4 : iconStorm,
-            5 : iconFog,
-            6 : iconOvercast,
-            7 : iconPartlyCloudy,
-        }
-        
-        return weatherCodes[code] || 'Unknown'; 
+        const c = code != null ? Number(code) : 0;
+        if (isNaN(c)) return iconPartlyCloudy;
+
+        if (c === 0) return iconSunny;
+        if (c === 1 || c === 2) return iconPartlyCloudy;
+        if (c === 3) return iconOvercast;
+        if (c === 45 || c === 48) return iconFog;
+        if (c >= 51 && c <= 57) return iconDrizzle;
+        if (c >= 61 && c <= 67) return iconRain;
+        if (c >= 71 && c <= 77) return iconSnow;
+        if (c >= 80 && c <= 82) return iconRain;
+        if (c >= 85 && c <= 86) return iconSnow;
+        if (c >= 95 && c <= 99) return iconStorm;
+
+        return iconPartlyCloudy || 'Unknown';
     }
 
     // Fonction pour extraire le jour de la semaine à partir d'une date
@@ -155,11 +158,11 @@ function Weather() {
             const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,precipitation,relativehumidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto&forecast_days=7`;
             const weatherRes = await fetch(weatherUrl);
             const weatherData = await weatherRes.json();
-            console.log("WeatherData: ", weatherData);
+            // console.log("WeatherData: ", weatherData);
 
             const currentDate = weatherData.current_weather.time?.split('T')[0];
             const dayName = getDayName(currentDate);
-            setCurrentDay(dayName);
+            // setCurrentDay(dayName);
             setSelectedDay(currentDate); // Initialiser avec la date actuelle
 
             setWeather({
@@ -305,7 +308,7 @@ return (
                         <div className='forecast'>
                             <div className='forecast1'>
                                 <p>Feels like</p>
-                                <p>{weather.apparentTemp} °C</p>
+                                <p>{weather.apparentTemp} °</p>
                             </div>
                             <div className='forecast2'>
                                 <p>Humidity</p>
@@ -326,17 +329,25 @@ return (
                                 <h2>Daily forecast</h2>
                             </div>
                             <div className='daily-forecast-item'>
-                                <div className='daily-item'>
+                                {weather.daily && weather.daily.time.slice(0, 7).map((date, index) => {
+                                    const max = weather.daily.temperature_2m_max[index];
+                                    const min = weather.daily.temperature_2m_min[index];
+                                    const code = weather.daily.weathercode[index];
+                                    const icon = getWeatherDescription(code);
+                                    const dayName = getDayName(date);
 
-                                </div>
-                                <div className='daily-item'></div>
-                                <div className='daily-item'></div>
-                                <div className='daily-item'></div>
-                                <div className='daily-item'></div>
-                                <div className='daily-item'></div>
-                                <div className='daily-item'></div>
-                            </div>
-                        </div>
+                                    return (
+                                        <div key={date} className='daily-item'>
+                                            <p className='daily-item-dayName'>{dayName} </p>
+                                            <img src={icon} className='weather-daily-icon' alt='weather-daily-ico' />
+                                            <div className='daily-item-temp'>
+                                                <span> {Math.round(max)}° </span>
+                                                <span> {Math.round(min)}° </span>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div></div>
                     </div>
                     {/* Hourly forecast */}
                     <div className='hourly-forecast'>

@@ -363,6 +363,12 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     gap: 20px;
 }
 
+.daily-item img {
+    display: block;
+    margin: auto;
+    width: 3rem;
+}
+
 .daily-item {
     height: 130px;
     width: 120px;
@@ -372,5 +378,20 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     border-width: 1px;
     border-style: solid;
 }
+
+.daily-item-dayName {
+    text-align: center;
+}
+
+.weather-daily-icon {
+    text-align: center;
+}
+
+.daily-item-temp {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
 /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */ 
