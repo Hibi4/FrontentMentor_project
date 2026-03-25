@@ -1,7 +1,13 @@
-.weather-container {
+html, body, #root {
+    min-height: 100%;
     background-color: hsl(243, 96%, 9%);
+}
+
+.weather-container {
+    /* background-color: hsl(243, 96%, 9%); */ 
     min-height: 100vh;
     width: 100%;
+    margin-bottom: 60px;
 }
 
 .header {
@@ -29,16 +35,52 @@
     width: 18px;
     height: 18px;
 }
+.units {
+    position: relative;
+    display: inline-block;
+  }
+  .units-select {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background-color: hsl(243, 27%, 20%);
+    color: white;
+    cursor: pointer;
+  }
+  .units-options {
+    position: absolute;
+    margin-top: 4px;
+    background-color: hsl(243, 27%, 20%);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .units-option {
+    padding: 8px 14px;
+    color: white;
+    cursor: pointer;
+  }
+  .units-option:hover {
+    background-color: hsl(243, 23%, 30%);
+  }
 
 /* style du select dans le pill */
 .units-select {
-    background-color: transparent;
+    background-color: hsl(243, 27%, 20%);
     color: white;
-    border: none;
+    border: 2px;
+    /* width: 100%; */
     font-size: 14px;
     cursor: pointer;
     outline: none;
     line-height: 1;
+}
+
+.units-select .optgroup {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+.units-select .optgroup option {
+    color: white;
 }
 
 .units::after {
@@ -50,12 +92,97 @@
     pointer-events: none;
 }
 
+.units-select .hr-units {
+    background-color: white;
+    height: 25px;
+}
+
 .weather-title {
     color: white;
     font-size: 60px;
     text-align: center;
     font-weight: 700;
 }
+
+/* CSS dropdown div */
+
+/* The container for the custom dropdown */
+.custom-select {
+    position: relative;
+    width: auto;
+    /* width: 200px; /* Adjust width as needed */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* The "button" that is always visible */
+  .select-button {
+    width: 100%;
+    padding: 10px;
+    /* background-color: white;  
+    border: 1px solid #ccc;*/
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: left;
+  }
+  
+  /* The dropdown list (hidden by default) */
+  .select-list {
+    position: absolute;
+    margin-top: 20px;
+    right: 0;
+    width: 200px; 
+    background-color: hsl(243, 27%, 20%);;
+    /* top: 100%;
+    left: 0;
+    width: 100%; */ 
+    font-size: 1rem;
+    /*background-color: white; hsl(243, 27%, 20%) */
+    border: 2px solid #272541;
+    border-radius: 7px;
+    /* border-top: none; #675e5e */
+    z-index: 10;
+    display: none; /* Hidden by default */
+    /* max-height: 300px;
+    overflow-y: auto; */ 
+  }
+  
+  /* Active state to show the list */
+  .custom-select.open .select-list {
+    display: block;
+  }
+  
+  /* --- THIS IS THE STYLE YOU ASKED FOR --- */
+  .select-option {
+    padding: 10px;
+    cursor: pointer;
+    border: 2px solid transparent; /* Default transparent border */
+    margin: 4px; /* Gives space for the border */
+  }
+  
+  /* .select-option:hover {
+    border: 2px solid yellow;
+    background-color: #f9f9f9;
+  } */ 
+  /* --------------------------------------- */
+  
+  /* Styles for disabled items (labels) */
+  .select-option.disabled {
+    color: #888;
+    font-weight: bold;
+    cursor: default;
+    pointer-events: none; /* Cannot be clicked */
+  }
+  
+  /* Style for your HR */
+  .custom-hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 5px 10px;
+  }
+
+/* */
 
 .search-container {
     display: flex;
@@ -98,6 +225,10 @@
 
 input::placeholder {
     color: white;
+}
+
+.units-span {
+    cursor: pointer;
 }
 
 .search-button {
@@ -148,6 +279,7 @@ input::placeholder {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 10px;
     /* padding: 0px 40px 0px 40px; */ 
     width: 90%;
     height: 45%;

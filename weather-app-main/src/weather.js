@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import logo from './assets/images/logo.svg'
 // import large from './assets/images/bg-today-large.svg'
 import units from './assets/images/icon-units.svg'
@@ -21,6 +21,32 @@ function Weather() {
     const [error, setError] = useState('');
     // const [currentDay, setCurrentDay] = useState('');
     const [selectedDay, setSelectedDay] = useState('');
+    const [selectedUnit, setSelectedUnit] = useState(''); // ou 'wind' par défaut
+    const UNIT_OPTIONS = ['temperature', 'wind'];
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedValue, setSelectedValue] = useState("Switch to Imperial");
+
+    // 1. Create a ref to reference the dropdown container
+    const dropdownRef = useRef(null);
+
+    // 2. Add an effect to listen for clicks on the document
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // Check if the click happened OUTSIDE the dropdown ref
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        // Bind the event listener
+        document.addEventListener('mousedown', handleClickOutside);
+
+        // 3. Cleanup: Unbind the event listener when component unmounts
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [dropdownRef]);
+
 
     const getWeatherDescription = (code) => {
         const c = code != null ? Number(code) : 0;
@@ -52,7 +78,7 @@ function Weather() {
         if (!startDate) return [];
         const days = [];
         const start = new Date(startDate + 'T00:00:00');
-        
+
         for (let i = 0; i < 5; i++) {
             const nextDate = new Date(start);
             nextDate.setDate(start.getDate() + i);
@@ -62,7 +88,7 @@ function Weather() {
                 dayName: getDayName(dateString)
             });
         }
-        
+
         return days;
     };
 
@@ -79,46 +105,63 @@ function Weather() {
     // Fonction pour récupérer les températures des heures suivantes
     const getNextHoursData = (hourlyTimes, hourlyTemperatures, selectedDate = null, count = 8) => {
         if (!hourlyTimes || !hourlyTemperatures || hourlyTimes.length === 0) return [];
-        
+
         let filteredTimes = hourlyTimes;
         let filteredTemperatures = hourlyTemperatures;
-        
+
         // Si une date est sélectionnée, filtrer les données pour ce jour
         if (selectedDate) {
-            const selectedDateStr = selectedDate.split('T')[0]; // Format YYYY-MM-DD
+            const selectedDateStr = selectedDate.split('T')[0]; // YYYY-MM-DD
             const filteredIndices = [];
-            
             hourlyTimes.forEach((time, index) => {
                 if (time) {
-                    const timeDateStr = time.split('T')[0];
-                    if (timeDateStr === selectedDateStr) {
+                    const [dateStr] = time.split('T');
+                    if (dateStr === selectedDateStr) {
                         filteredIndices.push(index);
                     }
                 }
             });
-            
-            filteredTimes = filteredIndices.map(i => hourlyTimes[i]);
-            filteredTemperatures = filteredIndices.map(i => hourlyTemperatures[i]);
+            let timesForDay = filteredIndices.map(i => hourlyTimes[i]);
+            let tempsForDay = filteredIndices.map(i => hourlyTemperatures[i]);
+            // Si le jour sélectionné est aujourd'hui, on commence à partir de l'heure actuelle
+            const todayStr = new Date().toISOString().split('T')[0];
+            if (selectedDateStr === todayStr) {
+                const now = new Date();
+                const currentHour = now.getHours();
+                const currentMinute = now.getMinutes();
+                const startIndexToday = timesForDay.findIndex(time => {
+                    const d = new Date(time);
+                    const h = d.getHours();
+                    // on passe à l'heure suivante si on est déjà bien avancé dans l'heure courante
+                    return h > currentHour || (h === currentHour && currentMinute < 30);
+                });
+                const startIndex = startIndexToday === -1 ? 0 : startIndexToday;
+                timesForDay = timesForDay.slice(startIndex);
+                tempsForDay = tempsForDay.slice(startIndex);
+            }
+            filteredTimes = timesForDay;
+            filteredTemperatures = tempsForDay;
+
         } else {
             // Si aucune date sélectionnée, utiliser la logique originale (heures suivantes)
             const now = new Date();
             const currentHour = now.getHours();
             const currentMinute = now.getMinutes();
             const startHour = currentMinute >= 30 ? currentHour + 1 : currentHour;
-            
+
             let startIndex = hourlyTimes.findIndex(time => {
                 if (!time) return false;
                 const timeDate = new Date(time);
                 const timeHour = timeDate.getHours();
                 return timeHour > startHour || (timeHour === startHour && currentMinute < 30);
             });
-            
+
             if (startIndex === -1) startIndex = 1;
-            
+
             filteredTimes = hourlyTimes.slice(startIndex);
             filteredTemperatures = hourlyTemperatures.slice(startIndex);
         }
-        
+
         // Récupérer les heures avec leurs températures
         const nextHours = [];
         for (let i = 0; i < count && i < filteredTimes.length; i++) {
@@ -130,13 +173,13 @@ function Weather() {
                 });
             }
         }
-        
+
         return nextHours;
     };
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        if(!city) return;
+        if (!city) return;
 
         setWeather(null);
         setError(null);
@@ -147,7 +190,7 @@ function Weather() {
             const geoRes = await fetch(geoUrl);
             const geoData = await geoRes.json();
 
-            if(!geoData.results || geoData.results.length === 0) {
+            if (!geoData.results || geoData.results.length === 0) {
                 throw new Error("City not found. Please try again.");
             }
 
@@ -183,11 +226,11 @@ function Weather() {
                 hourlyTimes: weatherData.hourly?.time || [],
                 hourlyTemperatures: weatherData.hourly?.temperature_2m || []
             })
-            
-    /* 
-    
 
-    */ 
+            /* 
+            
+        
+            */
 
         } catch (error) {
             setError(error.message);
@@ -227,66 +270,128 @@ return (
         )}
       </div>
     </div>
-    */ 
+    */
 
+    {/*
+        4. Attach the ref to the main container div 
+        <div ref={dropdownRef} className={`custom-select ${isOpen ? 'open' : ''}`}></div>    
+    className='weather-container' */}
     return (
         <div className='weather-container'>
             <div className='header'>
                 <div><img src={logo} className='' alt="logo" /> </div>
                 <div className='units'>
-                    <img src={units} alt='units' /> Units
-                    <select name="units" className="units-select" >
-                        <option value=""></option>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
-                    </select>                
-                </div>                
+                    <div ref={dropdownRef} className={`custom-select ${isOpen ? 'open' : ''}`}>
+                        <img src={units} alt='units' className='units-trigger-icon' /> 
+                        <span className='units-span' onClick={(e) => {
+                            e.stopPropagation();
+                            setIsOpen((prev) => !prev);
+                        }}>  Units v</span>
+                        {/* </div>*/}
+
+                        {/* Bouton qui affiche la valeur actuelle */}
+                        {/*<div
+                        
+                    )} <div className={`custom-select ${isOpen ? 'open' : ''}`}>
+*/ }
+                        {/* <div ref={dropdownRef} className={`custom-select ${isOpen ? 'open' : ''}`}> */}
+                        {/* The visible button  
+                        <div className="select-button" onClick={() => setIsOpen(!isOpen)}>
+                            
+                        </div> */}
+
+                        {/* The dropdown list */}
+                        <div className="select-list">
+                            <div className="select-option" >
+                                Switch to Imperial
+                            </div>
+
+                            <hr className='custom-hr' />
+
+                            <div className="select-option disabled">Temperature</div>
+                            <div className="select-option" onClick={() => {
+                                setIsOpen(false);
+                            }}>
+                                Celsius
+                            </div>
+                            <div
+                                className="select-option">
+                                Fahrenheit
+                            </div>
+
+                            <hr className='custom-hr' />
+
+                            <div className="select-option disabled">Precipitation</div>
+                            <div
+                                className="select-option"
+
+                            >
+                                Millimeters(mm)
+                            </div>
+
+                            <hr className='custom-hr' />
+
+                            <div className="select-option disabled">Wind Speed</div>
+                            <div className="select-option">
+                                Km/h
+                            </div>
+                            <div
+                                className="select-option"
+
+                            >
+                                Mph
+                            </div>
+                        </div>
+                    </div>
+                    {/*<select name="units" className="units-select" id="hr-select">
+                        <option value="">Switch to Imperial</option>
+
+                        
+                        <optgroup label="Temperature" className="optgroup">
+                            <option value="celsius">Celsius</option>
+                            <option value="fahraneit">Farhrenheit</option>
+                        </optgroup>
+
+                        
+                        <optgroup label="Precipitation" className="optgroup">
+                            <option value="millimeters">Millimeters(mm)</option>
+                        </optgroup>
+
+                        
+                        <optgroup label="Wind Speed" className="optgroup">
+                            <option value="km/h">Km/h</option>
+                            <option value="mph">Mph</option>
+                        </optgroup>
+                    </select>*/}
+                    {/* <select name="units" className="units-select" id="hr-select">
+                        <option value="">Switch to Imperial</option>
+                        <hr className='hr-units' />
+                        <option value="temperature" disabled>Temperature</option>
+                        <option value="celsius">Celsius</option>
+                        <option value="fahraneit">Farhrenheit</option>
+                        <hr className='hr-units' />
+                        <option value="precipitation" disabled>Precipitation</option>
+                        <option value="millimeters">Millimeters(mm)</option>
+                        <hr className='hr-units' />
+                        <option value="wind" disabled>Wind Speed</option>
+                        <option value="km/h">Km/h</option>
+                        <option value="mph">Mph</option>
+                    </select>*/}
+                </div>
             </div>
             <div className='weather-title'>How is the sky today?</div>
             <form onSubmit={handleSearch}>
 
-            
-            <div className='search-container'>
-                {
-                    /*
-                    return (    
-        <form onSubmit={handleSearch} className="search-box">
-          <input
-            type="text"
-            placeholder="Enter city (e.g., London)"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <button type="submit">Search</button>
-        </form>
 
-        {loading && <p className="loading">Loading weather data...</p>}
+                <div className='search-container'>
 
-        {error && <p className="error">{error}</p>}
+                    <div className='search-input-wrapper'>
+                        <img src={search} className='search-icon' alt='search-icon' />
+                        <input type='text' className='search-input' placeholder='Search for a place...' onChange={(e) => setCity(e.target.value)} />
 
-        {weather && (
-          <div className="weather-card">
-            <h2>{weather.city}, {weather.country}</h2>
-            <div className="temp">{weather.temp}°C</div>
-            <div className="desc">
-              <span>{getWeatherDescription(weather.code)}</span>
-              <span> | Wind: {weather.wind} km/h</span>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-                    */ 
-                }
-               
-                <div className='search-input-wrapper'>
-                    <img src={search} className='search-icon' alt='search-icon' />
-                    <input type='text' className='search-input' placeholder='Search for a place...' onChange={(e) => setCity(e.target.value)} />
+                    </div>
+                    <button type="submit" className='search-button'>Search</button>
                 </div>
-                <button type="submit" className='search-button'>Search</button>
-            </div> 
             </form>
             {error && <p className='error'>{error}</p>}
 
@@ -294,15 +399,15 @@ return (
                 <div className='container'>
                     <div>
                         <div className='picture-container'>
-                            {/* <img src={large} className='large-picture' alt="large" />*/ }
+                            {/* <img src={large} className='large-picture' alt="large" />*/}
                             <div className='weather-location'>
                                 <p> {weather.city}, {weather.country} </p>
                                 <p> {weather.day}, {weather.time} </p>
                             </div>
                             <div className='weather-grade'>
-                                <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' /> {/* width: 10rem */ }
-                                <p> {weather.temp} °C </p> {/* width: 3rem */ }
-                                {/* <img src={weather.icon} alt="weather-icon" />*/ }
+                                <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' /> {/* width: 10rem */}
+                                <p> {weather.temp} °C </p> {/* width: 3rem */}
+                                {/* <img src={weather.icon} alt="weather-icon" />*/}
                             </div>
                         </div>
                         <div className='forecast'>
@@ -378,7 +483,7 @@ return (
                                 </div>
                             ))}
                         </div>
-            
+
                     </div>
 
                 </div>
