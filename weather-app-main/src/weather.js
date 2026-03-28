@@ -21,10 +21,10 @@ function Weather() {
     const [error, setError] = useState('');
     // const [currentDay, setCurrentDay] = useState('');
     const [selectedDay, setSelectedDay] = useState('');
-    const [selectedUnit, setSelectedUnit] = useState(''); // ou 'wind' par défaut
+    const [selectedUnit, setSelectedUnit] = useState('celsius'); // par défaut Celsius
     const UNIT_OPTIONS = ['temperature', 'wind'];
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedValue, setSelectedValue] = useState("Switch to Imperial");
+    const [selectedOption, setSelectedOption] = useState('celsius'); // valeur sélectionnée dans le menu déroulant
 
     // 1. Create a ref to reference the dropdown container
     const dropdownRef = useRef(null);
@@ -65,6 +65,28 @@ function Weather() {
 
         return iconPartlyCloudy || 'Unknown';
     }
+
+    const convertTemp = (temp) => {
+        if (temp === null || temp === undefined) return temp;
+        if (selectedOption === 'fahrenheit') {
+            return Math.round((temp * 9) / 5 + 32);
+        }
+        // default celsius
+        return Math.round(temp);
+    };
+
+    const convertWind = (wind) => {
+        if (wind === null || wind === undefined) return wind;
+        if (selectedOption === 'mph') {
+            return Math.round(wind / 1.609);
+        }
+        // default km/h
+        return Math.round(wind);
+    };
+
+    const tempUnitLabel = selectedOption === 'fahrenheit' ? 'F' : 'C';
+    const windUnitLabel = selectedOption === 'mph' ? 'mph' : 'km/h';
+    const precipitationUnitLabel = selectedOption === 'millimeters' ? 'mm' : 'mm';
 
     // Fonction pour extraire le jour de la semaine à partir d'une date
     const getDayName = (dateString) => {
@@ -226,12 +248,6 @@ function Weather() {
                 hourlyTimes: weatherData.hourly?.time || [],
                 hourlyTemperatures: weatherData.hourly?.temperature_2m || []
             })
-
-            /* 
-            
-        
-            */
-
         } catch (error) {
             setError(error.message);
         }
@@ -286,7 +302,15 @@ return (
                         <span className='units-span' onClick={(e) => {
                             e.stopPropagation();
                             setIsOpen((prev) => !prev);
-                        }}>  Units v</span>
+                        }}>
+                            {selectedOption === 'switch' && 'Switch to Imperial'}
+                            {selectedOption === 'celsius' && 'Celsius'}
+                            {selectedOption === 'fahrenheit' && 'Fahrenheit'}
+                            {selectedOption === 'millimeters' && 'Millimeters (mm)'}
+                            {selectedOption === 'kmh' && 'Km/h'}
+                            {selectedOption === 'mph' && 'Mph'}
+                            {' '}v
+                        </span>
                         {/* </div>*/}
 
                         {/* Bouton qui affiche la valeur actuelle */}
@@ -302,44 +326,79 @@ return (
 
                         {/* The dropdown list */}
                         <div className="select-list">
-                            <div className="select-option" >
-                                Switch to Imperial
+                            <div
+                                className={`select-option ${selectedOption === 'switch' ? 'selected' : ''}`}
+                                onClick={() => {
+                                    setSelectedOption('switch');
+                                    setIsOpen(false);
+                                }}
+                            >
+                                <span>Switch to Imperial</span>
+                                <span className='checkmark'>{selectedOption === 'switch' ? 'V' : ''}</span>
                             </div>
 
                             <hr className='custom-hr' />
 
                             <div className="select-option disabled">Temperature</div>
-                            <div className="select-option" onClick={() => {
-                                setIsOpen(false);
-                            }}>
-                                Celsius
+                            <div
+                                className={`select-option ${selectedOption === 'celsius' ? 'selected' : ''}`}
+                                onClick={() => {
+                                    setSelectedOption('celsius');
+                                    setSelectedUnit('celsius');
+                                    setIsOpen(false);
+                                }}
+                            >
+                                <span>Celsius</span>
+                                <span className='checkmark'>{selectedOption === 'celsius' ? 'V' : ''}</span>
                             </div>
                             <div
-                                className="select-option">
-                                Fahrenheit
+                                className={`select-option ${selectedOption === 'fahrenheit' ? 'selected' : ''}`}
+                                onClick={() => {
+                                    setSelectedOption('fahrenheit');
+                                    setSelectedUnit('fahrenheit');
+                                    setIsOpen(false);
+                                }}
+                            >
+                                <span>Fahrenheit</span>
+                                <span className='checkmark'>{selectedOption === 'fahrenheit' ? 'V' : ''}</span>
                             </div>
 
                             <hr className='custom-hr' />
 
                             <div className="select-option disabled">Precipitation</div>
                             <div
-                                className="select-option"
-
+                                className={`select-option ${selectedOption === 'millimeters' ? 'selected' : ''}`}
+                                onClick={() => {
+                                    setSelectedOption('millimeters');
+                                    setIsOpen(false);
+                                }}
                             >
-                                Millimeters(mm)
+                                <span>Millimeters(mm)</span>
+                                <span className='checkmark'>{selectedOption === 'millimeters' ? 'V' : ''}</span>
                             </div>
 
                             <hr className='custom-hr' />
 
                             <div className="select-option disabled">Wind Speed</div>
-                            <div className="select-option">
-                                Km/h
+                            <div
+                                className={`select-option ${selectedOption === 'kmh' ? 'selected' : ''}`}
+                                onClick={() => {
+                                    setSelectedOption('kmh');
+                                    setIsOpen(false);
+                                }}
+                            >
+                                <span>Km/h</span>
+                                <span className='checkmark'>{selectedOption === 'kmh' ? 'V' : ''}</span>
                             </div>
                             <div
-                                className="select-option"
-
+                                className={`select-option ${selectedOption === 'mph' ? 'selected' : ''}`}
+                                onClick={() => {
+                                    setSelectedOption('mph');
+                                    setIsOpen(false);
+                                }}
                             >
-                                Mph
+                                <span>Mph</span>
+                                <span className='checkmark'>{selectedOption === 'mph' ? 'V' : ''}</span>
                             </div>
                         </div>
                     </div>
@@ -406,14 +465,14 @@ return (
                             </div>
                             <div className='weather-grade'>
                                 <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' /> {/* width: 10rem */}
-                                <p> {weather.temp} °C </p> {/* width: 3rem */}
+                                <p>{convertTemp(weather.temp)}°{tempUnitLabel}</p> {/* width: 3rem */}
                                 {/* <img src={weather.icon} alt="weather-icon" />*/}
                             </div>
                         </div>
                         <div className='forecast'>
                             <div className='forecast1'>
                                 <p>Feels like</p>
-                                <p>{weather.apparentTemp} °</p>
+                                <p>{convertTemp(weather.apparentTemp)}°{tempUnitLabel}</p>
                             </div>
                             <div className='forecast2'>
                                 <p>Humidity</p>
@@ -421,11 +480,11 @@ return (
                             </div>
                             <div className='forecast3'>
                                 <p>Wind</p>
-                                <p> {weather.wind} Km/h </p>
+                                <p>{convertWind(weather.wind)} {windUnitLabel}</p>
                             </div>
                             <div className='forecast4'>
                                 <p>Precipitation</p>
-                                <p> {weather.prec} mm</p>
+                                <p>{weather.prec} {precipitationUnitLabel}</p>
                             </div>
                         </div>
                         {/* Daily forecast */}
@@ -478,7 +537,7 @@ return (
                                         <p>{hourData.formattedTime}</p>
                                     </div>
                                     <div className='hourly-item-right'>
-                                        <p>{hourData.temperature}°</p>
+                                        <p>{convertTemp(hourData.temperature)}°{tempUnitLabel}</p>
                                     </div>
                                 </div>
                             ))}
