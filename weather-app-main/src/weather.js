@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import logo from './assets/images/logo.svg'
-// import large from './assets/images/bg-today-large.svg'
 import units from './assets/images/icon-units.svg'
-// import rain from './assets/images/icon-rain.webp'
 import search from './assets/images/icon-search.svg'
 import iconSunny from './assets/images/icon-sunny.webp'
 import iconDrizzle from './assets/images/icon-drizzle.webp'
@@ -21,10 +19,11 @@ function Weather() {
     const [error, setError] = useState('');
     // const [currentDay, setCurrentDay] = useState('');
     const [selectedDay, setSelectedDay] = useState('');
-    const [selectedUnit, setSelectedUnit] = useState('celsius'); // par défaut Celsius
-    const UNIT_OPTIONS = ['temperature', 'wind'];
+    // const [selectedUnit, setSelectedUnit] = useState('celsius'); // par défaut Celsius
+    // const UNIT_OPTIONS = ['temperature', 'wind'];
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState('celsius'); // valeur sélectionnée dans le menu déroulant
+    // const [selectedOption, setSelectedOption] = useState('celsius');
 
     // 1. Create a ref to reference the dropdown container
     const dropdownRef = useRef(null);
@@ -50,7 +49,7 @@ function Weather() {
 
     const getWeatherDescription = (code) => {
         const c = code != null ? Number(code) : 0;
-        if (isNaN(c)) return iconPartlyCloudy;
+        if (Number.isNaN(c)) return iconPartlyCloudy;
 
         if (c === 0) return iconSunny;
         if (c === 1 || c === 2) return iconPartlyCloudy;
@@ -86,7 +85,8 @@ function Weather() {
 
     const tempUnitLabel = selectedOption === 'fahrenheit' ? 'F' : 'C';
     const windUnitLabel = selectedOption === 'mph' ? 'mph' : 'km/h';
-    const precipitationUnitLabel = selectedOption === 'millimeters' ? 'mm' : 'mm';
+    // why mm. Convert from mm to inch : 1 inch = 1 / 25.4 mm
+    const precipitationUnitLabel = selectedOption === 'millimeters' ? 'mm' : '';
 
     // Fonction pour extraire le jour de la semaine à partir d'une date
     const getDayName = (dateString) => {
@@ -223,7 +223,6 @@ function Weather() {
             const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,precipitation,relativehumidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto&forecast_days=7`;
             const weatherRes = await fetch(weatherUrl);
             const weatherData = await weatherRes.json();
-            // console.log("WeatherData: ", weatherData);
 
             const currentDate = weatherData.current_weather.time?.split('T')[0];
             const dayName = getDayName(currentDate);
@@ -253,45 +252,6 @@ function Weather() {
         }
     }
 
-
-    /* 
-return (
-    <div className="app">
-      <div className="container">
-        <h1>🌤️ Meteo App</h1>
-        
-        <form onSubmit={handleSearch} className="search-box">
-          <input
-            type="text"
-            placeholder="Enter city (e.g., London)"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <button type="submit">Search</button>
-        </form>
-
-        {loading && <p className="loading">Loading weather data...</p>}
-
-        {error && <p className="error">{error}</p>}
-
-        {weather && (
-          <div className="weather-card">
-            <h2>{weather.city}, {weather.country}</h2>
-            <div className="temp">{weather.temp}°C</div>
-            <div className="desc">
-              <span>{getWeatherDescription(weather.code)}</span>
-              <span> | Wind: {weather.wind} km/h</span>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-    */
-
-    {/*
-        4. Attach the ref to the main container div 
-        <div ref={dropdownRef} className={`custom-select ${isOpen ? 'open' : ''}`}></div>    
-    className='weather-container' */}
     return (
         <div className='weather-container'>
             <div className='header'>
@@ -302,34 +262,15 @@ return (
                         <span className='units-span' onClick={(e) => {
                             e.stopPropagation();
                             setIsOpen((prev) => !prev);
-                        }}>
-                            {selectedOption === 'switch' && 'Switch to Imperial'}
-                            {selectedOption === 'celsius' && 'Celsius'}
-                            {selectedOption === 'fahrenheit' && 'Fahrenheit'}
-                            {selectedOption === 'millimeters' && 'Millimeters (mm)'}
-                            {selectedOption === 'kmh' && 'Km/h'}
-                            {selectedOption === 'mph' && 'Mph'}
-                            {' '}v
+                        }}> units v
                         </span>
-                        {/* </div>*/}
-
-                        {/* Bouton qui affiche la valeur actuelle */}
-                        {/*<div
-                        
-                    )} <div className={`custom-select ${isOpen ? 'open' : ''}`}>
-*/ }
-                        {/* <div ref={dropdownRef} className={`custom-select ${isOpen ? 'open' : ''}`}> */}
-                        {/* The visible button  
-                        <div className="select-button" onClick={() => setIsOpen(!isOpen)}>
-                            
-                        </div> */}
 
                         {/* The dropdown list */}
                         <div className="select-list">
                             <div
                                 className={`select-option ${selectedOption === 'switch' ? 'selected' : ''}`}
                                 onClick={() => {
-                                    setSelectedOption('switch');
+                                    {/* setSelectedOption('switch');*/}
                                     setIsOpen(false);
                                 }}
                             >
@@ -344,7 +285,6 @@ return (
                                 className={`select-option ${selectedOption === 'celsius' ? 'selected' : ''}`}
                                 onClick={() => {
                                     setSelectedOption('celsius');
-                                    setSelectedUnit('celsius');
                                     setIsOpen(false);
                                 }}
                             >
@@ -355,7 +295,6 @@ return (
                                 className={`select-option ${selectedOption === 'fahrenheit' ? 'selected' : ''}`}
                                 onClick={() => {
                                     setSelectedOption('fahrenheit');
-                                    setSelectedUnit('fahrenheit');
                                     setIsOpen(false);
                                 }}
                             >
@@ -484,6 +423,7 @@ return (
                             </div>
                             <div className='forecast4'>
                                 <p>Precipitation</p>
+                                {/* convert precipitation to user's preferred unit */}
                                 <p>{weather.prec} {precipitationUnitLabel}</p>
                             </div>
                         </div>
@@ -521,8 +461,8 @@ return (
                             </div>
                             <div>
                                 <select value={selectedDay} onChange={(e) => setSelectedDay(e.target.value)}>
-                                    {weather && getNext5Days(weather.date).map((day, index) => (
-                                        <option key={index} value={day.date}>
+                                    {weather && getNext5Days(weather.date).map((day) => (
+                                        <option key={day.date} value={day.date}>
                                             {day.dayName}
                                         </option>
                                     ))}
@@ -530,8 +470,8 @@ return (
                             </div>
                         </div>
                         <div>
-                            {weather && getNextHoursData(weather.hourlyTimes, weather.hourlyTemperatures, selectedDay, 8).map((hourData, index) => (
-                                <div key={index} className='forecast-meteo'>
+                            {weather && getNextHoursData(weather.hourlyTimes, weather.hourlyTemperatures, selectedDay, 8).map((hourData) => (
+                                <div key={hourData.time} className='forecast-meteo'>
                                     <div className='hourly-item-left'>
                                         <img src={getWeatherDescription(weather.code)} className='rain' alt='weather-icon' />
                                         <p>{hourData.formattedTime}</p>
