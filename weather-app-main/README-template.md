@@ -71,6 +71,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
+- unité clamp and how it can be used to create responsive typography and layouts that adapt to different screen sizes. For example, I used clamp to set the font size of my headings, which allowed them to scale smoothly between a minimum and maximum size based on the viewport width.
+
 To see how you can add code snippets, see below:
 
 ```html

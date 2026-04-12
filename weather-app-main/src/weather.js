@@ -83,10 +83,22 @@ function Weather() {
         return Math.round(wind);
     };
 
+    // Convert from mm to inch : 1 inch = 1 / 25.4 mm
+    const convertPrec = (prec) => {
+        if (prec === null || prec === undefined) return prec;
+        if (selectedOption === 'inch') { // 
+            return Math.round(prec / 25.4) * 10 / 10; // arrondi à 1 décimale
+            // return prec / 25.4; // arrondi à 1 décimale
+        }
+        // default mm
+        return Math.round(prec * 10) / 10; // arrondi à 1 décimale
+        // return prec / 10;
+    };
+
     const tempUnitLabel = selectedOption === 'fahrenheit' ? 'F' : 'C';
     const windUnitLabel = selectedOption === 'mph' ? 'mph' : 'km/h';
     // why mm. Convert from mm to inch : 1 inch = 1 / 25.4 mm
-    const precipitationUnitLabel = selectedOption === 'millimeters' ? 'mm' : '';
+    const precipitationUnitLabel = selectedOption === 'millimeters' ? 'mm' : 'inch';
 
     // Fonction pour extraire le jour de la semaine à partir d'une date
     const getDayName = (dateString) => {
@@ -315,6 +327,16 @@ function Weather() {
                                 <span>Millimeters(mm)</span>
                                 <span className='checkmark'>{selectedOption === 'millimeters' ? 'V' : ''}</span>
                             </div>
+                            <div
+                                className={`select-option ${selectedOption === 'inch' ? 'selected' : ''}`}
+                                onClick={() => {
+                                    setSelectedOption('inch');
+                                    setIsOpen(false);
+                                }}
+                            >
+                                <span>inch(in)</span>
+                                <span className='checkmark'>{selectedOption === 'inch' ? 'V' : ''}</span>
+                            </div>
 
                             <hr className='custom-hr' />
 
@@ -396,6 +418,17 @@ function Weather() {
             {weather && (
                 <div className='container'>
                     <div>
+                        <div className='picture-container-mobile'>
+                            <div className='weather-location'>
+                                <p> {weather.city}, {weather.country} </p>
+                                <p> {weather.day}, {weather.time} </p>
+                            </div>
+                            <div className='weather-grade'>
+                                <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' /> {/* width: 10rem */}
+                                <p>{convertTemp(weather.temp)}°{tempUnitLabel}</p> {/* width: 3rem */}
+                                {/* <img src={weather.icon} alt="weather-icon" />*/}
+                            </div>
+                        </div>
                         <div className='picture-container'>
                             {/* <img src={large} className='large-picture' alt="large" />*/}
                             <div className='weather-location'>
@@ -409,22 +442,21 @@ function Weather() {
                             </div>
                         </div>
                         <div className='forecast'>
-                            <div className='forecast1'>
+                            <div className='weather-forecast'>
                                 <p>Feels like</p>
                                 <p>{convertTemp(weather.apparentTemp)}°{tempUnitLabel}</p>
                             </div>
-                            <div className='forecast2'>
+                            <div className='weather-forecast'>
                                 <p>Humidity</p>
                                 <p>{weather.humidity}%</p>
                             </div>
-                            <div className='forecast3'>
+                            <div className='weather-forecast'>
                                 <p>Wind</p>
                                 <p>{convertWind(weather.wind)} {windUnitLabel}</p>
                             </div>
-                            <div className='forecast4'>
+                            <div className='weather-forecast'>
                                 <p>Precipitation</p>
-                                {/* convert precipitation to user's preferred unit */}
-                                <p>{weather.prec} {precipitationUnitLabel}</p>
+                                <p>{convertPrec(weather.prec)} {precipitationUnitLabel}</p>
                             </div>
                         </div>
                         {/* Daily forecast */}
