@@ -50,29 +50,8 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-- unité clamp and how it can be used to create responsive typography and layouts that adapt to different screen sizes. For example, I used clamp to set the font size of my headings, which allowed them to scale smoothly between a minimum and maximum size based on the viewport width.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I practice my React skills and how to create a project with it. I also learned how to use React Hook Form to handle the form and how to use functions, React Testing Library to test the project. I also practiced my skills to use CSS Grid and Flexbox to create the layout of the project and ook . I also learned how to use the useEffect hook applying setTimeout method to handle the logic of the project and the random method to pick an item.
+I discover new website to help me test the mobile version of my project. This site is https://responsivetesttool.com/.
 
 ### Continued development
 
@@ -88,6 +67,7 @@ I'm still not fully completely comfortable with React and I want to continue foc
 - [Example resource 6](https://www.geeksforgeeks.org/html/how-to-center-an-image-in-html/) - This link provides a clear explanation and examples of how to center an image in HTML using CSS.
 - [Example resource 7](https://open-meteo.com/en/docs?hourly=temperature_2m,relative_humidity_2m) - This link provides a clear explanation of how to use the Open-Meteo API to get hourly weather data, including temperature and relative humidity.
 - Vibe Coding : I use cursor and github copilot to help me write code more efficiently and resolve some complex bugs.
+- 
 
 https://create-react-app.dev/docs/getting-started/
 
