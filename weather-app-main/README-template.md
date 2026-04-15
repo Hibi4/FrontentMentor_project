@@ -67,7 +67,6 @@ I'm still not fully completely comfortable with React and I want to continue foc
 - [Example resource 6](https://www.geeksforgeeks.org/html/how-to-center-an-image-in-html/) - This link provides a clear explanation and examples of how to center an image in HTML using CSS.
 - [Example resource 7](https://open-meteo.com/en/docs?hourly=temperature_2m,relative_humidity_2m) - This link provides a clear explanation of how to use the Open-Meteo API to get hourly weather data, including temperature and relative humidity.
 - Vibe Coding : I use cursor and github copilot to help me write code more efficiently and resolve some complex bugs.
-- 
 
 https://create-react-app.dev/docs/getting-started/
 
