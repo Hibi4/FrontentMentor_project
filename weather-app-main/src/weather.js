@@ -17,13 +17,9 @@ function Weather() {
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null);
     const [error, setError] = useState('');
-    // const [currentDay, setCurrentDay] = useState('');
     const [selectedDay, setSelectedDay] = useState('');
-    // const [selectedUnit, setSelectedUnit] = useState('celsius'); // par défaut Celsius
-    // const UNIT_OPTIONS = ['temperature', 'wind'];
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState('celsius'); // valeur sélectionnée dans le menu déroulant
-    // const [selectedOption, setSelectedOption] = useState('celsius');
 
     // 1. Create a ref to reference the dropdown container
     const dropdownRef = useRef(null);
@@ -88,26 +84,23 @@ function Weather() {
         if (prec === null || prec === undefined) return prec;
         if (selectedOption === 'inch') { // 
             return Math.round(prec / 25.4) * 10 / 10; // arrondi à 1 décimale
-            // return prec / 25.4; // arrondi à 1 décimale
         }
         // default mm
-        return Math.round(prec * 10) / 10; // arrondi à 1 décimale
-        // return prec / 10;
+        return Math.round(prec * 10) / 10; // round to 1 decimal
     };
 
     const tempUnitLabel = selectedOption === 'fahrenheit' ? 'F' : 'C';
     const windUnitLabel = selectedOption === 'mph' ? 'mph' : 'km/h';
-    // why mm. Convert from mm to inch : 1 inch = 1 / 25.4 mm
     const precipitationUnitLabel = selectedOption === 'millimeters' ? 'mm' : 'inch';
 
-    // Fonction pour extraire le jour de la semaine à partir d'une date
+    // function to get the day name fom a date string
     const getDayName = (dateString) => {
         if (!dateString) return '';
         const date = new Date(dateString + 'T00:00:00');
         return date.toLocaleDateString('en-US', { weekday: 'long' }); // Ex: "Monday", "Tuesday"
     };
 
-    // Fonction pour générer les 5 prochains jours à partir d'une date
+    // function to generate the next 5 days from a given date 
     const getNext5Days = (startDate) => {
         if (!startDate) return [];
         const days = [];
@@ -126,7 +119,7 @@ function Weather() {
         return days;
     };
 
-    // Fonction pour formater l'heure en format 12h (ex: "3 PM", "4 PM")
+    // function to format the hour in 12h format (ex: "3 PM", "4 PM")
     const formatHour = (dateString) => {
         if (!dateString) return '';
         const date = new Date(dateString);
@@ -136,14 +129,14 @@ function Weather() {
         return `${displayHour} ${period}`;
     };
 
-    // Fonction pour récupérer les températures des heures suivantes
+    // function to get the next hours data (time and temperature) based on the selected date (if any) or the current time
     const getNextHoursData = (hourlyTimes, hourlyTemperatures, selectedDate = null, count = 8) => {
         if (!hourlyTimes || !hourlyTemperatures || hourlyTimes.length === 0) return [];
 
         let filteredTimes = hourlyTimes;
         let filteredTemperatures = hourlyTemperatures;
 
-        // Si une date est sélectionnée, filtrer les données pour ce jour
+        // if a date is selected, filter the data for that day 
         if (selectedDate) {
             const selectedDateStr = selectedDate.split('T')[0]; // YYYY-MM-DD
             const filteredIndices = [];
@@ -157,7 +150,6 @@ function Weather() {
             });
             let timesForDay = filteredIndices.map(i => hourlyTimes[i]);
             let tempsForDay = filteredIndices.map(i => hourlyTemperatures[i]);
-            // Si le jour sélectionné est aujourd'hui, on commence à partir de l'heure actuelle
             const todayStr = new Date().toISOString().split('T')[0];
             if (selectedDateStr === todayStr) {
                 const now = new Date();
@@ -166,7 +158,7 @@ function Weather() {
                 const startIndexToday = timesForDay.findIndex(time => {
                     const d = new Date(time);
                     const h = d.getHours();
-                    // on passe à l'heure suivante si on est déjà bien avancé dans l'heure courante
+                    // pass to the next hour if we are already well advanced in the curent hour
                     return h > currentHour || (h === currentHour && currentMinute < 30);
                 });
                 const startIndex = startIndexToday === -1 ? 0 : startIndexToday;
@@ -177,7 +169,6 @@ function Weather() {
             filteredTemperatures = tempsForDay;
 
         } else {
-            // Si aucune date sélectionnée, utiliser la logique originale (heures suivantes)
             const now = new Date();
             const currentHour = now.getHours();
             const currentMinute = now.getMinutes();
@@ -196,7 +187,7 @@ function Weather() {
             filteredTemperatures = hourlyTemperatures.slice(startIndex);
         }
 
-        // Récupérer les heures avec leurs températures
+        // Get the hours with their temperatures 
         const nextHours = [];
         for (let i = 0; i < count && i < filteredTimes.length; i++) {
             if (filteredTimes[i] && filteredTemperatures[i] !== undefined) {
@@ -231,15 +222,13 @@ function Weather() {
             const { latitude, longitude, name, country } = geoData.results[0];
 
             // STEP 2: Weather - Get current weather using Lat/Lon
-            // const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation,relativehumidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`;
             const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,precipitation,relativehumidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto&forecast_days=7`;
             const weatherRes = await fetch(weatherUrl);
             const weatherData = await weatherRes.json();
 
             const currentDate = weatherData.current_weather.time?.split('T')[0];
             const dayName = getDayName(currentDate);
-            // setCurrentDay(dayName);
-            setSelectedDay(currentDate); // Initialiser avec la date actuelle
+            setSelectedDay(currentDate);
 
             setWeather({
                 city: name,
@@ -248,7 +237,7 @@ function Weather() {
                 apparentTemp: weatherData.hourly?.apparent_temperature?.[0] || weatherData.current_weather.temperature,
                 time: weatherData.current_weather.time?.split('T')[0],
                 date: currentDate,
-                day: dayName, // Jour de la semaine (ex: "Monday")
+                day: dayName,
                 wind: weatherData.current_weather.windspeed,
                 code: weatherData.current_weather.weathercode,
                 prec: weatherData.hourly?.precipitation?.[0] || 0,
@@ -282,7 +271,6 @@ function Weather() {
                             <div
                                 className={`select-option ${selectedOption === 'switch' ? 'selected' : ''}`}
                                 onClick={() => {
-                                    {/* setSelectedOption('switch');*/}
                                     setIsOpen(false);
                                 }}
                             >
@@ -363,40 +351,6 @@ function Weather() {
                             </div>
                         </div>
                     </div>
-                    {/*<select name="units" className="units-select" id="hr-select">
-                        <option value="">Switch to Imperial</option>
-
-                        
-                        <optgroup label="Temperature" className="optgroup">
-                            <option value="celsius">Celsius</option>
-                            <option value="fahraneit">Farhrenheit</option>
-                        </optgroup>
-
-                        
-                        <optgroup label="Precipitation" className="optgroup">
-                            <option value="millimeters">Millimeters(mm)</option>
-                        </optgroup>
-
-                        
-                        <optgroup label="Wind Speed" className="optgroup">
-                            <option value="km/h">Km/h</option>
-                            <option value="mph">Mph</option>
-                        </optgroup>
-                    </select>*/}
-                    {/* <select name="units" className="units-select" id="hr-select">
-                        <option value="">Switch to Imperial</option>
-                        <hr className='hr-units' />
-                        <option value="temperature" disabled>Temperature</option>
-                        <option value="celsius">Celsius</option>
-                        <option value="fahraneit">Farhrenheit</option>
-                        <hr className='hr-units' />
-                        <option value="precipitation" disabled>Precipitation</option>
-                        <option value="millimeters">Millimeters(mm)</option>
-                        <hr className='hr-units' />
-                        <option value="wind" disabled>Wind Speed</option>
-                        <option value="km/h">Km/h</option>
-                        <option value="mph">Mph</option>
-                    </select>*/}
                 </div>
             </div>
             <div className='weather-title'>How is the sky today?</div>
@@ -424,21 +378,18 @@ function Weather() {
                                 <p> {weather.day}, {weather.time} </p>
                             </div>
                             <div className='weather-grade'>
-                                <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' /> {/* width: 10rem */}
-                                <p>{convertTemp(weather.temp)}°{tempUnitLabel}</p> {/* width: 3rem */}
-                                {/* <img src={weather.icon} alt="weather-icon" />*/}
+                                <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' />
+                                <p>{convertTemp(weather.temp)}°{tempUnitLabel}</p>
                             </div>
                         </div>
                         <div className='picture-container'>
-                            {/* <img src={large} className='large-picture' alt="large" />*/}
                             <div className='weather-location'>
                                 <p> {weather.city}, {weather.country} </p>
                                 <p> {weather.day}, {weather.time} </p>
                             </div>
                             <div className='weather-grade'>
-                                <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' /> {/* width: 10rem */}
-                                <p>{convertTemp(weather.temp)}°{tempUnitLabel}</p> {/* width: 3rem */}
-                                {/* <img src={weather.icon} alt="weather-icon" />*/}
+                                <img src={getWeatherDescription(weather.code)} className='rain' alt='rain' />
+                                <p>{convertTemp(weather.temp)}°{tempUnitLabel}</p>
                             </div>
                         </div>
                         <div className='forecast'>
@@ -514,9 +465,7 @@ function Weather() {
                                 </div>
                             ))}
                         </div>
-
                     </div>
-
                 </div>
             )}
         </div>
