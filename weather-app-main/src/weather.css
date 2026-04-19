@@ -28,6 +28,7 @@ body,
     padding: 8px 14px;
     background-color: hsl(243, 27%, 20%);
     border-radius: 999px;
+    /* padding: 12px; */ 
     border-radius: 5px;
 }
 
@@ -525,8 +526,12 @@ input::placeholder {
     }
 
     .container {
+        display: block;
+        max-width: 100%;
         grid-template-columns: 1fr;
         padding: 1rem;
+        overflow-x: hidden;
+        box-sizing: border-box;
         gap: 2rem;
     }
 
@@ -541,17 +546,11 @@ input::placeholder {
 
     .forecast {
         display: grid;
-        /* grid-template-columns: 1fr 1fr; */ 
-        grid-template-columns: repeat(2, 12rem);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+        width: 100%;
+        max-width: 100%;
     }
-
-    /* .daily-forecast-item {
-        display: flex;
-        overflow-x: auto;
-        gap: 1rem;
-        padding: 1rem 0;
-    } */ 
 
     .daily-forecast-item {
         display: grid;
@@ -567,10 +566,6 @@ input::placeholder {
         flex-shrink: 0;
         min-width: 80px;
     }
-
-    /* .hourly-forecast {
-        padding: 1rem;
-    } */ 
 
     .hourly-forecast {
         width: min(100%, calc(100% - 2rem));
@@ -603,6 +598,61 @@ input::placeholder {
         align-items: center;
         gap: 0.5rem;
     }
+}
+
+/* Mobile design */
+@media (max-width: 768px) {
+
+    /* .weather-container {
+        margin-bottom: 0;
+    }
+
+    .picture-container {
+        display: none;
+    }
+
+    .picture-container-mobile {
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+        height: 200px;
+        background-image: url('./assets/images/bg-today-small.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+    } 
+
+    .weather-location {
+        padding-left: 20px;
+    }
+
+    .weather-grade img {
+        width: 5rem;
+    } */ 
+
+    /* .header {
+        padding: 10px;
+    } */ 
+    
+
+    /* .daily-forecast-item {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 1rem;
+        padding: 1rem 0;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-x: hidden; 
+    } */ 
+
+    /* .hourly-forecast {
+        width: min(100%, calc(100% - 2rem));
+        padding: clamp(1rem, 5vw, 2rem);
+        margin-top: clamp(15rem, 3vh, 3rem);
+        margin-left: auto;
+        margin-right: auto;
+    } */ 
 }
 
 /* Tablet Styles (min-width: 769px and max-width: 1024px) */
