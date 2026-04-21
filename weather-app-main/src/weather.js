@@ -45,7 +45,7 @@ function Weather() {
 
     const getWeatherDescription = (code) => {
         const c = code != null ? Number(code) : 0;
-        if (Number.isNaN(c)) return iconPartlyCloudy;
+        if (isNaN(c)) return iconPartlyCloudy;
 
         if (c === 0) return iconSunny;
         if (c === 1 || c === 2) return iconPartlyCloudy;
@@ -76,8 +76,8 @@ function Weather() {
             return Math.round(wind / 1.609);
         }
         // default km/h
-        return Math.round(wind);
-    };
+        return Math.round(wind); 
+    }
 
     // Convert from mm to inch : 1 inch = 1 / 25.4 mm
     const convertPrec = (prec) => {
@@ -87,7 +87,7 @@ function Weather() {
         }
         // default mm
         return Math.round(prec * 10) / 10; // round to 1 decimal
-    };
+    }; // Math.round(wind);
 
     const tempUnitLabel = selectedOption === 'fahrenheit' ? 'F' : 'C';
     const windUnitLabel = selectedOption === 'mph' ? 'mph' : 'km/h';
@@ -100,8 +100,8 @@ function Weather() {
         return date.toLocaleDateString('en-US', { weekday: 'long' }); // Ex: "Monday", "Tuesday"
     };
 
-    // function to generate the next 5 days from a given date 
-    const getNext5Days = (startDate) => {
+    // function to generate the next 5 days from a given date te) => {
+    function getNext5Days(startDate) {
         if (!startDate) return [];
         const days = [];
         const start = new Date(startDate + 'T00:00:00');
@@ -119,8 +119,28 @@ function Weather() {
         return days;
     };
 
-    // function to format the hour in 12h format (ex: "3 PM", "4 PM")
-    const formatHour = (dateString) => {
+    const getDailyForecastFromSelectedDay = (daily, selectedDate) => {
+        if (!daily || !daily.time || daily.time.length === 0) return [];
+
+        const dates = daily.time;
+        const startIndex = selectedDate ? dates.indexOf(selectedDate) : 0;
+        const forecast = [];
+
+        for (let i = 0; i < dates.length; i++) {
+            const index = (startIndex + i) % dates.length;
+            forecast.push({
+                date: dates[index],
+                max: daily.temperature_2m_max?.[index] ?? 0,
+                min: daily.temperature_2m_min?.[index] ?? 0,
+                code: daily.weathercode?.[index] ?? 0,
+            });
+        }
+
+        return forecast;
+    };
+
+    // function to format the hour in 12h format (ex: "3 PM", "4 PM")g) => {
+    function formatHour(dateString) {
         if (!dateString) return '';
         const date = new Date(dateString);
         const hour = date.getHours();
@@ -188,6 +208,8 @@ function Weather() {
         }
 
         // Get the hours with their temperatures 
+
+
         const nextHours = [];
         for (let i = 0; i < count && i < filteredTimes.length; i++) {
             if (filteredTimes[i] && filteredTemperatures[i] !== undefined) {
@@ -416,20 +438,17 @@ function Weather() {
                                 <h2>Daily forecast</h2>
                             </div>
                             <div className='daily-forecast-item'>
-                                {weather.daily && weather.daily.time.slice(0, 7).map((date, index) => {
-                                    const max = weather.daily.temperature_2m_max[index];
-                                    const min = weather.daily.temperature_2m_min[index];
-                                    const code = weather.daily.weathercode[index];
-                                    const icon = getWeatherDescription(code);
-                                    const dayName = getDayName(date);
+                                {weather.daily && getDailyForecastFromSelectedDay(weather.daily, selectedDay).map((day) => {
+                                    const icon = getWeatherDescription(day.code);
+                                    const dayName = getDayName(day.date);
 
                                     return (
-                                        <div key={date} className='daily-item'>
-                                            <p className='daily-item-dayName'>{dayName} </p>
+                                        <div key={day.date} className='daily-item'>
+                                            <p className='daily-item-dayName'>{dayName}</p>
                                             <img src={icon} className='weather-daily-icon' alt='weather-daily-ico' />
                                             <div className='daily-item-temp'>
-                                                <span> {Math.round(max)}° </span>
-                                                <span> {Math.round(min)}° </span>
+                                                <span>{Math.round(day.max)}°</span>
+                                                <span>{Math.round(day.min)}°</span>
                                             </div>
                                         </div>
                                     )
