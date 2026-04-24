@@ -587,12 +587,6 @@ input::placeholder {
         align-items: center;
         gap: 0.5rem;
     }
-
-    /* .daily-forecast-item {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(90px, 1fr));
-        gap: 1rem;
-    } */ 
 }
 
 @media (max-width: 400px) { 
@@ -613,47 +607,26 @@ input::placeholder {
     .daily-item {
         width: 95%;
     }
-
-    /*.forecast div {
-        padding: 20px;
-        margin-left: auto;
-        margin-right: auto;
-    }*/
 }
 
 @media (min-width: 400px) and (max-width: 500px) { 
     .daily-forecast-item {
         display: grid;
-        grid-template-columns: repeat(3, minmax(90px, 1fr));
+        grid-template-columns: repeat(2, minmax(90px, 1fr));
         gap: 1rem;
     }
 
-    /* 
-        .forecast {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-top: 20px;
-            padding-bottom: 20px;
-            width: 95%;
-        }
+    .daily-item {
+        width: 95%;
+    }
 
-        .weather-forecast {
-            height: 150px;
-            width: 170px;
-            border-radius: 5px;
-            border: 1px solid;
-            border-color: rgb(88 76 76);
-            background-color: hsl(243, 27%, 20%);
-            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-        }
+    .daily-item-temp {
+        padding: 0 5px;
+    }
 
-        .weather-forecast p {
-            color: white;
-            text-align: center;
-            font-size: 24px;
-        }
-    */ 
+    .hourly-forecast {
+        margin-top: 0;
+    }
 }
 
 /* Tablet Styles (min-width: 769px and max-width: 1024px) */
