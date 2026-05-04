@@ -19,8 +19,7 @@ function Weather() {
     const [error, setError] = useState('');
     const [selectedDay, setSelectedDay] = useState('');
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState('celsius'); // valeur sélectionnée dans le menu déroulant
-
+    const [selectedOption, setSelectedOption] = useState('celsius'); 
     // 1. Create a ref to reference the dropdown container
     const dropdownRef = useRef(null);
 
@@ -82,16 +81,16 @@ function Weather() {
     // Convert from mm to inch : 1 inch = 1 / 25.4 mm
     const convertPrec = (prec) => {
         if (prec === null || prec === undefined) return prec;
-        if (selectedOption === 'inch') { // 
-            return Math.round(prec / 25.4) * 10 / 10; // arrondi à 1 décimale
+        if (selectedOption === 'inch') {
+            return Math.round(prec / 25.4) * 10 / 10; // round to 1 decimal
         }
         // default mm
         return Math.round(prec * 10) / 10; // round to 1 decimal
-    }; // Math.round(wind);
+    };
 
     const tempUnitLabel = selectedOption === 'fahrenheit' ? 'F' : 'C';
     const windUnitLabel = selectedOption === 'mph' ? 'mph' : 'km/h';
-    const precipitationUnitLabel = selectedOption === 'millimeters' ? 'mm' : 'inch';
+    const precipitationUnitLabel = selectedOption === 'inch' ? 'inch' : 'mm';
 
     // function to get the day name fom a date string
     const getDayName = (dateString) => {
