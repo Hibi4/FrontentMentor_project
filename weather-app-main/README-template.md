@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL here](https://github.com/Hibi4/FrontentMentor_project.git)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://github.com/Hibi4/FrontentMentor_project.git)
+- Live Site URL: [live site URL](https://your-live-site-url.com)
 
 ## My process
 
@@ -66,23 +66,10 @@ I'm still not fully completely comfortable with React and I want to continue foc
 - [Example resource 5](https://www.geeksforgeeks.org/html/how-to-center-an-image-in-html/) - This link provides a clear explanation and examples of how to center an image in HTML using CSS.
 - [Example resource 6](https://www.geeksforgeeks.org/html/how-to-center-an-image-in-html/) - This link provides a clear explanation and examples of how to center an image in HTML using CSS.
 - [Example resource 7](https://open-meteo.com/en/docs?hourly=temperature_2m,relative_humidity_2m) - This link provides a clear explanation of how to use the Open-Meteo API to get hourly weather data, including temperature and relative humidity.
+- [Example resource 8](https://responsivetesttool.com/) - This link helps me to test the mobile version of my project and to make sure that it its responsive and looks good on different screen sizes.
 - Vibe Coding : I use cursor and github copilot to help me write code more efficiently and resolve some complex bugs.
-
-https://create-react-app.dev/docs/getting-started/
-
-https://www.w3schools.com/csS/css_border_width.asp 
-
-https://getcssscan.com/css-box-shadow-examples
-
-https://freefrontend.com/css-box-shadow-examples/ 
-
-https://refine.dev/blog/box-shadow-css/#css-box-shadow-examples 
-
-https://open-meteo.com/en/docs?hourly=temperature_2m,relative_humidity_2m 
-
-https://www.geeksforgeeks.org/html/how-to-center-an-image-in-html/ 
 
 ## Author
 
 - Website - [Hibi](https://portfolio-ousmane.vercel.app/en/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/hibi4)
+- Frontend Mentor - [@hibi4](https://www.frontendmentor.io/profile/hibi4)
